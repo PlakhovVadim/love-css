@@ -1,0 +1,183 @@
+/*! Love.css fonts | MIT License | github.com/PlakhovVadim/love-css */
+
+/*
+ * Font loading strategy
+ * ---------------------
+ * This file defines @font-face rules only. It does not set font-family on any
+ * element — that is the job of love.tokens.css and love.base.css.
+ *
+ * To use a different font:
+ *   1. Drop the files into assets/fonts/<FontName>/
+ *   2. Copy one of the @font-face blocks below and update the src path.
+ *   3. Point --love-font-sans (or --love-font-mono) at the new family name.
+ *
+ * To add language support (Cyrillic, Greek, etc.):
+ *   - Add a unicode-range descriptor to the @font-face block.
+ *   - See the commented examples at the bottom of this file.
+ *
+ * To disable a font entirely:
+ *   - Remove or comment out its @font-face blocks.
+ *   - The fallback stack in love.tokens.css will take over automatically.
+ */
+
+/* -------------------------------------------------------------------------
+ * Space Grotesk — variable font (weights 300–700)
+ * This single file covers Light, Regular, Medium, SemiBold, and Bold.
+ * Recommended as the primary sans-serif for Love.css.
+ * License: SIL Open Font License 1.1 — see assets/fonts/Space_Grotesk/OFL.txt
+ * ------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  font-synthesis: none;
+  src:
+    local("Space Grotesk"),
+    local("SpaceGrotesk"),
+    url("../assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+/* -------------------------------------------------------------------------
+ * Space Grotesk — static fallbacks
+ * These are optional. Keep them only if you want explicit control over
+ * individual weights or need to support browsers without variable font
+ * support (very rare in 2026 — WOFF2 and variable fonts are universal).
+ *
+ * If you use the variable font above, you can comment these out to save
+ * requests. They are listed here so you can see the pattern for adding
+ * a non-variable font.
+ * ------------------------------------------------------------------------- */
+
+/*
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf") format("truetype");
+}
+*/
+
+/* -------------------------------------------------------------------------
+ * Space Grotesk — italic
+ * Space Grotesk does not ship an italic file. If you need italics, either:
+ *   1. Use font-synthesis: style (browser generates oblique) — default
+ *   2. Add a real italic font family and set it as a fallback
+ *   3. Load a different family that includes italics
+ *
+ * To let the browser synthesize italics (acceptable for most UI):
+ *   Leave font-synthesis as-is (default: weight style).
+ * To disable synthesis entirely (strict, no fake italics):
+ *   Set font-synthesis: none on the @font-face above.
+ * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ * Language support — unicode-range
+ * -------------------------------------------------------------------------
+ * By default, a @font-face without unicode-range is downloaded for any
+ * character that matches. If your font covers multiple scripts, you can
+ * split it into subsets so the browser only downloads what the page uses.
+ *
+ * Space Grotesk supports Latin and Latin Extended. The example below shows
+ * how to add Cyrillic support for a font that includes it.
+ *
+ * Multiple @font-face rules with the same family name and different
+ * unicode-range values are combined by the browser: it picks the best
+ * subset for each character. This is the standard technique for
+ * multi-language sites.
+ *
+ * Example for a font with Cyrillic support:
+ *
+ * @font-face {
+ *   font-family: "MyFont";
+ *   src: url("../assets/fonts/MyFont/MyFont-Latin.woff2") format("woff2");
+ *   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+ *   font-display: swap;
+ * }
+ *
+ * @font-face {
+ *   font-family: "MyFont";
+ *   src: url("../assets/fonts/MyFont/MyFont-Cyrillic.woff2") format("woff2");
+ *   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+ *   font-display: swap;
+ * }
+ *
+ * Common unicode-range blocks:
+ *   Latin:          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+ *   Latin Extended: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+ *   Cyrillic:       U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+ *   Greek:          U+0370-03FF
+ *   Vietnamese:     U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+ * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ * Adding a completely new font
+ * -------------------------------------------------------------------------
+ * Copy the block below, change the family name, the weight range, and the
+ * file paths. Then in love.tokens.css point --love-font-sans or
+ * --love-font-mono at the new family name.
+ *
+ * @font-face {
+ *   font-family: "MyFont";
+ *   font-style: normal;
+ *   font-weight: 400 700;
+ *   font-display: swap;
+ *   font-synthesis: none;
+ *   src: url("../assets/fonts/MyFont/MyFont-Variable.woff2") format("woff2-variations");
+ * }
+ * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ * Monospace font
+ * -------------------------------------------------------------------------
+ * Love.css does not ship a monospace font. The default stack in
+ * love.tokens.css uses system monospace fonts. If you want a custom
+ * monospace font, add its @font-face here and point --love-font-mono
+ * at the new family name.
+ * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ * Performance notes
+ * -------------------------------------------------------------------------
+ * - font-display: swap shows fallback text immediately and swaps when the
+ *   web font loads. This eliminates invisible text (FOIT) and is the
+ *   recommended default for most sites.
+ *
+ * - font-synthesis: none prevents the browser from faking weights and
+ *   italics. Since Space Grotesk is a variable font with real weights,
+ *   no synthesis is needed. If you load a font with only one weight,
+ *   remove font-synthesis: none or the browser will not render bold at all.
+ *
+ * - local() checks if the font is already installed on the user's system.
+ *   This is a micro-optimization; the benefit is small but the cost is zero.
+ *
+ * - WOFF2 is preferred for production. The .ttf files here work fine for
+ *   development and testing. To convert: use transfonter.org or
+ *   fonttools ttLib.woff2 compress.
+ * ------------------------------------------------------------------------- */

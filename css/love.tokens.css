@@ -1,0 +1,186 @@
+/*! Love.css tokens | MIT License | github.com/PlakhovVadim/love-css */
+
+:root {
+  /* Color primitives */
+  --love-color-blue-50: oklch(0.971 0.013 250);
+  --love-color-blue-100: oklch(0.936 0.032 250);
+  --love-color-blue-200: oklch(0.885 0.062 250);
+  --love-color-blue-300: oklch(0.809 0.105 250);
+  --love-color-blue-400: oklch(0.707 0.148 250);
+  --love-color-blue-500: oklch(0.623 0.180 250);
+  --love-color-blue-600: oklch(0.546 0.190 250);
+  --love-color-blue-700: oklch(0.488 0.175 250);
+  --love-color-blue-800: oklch(0.424 0.150 250);
+  --love-color-blue-900: oklch(0.379 0.120 250);
+
+  --love-color-red-50: oklch(0.971 0.013 25);
+  --love-color-red-100: oklch(0.936 0.032 25);
+  --love-color-red-500: oklch(0.637 0.200 25);
+  --love-color-red-600: oklch(0.577 0.220 25);
+  --love-color-red-700: oklch(0.505 0.210 25);
+
+  --love-color-green-50: oklch(0.971 0.013 145);
+  --love-color-green-500: oklch(0.696 0.170 145);
+  --love-color-green-600: oklch(0.627 0.180 145);
+  --love-color-green-700: oklch(0.527 0.160 145);
+
+  --love-color-yellow-50: oklch(0.971 0.013 85);
+  --love-color-yellow-500: oklch(0.795 0.180 85);
+  --love-color-yellow-600: oklch(0.681 0.170 85);
+  --love-color-yellow-700: oklch(0.554 0.150 85);
+
+  --love-color-purple-400: oklch(0.68 0.15 300);
+  --love-color-purple-500: oklch(0.60 0.17 300);
+  --love-color-purple-600: oklch(0.52 0.18 300);
+
+  --love-color-gray-50: oklch(0.985 0.002 250);
+  --love-color-gray-100: oklch(0.967 0.003 250);
+  --love-color-gray-200: oklch(0.928 0.005 250);
+  --love-color-gray-300: oklch(0.872 0.007 250);
+  --love-color-gray-400: oklch(0.707 0.010 250);
+  --love-color-gray-500: oklch(0.551 0.012 250);
+  --love-color-gray-600: oklch(0.446 0.012 250);
+  --love-color-gray-700: oklch(0.370 0.011 250);
+  --love-color-gray-800: oklch(0.268 0.010 250);
+  --love-color-gray-900: oklch(0.208 0.009 250);
+  --love-color-gray-950: oklch(0.129 0.008 250);
+
+  --love-color-white: #ffffff;
+  --love-color-black: #000000;
+
+  /* Spacing scale */
+  --love-space-0: 0;
+  --love-space-1: 0.25rem;
+  --love-space-2: 0.5rem;
+  --love-space-3: 0.75rem;
+  --love-space-4: 1rem;
+  --love-space-5: 1.25rem;
+  --love-space-6: 1.5rem;
+  --love-space-8: 2rem;
+  --love-space-10: 2.5rem;
+  --love-space-12: 3rem;
+  --love-space-16: 4rem;
+  --love-space-20: 5rem;
+
+  /* Radius scale */
+  --love-radius-none: 0;
+  --love-radius-sm: 0.25rem;
+  --love-radius-md: 0.5rem;
+  --love-radius-lg: 0.75rem;
+  --love-radius-xl: 1rem;
+  --love-radius-full: 9999px;
+
+  /* Typography */
+  --love-font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --love-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --love-font-size-xs: 0.75rem;
+  --love-font-size-sm: 0.875rem;
+  --love-font-size-base: 1rem;
+  --love-font-size-lg: 1.125rem;
+  --love-font-size-xl: 1.25rem;
+  --love-font-size-2xl: 1.5rem;
+  --love-font-size-3xl: 1.875rem;
+  --love-font-size-4xl: 2.25rem;
+
+  --love-font-weight-light: 300;
+  --love-font-weight-normal: 400;
+  --love-font-weight-medium: 500;
+  --love-font-weight-semibold: 600;
+  --love-font-weight-bold: 700;
+
+  --love-line-height-tight: 1.25;
+  --love-line-height-base: 1.5;
+  --love-line-height-relaxed: 1.75;
+
+  --love-letter-spacing-tight: -0.01em;
+  --love-letter-spacing-normal: 0;
+  --love-letter-spacing-wide: 0.025em;
+
+  /* Motion tokens */
+  --love-duration-fast: 150ms;
+  --love-duration-normal: 250ms;
+  --love-duration-slow: 400ms;
+  --love-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --love-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --love-ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Shadow scale */
+  --love-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+  --love-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.06);
+  --love-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.05);
+
+  /* Z-index scale */
+  --love-z-base: 0;
+  --love-z-dropdown: 100;
+  --love-z-sticky: 200;
+  --love-z-modal-backdrop: 300;
+  --love-z-modal: 400;
+  --love-z-toast: 500;
+  --love-z-tooltip: 600;
+
+  /* Semantic tokens — light theme (default) */
+  --love-bg: var(--love-color-gray-50);
+  --love-bg-subtle: var(--love-color-gray-100);
+  --love-bg-elevated: var(--love-color-white);
+  --love-text: var(--love-color-gray-900);
+  --love-text-muted: var(--love-color-gray-600);
+  --love-text-inverse: var(--love-color-white);
+  --love-text-placeholder: var(--love-color-gray-500);
+  --love-border: var(--love-color-gray-200);
+  --love-border-strong: var(--love-color-gray-300);
+
+  --love-primary: var(--love-color-blue-600);
+  --love-primary-hover: var(--love-color-blue-700);
+  --love-primary-subtle: var(--love-color-blue-50);
+
+  --love-danger: var(--love-color-red-600);
+  --love-danger-hover: var(--love-color-red-700);
+  --love-danger-subtle: var(--love-color-red-50);
+
+  --love-success: var(--love-color-green-600);
+  --love-success-subtle: var(--love-color-green-50);
+
+  --love-warning: var(--love-color-yellow-600);
+  --love-warning-subtle: var(--love-color-yellow-50);
+
+  --love-focus: var(--love-color-blue-400);
+
+  /* Link tokens */
+  --love-link: var(--love-primary);
+  --love-link-hover: var(--love-primary-hover);
+  --love-link-visited: var(--love-color-purple-600);
+  --love-link-decoration: none;
+  --love-link-decoration-hover: underline;
+
+  /* Component tokens */
+  --love-btn-radius: var(--love-radius-none);
+  --love-btn-padding-x: var(--love-space-4);
+  --love-btn-padding-y: var(--love-space-2);
+  --love-btn-font-size: var(--love-font-size-base);
+  --love-btn-font-weight: var(--love-font-weight-medium);
+  --love-btn-transition:
+    background-color var(--love-duration-fast) var(--love-ease-default),
+    color var(--love-duration-fast) var(--love-ease-default),
+    border-color var(--love-duration-fast) var(--love-ease-default),
+    box-shadow var(--love-duration-fast) var(--love-ease-default);
+
+  --love-card-radius: var(--love-radius-none);
+  --love-card-padding: var(--love-space-6);
+  --love-card-bg: var(--love-bg-elevated);
+  --love-card-border: var(--love-border);
+  --love-card-shadow: var(--love-shadow-sm);
+
+  --love-input-radius: var(--love-radius-none);
+  --love-input-padding-x: var(--love-space-3);
+  --love-input-padding-y: var(--love-space-2);
+  --love-input-border: var(--love-border);
+  --love-input-bg: var(--love-bg-elevated);
+
+  --love-table-radius: var(--love-radius-none);
+  --love-table-row-height: 2.5rem;
+  --love-table-cell-padding-x: var(--love-space-4);
+  --love-table-cell-padding-y: var(--love-space-3);
+  --love-table-border: var(--love-border);
+  --love-table-header-bg: var(--love-bg-subtle);
+}

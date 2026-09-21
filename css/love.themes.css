@@ -1,0 +1,112 @@
+/*! Love.css themes | MIT License | github.com/PlakhovVadim/love-css */
+
+/* Auto: follow system preference when no explicit theme is set */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-love-theme]) {
+    --love-bg: var(--love-color-gray-950);
+    --love-bg-subtle: var(--love-color-gray-900);
+    --love-bg-elevated: var(--love-color-gray-800);
+    --love-text: var(--love-color-gray-100);
+    --love-text-muted: var(--love-color-gray-400);
+    --love-text-inverse: var(--love-color-gray-900);
+    --love-border: var(--love-color-gray-700);
+    --love-border-strong: var(--love-color-gray-600);
+    --love-primary: var(--love-color-blue-400);
+    --love-primary-hover: var(--love-color-blue-300);
+    --love-primary-subtle: oklch(0.3 0.08 250);
+    --love-danger: var(--love-color-red-500);
+    --love-danger-hover: var(--love-color-red-500);
+    --love-danger-subtle: oklch(0.3 0.08 25);
+    --love-success: var(--love-color-green-500);
+    --love-success-subtle: oklch(0.3 0.08 145);
+    --love-warning: var(--love-color-yellow-500);
+    --love-warning-subtle: oklch(0.3 0.08 85);
+    --love-focus: var(--love-color-blue-500);
+    --love-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.3);
+    --love-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
+    --love-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.3);
+  }
+}
+
+/* Explicit light theme */
+
+[data-love-theme="light"] {
+  --love-bg: var(--love-color-gray-50);
+  --love-bg-subtle: var(--love-color-gray-100);
+  --love-bg-elevated: var(--love-color-white);
+  --love-text: var(--love-color-gray-900);
+  --love-text-muted: var(--love-color-gray-600);
+  --love-text-inverse: var(--love-color-white);
+  --love-border: var(--love-color-gray-200);
+  --love-border-strong: var(--love-color-gray-300);
+  --love-primary: var(--love-color-blue-600);
+  --love-primary-hover: var(--love-color-blue-700);
+  --love-primary-subtle: var(--love-color-blue-50);
+  --love-danger: var(--love-color-red-600);
+  --love-danger-hover: var(--love-color-red-700);
+  --love-danger-subtle: var(--love-color-red-50);
+  --love-success: var(--love-color-green-600);
+  --love-success-subtle: var(--love-color-green-50);
+  --love-warning: var(--love-color-yellow-600);
+  --love-warning-subtle: var(--love-color-yellow-50);
+  --love-focus: var(--love-color-blue-400);
+}
+
+/* Explicit dark theme */
+
+[data-love-theme="dark"] {
+  --love-bg: var(--love-color-gray-950);
+  --love-bg-subtle: var(--love-color-gray-900);
+  --love-bg-elevated: var(--love-color-gray-800);
+  --love-text: var(--love-color-gray-100);
+  --love-text-muted: var(--love-color-gray-400);
+  --love-text-inverse: var(--love-color-gray-900);
+  --love-border: var(--love-color-gray-700);
+  --love-border-strong: var(--love-color-gray-600);
+  --love-primary: var(--love-color-blue-400);
+  --love-primary-hover: var(--love-color-blue-300);
+  --love-primary-subtle: oklch(0.3 0.08 250);
+  --love-danger: var(--love-color-red-500);
+  --love-danger-hover: var(--love-color-red-500);
+  --love-danger-subtle: oklch(0.3 0.08 25);
+  --love-success: var(--love-color-green-500);
+  --love-success-subtle: oklch(0.3 0.08 145);
+  --love-warning: var(--love-color-yellow-500);
+  --love-warning-subtle: oklch(0.3 0.08 85);
+  --love-focus: var(--love-color-blue-500);
+  --love-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.3);
+  --love-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
+  --love-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.3);
+}
+
+/* High contrast theme */
+
+[data-love-theme="high-contrast"] {
+  --love-bg: var(--love-color-white);
+  --love-bg-subtle: var(--love-color-gray-100);
+  --love-bg-elevated: var(--love-color-white);
+  --love-text: var(--love-color-black);
+  --love-text-muted: var(--love-color-gray-800);
+  --love-text-inverse: var(--love-color-white);
+  --love-border: var(--love-color-black);
+  --love-border-strong: var(--love-color-black);
+  --love-primary: oklch(0.4 0.2 250);
+  --love-primary-hover: oklch(0.3 0.2 250);
+  --love-focus: oklch(0.4 0.2 250);
+}
+
+/* Smooth theme transition */
+
+html {
+  transition: background-color var(--love-duration-normal) var(--love-ease-default),
+              color var(--love-duration-normal) var(--love-ease-default);
+}
+
+/* Respect reduced motion for theme transitions */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    transition: none;
+  }
+}

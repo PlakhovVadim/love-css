@@ -1,0 +1,337 @@
+/*! Love.css base | MIT License | github.com/PlakhovVadim/love-css */
+
+html {
+  font-family: var(--love-font-sans);
+  font-size: 100%;
+  line-height: var(--love-line-height-base);
+  color: var(--love-text);
+  background-color: var(--love-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: var(--love-font-size-base);
+  line-height: var(--love-line-height-base);
+  min-height: 100vh;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+  margin-top: var(--love-space-8);
+  margin-bottom: var(--love-space-4);
+  color: var(--love-text);
+}
+
+h1 { font-size: var(--love-font-size-4xl); }
+h2 { font-size: var(--love-font-size-3xl); }
+h3 { font-size: var(--love-font-size-2xl); }
+h4 { font-size: var(--love-font-size-xl); }
+h5 { font-size: var(--love-font-size-lg); }
+h6 { font-size: var(--love-font-size-base); text-transform: uppercase; letter-spacing: 0.05em; color: var(--love-text-muted); }
+
+h1:first-child, h2:first-child, h3:first-child,
+h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+
+/* Paragraphs */
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--love-space-4);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+
+a {
+  color: var(--love-primary);
+  text-decoration: none;
+  transition: color var(--love-duration-fast) var(--love-ease-default);
+}
+
+a:hover {
+  color: var(--love-primary-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+  border-radius: var(--love-radius-sm);
+}
+
+/* Lists */
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: var(--love-space-4);
+  padding-left: var(--love-space-6);
+}
+
+ul { list-style: disc; }
+ol { list-style: decimal; }
+
+ul ul, ul ol, ol ul, ol ol {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: var(--love-space-1);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: var(--love-space-4);
+}
+
+dt {
+  font-weight: var(--love-font-weight-semibold);
+  margin-bottom: var(--love-space-1);
+}
+
+dd {
+  margin-left: var(--love-space-6);
+  margin-bottom: var(--love-space-3);
+  color: var(--love-text-muted);
+}
+
+/* Blockquotes */
+
+blockquote {
+  margin: var(--love-space-4) 0;
+  padding: var(--love-space-3) var(--love-space-6);
+  border-left: 4px solid var(--love-border-strong);
+  color: var(--love-text-muted);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  font-style: normal;
+}
+
+q {
+  font-style: italic;
+}
+
+cite {
+  font-style: italic;
+}
+
+/* Code */
+
+code, kbd, samp, pre {
+  font-family: var(--love-font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.125em 0.375em;
+  background-color: var(--love-bg-subtle);
+  border-radius: var(--love-radius-sm);
+  color: var(--love-text);
+}
+
+pre {
+  margin: var(--love-space-4) 0;
+  padding: var(--love-space-4);
+  background-color: var(--love-bg-subtle);
+  border-radius: var(--love-radius-md);
+  overflow-x: auto;
+  line-height: var(--love-line-height-base);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+kbd {
+  padding: 0.125em 0.375em;
+  background-color: var(--love-bg-subtle);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-sm);
+  font-size: 0.85em;
+}
+
+/* Inline semantic elements */
+
+strong, b {
+  font-weight: var(--love-font-weight-semibold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--love-font-size-sm);
+}
+
+mark {
+  padding: 0.125em 0.25em;
+  background-color: var(--love-warning-subtle);
+  color: var(--love-text);
+  border-radius: var(--love-radius-sm);
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+del {
+  text-decoration: line-through;
+  color: var(--love-text-muted);
+}
+
+ins {
+  text-decoration: underline;
+  color: var(--love-success);
+}
+
+sub, sup {
+  font-size: 0.75em;
+}
+
+/* Media */
+
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: var(--love-space-4) 0;
+}
+
+figcaption {
+  margin-top: var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--love-space-4) 0;
+}
+
+caption {
+  margin-bottom: var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+  text-align: left;
+}
+
+th, td {
+  padding: var(--love-table-cell-padding-y) var(--love-table-cell-padding-x);
+  text-align: left;
+  border-bottom: 1px solid var(--love-table-border);
+}
+
+th {
+  font-weight: var(--love-font-weight-semibold);
+  background-color: var(--love-bg-subtle);
+}
+
+/* Horizontal rule */
+
+hr {
+  margin: var(--love-space-8) 0;
+  border: 0;
+  border-top: 1px solid var(--love-border);
+}
+
+/* Forms */
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0 0 var(--love-space-6);
+  padding: var(--love-space-4);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-md);
+}
+
+legend {
+  padding: 0 var(--love-space-2);
+  font-weight: var(--love-font-weight-semibold);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--love-space-1);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+}
+
+/* Interactive */
+
+details {
+  margin: var(--love-space-4) 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: var(--love-font-weight-medium);
+  padding: var(--love-space-2) 0;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+  border-radius: var(--love-radius-sm);
+}
+
+/* Misc */
+
+address {
+  font-style: normal;
+  margin: var(--love-space-4) 0;
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background-color: var(--love-primary);
+  color: var(--love-text-inverse);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

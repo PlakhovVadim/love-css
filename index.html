@@ -5,18 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Love.css — Kitchen Sink. A complete HTML element test page for building CSS systems and frameworks.">
   <title>Love.css — Kitchen Sink</title>
+
   <link rel="stylesheet" href="css/love.reset.css">
+  <link rel="stylesheet" href="css/love.fonts.css">
+  <link rel="stylesheet" href="css/love.tokens.css">
+  <link rel="stylesheet" href="css/love.base.css">
+  <link rel="stylesheet" href="css/love.themes.css">
+
+  <style>
+    /* Kitchen sink layout — test-only styles, not part of Love.css */
+    body {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: var(--love-space-6);
+    }
+    .ks-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--love-space-4);
+      padding-bottom: var(--love-space-6);
+      border-bottom: 1px solid var(--love-border);
+      margin-bottom: var(--love-space-6);
+    }
+    .ks-theme-switcher {
+      display: flex;
+      gap: var(--love-space-2);
+      flex-shrink: 0;
+    }
+    .ks-theme-switcher button {
+      padding: var(--love-space-2) var(--love-space-3);
+      font-family: var(--love-font-sans);
+      font-size: var(--love-font-size-sm);
+      font-weight: var(--love-font-weight-medium);
+      color: var(--love-text);
+      background: var(--love-bg-elevated);
+      border: 1px solid var(--love-border);
+      border-radius: var(--love-radius-none);
+      cursor: pointer;
+      transition: var(--love-btn-transition);
+    }
+    .ks-theme-switcher button:hover {
+      background: var(--love-bg-subtle);
+      border-color: var(--love-border-strong);
+    }
+    .ks-theme-switcher button[aria-pressed="true"] {
+      background: var(--love-primary);
+      color: var(--love-text-inverse);
+      border-color: var(--love-primary);
+    }
+    .ks-nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .ks-nav > ul > li {
+      margin-bottom: var(--love-space-2);
+    }
+    .ks-nav a {
+      color: var(--love-link);
+      text-decoration: var(--love-link-decoration);
+    }
+    .ks-nav a:hover {
+      color: var(--love-link-hover);
+      text-decoration: var(--love-link-decoration-hover);
+    }
+    .ks-nav a:visited {
+      color: var(--love-link-visited);
+    }
+    section {
+      margin-bottom: var(--love-space-12);
+    }
+    article {
+      margin-bottom: var(--love-space-8);
+    }
+    footer[role="contentinfo"] {
+      padding-top: var(--love-space-6);
+      border-top: 1px solid var(--love-border);
+      margin-top: var(--love-space-12);
+      color: var(--love-text-muted);
+      font-size: var(--love-font-size-sm);
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>Love.css Kitchen Sink</h1>
-    <p>A complete HTML element test page for building CSS systems and frameworks. Every element is present, unstyled, ready for your CSS.</p>
+  <header class="ks-header">
+    <div>
+      <h1>Love.css Kitchen Sink</h1>
+      <p>A complete HTML element test page for building CSS systems and frameworks. Every element is present, unstyled, ready for your CSS.</p>
+    </div>
+    <div class="ks-theme-switcher" role="group" aria-label="Theme switcher">
+      <button type="button" data-theme="light" aria-pressed="false">Light</button>
+      <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
+      <button type="button" data-theme="high-contrast" aria-pressed="false">Contrast</button>
+    </div>
   </header>
 
-  <nav aria-label="Table of contents">
+  <nav class="ks-nav" aria-label="Table of contents">
     <ul>
-      <li><a href="#document-metadata">Document metadata</a></li>
       <li><a href="#sections">Sections</a></li>
       <li><a href="#grouping-content">Grouping content</a></li>
       <li><a href="#text-level-semantics">Text-level semantics</a></li>
@@ -25,60 +111,13 @@
       <li><a href="#tabular-data">Tabular data</a></li>
       <li><a href="#forms">Forms</a></li>
       <li><a href="#interactive-elements">Interactive elements</a></li>
-      <li><a href="#scripting">Scripting</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- ==================================================================
-         DOCUMENT METADATA
-         ================================================================== -->
-    <section id="document-metadata">
-      <h2>Document metadata</h2>
-
-      <article>
-        <h3><code>&lt;base&gt;</code></h3>
-        <p>The <code>base</code> element specifies the base URL for all relative URLs in a document. It must appear before any element that uses a URL.</p>
-        <!-- <base href="https://example.com/"> -->
-      </article>
-
-      <article>
-        <h3><code>&lt;link&gt;</code></h3>
-        <p>The <code>link</code> element defines relationships between the current document and external resources. Most commonly used for stylesheets and icons.</p>
-        <!-- <link rel="stylesheet" href="styles.css"> -->
-        <!-- <link rel="icon" href="favicon.ico"> -->
-      </article>
-
-      <article>
-        <h3><code>&lt;meta&gt;</code></h3>
-        <p>The <code>meta</code> element represents metadata that cannot be expressed by other meta-related elements.</p>
-        <!-- <meta name="author" content="Love.css"> -->
-        <!-- <meta http-equiv="refresh" content="30"> -->
-      </article>
-
-      <article>
-        <h3><code>&lt;style&gt;</code></h3>
-        <p>The <code>style</code> element contains CSS rules for the document.</p>
-        <!-- <style> body { color: red; } </style> -->
-      </article>
-
-      <article>
-        <h3><code>&lt;title&gt;</code></h3>
-        <p>The <code>title</code> element defines the document's title, shown in the browser's title bar or tab.</p>
-      </article>
-    </section>
-
-    <!-- ==================================================================
-         SECTIONS
-         ================================================================== -->
     <section id="sections">
       <h2>Sections</h2>
-
-      <article>
-        <h3><code>&lt;body&gt;</code></h3>
-        <p>The <code>body</code> element represents the content of an HTML document. There can be only one.</p>
-      </article>
 
       <article>
         <h3><code>&lt;address&gt;</code></h3>
@@ -103,7 +142,7 @@
         <h3><code>&lt;aside&gt;</code></h3>
         <aside>
           <h4>Aside heading</h4>
-          <p>The <code>aside</code> element represents a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.</p>
+          <p>The <code>aside</code> element represents a portion of a document whose content is only indirectly related to the document's main content.</p>
         </aside>
       </article>
 
@@ -117,24 +156,19 @@
       <article>
         <h3><code>&lt;header&gt;</code></h3>
         <header>
-          <h1>Header heading</h1>
+          <h4>Header heading</h4>
           <p>This is a header. It typically contains introductory content or navigational aids.</p>
         </header>
       </article>
 
       <article>
-        <h3><code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code></h3>
+        <h3>Headings <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code></h3>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
-      </article>
-
-      <article>
-        <h3><code>&lt;main&gt;</code></h3>
-        <p>The <code>main</code> element represents the dominant content of the <code>body</code> of a document. There must be only one visible <code>main</code> per document.</p>
       </article>
 
       <article>
@@ -152,7 +186,7 @@
         <h3><code>&lt;section&gt;</code></h3>
         <section>
           <h4>Section heading</h4>
-          <p>A <code>section</code> represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it.</p>
+          <p>A <code>section</code> represents a generic standalone section of a document.</p>
         </section>
       </article>
 
@@ -168,26 +202,24 @@
       </article>
     </section>
 
-    <!-- ==================================================================
-         GROUPING CONTENT
-         ================================================================== -->
     <section id="grouping-content">
       <h2>Grouping content</h2>
 
       <article>
         <h3><code>&lt;blockquote&gt;</code></h3>
         <blockquote>
-          <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-          <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+          <p>A block quotation is a quotation in a written document, set off from the main text as a paragraph or block of text.</p>
           <cite><a href="#!">Said no one, ever.</a></cite>
         </blockquote>
       </article>
 
       <article>
-        <h3><code>&lt;dd&gt;</code></h3>
+        <h3><code>&lt;dd&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code></h3>
         <dl>
           <dt>Definition List Title</dt>
           <dd>This is a definition list division.</dd>
+          <dt>Another Title</dt>
+          <dd>And its description.</dd>
         </dl>
       </article>
 
@@ -199,36 +231,10 @@
       </article>
 
       <article>
-        <h3><code>&lt;dl&gt;</code></h3>
-        <dl>
-          <dt>Definition List Title</dt>
-          <dd>This is a definition list division.</dd>
-          <dt>Another Title</dt>
-          <dd>And its description.</dd>
-        </dl>
-      </article>
-
-      <article>
-        <h3><code>&lt;dt&gt;</code></h3>
-        <dl>
-          <dt>Definition term</dt>
-          <dd>The description of the term.</dd>
-        </dl>
-      </article>
-
-      <article>
-        <h3><code>&lt;figcaption&gt;</code></h3>
+        <h3><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></h3>
         <figure>
           <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
           <figcaption>Here is a caption for this figure.</figcaption>
-        </figure>
-      </article>
-
-      <article>
-        <h3><code>&lt;figure&gt;</code></h3>
-        <figure>
-          <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
-          <figcaption>Figure caption</figcaption>
         </figure>
       </article>
 
@@ -238,25 +244,12 @@
       </article>
 
       <article>
-        <h3><code>&lt;li&gt;</code></h3>
+        <h3><code>&lt;li&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code></h3>
         <ul>
-          <li>List item 1</li>
-          <li>List item 2</li>
-          <li>List item 3</li>
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3</li>
         </ul>
-      </article>
-
-      <article>
-        <h3><code>&lt;menu&gt;</code></h3>
-        <menu>
-          <li><button type="button">Copy</button></li>
-          <li><button type="button">Cut</button></li>
-          <li><button type="button">Paste</button></li>
-        </menu>
-      </article>
-
-      <article>
-        <h3><code>&lt;ol&gt;</code></h3>
         <ol type="1">
           <li>List Item 1</li>
           <li>
@@ -271,8 +264,17 @@
       </article>
 
       <article>
+        <h3><code>&lt;menu&gt;</code></h3>
+        <menu>
+          <li><button type="button">Copy</button></li>
+          <li><button type="button">Cut</button></li>
+          <li><button type="button">Paste</button></li>
+        </menu>
+      </article>
+
+      <article>
         <h3><code>&lt;p&gt;</code></h3>
-        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.</p>
+        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea.</p>
       </article>
 
       <article>
@@ -285,26 +287,8 @@
   ` a b c d e f g h i j k l m n o
   p q r s t u v w x y z { | } ~</pre>
       </article>
-
-      <article>
-        <h3><code>&lt;ul&gt;</code></h3>
-        <ul>
-          <li>List Item 1</li>
-          <li>
-            List Item 2
-            <ul>
-              <li>List Item 1</li>
-              <li>List Item 2</li>
-            </ul>
-          </li>
-          <li>List Item 3</li>
-        </ul>
-      </article>
     </section>
 
-    <!-- ==================================================================
-         TEXT-LEVEL SEMANTICS
-         ================================================================== -->
     <section id="text-level-semantics">
       <h2>Text-level semantics</h2>
 
@@ -312,6 +296,7 @@
         <h3><code>&lt;a&gt;</code></h3>
         <p><a href="#!">This is a text link</a>.</p>
         <p><a href="#!" target="_blank" rel="noopener">This link opens in a new tab</a>.</p>
+        <p><a href="https://example.com" target="_blank" rel="noopener">External link — click it, then come back to see :visited styling</a>.</p>
       </article>
 
       <article>
@@ -325,12 +310,8 @@
       </article>
 
       <article>
-        <h3><code>&lt;bdi&gt;</code></h3>
+        <h3><code>&lt;bdi&gt;</code> and <code>&lt;bdo&gt;</code></h3>
         <p>User <bdi>إيان</bdi> wrote a review.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;bdo&gt;</code></h3>
         <p><bdo dir="rtl">This text will go right to left.</bdo></p>
       </article>
 
@@ -360,18 +341,16 @@
       </article>
 
       <article>
-        <h3><code>&lt;em&gt;</code></h3>
+        <h3><code>&lt;em&gt;</code> and <code>&lt;i&gt;</code></h3>
         <p><em>This text has added emphasis.</em></p>
-      </article>
-
-      <article>
-        <h3><code>&lt;i&gt;</code></h3>
         <p>The <i>i element</i> is text that is offset from the normal text.</p>
       </article>
 
       <article>
-        <h3><code>&lt;kbd&gt;</code></h3>
+        <h3><code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></h3>
         <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></p>
+        <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+        <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
       </article>
 
       <article>
@@ -385,7 +364,7 @@
       </article>
 
       <article>
-        <h3><code>&lt;rp&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;ruby&gt;</code></h3>
+        <h3><code>&lt;ruby&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;rp&gt;</code></h3>
         <p>
           <ruby>
             漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
@@ -395,37 +374,15 @@
       </article>
 
       <article>
-        <h3><code>&lt;s&gt;</code></h3>
+        <h3><code>&lt;s&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;strong&gt;</code></h3>
         <p><s>This text has a strikethrough</s>.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;samp&gt;</code></h3>
-        <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
-      </article>
-
-      <article>
-        <h3><code>&lt;small&gt;</code></h3>
         <p><small>This small text is small for fine print, etc.</small></p>
-      </article>
-
-      <article>
-        <h3><code>&lt;span&gt;</code></h3>
-        <p>The <span>span element</span> is a generic inline container for phrasing content.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;strong&gt;</code></h3>
         <p><strong>Strong is used to indicate strong importance.</strong></p>
       </article>
 
       <article>
-        <h3><code>&lt;sub&gt;</code></h3>
+        <h3><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code></h3>
         <p>Subscript for things like H<sub>2</sub>O.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;sup&gt;</code></h3>
         <p>Superscript<sup>®</sup>.</p>
       </article>
 
@@ -435,51 +392,36 @@
       </article>
 
       <article>
-        <h3><code>&lt;u&gt;</code></h3>
-        <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;var&gt;</code></h3>
-        <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;wbr&gt;</code></h3>
+        <h3><code>&lt;u&gt;</code> and <code>&lt;wbr&gt;</code></h3>
+        <p>The <u>u element</u> is text with an unarticulated non-textual annotation.</p>
         <p>Supercalifragilisticexpialidocious<wbr>Supercalifragilisticexpialidocious</p>
       </article>
     </section>
 
-    <!-- ==================================================================
-         EDITS
-         ================================================================== -->
     <section id="edits">
       <h2>Edits</h2>
 
       <article>
-        <h3><code>&lt;del&gt;</code></h3>
+        <h3><code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code></h3>
         <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;ins&gt;</code></h3>
         <p><ins datetime="2024-01-01T12:00:00Z">This text was inserted on January 1, 2024.</ins></p>
       </article>
     </section>
 
-    <!-- ==================================================================
-         EMBEDDED CONTENT
-         ================================================================== -->
     <section id="embedded-content">
       <h2>Embedded content</h2>
 
       <article>
-        <h3><code>&lt;area&gt;</code></h3>
-        <map name="infographic">
-          <area shape="rect" coords="0,0,100,100" href="#!" alt="Rectangle area">
-          <area shape="circle" coords="200,200,50" href="#!" alt="Circle area">
-        </map>
-        <p>Clickable areas defined by <code>area</code> require an <code>img</code> with <code>usemap</code>.</p>
+        <h3><code>&lt;img&gt;</code></h3>
+        <p><img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150"></p>
+      </article>
+
+      <article>
+        <h3><code>&lt;picture&gt;</code></h3>
+        <picture>
+          <source srcset="assets/img/placeholder-wide.svg" media="(min-width: 800px)">
+          <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
+        </picture>
       </article>
 
       <article>
@@ -492,68 +434,12 @@
       </article>
 
       <article>
-        <h3><code>&lt;canvas&gt;</code></h3>
-        <canvas width="200" height="100">
-          Your browser does not support the <code>canvas</code> element.
-        </canvas>
-      </article>
-
-      <article>
-        <h3><code>&lt;embed&gt;</code></h3>
-        <embed src="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
-      </article>
-
-      <article>
-        <h3><code>&lt;iframe&gt;</code></h3>
-        <iframe src="about:blank" title="Example iframe" width="300" height="200"></iframe>
-      </article>
-
-      <article>
-        <h3><code>&lt;img&gt;</code></h3>
-        <p><img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150"></p>
-      </article>
-
-      <article>
-        <h3><code>&lt;map&gt;</code></h3>
-        <p>See the <code>area</code> example above.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;object&gt;</code></h3>
-        <object data="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
-          <p>Your browser does not support the <code>object</code> element.</p>
-        </object>
-      </article>
-
-      <article>
-        <h3><code>&lt;param&gt;</code></h3>
-        <object data="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
-          <param name="quality" value="high">
-        </object>
-      </article>
-
-      <article>
-        <h3><code>&lt;picture&gt;</code></h3>
-        <picture>
-          <source srcset="assets/img/placeholder-wide.svg" media="(min-width: 800px)">
-          <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
-        </picture>
-      </article>
-
-      <article>
-        <h3><code>&lt;source&gt;</code></h3>
+        <h3><code>&lt;video&gt;</code> and <code>&lt;source&gt;</code></h3>
         <video controls width="320" height="240">
           <source src="assets/media/sample.webm" type="video/webm">
           <source src="assets/media/sample.mp4" type="video/mp4">
           Your browser does not support the <code>video</code> element.
         </video>
-      </article>
-
-      <article>
-        <h3><code>&lt;svg&gt;</code></h3>
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="#1fa3ec" />
-        </svg>
       </article>
 
       <article>
@@ -566,17 +452,42 @@
       </article>
 
       <article>
-        <h3><code>&lt;video&gt;</code></h3>
-        <video controls width="320" height="240">
-          <source src="assets/media/sample.mp4" type="video/mp4">
-          Your browser does not support the <code>video</code> element.
-        </video>
+        <h3><code>&lt;canvas&gt;</code></h3>
+        <canvas width="200" height="100">
+          Your browser does not support the <code>canvas</code> element.
+        </canvas>
+      </article>
+
+      <article>
+        <h3><code>&lt;svg&gt;</code></h3>
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="#1fa3ec" />
+        </svg>
+      </article>
+
+      <article>
+        <h3><code>&lt;iframe&gt;</code></h3>
+        <iframe src="about:blank" title="Example iframe" width="300" height="200"></iframe>
+      </article>
+
+      <article>
+        <h3><code>&lt;embed&gt;</code> and <code>&lt;object&gt;</code></h3>
+        <embed src="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
+        <object data="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
+          <p>Your browser does not support the <code>object</code> element.</p>
+        </object>
+      </article>
+
+      <article>
+        <h3><code>&lt;map&gt;</code> and <code>&lt;area&gt;</code></h3>
+        <map name="infographic">
+          <area shape="rect" coords="0,0,100,100" href="#!" alt="Rectangle area">
+          <area shape="circle" coords="200,200,50" href="#!" alt="Circle area">
+        </map>
+        <p>Clickable areas defined by <code>area</code> require an <code>img</code> with <code>usemap</code>.</p>
       </article>
     </section>
 
-    <!-- ==================================================================
-         TABULAR DATA
-         ================================================================== -->
     <section id="tabular-data">
       <h2>Tabular data</h2>
 
@@ -585,7 +496,7 @@
         <table>
           <caption>Table Caption</caption>
           <colgroup>
-            <col span="2" style="background-color: #f0f0f0;">
+            <col span="2">
             <col span="3">
           </colgroup>
           <thead>
@@ -597,15 +508,6 @@
               <th>Table Heading 5</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Table Footer 1</th>
-              <th>Table Footer 2</th>
-              <th>Table Footer 3</th>
-              <th>Table Footer 4</th>
-              <th>Table Footer 5</th>
-            </tr>
-          </tfoot>
           <tbody>
             <tr>
               <td>Table Cell 1</td>
@@ -629,13 +531,19 @@
               <td>Table Cell 5</td>
             </tr>
           </tbody>
+          <tfoot>
+            <tr>
+              <th>Table Footer 1</th>
+              <th>Table Footer 2</th>
+              <th>Table Footer 3</th>
+              <th>Table Footer 4</th>
+              <th>Table Footer 5</th>
+            </tr>
+          </tfoot>
         </table>
       </article>
     </section>
 
-    <!-- ==================================================================
-         FORMS
-         ================================================================== -->
     <section id="forms">
       <h2>Forms</h2>
 
@@ -706,10 +614,6 @@
           <p>
             <label for="input-file-multiple">File (multiple)</label>
             <input type="file" id="input-file-multiple" name="files" multiple>
-          </p>
-          <p>
-            <label for="input-hidden">Hidden (not visible)</label>
-            <input type="hidden" id="input-hidden" name="hidden" value="hidden-value">
           </p>
           <p>
             <label for="input-checkbox">Checkbox</label>
@@ -797,14 +701,11 @@
       </form>
     </section>
 
-    <!-- ==================================================================
-         INTERACTIVE ELEMENTS
-         ================================================================== -->
     <section id="interactive-elements">
       <h2>Interactive elements</h2>
 
       <article>
-        <h3><code>&lt;details&gt;</code></h3>
+        <h3><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h3>
         <details>
           <summary>Expand for details</summary>
           <p>Here is the detailed content that is hidden until the summary is activated.</p>
@@ -822,64 +723,47 @@
           </form>
         </dialog>
       </article>
-
-      <article>
-        <h3><code>&lt;summary&gt;</code></h3>
-        <details>
-          <summary>This is a summary element</summary>
-          <p>And this is the content revealed when the summary is clicked.</p>
-        </details>
-      </article>
-    </section>
-
-    <!-- ==================================================================
-         SCRIPTING
-         ================================================================== -->
-    <section id="scripting">
-      <h2>Scripting</h2>
-
-      <article>
-        <h3><code>&lt;canvas&gt;</code></h3>
-        <p>See the <a href="#embedded-content">Embedded content</a> section above.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;noscript&gt;</code></h3>
-        <noscript>
-          <p>This content is displayed only when JavaScript is disabled in the browser.</p>
-        </noscript>
-      </article>
-
-      <article>
-        <h3><code>&lt;script&gt;</code></h3>
-        <p>The <code>script</code> element is used to embed or reference executable code. It is not rendered visually.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;template&gt;</code></h3>
-        <template id="demo-template">
-          <p>This content is inside a template and is not rendered until activated by JavaScript.</p>
-        </template>
-        <p>The <code>template</code> element holds HTML that is not rendered immediately but can be cloned and inserted later.</p>
-      </article>
-
-      <article>
-        <h3><code>&lt;slot&gt;</code></h3>
-        <p>The <code>slot</code> element is a placeholder inside a web component that you can fill with your own markup. It is used with <code>template</code> and Shadow DOM.</p>
-        <!-- Example slot usage (requires a web component definition):
-        <template id="element-details-template">
-          <slot name="element-name">NEED NAME</slot>
-          <slot name="description">NEED DESCRIPTION</slot>
-        </template>
-        -->
-      </article>
     </section>
 
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>Love.css Kitchen Sink — built for testing CSS systems and frameworks. <a href="#top">Back to top</a>.</p>
   </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var buttons = document.querySelectorAll('.ks-theme-switcher button');
+
+      function applyTheme(theme) {
+        if (theme === 'auto') {
+          html.removeAttribute('data-love-theme');
+        } else {
+          html.setAttribute('data-love-theme', theme);
+        }
+        buttons.forEach(function (btn) {
+          btn.setAttribute('aria-pressed', btn.dataset.theme === theme ? 'true' : 'false');
+        });
+        try { localStorage.setItem('love-theme', theme); } catch (e) {}
+      }
+
+      var saved = null;
+      try { saved = localStorage.getItem('love-theme'); } catch (e) {}
+      if (saved) {
+        applyTheme(saved);
+      } else {
+        var current = html.getAttribute('data-love-theme') || 'auto';
+        applyTheme(current);
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(btn.dataset.theme);
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
