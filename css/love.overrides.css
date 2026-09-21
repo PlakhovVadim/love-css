@@ -1,0 +1,24 @@
+/*! Love.css overrides | MIT License | github.com/PlakhovVadim/love-css */
+
+/*
+ * This file is intentionally empty.
+ *
+ * Use it to override Love.css defaults without editing the framework
+ * files. Your rules here load last, so they win against any module
+ * without needing !important or higher specificity.
+ *
+ * Example:
+ *
+ *   :root {
+ *     --love-btn-radius: 0.5rem;
+ *   }
+ *
+ *   .btn-primary {
+ *     text-transform: uppercase;
+ *     letter-spacing: 0.05em;
+ *   }
+ *
+ * If you upgrade Love.css later, this file is preserved. Keep your
+ * customizations here instead of editing love.tokens.css or any other
+ * module directly.
+ */

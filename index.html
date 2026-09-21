@@ -11,9 +11,16 @@
   <link rel="stylesheet" href="css/love.tokens.css">
   <link rel="stylesheet" href="css/love.base.css">
   <link rel="stylesheet" href="css/love.themes.css">
+  <link rel="stylesheet" href="css/love.button.css">
+  <link rel="stylesheet" href="css/love.card.css">
+  <link rel="stylesheet" href="css/love.form.css">
+  <link rel="stylesheet" href="css/love.table.css">
+  <link rel="stylesheet" href="css/love.layout.css">
+  <link rel="stylesheet" href="css/love.utilities.css">
+  <link rel="stylesheet" href="css/love.animations.css">
+  <link rel="stylesheet" href="css/love.overrides.css">
 
   <style>
-    /* Kitchen sink layout — test-only styles, not part of Love.css */
     body {
       max-width: 72rem;
       margin: 0 auto;
@@ -33,27 +40,6 @@
       gap: var(--love-space-2);
       flex-shrink: 0;
     }
-    .ks-theme-switcher button {
-      padding: var(--love-space-2) var(--love-space-3);
-      font-family: var(--love-font-sans);
-      font-size: var(--love-font-size-sm);
-      font-weight: var(--love-font-weight-medium);
-      color: var(--love-text);
-      background: var(--love-bg-elevated);
-      border: 1px solid var(--love-border);
-      border-radius: var(--love-radius-none);
-      cursor: pointer;
-      transition: var(--love-btn-transition);
-    }
-    .ks-theme-switcher button:hover {
-      background: var(--love-bg-subtle);
-      border-color: var(--love-border-strong);
-    }
-    .ks-theme-switcher button[aria-pressed="true"] {
-      background: var(--love-primary);
-      color: var(--love-text-inverse);
-      border-color: var(--love-primary);
-    }
     .ks-nav ul {
       list-style: none;
       padding-left: 0;
@@ -61,22 +47,17 @@
     .ks-nav > ul > li {
       margin-bottom: var(--love-space-2);
     }
-    .ks-nav a {
-      color: var(--love-link);
-      text-decoration: var(--love-link-decoration);
-    }
-    .ks-nav a:hover {
-      color: var(--love-link-hover);
-      text-decoration: var(--love-link-decoration-hover);
-    }
-    .ks-nav a:visited {
-      color: var(--love-link-visited);
-    }
     section {
       margin-bottom: var(--love-space-12);
     }
     article {
       margin-bottom: var(--love-space-8);
+    }
+    .ks-box {
+      padding: var(--love-space-4);
+      background: var(--love-bg-subtle);
+      border: 1px solid var(--love-border);
+      text-align: center;
     }
     footer[role="contentinfo"] {
       padding-top: var(--love-space-6);
@@ -92,12 +73,12 @@
   <header class="ks-header">
     <div>
       <h1>Love.css Kitchen Sink</h1>
-      <p>A complete HTML element test page for building CSS systems and frameworks. Every element is present, unstyled, ready for your CSS.</p>
+      <p>A complete HTML element test page for building CSS systems and frameworks.</p>
     </div>
     <div class="ks-theme-switcher" role="group" aria-label="Theme switcher">
-      <button type="button" data-theme="light" aria-pressed="false">Light</button>
-      <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
-      <button type="button" data-theme="high-contrast" aria-pressed="false">Contrast</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme="light" aria-pressed="false">Light</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme="dark" aria-pressed="false">Dark</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme="high-contrast" aria-pressed="false">Contrast</button>
     </div>
   </header>
 
@@ -108,8 +89,13 @@
       <li><a href="#text-level-semantics">Text-level semantics</a></li>
       <li><a href="#edits">Edits</a></li>
       <li><a href="#embedded-content">Embedded content</a></li>
-      <li><a href="#tabular-data">Tabular data</a></li>
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#tables">Tables</a></li>
       <li><a href="#forms">Forms</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#utilities">Utilities</a></li>
+      <li><a href="#animations">Animations</a></li>
       <li><a href="#interactive-elements">Interactive elements</a></li>
     </ul>
   </nav>
@@ -134,7 +120,7 @@
         <h3><code>&lt;article&gt;</code></h3>
         <article>
           <h4>Article heading</h4>
-          <p>An <code>article</code> represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable.</p>
+          <p>An <code>article</code> represents a self-contained composition in a document, page, application, or site.</p>
         </article>
       </article>
 
@@ -226,7 +212,7 @@
       <article>
         <h3><code>&lt;div&gt;</code></h3>
         <div>
-          <p>The <code>div</code> element is a generic container for flow content. It has no effect on the content or layout until styled using CSS.</p>
+          <p>The <code>div</code> element is a generic container for flow content.</p>
         </div>
       </article>
 
@@ -306,7 +292,7 @@
 
       <article>
         <h3><code>&lt;b&gt;</code></h3>
-        <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
+        <p>The <b>b element</b> is stylistically different text from normal text.</p>
       </article>
 
       <article>
@@ -400,7 +386,6 @@
 
     <section id="edits">
       <h2>Edits</h2>
-
       <article>
         <h3><code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code></h3>
         <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
@@ -488,59 +473,267 @@
       </article>
     </section>
 
-    <section id="tabular-data">
-      <h2>Tabular data</h2>
+    <section id="cards">
+      <h2>Cards</h2>
 
       <article>
-        <h3><code>&lt;table&gt;</code></h3>
-        <table>
+        <h3>Basic card</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-subtitle">Subtitle goes here</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">A card is a flexible container. It has header, body, and footer sections. All padding comes from tokens.</p>
+            </div>
+            <div class="card-footer">
+              <div class="card-actions">
+                <button type="button" class="btn btn-primary">Action</button>
+                <button type="button" class="btn btn-ghost">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Body only</h4>
+              <p class="card-text">A card without header or footer. Just padding and content.</p>
+            </div>
+          </div>
+
+          <div class="card card-compact">
+            <div class="card-body">
+              <h4 class="card-title">Compact card</h4>
+              <p class="card-text">Uses <code>.card-compact</code> for tighter padding.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Variants</h3>
+        <div class="grid-3">
+          <div class="card card-flat">
+            <div class="card-body">
+              <h4 class="card-title">Flat</h4>
+              <p class="card-text">No shadow. Just a border.</p>
+            </div>
+          </div>
+
+          <div class="card card-bordered">
+            <div class="card-body">
+              <h4 class="card-title">Bordered</h4>
+              <p class="card-text">Stronger border, no shadow.</p>
+            </div>
+          </div>
+
+          <div class="card card-hover">
+            <div class="card-body">
+              <h4 class="card-title">Hover</h4>
+              <p class="card-text">Hover to see shadow grow.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Accents</h3>
+        <div class="grid-4">
+          <div class="card card-accent">
+            <div class="card-body">
+              <h4 class="card-title">Primary</h4>
+            </div>
+          </div>
+          <div class="card card-accent-danger">
+            <div class="card-body">
+              <h4 class="card-title">Danger</h4>
+            </div>
+          </div>
+          <div class="card card-accent-success">
+            <div class="card-body">
+              <h4 class="card-title">Success</h4>
+            </div>
+          </div>
+          <div class="card card-accent-warning">
+            <div class="card-body">
+              <h4 class="card-title">Warning</h4>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Interactive card (link)</h3>
+        <a href="#!" class="card card-interactive" style="max-width: 20rem; display: block;">
+          <div class="card-body">
+            <h4 class="card-title">Clickable card</h4>
+            <p class="card-text">Hover and focus show it is interactive.</p>
+          </div>
+        </a>
+      </article>
+    </section>
+
+    <section id="tables">
+      <h2>Tables</h2>
+
+      <article>
+        <h3>Basic table</h3>
+        <table class="table">
           <caption>Table Caption</caption>
-          <colgroup>
-            <col span="2">
-            <col span="3">
-          </colgroup>
           <thead>
             <tr>
-              <th>Table Heading 1</th>
-              <th>Table Heading 2</th>
-              <th>Table Heading 3</th>
-              <th>Table Heading 4</th>
-              <th>Table Heading 5</th>
+              <th>Heading 1</th>
+              <th>Heading 2</th>
+              <th>Heading 3</th>
+              <th>Heading 4</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Table Cell 1</td>
-              <td>Table Cell 2</td>
-              <td>Table Cell 3</td>
-              <td>Table Cell 4</td>
-              <td>Table Cell 5</td>
+              <td>Cell 1</td>
+              <td>Cell 2</td>
+              <td>Cell 3</td>
+              <td>Cell 4</td>
             </tr>
             <tr>
-              <td>Table Cell 1</td>
-              <td>Table Cell 2</td>
-              <td>Table Cell 3</td>
-              <td>Table Cell 4</td>
-              <td>Table Cell 5</td>
-            </tr>
-            <tr>
-              <td>Table Cell 1</td>
-              <td>Table Cell 2</td>
-              <td>Table Cell 3</td>
-              <td>Table Cell 4</td>
-              <td>Table Cell 5</td>
+              <td>Cell 1</td>
+              <td>Cell 2</td>
+              <td>Cell 3</td>
+              <td>Cell 4</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
-              <th>Table Footer 1</th>
-              <th>Table Footer 2</th>
-              <th>Table Footer 3</th>
-              <th>Table Footer 4</th>
-              <th>Table Footer 5</th>
-            </tr>
-          </tfoot>
         </table>
+      </article>
+
+      <article>
+        <h3>Striped + hover</h3>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Last seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>Admin</td>
+              <td>Active</td>
+              <td>2 minutes ago</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>Editor</td>
+              <td>Active</td>
+              <td>1 hour ago</td>
+            </tr>
+            <tr>
+              <td>Carol</td>
+              <td>Viewer</td>
+              <td>Invited</td>
+              <td>Never</td>
+            </tr>
+            <tr>
+              <td>Dave</td>
+              <td>Editor</td>
+              <td>Disabled</td>
+              <td>3 days ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Bordered</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Compact</h3>
+        <table class="table table-compact table-striped">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>name</td><td>love-css</td><td>string</td></tr>
+            <tr><td>version</td><td>0.1.0</td><td>string</td></tr>
+            <tr><td>modules</td><td>28</td><td>number</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Selected and disabled rows</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Row</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Row 1</td><td>normal</td></tr>
+            <tr class="is-selected"><td>Row 2</td><td>selected</td></tr>
+            <tr><td>Row 3</td><td>normal</td></tr>
+            <tr class="is-disabled"><td>Row 4</td><td>disabled</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Responsive wrapper</h3>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Column A</th>
+                <th>Column B</th>
+                <th>Column C</th>
+                <th>Column D</th>
+                <th>Column E</th>
+                <th>Column F</th>
+                <th>Column G</th>
+                <th>Column H</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+              </tr>
+              <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted text-sm mt-2">On narrow screens the table scrolls horizontally.</p>
       </article>
     </section>
 
@@ -548,98 +741,75 @@
       <h2>Forms</h2>
 
       <form>
-        <fieldset>
-          <legend>Input types</legend>
+        <article>
+          <h3>Basic inputs with hints and errors</h3>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="f-name">Name</label>
+              <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name">
+              <span class="form-hint">Use your real name for verification.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label-required" for="f-email">Email</label>
+              <input class="form-input is-error" type="email" id="f-email" name="email" value="not-an-email">
+              <span class="form-error">Please enter a valid email address.</span>
+            </div>
+          </div>
 
-          <p>
-            <label for="input-text">Text</label>
-            <input type="text" id="input-text" name="text" placeholder="Text input">
-          </p>
-          <p>
-            <label for="input-password">Password</label>
-            <input type="password" id="input-password" name="password" placeholder="Password">
-          </p>
-          <p>
-            <label for="input-email">Email</label>
-            <input type="email" id="input-email" name="email" placeholder="name@example.com">
-          </p>
-          <p>
-            <label for="input-url">URL</label>
-            <input type="url" id="input-url" name="url" placeholder="https://example.com">
-          </p>
-          <p>
-            <label for="input-tel">Telephone</label>
-            <input type="tel" id="input-tel" name="tel" placeholder="(999) 999-9999">
-          </p>
-          <p>
-            <label for="input-search">Search</label>
-            <input type="search" id="input-search" name="search" placeholder="Search term">
-          </p>
-          <p>
-            <label for="input-number">Number</label>
-            <input type="number" id="input-number" name="number" min="0" max="100" value="50">
-          </p>
-          <p>
-            <label for="input-range">Range</label>
-            <input type="range" id="input-range" name="range" min="0" max="100" value="50">
-          </p>
-          <p>
-            <label for="input-date">Date</label>
-            <input type="date" id="input-date" name="date" value="2026-09-21">
-          </p>
-          <p>
-            <label for="input-time">Time</label>
-            <input type="time" id="input-time" name="time" value="12:30">
-          </p>
-          <p>
-            <label for="input-datetime-local">Datetime local</label>
-            <input type="datetime-local" id="input-datetime-local" name="datetime-local" value="2026-09-21T12:30">
-          </p>
-          <p>
-            <label for="input-month">Month</label>
-            <input type="month" id="input-month" name="month" value="2026-09">
-          </p>
-          <p>
-            <label for="input-week">Week</label>
-            <input type="week" id="input-week" name="week" value="2026-W38">
-          </p>
-          <p>
-            <label for="input-color">Color</label>
-            <input type="color" id="input-color" name="color" value="#1fa3ec">
-          </p>
-          <p>
-            <label for="input-file">File</label>
-            <input type="file" id="input-file" name="file">
-          </p>
-          <p>
-            <label for="input-file-multiple">File (multiple)</label>
-            <input type="file" id="input-file-multiple" name="files" multiple>
-          </p>
-          <p>
-            <label for="input-checkbox">Checkbox</label>
-            <input type="checkbox" id="input-checkbox" name="checkbox" checked>
-          </p>
-          <p>
-            <label for="input-radio">Radio</label>
-            <input type="radio" id="input-radio" name="radio" checked>
-          </p>
-          <p>
-            <label for="input-datalist">Datalist</label>
-            <input type="text" id="input-datalist" name="datalist" list="example-list">
-            <datalist id="example-list">
-              <option value="Example #1">
-              <option value="Example #2">
-              <option value="Example #3">
-            </datalist>
-          </p>
-        </fieldset>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="f-username">Username</label>
+              <input class="form-input is-success" type="text" id="f-username" name="username" value="love-css">
+              <span class="form-hint">This username is available.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-password">Password</label>
+              <input class="form-input" type="password" id="f-password" name="password" placeholder="••••••••">
+            </div>
+          </div>
+        </article>
 
-        <fieldset>
-          <legend>Other form elements</legend>
+        <article>
+          <h3>Input sizes</h3>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label" for="f-sm">Small</label>
+              <input class="form-input form-input-sm" type="text" id="f-sm" placeholder="Small">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-md">Default</label>
+              <input class="form-input" type="text" id="f-md" placeholder="Default">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-lg">Large</label>
+              <input class="form-input form-input-lg" type="text" id="f-lg" placeholder="Large">
+            </div>
+          </div>
+        </article>
 
-          <p>
-            <label for="select-single">Select (single)</label>
-            <select id="select-single" name="select">
+        <article>
+          <h3>Input group</h3>
+          <div class="form-group">
+            <label class="form-label" for="f-url">Website</label>
+            <div class="input-group">
+              <span class="input-group-text">https://</span>
+              <input class="form-input" type="text" id="f-url" placeholder="example.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-price">Price</label>
+            <div class="input-group">
+              <input class="form-input" type="number" id="f-price" value="49">
+              <span class="input-group-text">.00 USD</span>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <h3>Select, textarea, datalist</h3>
+          <div class="form-group">
+            <label class="form-label" for="f-select">Select</label>
+            <select id="f-select">
               <optgroup label="Option Group 1">
                 <option>Option One</option>
                 <option>Option Two</option>
@@ -649,56 +819,349 @@
                 <option>Option Four</option>
               </optgroup>
             </select>
-          </p>
+          </div>
 
-          <p>
-            <label for="select-multiple">Select (multiple)</label>
-            <select id="select-multiple" name="select-multiple" multiple>
+          <div class="form-group">
+            <label class="form-label" for="f-select-multiple">Select (multiple)</label>
+            <select id="f-select-multiple" multiple>
               <option>Option One</option>
               <option>Option Two</option>
               <option>Option Three</option>
             </select>
-          </p>
+          </div>
 
-          <p>
-            <label for="textarea">Textarea</label>
-            <textarea id="textarea" name="textarea" rows="6" cols="40" placeholder="Enter your message here"></textarea>
-          </p>
+          <div class="form-group">
+            <label class="form-label" for="f-textarea">Message</label>
+            <textarea id="f-textarea" rows="4" placeholder="Enter your message here"></textarea>
+          </div>
 
-          <p>
-            <label for="output">Output</label>
-            <output id="output" name="output">50</output>
-          </p>
+          <div class="form-group">
+            <label class="form-label" for="f-datalist">Datalist</label>
+            <input class="form-input" type="text" id="f-datalist" list="example-list" placeholder="Type to search">
+            <datalist id="example-list">
+              <option value="Example #1">
+              <option value="Example #2">
+              <option value="Example #3">
+            </datalist>
+          </div>
+        </article>
 
-          <p>
-            <label for="progress">Progress</label>
-            <progress id="progress" value="70" max="100">70%</progress>
-          </p>
+        <article>
+          <h3>Checkboxes and radios</h3>
+          <fieldset>
+            <legend>Notification preferences</legend>
+            <div class="form-check">
+              <input type="checkbox" id="f-check1" checked>
+              <label for="f-check1">Email notifications</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="f-check2">
+              <label for="f-check2">
+                Push notifications
+                <span class="form-check-hint">Only available in the mobile app.</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="f-check3" disabled>
+              <label for="f-check3">SMS (unavailable)</label>
+            </div>
+          </fieldset>
 
-          <p>
-            <label for="meter">Meter</label>
-            <meter id="meter" value="0.7" min="0" max="1">70%</meter>
-          </p>
-        </fieldset>
+          <fieldset>
+            <legend>Account type</legend>
+            <div class="form-check">
+              <input type="radio" id="f-radio1" name="acct" checked>
+              <label for="f-radio1">Personal</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="f-radio2" name="acct">
+              <label for="f-radio2">Business</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="f-radio3" name="acct">
+              <label for="f-radio3">Enterprise</label>
+            </div>
+          </fieldset>
+        </article>
 
-        <fieldset>
-          <legend>Buttons</legend>
+        <article>
+          <h3>Native HTML5 inputs</h3>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label" for="f-number">Number</label>
+              <input class="form-input" type="number" id="f-number" min="0" max="100" value="50">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-date">Date</label>
+              <input class="form-input" type="date" id="f-date" value="2026-09-21">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-time">Time</label>
+              <input class="form-input" type="time" id="f-time" value="12:30">
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label" for="f-color">Color</label>
+              <input type="color" id="f-color" value="#7c3aed">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-range">Range</label>
+              <input type="range" id="f-range" min="0" max="100" value="50">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-file">File</label>
+              <input type="file" id="f-file">
+            </div>
+          </div>
+        </article>
 
-          <p>
-            <button type="submit">Submit button</button>
-            <button type="button">Generic button</button>
-            <button type="reset">Reset button</button>
-            <button type="button" disabled>Disabled button</button>
-          </p>
+        <article>
+          <h3>Progress, meter, output</h3>
+          <div class="form-group">
+            <label class="form-label" for="f-progress">Progress</label>
+            <progress id="f-progress" value="70" max="100">70%</progress>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-meter">Meter</label>
+            <meter id="f-meter" value="0.7" min="0" max="1">70%</meter>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-output">Output</label>
+            <output id="f-output" for="f-range">50</output>
+          </div>
+        </article>
 
-          <p>
+        <article>
+          <h3>Native buttons — styled automatically</h3>
+          <div class="cluster">
+            <button type="submit">Submit</button>
+            <button type="button">Generic</button>
+            <button type="reset">Reset</button>
+            <button type="button" disabled>Disabled</button>
+          </div>
+          <div class="cluster mt-3">
             <input type="submit" value="Input submit">
             <input type="button" value="Input button">
             <input type="reset" value="Input reset">
-            <input type="submit" value="Input submit disabled" disabled>
-          </p>
-        </fieldset>
+            <input type="submit" value="Disabled" disabled>
+          </div>
+        </article>
       </form>
+    </section>
+
+    <section id="buttons">
+      <h2>Buttons</h2>
+
+      <article>
+        <h3>Variants</h3>
+        <div class="cluster">
+          <button type="button" class="btn">Default</button>
+          <button type="button" class="btn btn-primary">Primary (grape)</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-ghost">Ghost</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-success">Success</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="cluster">
+          <button type="button" class="btn btn-primary btn-sm">Small</button>
+          <button type="button" class="btn btn-primary">Default</button>
+          <button type="button" class="btn btn-primary btn-lg">Large</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>Block and icon-only</h3>
+        <div class="stack-3">
+          <button type="button" class="btn btn-primary btn-block">Block button — full width</button>
+        </div>
+        <div class="cluster">
+          <button type="button" class="btn btn-icon" aria-label="Add">+</button>
+          <button type="button" class="btn btn-icon btn-primary" aria-label="Add">+</button>
+          <button type="button" class="btn btn-icon btn-danger" aria-label="Delete">×</button>
+          <button type="button" class="btn btn-icon btn-ghost" aria-label="More">⋯</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>States</h3>
+        <div class="cluster">
+          <button type="button" class="btn">Normal</button>
+          <button type="button" class="btn" disabled>Disabled</button>
+          <button type="button" class="btn is-disabled">Disabled (class)</button>
+          <button type="button" class="btn is-loading">Loading</button>
+          <button type="button" class="btn btn-primary is-loading">Loading primary</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>Selected / toggle buttons (grape)</h3>
+        <p>Click to toggle. The active state uses the grape color.</p>
+        <div class="cluster">
+          <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Bold</button>
+          <button type="button" class="btn" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Italic (selected)</button>
+          <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Underline</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>Button group</h3>
+        <div class="btn-group" role="group" aria-label="Text alignment">
+          <button type="button" class="btn" aria-pressed="true">Left</button>
+          <button type="button" class="btn" aria-pressed="false">Center</button>
+          <button type="button" class="btn" aria-pressed="false">Right</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>Buttons as links</h3>
+        <div class="cluster">
+          <a href="#!" class="btn btn-primary">Link styled as button</a>
+          <a href="#!" class="btn btn-ghost">Ghost link</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="layout">
+      <h2>Layout</h2>
+
+      <article>
+        <h3><code>.container</code></h3>
+        <div class="container" style="background: var(--love-bg-subtle); padding-block: var(--love-space-4);">
+          <p>Centered container with max-width 72rem and horizontal padding.</p>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.row</code> and <code>.col</code></h3>
+        <div class="row">
+          <div class="col-4"><div class="ks-box">col-4</div></div>
+          <div class="col-4"><div class="ks-box">col-4</div></div>
+          <div class="col-4"><div class="ks-box">col-4</div></div>
+        </div>
+        <div class="row mt-4">
+          <div class="col"><div class="ks-box">col (auto)</div></div>
+          <div class="col"><div class="ks-box">col (auto)</div></div>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.stack</code></h3>
+        <div class="stack-3">
+          <div class="ks-box">Stack item 1</div>
+          <div class="ks-box">Stack item 2</div>
+          <div class="ks-box">Stack item 3</div>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.cluster</code></h3>
+        <div class="cluster">
+          <div class="ks-box">Item 1</div>
+          <div class="ks-box">Item 2</div>
+          <div class="ks-box">Item 3</div>
+          <div class="ks-box">Item 4</div>
+          <div class="ks-box">Item 5</div>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.grid-auto</code></h3>
+        <div class="grid-auto">
+          <div class="ks-box">Auto 1</div>
+          <div class="ks-box">Auto 2</div>
+          <div class="ks-box">Auto 3</div>
+          <div class="ks-box">Auto 4</div>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.grid-3</code></h3>
+        <div class="grid-3">
+          <div class="ks-box">1</div>
+          <div class="ks-box">2</div>
+          <div class="ks-box">3</div>
+        </div>
+      </article>
+
+      <article>
+        <h3><code>.sidebar</code></h3>
+        <div class="sidebar">
+          <div class="ks-box">Sidebar</div>
+          <div class="ks-box">Main content</div>
+        </div>
+      </article>
+    </section>
+
+    <section id="utilities">
+      <h2>Utilities</h2>
+
+      <article>
+        <h3>Spacing</h3>
+        <div class="p-4 mb-4" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
+          <code>.p-4 .mb-4</code> — padding and margin on the same element.
+        </div>
+        <div class="p-6" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
+          <code>.p-6</code> — larger padding.
+        </div>
+      </article>
+
+      <article>
+        <h3>Text</h3>
+        <p class="text-left">Left aligned</p>
+        <p class="text-center">Center aligned</p>
+        <p class="text-right">Right aligned</p>
+        <p class="text-muted">Muted color</p>
+        <p class="text-primary">Primary color (grape)</p>
+        <p class="text-danger">Danger color</p>
+        <p class="text-success">Success color</p>
+        <p class="text-sm">Small text</p>
+        <p class="text-lg">Large text</p>
+        <p class="text-bold">Bold text</p>
+        <p class="text-uppercase">uppercase text</p>
+      </article>
+
+      <article>
+        <h3>Flex and visibility</h3>
+        <div class="flex justify-between items-center gap-3 p-3" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
+          <span>Left</span>
+          <span>Center</span>
+          <span>Right</span>
+        </div>
+        <p class="mt-3">This paragraph is visible. <span class="sr-only">This text is only for screen readers.</span></p>
+        <p class="mt-3"><span class="hide">This text is hidden.</span> This text is not hidden.</p>
+      </article>
+    </section>
+
+    <section id="animations">
+      <h2>Animations</h2>
+
+      <article>
+        <h3>Entrance animations</h3>
+        <div class="cluster">
+          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-fade'); e.classList.remove('fade-in'); void e.offsetWidth; e.classList.add('fade-in');">Replay fade-in</button>
+          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-slide'); e.classList.remove('slide-up'); void e.offsetWidth; e.classList.add('slide-up');">Replay slide-up</button>
+          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-scale'); e.classList.remove('scale-in'); void e.offsetWidth; e.classList.add('scale-in');">Replay scale-in</button>
+        </div>
+        <div class="grid-3 mt-4">
+          <div id="anim-fade" class="ks-box">fade-in</div>
+          <div id="anim-slide" class="ks-box">slide-up</div>
+          <div id="anim-scale" class="ks-box">scale-in</div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Loading animations</h3>
+        <div class="cluster">
+          <div class="ks-box" style="width: 4rem;">spin<div class="spin" style="display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--love-primary); border-top-color: transparent; border-radius: 9999px;"></div></div>
+          <div class="ks-box shimmer" style="width: 12rem;">shimmer</div>
+          <div class="ks-box pulse" style="width: 12rem;">pulse</div>
+        </div>
+      </article>
     </section>
 
     <section id="interactive-elements">
@@ -714,12 +1177,12 @@
 
       <article>
         <h3><code>&lt;dialog&gt;</code></h3>
-        <button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open dialog</button>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('demo-dialog').showModal()">Open dialog</button>
         <dialog id="demo-dialog">
           <h4>Dialog heading</h4>
           <p>This is a native HTML dialog element. It can be modal or non-modal.</p>
           <form method="dialog">
-            <button>Close</button>
+            <button type="submit" class="btn">Close</button>
           </form>
         </dialog>
       </article>
@@ -760,6 +1223,14 @@
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           applyTheme(btn.dataset.theme);
+        });
+      });
+
+      var groupButtons = document.querySelectorAll('.btn-group .btn');
+      groupButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          groupButtons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          btn.setAttribute('aria-pressed', 'true');
         });
       });
     })();

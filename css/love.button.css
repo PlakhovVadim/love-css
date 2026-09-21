@@ -1,0 +1,306 @@
+/*! Love.css button | MIT License | github.com/PlakhovVadim/love-css */
+
+/* Base button
+   Applies to native <button>, <input type="submit|button|reset">, and .btn.
+   Every visual parameter comes from tokens — no hardcoded values. */
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--love-btn-gap);
+
+  padding: var(--love-btn-padding-y) var(--love-btn-padding-x);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-btn-font-size);
+  font-weight: var(--love-btn-font-weight);
+  line-height: var(--love-btn-line-height);
+  letter-spacing: var(--love-letter-spacing-normal);
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  color: var(--love-btn-color);
+  background-color: var(--love-btn-bg);
+  border: var(--love-btn-border-width) solid var(--love-btn-border);
+  border-radius: var(--love-btn-radius);
+
+  transition: var(--love-btn-transition);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn):hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  color: var(--love-btn-hover-color);
+  background-color: var(--love-btn-hover-bg);
+  border-color: var(--love-btn-hover-border);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn):active:not(:disabled):not(.is-disabled):not(.is-loading) {
+  color: var(--love-btn-active-color);
+  background-color: var(--love-btn-active-bg);
+  border-color: var(--love-btn-active-border);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn):focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn):disabled,
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn).is-disabled {
+  opacity: var(--love-btn-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary */
+
+.btn-primary {
+  color: var(--love-btn-primary-color);
+  background-color: var(--love-btn-primary-bg);
+  border-color: var(--love-btn-primary-border);
+}
+
+.btn-primary:hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  background-color: var(--love-btn-primary-hover-bg);
+  border-color: var(--love-btn-primary-hover-border);
+}
+
+/* Secondary */
+
+.btn-secondary {
+  color: var(--love-btn-secondary-color);
+  background-color: var(--love-btn-secondary-bg);
+  border-color: var(--love-btn-secondary-border);
+}
+
+.btn-secondary:hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  background-color: var(--love-btn-secondary-hover-bg);
+  border-color: var(--love-btn-secondary-hover-border);
+}
+
+/* Ghost */
+
+.btn-ghost {
+  color: var(--love-btn-ghost-color);
+  background-color: var(--love-btn-ghost-bg);
+  border-color: var(--love-btn-ghost-border);
+}
+
+.btn-ghost:hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  background-color: var(--love-btn-ghost-hover-bg);
+  border-color: var(--love-btn-ghost-hover-border);
+}
+
+/* Danger */
+
+.btn-danger {
+  color: var(--love-btn-danger-color);
+  background-color: var(--love-btn-danger-bg);
+  border-color: var(--love-btn-danger-border);
+}
+
+.btn-danger:hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  background-color: var(--love-btn-danger-hover-bg);
+  border-color: var(--love-btn-danger-hover-border);
+}
+
+/* Success */
+
+.btn-success {
+  color: var(--love-btn-success-color);
+  background-color: var(--love-btn-success-bg);
+  border-color: var(--love-btn-success-border);
+}
+
+.btn-success:hover:not(:disabled):not(.is-disabled):not(.is-loading) {
+  background-color: var(--love-btn-success-hover-bg);
+  border-color: var(--love-btn-success-hover-border);
+}
+
+/* Sizes */
+
+.btn-sm {
+  padding: var(--love-btn-sm-padding-y) var(--love-btn-sm-padding-x);
+  font-size: var(--love-btn-sm-font-size);
+}
+
+.btn-lg {
+  padding: var(--love-btn-lg-padding-y) var(--love-btn-lg-padding-x);
+  font-size: var(--love-btn-lg-font-size);
+}
+
+/* Block — full width */
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* Icon-only — square button */
+
+.btn-icon {
+  padding: var(--love-btn-padding-y);
+  aspect-ratio: 1 / 1;
+}
+
+.btn-icon.btn-sm {
+  padding: var(--love-btn-sm-padding-y);
+}
+
+.btn-icon.btn-lg {
+  padding: var(--love-btn-lg-padding-y);
+}
+
+/* Selected / pressed state
+   .is-selected or aria-pressed="true" gives the grape accent. */
+
+.btn.is-selected,
+.btn[aria-pressed="true"],
+button[aria-pressed="true"]:not(.btn-primary):not(.btn-danger):not(.btn-success):not(.btn-secondary) {
+  color: var(--love-btn-active-color);
+  background-color: var(--love-btn-active-bg);
+  border-color: var(--love-btn-active-border);
+}
+
+.btn.is-selected:hover:not(:disabled):not(.is-disabled),
+.btn[aria-pressed="true"]:hover:not(:disabled):not(.is-disabled),
+button[aria-pressed="true"]:not(.btn-primary):not(.btn-danger):not(.btn-success):not(.btn-secondary):hover:not(:disabled) {
+  background-color: var(--love-grape-hover);
+  border-color: var(--love-grape-hover);
+}
+
+/* Loading state */
+
+.btn.is-loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--love-radius-full);
+  color: var(--love-btn-color);
+  animation: love-btn-spin 0.6s linear infinite;
+}
+
+.btn-primary.is-loading::after { color: var(--love-btn-primary-color); }
+.btn-danger.is-loading::after { color: var(--love-btn-danger-color); }
+.btn-success.is-loading::after { color: var(--love-btn-success-color); }
+
+@keyframes love-btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Button group */
+
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group > .btn {
+  border-radius: 0;
+  margin-left: calc(-1 * var(--love-btn-border-width));
+}
+
+.btn-group > .btn:first-child {
+  border-top-left-radius: var(--love-btn-radius);
+  border-bottom-left-radius: var(--love-btn-radius);
+  margin-left: 0;
+}
+
+.btn-group > .btn:last-child {
+  border-top-right-radius: var(--love-btn-radius);
+  border-bottom-right-radius: var(--love-btn-radius);
+}
+
+.btn-group > .btn:hover,
+.btn-group > .btn:focus-visible,
+.btn-group > .btn.is-selected,
+.btn-group > .btn[aria-pressed="true"] {
+  z-index: 1;
+}
+
+/* File input button
+   Styles the "Choose file" / "Обзор" button inside <input type="file">. */
+
+input[type="file"]::file-selector-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--love-btn-padding-y) var(--love-btn-padding-x);
+  margin-right: var(--love-space-3);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-btn-font-size);
+  font-weight: var(--love-btn-font-weight);
+  line-height: var(--love-btn-line-height);
+  color: var(--love-btn-color);
+  background-color: var(--love-btn-bg);
+  border: var(--love-btn-border-width) solid var(--love-btn-border);
+  border-radius: var(--love-btn-radius);
+  cursor: pointer;
+  transition: var(--love-btn-transition);
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--love-btn-hover-bg);
+  border-color: var(--love-btn-hover-border);
+}
+
+input[type="file"]:focus-visible::file-selector-button {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* WebKit fallback for older Safari */
+
+input[type="file"]::-webkit-file-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--love-btn-padding-y) var(--love-btn-padding-x);
+  margin-right: var(--love-space-3);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-btn-font-size);
+  font-weight: var(--love-btn-font-weight);
+  color: var(--love-btn-color);
+  background-color: var(--love-btn-bg);
+  border: var(--love-btn-border-width) solid var(--love-btn-border);
+  border-radius: var(--love-btn-radius);
+  cursor: pointer;
+}
+
+/* Number input spinners
+   Native spinners in input[type=number] are kept but styled to match
+   the button aesthetic where the browser allows it. */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  :is(button, input[type="submit"], input[type="button"], input[type="reset"], .btn),
+  input[type="file"]::file-selector-button {
+    transition: none;
+  }
+  .btn.is-loading::after {
+    animation-duration: 1.5s;
+  }
+}

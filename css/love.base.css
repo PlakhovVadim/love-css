@@ -22,6 +22,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--love-font-weight-semibold);
   line-height: var(--love-line-height-tight);
+  letter-spacing: var(--love-letter-spacing-tight);
   margin-top: var(--love-space-8);
   margin-bottom: var(--love-space-4);
   color: var(--love-text);
@@ -32,7 +33,12 @@ h2 { font-size: var(--love-font-size-3xl); }
 h3 { font-size: var(--love-font-size-2xl); }
 h4 { font-size: var(--love-font-size-xl); }
 h5 { font-size: var(--love-font-size-lg); }
-h6 { font-size: var(--love-font-size-base); text-transform: uppercase; letter-spacing: 0.05em; color: var(--love-text-muted); }
+h6 {
+  font-size: var(--love-font-size-base);
+  text-transform: uppercase;
+  letter-spacing: var(--love-letter-spacing-wide);
+  color: var(--love-text-muted);
+}
 
 h1:first-child, h2:first-child, h3:first-child,
 h4:first-child, h5:first-child, h6:first-child {
@@ -53,20 +59,23 @@ p:last-child {
 /* Links */
 
 a {
-  color: var(--love-primary);
-  text-decoration: none;
+  color: var(--love-link);
+  text-decoration: var(--love-link-decoration);
   transition: color var(--love-duration-fast) var(--love-ease-default);
 }
 
 a:hover {
-  color: var(--love-primary-hover);
-  text-decoration: underline;
+  color: var(--love-link-hover);
+  text-decoration: var(--love-link-decoration-hover);
+}
+
+a:visited {
+  color: var(--love-link-visited);
 }
 
 a:focus-visible {
   outline: 2px solid var(--love-focus);
   outline-offset: 2px;
-  border-radius: var(--love-radius-sm);
 }
 
 /* Lists */
@@ -147,7 +156,6 @@ code, kbd, samp, pre {
 code {
   padding: 0.125em 0.375em;
   background-color: var(--love-bg-subtle);
-  border-radius: var(--love-radius-sm);
   color: var(--love-text);
 }
 
@@ -155,7 +163,7 @@ pre {
   margin: var(--love-space-4) 0;
   padding: var(--love-space-4);
   background-color: var(--love-bg-subtle);
-  border-radius: var(--love-radius-md);
+  color: var(--love-text);
   overflow-x: auto;
   line-height: var(--love-line-height-base);
 }
@@ -163,14 +171,12 @@ pre {
 pre code {
   padding: 0;
   background-color: transparent;
-  border-radius: 0;
 }
 
 kbd {
   padding: 0.125em 0.375em;
   background-color: var(--love-bg-subtle);
   border: 1px solid var(--love-border);
-  border-radius: var(--love-radius-sm);
   font-size: 0.85em;
 }
 
@@ -192,7 +198,6 @@ mark {
   padding: 0.125em 0.25em;
   background-color: var(--love-warning-subtle);
   color: var(--love-text);
-  border-radius: var(--love-radius-sm);
 }
 
 abbr[title] {
@@ -232,63 +237,12 @@ figcaption {
   color: var(--love-text-muted);
 }
 
-/* Tables */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: var(--love-space-4) 0;
-}
-
-caption {
-  margin-bottom: var(--love-space-2);
-  font-size: var(--love-font-size-sm);
-  color: var(--love-text-muted);
-  text-align: left;
-}
-
-th, td {
-  padding: var(--love-table-cell-padding-y) var(--love-table-cell-padding-x);
-  text-align: left;
-  border-bottom: 1px solid var(--love-table-border);
-}
-
-th {
-  font-weight: var(--love-font-weight-semibold);
-  background-color: var(--love-bg-subtle);
-}
-
 /* Horizontal rule */
 
 hr {
   margin: var(--love-space-8) 0;
   border: 0;
   border-top: 1px solid var(--love-border);
-}
-
-/* Forms */
-
-form {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0 0 var(--love-space-6);
-  padding: var(--love-space-4);
-  border: 1px solid var(--love-border);
-  border-radius: var(--love-radius-md);
-}
-
-legend {
-  padding: 0 var(--love-space-2);
-  font-weight: var(--love-font-weight-semibold);
-}
-
-label {
-  display: block;
-  margin-bottom: var(--love-space-1);
-  font-size: var(--love-font-size-sm);
-  font-weight: var(--love-font-weight-medium);
 }
 
 /* Interactive */
@@ -306,7 +260,6 @@ summary {
 summary:focus-visible {
   outline: 2px solid var(--love-focus);
   outline-offset: 2px;
-  border-radius: var(--love-radius-sm);
 }
 
 /* Misc */
@@ -321,7 +274,7 @@ time {
 }
 
 ::selection {
-  background-color: var(--love-primary);
+  background-color: var(--love-grape);
   color: var(--love-text-inverse);
 }
 

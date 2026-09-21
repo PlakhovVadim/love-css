@@ -1,0 +1,142 @@
+/*! Love.css layout | MIT License | github.com/PlakhovVadim/love-css */
+
+/* Container — constrains content width and centers it */
+
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--love-space-4);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-inline: var(--love-space-4);
+}
+
+/* Row and col — simple 12-column grid using flex */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--love-space-4);
+}
+
+.col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+}
+
+.col-1  { flex: 0 0 calc(8.3333% - var(--love-space-4)); }
+.col-2  { flex: 0 0 calc(16.6667% - var(--love-space-4)); }
+.col-3  { flex: 0 0 calc(25% - var(--love-space-4)); }
+.col-4  { flex: 0 0 calc(33.3333% - var(--love-space-4)); }
+.col-6  { flex: 0 0 calc(50% - var(--love-space-4)); }
+.col-8  { flex: 0 0 calc(66.6667% - var(--love-space-4)); }
+.col-12 { flex: 0 0 100%; }
+
+/* Stack — vertical rhythm. Children get equal gaps. */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--love-space-4);
+}
+
+.stack-0 { gap: 0; }
+.stack-1 { gap: var(--love-space-1); }
+.stack-2 { gap: var(--love-space-2); }
+.stack-3 { gap: var(--love-space-3); }
+.stack-4 { gap: var(--love-space-4); }
+.stack-6 { gap: var(--love-space-6); }
+.stack-8 { gap: var(--love-space-8); }
+
+/* Cluster — horizontal group that wraps */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--love-space-3);
+  align-items: center;
+}
+
+.cluster-between {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--love-space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Center — centers a single child both axes */
+
+.center {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+
+/* Sidebar — main content plus aside, collapses on small screens */
+
+.sidebar {
+  display: grid;
+  gap: var(--love-space-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .sidebar {
+    grid-template-columns: 16rem 1fr;
+  }
+  .sidebar-right {
+    grid-template-columns: 1fr 16rem;
+  }
+}
+
+/* Grid — auto-fit responsive grid */
+
+.grid {
+  display: grid;
+  gap: var(--love-space-4);
+}
+
+.grid-auto {
+  display: grid;
+  gap: var(--love-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.grid-2 {
+  display: grid;
+  gap: var(--love-space-4);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--love-space-4);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  display: grid;
+  gap: var(--love-space-4);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 48rem) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-bleed — escapes the container padding */
+
+.full-bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}

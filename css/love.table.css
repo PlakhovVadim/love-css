@@ -1,0 +1,130 @@
+/*! Love.css table | MIT License | github.com/PlakhovVadim/love-css */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  color: var(--love-text);
+  background-color: transparent;
+  font-size: var(--love-font-size-sm);
+}
+
+.table caption {
+  margin-bottom: var(--love-space-3);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: var(--love-table-cell-padding-y) var(--love-table-cell-padding-x);
+  text-align: left;
+  vertical-align: middle;
+  color: var(--love-text);
+  border-bottom: 1px solid var(--love-table-border);
+}
+
+.table th {
+  font-weight: var(--love-font-weight-semibold);
+  background-color: var(--love-table-header-bg);
+  border-bottom: 2px solid var(--love-border-strong);
+  color: var(--love-text);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tfoot th,
+.table tfoot td {
+  border-top: 2px solid var(--love-border-strong);
+  border-bottom: 0;
+  background-color: var(--love-table-header-bg);
+  font-weight: var(--love-font-weight-medium);
+}
+
+/* Striped — alternating row backgrounds */
+
+.table-striped tbody tr:nth-child(odd) td {
+  background-color: var(--love-bg-subtle);
+}
+
+/* Hover — row highlight on hover */
+
+.table-hover tbody tr {
+  transition: background-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.table-hover tbody tr:hover td {
+  background-color: var(--love-primary-subtle);
+}
+
+/* Bordered — vertical borders on all sides */
+
+.table-bordered {
+  border: 1px solid var(--love-table-border);
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--love-table-border);
+}
+
+.table-bordered th {
+  border-bottom-width: 2px;
+}
+
+/* Compact — reduced cell padding */
+
+.table-compact th,
+.table-compact td {
+  padding: var(--love-space-1) var(--love-space-2);
+}
+
+.table-compact {
+  font-size: var(--love-font-size-xs);
+}
+
+/* Sticky header — keeps the header visible while scrolling */
+
+.table-sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: var(--love-z-sticky);
+  background-color: var(--love-table-header-bg);
+}
+
+/* Responsive wrapper — horizontal scroll on small screens */
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Selected row */
+
+.table tbody tr.is-selected td {
+  background-color: var(--love-primary-subtle);
+}
+
+.table tbody tr.is-selected:hover td {
+  background-color: var(--love-primary-subtle);
+}
+
+/* Disabled row */
+
+.table tbody tr.is-disabled td {
+  opacity: 0.5;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .table-hover tbody tr {
+    transition: none;
+  }
+}

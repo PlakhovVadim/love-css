@@ -1,0 +1,393 @@
+/*! Love.css form | MIT License | github.com/PlakhovVadim/love-css */
+
+/* Form layout */
+
+.form-group {
+  margin-bottom: var(--love-space-4);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--love-space-1);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  color: var(--love-text);
+}
+
+.form-label-required::after {
+  content: " *";
+  color: var(--love-danger);
+}
+
+/* Inputs, selects, textareas */
+
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--love-input-padding-y) var(--love-input-padding-x);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  line-height: var(--love-line-height-base);
+  color: var(--love-text);
+  background-color: var(--love-input-bg);
+  border: 1px solid var(--love-input-border);
+  border-radius: var(--love-input-radius);
+  transition: border-color var(--love-duration-fast) var(--love-ease-default),
+              box-shadow var(--love-duration-fast) var(--love-ease-default);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input:hover,
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="url"]:hover,
+input[type="tel"]:hover,
+input[type="search"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover,
+input[type="datetime-local"]:hover,
+input[type="month"]:hover,
+input[type="week"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--love-border-strong);
+}
+
+.form-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--love-primary);
+  box-shadow: 0 0 0 3px var(--love-primary-subtle);
+}
+
+.form-input:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--love-bg-subtle);
+}
+
+.form-input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--love-text-placeholder);
+  opacity: 1;
+}
+
+/* Textarea */
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+  line-height: var(--love-line-height-base);
+}
+
+/* Select — arrow indicator */
+
+select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--love-space-3) center;
+  padding-right: calc(var(--love-input-padding-x) * 2 + 12px);
+}
+
+select[multiple] {
+  background-image: none;
+  padding-right: var(--love-input-padding-x);
+  min-height: 6rem;
+}
+
+/* Validation states */
+
+.form-input:invalid:not(:placeholder-shown):not(:focus),
+input:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: var(--love-danger);
+}
+
+.form-input:invalid:not(:placeholder-shown):not(:focus):focus,
+input:invalid:not(:placeholder-shown):not(:focus):focus {
+  box-shadow: 0 0 0 3px var(--love-danger-subtle);
+}
+
+.form-input:valid:not(:placeholder-shown),
+input:valid:not(:placeholder-shown) {
+  border-color: var(--love-border);
+}
+
+/* Explicit error and success classes for custom validation */
+
+.form-input.is-error,
+input.is-error {
+  border-color: var(--love-danger);
+}
+
+.form-input.is-error:focus,
+input.is-error:focus {
+  box-shadow: 0 0 0 3px var(--love-danger-subtle);
+}
+
+.form-input.is-success,
+input.is-success {
+  border-color: var(--love-success);
+}
+
+.form-input.is-success:focus,
+input.is-success:focus {
+  box-shadow: 0 0 0 3px var(--love-success-subtle);
+}
+
+/* Hint and error messages */
+
+.form-hint {
+  display: block;
+  margin-top: var(--love-space-1);
+  font-size: var(--love-font-size-xs);
+  color: var(--love-text-muted);
+}
+
+.form-error {
+  display: block;
+  margin-top: var(--love-space-1);
+  font-size: var(--love-font-size-xs);
+  color: var(--love-danger);
+}
+
+/* Checkboxes and radios */
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--love-space-2);
+  margin-bottom: var(--love-space-2);
+}
+
+.form-check:last-child {
+  margin-bottom: 0;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2em;
+  flex-shrink: 0;
+  accent-color: var(--love-primary);
+  cursor: pointer;
+}
+
+.form-check input[type="checkbox"]:disabled,
+.form-check input[type="radio"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check label {
+  margin: 0;
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-normal);
+  cursor: pointer;
+}
+
+.form-check-hint {
+  display: block;
+  margin-top: var(--love-space-1);
+  font-size: var(--love-font-size-xs);
+  color: var(--love-text-muted);
+}
+
+/* Form row — horizontal group of fields */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--love-space-4);
+}
+
+@media (min-width: 48rem) {
+  .form-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-row-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Input sizes */
+
+.form-input-sm,
+input.form-input-sm {
+  padding: var(--love-space-1) var(--love-space-2);
+  font-size: var(--love-font-size-xs);
+}
+
+.form-input-lg,
+input.form-input-lg {
+  padding: var(--love-space-3) var(--love-space-4);
+  font-size: var(--love-font-size-base);
+}
+
+/* Input group — input with attached prefix or suffix */
+
+.input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.input-group > .form-input,
+.input-group > input {
+  flex: 1 1 auto;
+  width: 1%;
+}
+
+.input-group > .input-group-text {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--love-input-padding-y) var(--love-input-padding-x);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+  background-color: var(--love-bg-subtle);
+  border: 1px solid var(--love-input-border);
+}
+
+.input-group > :first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > :last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > :not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Fieldset and legend */
+
+fieldset {
+  margin: 0 0 var(--love-space-6);
+  padding: var(--love-space-4);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-input-radius);
+}
+
+legend {
+  padding: 0 var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-semibold);
+  color: var(--love-text);
+}
+
+/* File input — the button inside is styled by love.button.css */
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: var(--love-space-2) var(--love-input-padding-x);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  background-color: var(--love-input-bg);
+  border: 1px solid var(--love-input-border);
+  border-radius: var(--love-input-radius);
+  cursor: pointer;
+}
+
+input[type="file"]:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* Range input */
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+  accent-color: var(--love-primary);
+}
+
+/* Color input */
+
+input[type="color"] {
+  display: inline-block;
+  width: 3rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--love-input-border);
+  border-radius: var(--love-input-radius);
+  cursor: pointer;
+  background-color: var(--love-input-bg);
+}
+
+/* Progress and meter */
+
+progress {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+  accent-color: var(--love-primary);
+}
+
+meter {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+  accent-color: var(--love-primary);
+}
+
+/* Output */
+
+output {
+  display: inline-block;
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .form-input,
+  input,
+  textarea,
+  select {
+    transition: none;
+  }
+}

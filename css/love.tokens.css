@@ -29,9 +29,17 @@
   --love-color-yellow-600: oklch(0.681 0.170 85);
   --love-color-yellow-700: oklch(0.554 0.150 85);
 
-  --love-color-purple-400: oklch(0.68 0.15 300);
-  --love-color-purple-500: oklch(0.60 0.17 300);
-  --love-color-purple-600: oklch(0.52 0.18 300);
+  /* Grape — primary accent of Love.css */
+  --love-color-grape-50: oklch(0.971 0.014 300);
+  --love-color-grape-100: oklch(0.936 0.034 300);
+  --love-color-grape-200: oklch(0.885 0.065 300);
+  --love-color-grape-300: oklch(0.809 0.105 300);
+  --love-color-grape-400: oklch(0.707 0.150 300);
+  --love-color-grape-500: oklch(0.623 0.180 300);
+  --love-color-grape-600: oklch(0.546 0.190 300);
+  --love-color-grape-700: oklch(0.488 0.175 300);
+  --love-color-grape-800: oklch(0.424 0.150 300);
+  --love-color-grape-900: oklch(0.379 0.120 300);
 
   --love-color-gray-50: oklch(0.985 0.002 250);
   --love-color-gray-100: oklch(0.967 0.003 250);
@@ -130,53 +138,124 @@
   --love-border: var(--love-color-gray-200);
   --love-border-strong: var(--love-color-gray-300);
 
-  --love-primary: var(--love-color-blue-600);
-  --love-primary-hover: var(--love-color-blue-700);
-  --love-primary-subtle: var(--love-color-blue-50);
+  /* Primary accent — grape */
+  --love-primary: var(--love-color-grape-600);
+  --love-primary-hover: var(--love-color-grape-700);
+  --love-primary-subtle: var(--love-color-grape-50);
 
   --love-danger: var(--love-color-red-600);
   --love-danger-hover: var(--love-color-red-700);
   --love-danger-subtle: var(--love-color-red-50);
 
   --love-success: var(--love-color-green-600);
+  --love-success-hover: var(--love-color-green-700);
   --love-success-subtle: var(--love-color-green-50);
 
   --love-warning: var(--love-color-yellow-600);
+  --love-warning-hover: var(--love-color-yellow-700);
   --love-warning-subtle: var(--love-color-yellow-50);
 
-  --love-focus: var(--love-color-blue-400);
+  --love-grape: var(--love-color-grape-600);
+  --love-grape-hover: var(--love-color-grape-700);
+  --love-grape-subtle: var(--love-color-grape-50);
+
+  --love-focus: var(--love-color-grape-400);
 
   /* Link tokens */
   --love-link: var(--love-primary);
   --love-link-hover: var(--love-primary-hover);
-  --love-link-visited: var(--love-color-purple-600);
+  --love-link-visited: var(--love-color-grape-800);
   --love-link-decoration: none;
   --love-link-decoration-hover: underline;
 
-  /* Component tokens */
+  /* Button tokens */
   --love-btn-radius: var(--love-radius-none);
-  --love-btn-padding-x: var(--love-space-4);
-  --love-btn-padding-y: var(--love-space-2);
-  --love-btn-font-size: var(--love-font-size-base);
+  --love-btn-padding-x: var(--love-space-3);
+  --love-btn-padding-y: 0.375rem;
+  --love-btn-font-size: var(--love-font-size-sm);
   --love-btn-font-weight: var(--love-font-weight-medium);
+  --love-btn-line-height: 1.25;
+  --love-btn-gap: var(--love-space-2);
+  --love-btn-border-width: 1px;
+
+  /* Button — default (neutral) */
+  --love-btn-bg: var(--love-bg-elevated);
+  --love-btn-color: var(--love-text);
+  --love-btn-border: var(--love-border);
+  --love-btn-hover-bg: var(--love-bg-subtle);
+  --love-btn-hover-color: var(--love-text);
+  --love-btn-hover-border: var(--love-border-strong);
+  --love-btn-active-bg: var(--love-grape);
+  --love-btn-active-color: var(--love-text-inverse);
+  --love-btn-active-border: var(--love-grape);
+  --love-btn-disabled-opacity: 0.5;
+
+  /* Button — primary */
+  --love-btn-primary-bg: var(--love-primary);
+  --love-btn-primary-color: var(--love-text-inverse);
+  --love-btn-primary-border: var(--love-primary);
+  --love-btn-primary-hover-bg: var(--love-primary-hover);
+  --love-btn-primary-hover-border: var(--love-primary-hover);
+
+  /* Button — secondary */
+  --love-btn-secondary-bg: var(--love-bg-subtle);
+  --love-btn-secondary-color: var(--love-text);
+  --love-btn-secondary-border: var(--love-border);
+  --love-btn-secondary-hover-bg: var(--love-border);
+  --love-btn-secondary-hover-border: var(--love-border-strong);
+
+  /* Button — ghost */
+  --love-btn-ghost-bg: transparent;
+  --love-btn-ghost-color: var(--love-text);
+  --love-btn-ghost-border: transparent;
+  --love-btn-ghost-hover-bg: var(--love-bg-subtle);
+  --love-btn-ghost-hover-border: transparent;
+
+  /* Button — danger */
+  --love-btn-danger-bg: var(--love-danger);
+  --love-btn-danger-color: var(--love-text-inverse);
+  --love-btn-danger-border: var(--love-danger);
+  --love-btn-danger-hover-bg: var(--love-danger-hover);
+  --love-btn-danger-hover-border: var(--love-danger-hover);
+
+  /* Button — success */
+  --love-btn-success-bg: var(--love-success);
+  --love-btn-success-color: var(--love-text-inverse);
+  --love-btn-success-border: var(--love-success);
+  --love-btn-success-hover-bg: var(--love-success-hover);
+  --love-btn-success-hover-border: var(--love-success-hover);
+
+  /* Button — size scale */
+  --love-btn-sm-padding-x: var(--love-space-2);
+  --love-btn-sm-padding-y: 0.125rem;
+  --love-btn-sm-font-size: var(--love-font-size-sm);
+
+  --love-btn-lg-padding-x: var(--love-space-5);
+  --love-btn-lg-padding-y: var(--love-space-3);
+  --love-btn-lg-font-size: var(--love-font-size-lg);
+
+  /* Button — transition */
   --love-btn-transition:
     background-color var(--love-duration-fast) var(--love-ease-default),
     color var(--love-duration-fast) var(--love-ease-default),
     border-color var(--love-duration-fast) var(--love-ease-default),
     box-shadow var(--love-duration-fast) var(--love-ease-default);
 
+  /* Card tokens */
   --love-card-radius: var(--love-radius-none);
   --love-card-padding: var(--love-space-6);
   --love-card-bg: var(--love-bg-elevated);
   --love-card-border: var(--love-border);
   --love-card-shadow: var(--love-shadow-sm);
 
+  /* Input tokens */
   --love-input-radius: var(--love-radius-none);
   --love-input-padding-x: var(--love-space-3);
   --love-input-padding-y: var(--love-space-2);
   --love-input-border: var(--love-border);
   --love-input-bg: var(--love-bg-elevated);
 
+  /* Table tokens */
   --love-table-radius: var(--love-radius-none);
   --love-table-row-height: 2.5rem;
   --love-table-cell-padding-x: var(--love-space-4);

@@ -1,0 +1,158 @@
+/*! Love.css card | MIT License | github.com/PlakhovVadim/love-css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--love-card-bg);
+  border: 1px solid var(--love-card-border);
+  border-radius: var(--love-card-radius);
+  box-shadow: var(--love-card-shadow);
+  overflow: hidden;
+  transition: box-shadow var(--love-duration-fast) var(--love-ease-default),
+              border-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.card-header {
+  padding: var(--love-card-padding);
+  border-bottom: 1px solid var(--love-card-border);
+  background-color: var(--love-card-bg);
+}
+
+.card-header:last-child {
+  border-bottom: 0;
+}
+
+.card-body {
+  padding: var(--love-card-padding);
+  flex: 1 1 auto;
+}
+
+.card-footer {
+  padding: var(--love-card-padding);
+  border-top: 1px solid var(--love-card-border);
+  background-color: var(--love-card-bg);
+}
+
+.card-footer:first-child {
+  border-top: 0;
+}
+
+/* Typography inside cards */
+
+.card-title {
+  margin: 0;
+  font-size: var(--love-font-size-lg);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text);
+}
+
+.card-subtitle {
+  margin-top: var(--love-space-1);
+  margin-bottom: 0;
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+}
+
+.card-text {
+  margin-top: var(--love-space-3);
+  margin-bottom: 0;
+  color: var(--love-text);
+}
+
+.card-text:first-child {
+  margin-top: 0;
+}
+
+/* Media — image at the top or bottom of a card */
+
+.card-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Actions — usually a group of buttons in the footer */
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--love-space-2);
+  align-items: center;
+}
+
+.card-actions-end {
+  justify-content: flex-end;
+}
+
+/* Variants */
+
+.card-flat {
+  box-shadow: none;
+  border-color: var(--love-border);
+}
+
+.card-bordered {
+  border-color: var(--love-border-strong);
+  box-shadow: none;
+}
+
+.card-hover:hover {
+  box-shadow: var(--love-shadow-md);
+  border-color: var(--love-border-strong);
+}
+
+/* Compact — smaller padding */
+
+.card-compact .card-header,
+.card-compact .card-body,
+.card-compact .card-footer {
+  padding: var(--love-space-4);
+}
+
+/* Accent — colored top border for emphasis */
+
+.card-accent {
+  border-top: 3px solid var(--love-primary);
+}
+
+.card-accent-danger {
+  border-top: 3px solid var(--love-danger);
+}
+
+.card-accent-success {
+  border-top: 3px solid var(--love-success);
+}
+
+.card-accent-warning {
+  border-top: 3px solid var(--love-warning);
+}
+
+/* Interactive card — clickable, shows hover state */
+
+.card-interactive {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-interactive:hover {
+  box-shadow: var(--love-shadow-md);
+  border-color: var(--love-border-strong);
+}
+
+.card-interactive:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-hover,
+  .card-interactive {
+    transition: none;
+  }
+}
