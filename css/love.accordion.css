@@ -1,0 +1,161 @@
+/*! Love.css accordion | MIT License | github.com/PlakhovVadim/love-css */
+
+/*
+ * Accordion is built on the native <details> / <summary> elements.
+ * No JavaScript required. Animated height is achieved by
+ * transitioning grid-template-rows, which is layout-safe in modern browsers.
+ */
+
+.accordion {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+  overflow: hidden;
+}
+
+.accordion-item {
+  display: block;
+  border-bottom: 1px solid var(--love-border);
+}
+
+.accordion-item:last-child {
+  border-bottom: 0;
+}
+
+.accordion-trigger,
+.accordion-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--love-space-3);
+  padding: var(--love-space-3) var(--love-space-4);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text);
+  background-color: var(--love-bg-elevated);
+  border: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.accordion-trigger::-webkit-details-marker,
+.accordion-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-trigger::marker,
+.accordion-item > summary::marker {
+  content: "";
+}
+
+.accordion-trigger:hover,
+.accordion-item > summary:hover {
+  background-color: var(--love-bg-subtle);
+}
+
+.accordion-trigger:focus-visible,
+.accordion-item > summary:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: -2px;
+}
+
+/* Chevron indicator */
+
+.accordion-trigger::after,
+.accordion-item > summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--love-text-muted);
+  border-bottom: 2px solid var(--love-text-muted);
+  transform: rotate(45deg);
+  transition: transform var(--love-duration-fast) var(--love-ease-default);
+  margin-top: -0.25rem;
+}
+
+.accordion-item[open] > summary::after,
+.accordion-item.is-open .accordion-trigger::after {
+  transform: rotate(-135deg);
+  margin-top: 0.25rem;
+}
+
+/* Panel */
+
+.accordion-panel,
+.accordion-item > *:not(summary) {
+  padding: var(--love-space-3) var(--love-space-4);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  background-color: var(--love-bg-elevated);
+  border-top: 1px solid var(--love-border);
+}
+
+.accordion-panel > *:first-child,
+.accordion-item > *:not(summary):first-of-type {
+  margin-top: 0;
+}
+
+.accordion-panel > *:last-child,
+.accordion-item > *:not(summary):last-of-type {
+  margin-bottom: 0;
+}
+
+/* Flush — no outer border */
+
+.accordion-flush {
+  border: 0;
+}
+
+.accordion-flush .accordion-trigger,
+.accordion-flush .accordion-item > summary {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+}
+
+.accordion-flush .accordion-panel,
+.accordion-flush .accordion-item > *:not(summary) {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+}
+
+/* Separated — each item has its own border and margin */
+
+.accordion-separated {
+  border: 0;
+  overflow: visible;
+}
+
+.accordion-separated .accordion-item {
+  border: 1px solid var(--love-border);
+  margin-bottom: var(--love-space-2);
+}
+
+.accordion-separated .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Open state background */
+
+.accordion-item[open] > summary,
+.accordion-item.is-open .accordion-trigger {
+  background-color: var(--love-bg-subtle);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-trigger,
+  .accordion-item > summary,
+  .accordion-trigger::after,
+  .accordion-item > summary::after {
+    transition: none;
+  }
+}

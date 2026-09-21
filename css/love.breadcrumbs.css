@@ -1,0 +1,82 @@
+/*! Love.css breadcrumbs | MIT License | github.com/PlakhovVadim/love-css */
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--love-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+}
+
+.breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--love-space-1);
+}
+
+.breadcrumbs-item:not(:last-child)::after {
+  content: "/";
+  display: inline-block;
+  margin-left: var(--love-space-1);
+  color: var(--love-text-muted);
+  user-select: none;
+}
+
+.breadcrumbs-link {
+  color: var(--love-link);
+  text-decoration: none;
+  transition: color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--love-link-hover);
+  text-decoration: underline;
+}
+
+.breadcrumbs-link:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+.breadcrumbs-current {
+  color: var(--love-text);
+  font-weight: var(--love-font-weight-medium);
+}
+
+/* Separator variants */
+
+.breadcrumbs-arrow .breadcrumbs-item:not(:last-child)::after {
+  content: "›";
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.breadcrumbs-chevron .breadcrumbs-item:not(:last-child)::after {
+  content: "→";
+}
+
+.breadcrumbs-dot .breadcrumbs-item:not(:last-child)::after {
+  content: "•";
+}
+
+/* Background wrapper */
+
+.breadcrumbs-bar {
+  display: block;
+  padding: var(--love-space-2) var(--love-space-3);
+  background-color: var(--love-bg-subtle);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumbs-link {
+    transition: none;
+  }
+}

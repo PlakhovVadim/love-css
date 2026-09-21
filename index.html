@@ -23,6 +23,10 @@
   <link rel="stylesheet" href="css/love.tabs.css">
   <link rel="stylesheet" href="css/love.dropdown.css">
   <link rel="stylesheet" href="css/love.toast.css">
+  <link rel="stylesheet" href="css/love.pagination.css">
+  <link rel="stylesheet" href="css/love.breadcrumbs.css">
+  <link rel="stylesheet" href="css/love.tooltip.css">
+  <link rel="stylesheet" href="css/love.accordion.css">
   <link rel="stylesheet" href="css/love.layout.css">
   <link rel="stylesheet" href="css/love.utilities.css">
   <link rel="stylesheet" href="css/love.animations.css">
@@ -100,6 +104,10 @@
       <li><a href="#tabs">Tabs</a></li>
       <li><a href="#dropdowns">Dropdowns</a></li>
       <li><a href="#toasts">Toasts</a></li>
+      <li><a href="#pagination">Pagination</a></li>
+      <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+      <li><a href="#tooltips">Tooltips</a></li>
+      <li><a href="#accordions">Accordions</a></li>
       <li><a href="#layout">Layout</a></li>
       <li><a href="#utilities">Utilities</a></li>
       <li><a href="#animations">Animations</a></li>
@@ -981,32 +989,22 @@
               <p class="alert-text">Your changes have been saved successfully.</p>
             </div>
           </div>
-
           <div class="alert alert-danger">
             <div class="alert-content">
               <span class="alert-title">Error</span>
               <p class="alert-text">Something went wrong. Please try again.</p>
             </div>
           </div>
-
           <div class="alert alert-warning">
             <div class="alert-content">
               <span class="alert-title">Warning</span>
               <p class="alert-text">Your account is nearing its usage limit.</p>
             </div>
           </div>
-
           <div class="alert alert-info">
             <div class="alert-content">
               <span class="alert-title">Information</span>
               <p class="alert-text">A new version of Love.css is available.</p>
-            </div>
-          </div>
-
-          <div class="alert">
-            <div class="alert-content">
-              <span class="alert-title">Neutral</span>
-              <p class="alert-text">This is a neutral alert with no variant applied.</p>
             </div>
           </div>
         </div>
@@ -1461,6 +1459,200 @@
       </article>
     </section>
 
+    <section id="pagination">
+      <h2>Pagination</h2>
+
+      <article>
+        <h3>Basic pagination</h3>
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Previous">‹</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
+            <li class="pagination-item is-active"><span class="pagination-link">3</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">4</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">5</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Next">›</a></li>
+          </ul>
+        </nav>
+      </article>
+
+      <article>
+        <h3>With ellipsis</h3>
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+            <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">8</a></li>
+            <li class="pagination-item is-active"><span class="pagination-link">9</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">10</a></li>
+            <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">42</a></li>
+          </ul>
+        </nav>
+      </article>
+
+      <article>
+        <h3>Disabled prev/next</h3>
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            <li class="pagination-item is-disabled"><span class="pagination-link" aria-disabled="true">‹</span></li>
+            <li class="pagination-item is-active"><span class="pagination-link">1</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">›</a></li>
+          </ul>
+        </nav>
+      </article>
+
+      <article>
+        <h3>Sizes and centered</h3>
+        <nav aria-label="Pagination">
+          <ul class="pagination pagination-sm pagination-center">
+            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+            <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pagination" class="mt-3">
+          <ul class="pagination pagination-lg pagination-center">
+            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+            <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
+            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+
+    <section id="breadcrumbs">
+      <h2>Breadcrumbs</h2>
+
+      <article>
+        <h3>Basic</h3>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Library</a></li>
+            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Data</span></li>
+          </ol>
+        </nav>
+      </article>
+
+      <article>
+        <h3>Arrow separator</h3>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs breadcrumbs-arrow">
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Products</a></li>
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Shoes</a></li>
+            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Sneakers</span></li>
+          </ol>
+        </nav>
+      </article>
+
+      <article>
+        <h3>With background bar</h3>
+        <nav aria-label="Breadcrumb" class="breadcrumbs-bar">
+          <ol class="breadcrumbs">
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Admin</a></li>
+            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Users</a></li>
+            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Edit profile</span></li>
+          </ol>
+        </nav>
+      </article>
+    </section>
+
+    <section id="tooltips">
+      <h2>Tooltips</h2>
+
+      <article>
+        <h3>Placement</h3>
+        <p>
+          Hover or focus each trigger to see the tooltip.
+        </p>
+        <div class="cluster">
+          <button type="button" class="btn tooltip" data-tooltip="This tooltip appears above">Top (default)</button>
+          <button type="button" class="btn tooltip tooltip-bottom" data-tooltip="This tooltip appears below">Bottom</button>
+          <button type="button" class="btn tooltip tooltip-right" data-tooltip="This tooltip appears on the right">Right</button>
+          <button type="button" class="btn tooltip tooltip-left" data-tooltip="This tooltip appears on the left">Left</button>
+        </div>
+      </article>
+
+      <article>
+        <h3>On inline text</h3>
+        <p>
+          This sentence has a
+          <span class="tooltip tooltip-underline" tabindex="0" data-tooltip="A tooltip on inline text">helpful tooltip</span>
+          that explains the term. Tab to it with the keyboard.
+        </p>
+      </article>
+
+      <article>
+        <h3>On icon buttons</h3>
+        <div class="cluster">
+          <button type="button" class="btn btn-icon tooltip" aria-label="Add" data-tooltip="Add new item">+</button>
+          <button type="button" class="btn btn-icon btn-danger tooltip" aria-label="Delete" data-tooltip="Delete this item">×</button>
+          <button type="button" class="btn btn-icon btn-ghost tooltip" aria-label="More" data-tooltip="More actions">⋯</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="accordions">
+      <h2>Accordions</h2>
+
+      <article>
+        <h3>Basic accordion</h3>
+        <div class="accordion">
+          <details class="accordion-item" open>
+            <summary class="accordion-trigger">What is Love.css?</summary>
+            <div class="accordion-panel">
+              <p>Love.css is a minimalist CSS framework for fast interface assembly. It focuses on design, not animations, and gives you full control through tokens.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="accordion-trigger">How do I install it?</summary>
+            <div class="accordion-panel">
+              <p>Clone the repository, run the installer, and start using classes. No build step, no dependencies, no configuration files.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="accordion-trigger">Can I customize it?</summary>
+            <div class="accordion-panel">
+              <p>Yes. Every visual parameter is a CSS variable. Change a token and the entire framework adapts. Or use <code>love.overrides.css</code> for your own rules.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article>
+        <h3>Flush accordion</h3>
+        <div class="accordion accordion-flush">
+          <details class="accordion-item">
+            <summary class="accordion-trigger">Section one</summary>
+            <div class="accordion-panel"><p>Content for section one.</p></div>
+          </details>
+          <details class="accordion-item">
+            <summary class="accordion-trigger">Section two</summary>
+            <div class="accordion-panel"><p>Content for section two.</p></div>
+          </details>
+        </div>
+      </article>
+
+      <article>
+        <h3>Separated accordion</h3>
+        <div class="accordion accordion-separated">
+          <details class="accordion-item">
+            <summary class="accordion-trigger">First card</summary>
+            <div class="accordion-panel"><p>Each item is its own bordered card.</p></div>
+          </details>
+          <details class="accordion-item">
+            <summary class="accordion-trigger">Second card</summary>
+            <div class="accordion-panel"><p>With spacing between them.</p></div>
+          </details>
+        </div>
+      </article>
+    </section>
+
     <section id="layout">
       <h2>Layout</h2>
 
@@ -1635,7 +1827,6 @@
 
       /* Theme switcher */
       var themeButtons = document.querySelectorAll('.ks-theme-switcher button');
-
       function applyTheme(theme) {
         if (theme === 'auto') {
           html.removeAttribute('data-love-theme');
@@ -1647,15 +1838,11 @@
         });
         try { localStorage.setItem('love-theme', theme); } catch (e) {}
       }
-
       var savedTheme = null;
       try { savedTheme = localStorage.getItem('love-theme'); } catch (e) {}
       applyTheme(savedTheme || html.getAttribute('data-love-theme') || 'auto');
-
       themeButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          applyTheme(btn.dataset.theme);
-        });
+        btn.addEventListener('click', function () { applyTheme(btn.dataset.theme); });
       });
 
       /* Button group */

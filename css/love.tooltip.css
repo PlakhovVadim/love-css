@@ -1,0 +1,166 @@
+/*! Love.css tooltip | MIT License | github.com/PlakhovVadim/love-css */
+
+/*
+ * Tooltip uses a data attribute for the text.
+ * Markup: <span class="tooltip" data-tooltip="Text here">Trigger</span>
+ * Positioning is controlled by .tooltip-top, .tooltip-bottom (default is top).
+ */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip::before,
+.tooltip::after {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--love-duration-fast) var(--love-ease-out),
+              visibility var(--love-duration-fast) var(--love-ease-out),
+              transform var(--love-duration-fast) var(--love-ease-out);
+  z-index: var(--love-z-tooltip);
+}
+
+/* Tooltip body */
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.25rem);
+  padding: var(--love-space-1) var(--love-space-2);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-xs);
+  font-weight: var(--love-font-weight-medium);
+  line-height: var(--love-line-height-tight);
+  white-space: nowrap;
+  color: var(--love-text-inverse);
+  background-color: var(--love-text);
+  border-radius: var(--love-radius-none);
+  box-shadow: var(--love-shadow-md);
+  max-width: 20rem;
+}
+
+/* Tooltip arrow */
+
+.tooltip::before {
+  content: "";
+  bottom: calc(100% + 0.25rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.25rem);
+  border: 0.25rem solid transparent;
+  border-top-color: var(--love-text);
+}
+
+/* Show on hover and focus */
+
+.tooltip:hover::before,
+.tooltip:hover::after,
+.tooltip:focus-visible::before,
+.tooltip:focus-visible::after,
+.tooltip:focus-within::before,
+.tooltip:focus-within::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom placement */
+
+.tooltip-bottom::after {
+  bottom: auto;
+  top: calc(100% + 0.5rem);
+  transform: translateX(-50%) translateY(-0.25rem);
+}
+
+.tooltip-bottom::before {
+  bottom: auto;
+  top: calc(100% + 0.25rem);
+  transform: translateX(-50%) translateY(-0.25rem);
+  border-top-color: transparent;
+  border-bottom-color: var(--love-text);
+}
+
+.tooltip-bottom:hover::before,
+.tooltip-bottom:hover::after,
+.tooltip-bottom:focus-visible::before,
+.tooltip-bottom:focus-visible::after,
+.tooltip-bottom:focus-within::before,
+.tooltip-bottom:focus-within::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Right placement */
+
+.tooltip-right::after {
+  bottom: auto;
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  transform: translateX(-0.25rem) translateY(-50%);
+}
+
+.tooltip-right::before {
+  bottom: auto;
+  left: calc(100% + 0.25rem);
+  top: 50%;
+  transform: translateX(-0.25rem) translateY(-50%);
+  border-top-color: transparent;
+  border-right-color: var(--love-text);
+}
+
+.tooltip-right:hover::before,
+.tooltip-right:hover::after,
+.tooltip-right:focus-visible::before,
+.tooltip-right:focus-visible::after,
+.tooltip-right:focus-within::before,
+.tooltip-right:focus-within::after {
+  transform: translateX(0) translateY(-50%);
+}
+
+/* Left placement */
+
+.tooltip-left::after {
+  bottom: auto;
+  right: calc(100% + 0.5rem);
+  left: auto;
+  top: 50%;
+  transform: translateX(0.25rem) translateY(-50%);
+}
+
+.tooltip-left::before {
+  bottom: auto;
+  right: calc(100% + 0.25rem);
+  left: auto;
+  top: 50%;
+  transform: translateX(0.25rem) translateY(-50%);
+  border-top-color: transparent;
+  border-left-color: var(--love-text);
+}
+
+.tooltip-left:hover::before,
+.tooltip-left:hover::after,
+.tooltip-left:focus-visible::before,
+.tooltip-left:focus-visible::after,
+.tooltip-left:focus-within::before,
+.tooltip-left:focus-within::after {
+  transform: translateX(0) translateY(-50%);
+}
+
+/* Underlined dotted trigger */
+
+.tooltip-underline {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip::before,
+  .tooltip::after {
+    transition: none;
+  }
+}

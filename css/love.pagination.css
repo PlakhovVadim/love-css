@@ -1,0 +1,155 @@
+/*! Love.css pagination | MIT License | github.com/PlakhovVadim/love-css */
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-item {
+  display: inline-flex;
+}
+
+.pagination-link,
+.pagination-item > a,
+.pagination-item > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 var(--love-space-2);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  line-height: 1;
+  color: var(--love-text);
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+  margin-left: -1px;
+  cursor: pointer;
+  transition: color var(--love-duration-fast) var(--love-ease-default),
+              background-color var(--love-duration-fast) var(--love-ease-default),
+              border-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.pagination-item:first-child .pagination-link,
+.pagination-item:first-child > a,
+.pagination-item:first-child > span {
+  margin-left: 0;
+}
+
+.pagination-link:hover,
+.pagination-item > a:hover {
+  color: var(--love-text);
+  background-color: var(--love-bg-subtle);
+  border-color: var(--love-border-strong);
+  z-index: 1;
+}
+
+.pagination-link:focus-visible,
+.pagination-item > a:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+/* Active page */
+
+.pagination-link.is-active,
+.pagination-item.is-active > a,
+.pagination-item.is-active > span,
+.pagination-link[aria-current="page"] {
+  color: var(--love-text-inverse);
+  background-color: var(--love-primary);
+  border-color: var(--love-primary);
+  cursor: default;
+  z-index: 1;
+}
+
+/* Disabled prev/next */
+
+.pagination-link.is-disabled,
+.pagination-item.is-disabled > a,
+.pagination-item.is-disabled > span,
+.pagination-link[aria-disabled="true"] {
+  color: var(--love-text-muted);
+  background-color: transparent;
+  border-color: var(--love-border);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Ellipsis — the "..." between page numbers */
+
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text-muted);
+  background-color: transparent;
+  border: 1px solid var(--love-border);
+  margin-left: -1px;
+}
+
+/* Size modifiers */
+
+.pagination-sm .pagination-link,
+.pagination-sm .pagination-item > a,
+.pagination-sm .pagination-item > span,
+.pagination-sm .pagination-ellipsis {
+  min-width: 1.75rem;
+  height: 1.75rem;
+  font-size: var(--love-font-size-xs);
+}
+
+.pagination-lg .pagination-link,
+.pagination-lg .pagination-item > a,
+.pagination-lg .pagination-item > span,
+.pagination-lg .pagination-ellipsis {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  font-size: var(--love-font-size-base);
+}
+
+/* Centered variant */
+
+.pagination-center {
+  justify-content: center;
+}
+
+/* Rounded toggle — uses full radius regardless of global radius-none */
+
+.pagination-rounded .pagination-link,
+.pagination-rounded .pagination-item > a,
+.pagination-rounded .pagination-item > span,
+.pagination-rounded .pagination-ellipsis {
+  border-radius: var(--love-radius-sm);
+  margin-left: var(--love-space-1);
+}
+
+.pagination-rounded .pagination-item:first-child .pagination-link,
+.pagination-rounded .pagination-item:first-child > a,
+.pagination-rounded .pagination-item:first-child > span {
+  margin-left: 0;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .pagination-link,
+  .pagination-item > a {
+    transition: none;
+  }
+}
