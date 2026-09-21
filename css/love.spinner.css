@@ -1,0 +1,128 @@
+/*! Love.css spinner | MIT License | github.com/PlakhovVadim/love-css */
+
+.spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--love-border);
+  border-top-color: var(--love-primary);
+  border-radius: var(--love-radius-full);
+  animation: love-spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+/* Sizes */
+
+.spinner-sm {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-width: 2px;
+}
+
+.spinner-lg {
+  width: 2rem;
+  height: 2rem;
+  border-width: 3px;
+}
+
+.spinner-xl {
+  width: 3rem;
+  height: 3rem;
+  border-width: 4px;
+}
+
+/* Color variants */
+
+.spinner-primary {
+  border-color: var(--love-primary-subtle);
+  border-top-color: var(--love-primary);
+}
+
+.spinner-success {
+  border-color: var(--love-success-subtle);
+  border-top-color: var(--love-success);
+}
+
+.spinner-danger {
+  border-color: var(--love-danger-subtle);
+  border-top-color: var(--love-danger);
+}
+
+.spinner-warning {
+  border-color: var(--love-warning-subtle);
+  border-top-color: var(--love-warning);
+}
+
+.spinner-inverse {
+  border-color: oklch(1 0 0 / 0.3);
+  border-top-color: var(--love-text-inverse);
+}
+
+/* Dots — three-dot loading indicator */
+
+.spinner-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: auto;
+  height: auto;
+  border: 0;
+  animation: none;
+}
+
+.spinner-dots::before,
+.spinner-dots::after,
+.spinner-dots > span {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--love-primary);
+  border-radius: var(--love-radius-full);
+  animation: love-spinner-dot 1.2s ease-in-out infinite;
+}
+
+.spinner-dots::before {
+  animation-delay: 0s;
+}
+
+.spinner-dots > span {
+  animation-delay: 0.15s;
+}
+
+.spinner-dots::after {
+  animation-delay: 0.3s;
+}
+
+@keyframes love-spinner-dot {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Centered wrapper — for full-area loading states */
+
+.spinner-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--love-space-8);
+}
+
+/* Reduced motion — slow instead of remove, so loading state stays visible */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.8s;
+  }
+  .spinner-dots::before,
+  .spinner-dots::after,
+  .spinner-dots > span {
+    animation-duration: 2.4s;
+  }
+}

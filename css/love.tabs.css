@@ -1,0 +1,142 @@
+/*! Love.css tabs | MIT License | github.com/PlakhovVadim/love-css */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--love-border);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--love-space-1);
+  padding: var(--love-space-2) var(--love-space-4);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color var(--love-duration-fast) var(--love-ease-default),
+              border-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.tab:hover {
+  color: var(--love-text);
+  border-bottom-color: var(--love-border-strong);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: -2px;
+}
+
+.tab[aria-selected="true"],
+.tab.tab-active {
+  color: var(--love-primary);
+  border-bottom-color: var(--love-primary);
+}
+
+.tab:disabled,
+.tab.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Panels */
+
+.tab-panel {
+  padding: var(--love-space-4) 0;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+/* Filled variant */
+
+.tabs-filled .tabs-list {
+  gap: var(--love-space-1);
+  padding: var(--love-space-1);
+  background-color: var(--love-bg-subtle);
+  border-bottom: 0;
+}
+
+.tabs-filled .tab {
+  margin-bottom: 0;
+  border-bottom: 0;
+  color: var(--love-text);
+}
+
+.tabs-filled .tab:hover {
+  background-color: var(--love-bg-elevated);
+}
+
+.tabs-filled .tab[aria-selected="true"],
+.tabs-filled .tab.tab-active {
+  color: var(--love-text-inverse);
+  background-color: var(--love-primary);
+}
+
+/* Vertical variant */
+
+.tabs-vertical {
+  flex-direction: row;
+}
+
+.tabs-vertical .tabs-list {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-width: 12rem;
+  border-bottom: 0;
+  border-right: 1px solid var(--love-border);
+}
+
+.tabs-vertical .tab {
+  justify-content: flex-start;
+  margin-bottom: 0;
+  margin-right: -1px;
+  border-bottom: 0;
+  border-right: 2px solid transparent;
+}
+
+.tabs-vertical .tab:hover {
+  border-right-color: var(--love-border-strong);
+  border-bottom-color: transparent;
+}
+
+.tabs-vertical .tab[aria-selected="true"],
+.tabs-vertical .tab.tab-active {
+  border-right-color: var(--love-primary);
+  border-bottom-color: transparent;
+}
+
+.tabs-vertical .tab-panel {
+  flex: 1 1 auto;
+  padding: 0 0 0 var(--love-space-4);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .tab {
+    transition: none;
+  }
+}

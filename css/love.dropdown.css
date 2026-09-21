@@ -1,0 +1,134 @@
+/*! Love.css dropdown | MIT License | github.com/PlakhovVadim/love-css */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + var(--love-space-1));
+  left: 0;
+  z-index: var(--love-z-dropdown);
+  min-width: 12rem;
+  max-width: 20rem;
+  padding: var(--love-space-1) 0;
+  margin: 0;
+  list-style: none;
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  background-color: var(--love-bg-elevated);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+  box-shadow: var(--love-shadow-md);
+  animation: love-fade-in var(--love-duration-fast) var(--love-ease-out) both,
+             love-slide-down var(--love-duration-fast) var(--love-ease-out) both;
+}
+
+.dropdown-menu[hidden] {
+  display: none;
+}
+
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu-up {
+  top: auto;
+  bottom: calc(100% + var(--love-space-1));
+}
+
+/* Items */
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--love-space-2);
+  width: 100%;
+  padding: var(--love-space-2) var(--love-space-4);
+  font-family: var(--love-font-sans);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-normal);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text);
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background-color var(--love-duration-fast) var(--love-ease-default),
+              color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.dropdown-item:hover {
+  color: var(--love-text);
+  background-color: var(--love-bg-subtle);
+}
+
+.dropdown-item:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: -2px;
+}
+
+.dropdown-item.is-active {
+  color: var(--love-primary);
+  background-color: var(--love-primary-subtle);
+}
+
+.dropdown-item:disabled,
+.dropdown-item.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.dropdown-item-danger {
+  color: var(--love-danger);
+}
+
+.dropdown-item-danger:hover {
+  color: var(--love-danger);
+  background-color: var(--love-danger-subtle);
+}
+
+/* Divider and header */
+
+.dropdown-divider {
+  height: 1px;
+  margin: var(--love-space-1) 0;
+  background-color: var(--love-border);
+  border: 0;
+}
+
+.dropdown-header {
+  padding: var(--love-space-2) var(--love-space-4);
+  font-size: var(--love-font-size-xs);
+  font-weight: var(--love-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--love-letter-spacing-wide);
+  color: var(--love-text-muted);
+}
+
+/* Details-based dropdown — no JavaScript required */
+
+details.dropdown > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-menu {
+    animation: none;
+  }
+  .dropdown-item {
+    transition: none;
+  }
+}

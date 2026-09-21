@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="css/love.card.css">
   <link rel="stylesheet" href="css/love.form.css">
   <link rel="stylesheet" href="css/love.table.css">
+  <link rel="stylesheet" href="css/love.alert.css">
+  <link rel="stylesheet" href="css/love.badge.css">
+  <link rel="stylesheet" href="css/love.spinner.css">
+  <link rel="stylesheet" href="css/love.skeleton.css">
+  <link rel="stylesheet" href="css/love.modal.css">
+  <link rel="stylesheet" href="css/love.tabs.css">
+  <link rel="stylesheet" href="css/love.dropdown.css">
+  <link rel="stylesheet" href="css/love.toast.css">
   <link rel="stylesheet" href="css/love.layout.css">
   <link rel="stylesheet" href="css/love.utilities.css">
   <link rel="stylesheet" href="css/love.animations.css">
@@ -40,19 +48,10 @@
       gap: var(--love-space-2);
       flex-shrink: 0;
     }
-    .ks-nav ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .ks-nav > ul > li {
-      margin-bottom: var(--love-space-2);
-    }
-    section {
-      margin-bottom: var(--love-space-12);
-    }
-    article {
-      margin-bottom: var(--love-space-8);
-    }
+    .ks-nav ul { list-style: none; padding-left: 0; }
+    .ks-nav > ul > li { margin-bottom: var(--love-space-2); }
+    section { margin-bottom: var(--love-space-12); }
+    article { margin-bottom: var(--love-space-8); }
     .ks-box {
       padding: var(--love-space-4);
       background: var(--love-bg-subtle);
@@ -93,6 +92,14 @@
       <li><a href="#tables">Tables</a></li>
       <li><a href="#forms">Forms</a></li>
       <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#alerts">Alerts</a></li>
+      <li><a href="#badges">Badges</a></li>
+      <li><a href="#spinners">Spinners</a></li>
+      <li><a href="#skeletons">Skeletons</a></li>
+      <li><a href="#modals">Modals</a></li>
+      <li><a href="#tabs">Tabs</a></li>
+      <li><a href="#dropdowns">Dropdowns</a></li>
+      <li><a href="#toasts">Toasts</a></li>
       <li><a href="#layout">Layout</a></li>
       <li><a href="#utilities">Utilities</a></li>
       <li><a href="#animations">Animations</a></li>
@@ -485,7 +492,7 @@
               <p class="card-subtitle">Subtitle goes here</p>
             </div>
             <div class="card-body">
-              <p class="card-text">A card is a flexible container. It has header, body, and footer sections. All padding comes from tokens.</p>
+              <p class="card-text">A card is a flexible container.</p>
             </div>
             <div class="card-footer">
               <div class="card-actions">
@@ -498,14 +505,14 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Body only</h4>
-              <p class="card-text">A card without header or footer. Just padding and content.</p>
+              <p class="card-text">A card without header or footer.</p>
             </div>
           </div>
 
           <div class="card card-compact">
             <div class="card-body">
               <h4 class="card-title">Compact card</h4>
-              <p class="card-text">Uses <code>.card-compact</code> for tighter padding.</p>
+              <p class="card-text">Tighter padding.</p>
             </div>
           </div>
         </div>
@@ -517,14 +524,14 @@
           <div class="card card-flat">
             <div class="card-body">
               <h4 class="card-title">Flat</h4>
-              <p class="card-text">No shadow. Just a border.</p>
+              <p class="card-text">No shadow.</p>
             </div>
           </div>
 
           <div class="card card-bordered">
             <div class="card-body">
               <h4 class="card-title">Bordered</h4>
-              <p class="card-text">Stronger border, no shadow.</p>
+              <p class="card-text">Stronger border.</p>
             </div>
           </div>
 
@@ -540,26 +547,10 @@
       <article>
         <h3>Accents</h3>
         <div class="grid-4">
-          <div class="card card-accent">
-            <div class="card-body">
-              <h4 class="card-title">Primary</h4>
-            </div>
-          </div>
-          <div class="card card-accent-danger">
-            <div class="card-body">
-              <h4 class="card-title">Danger</h4>
-            </div>
-          </div>
-          <div class="card card-accent-success">
-            <div class="card-body">
-              <h4 class="card-title">Success</h4>
-            </div>
-          </div>
-          <div class="card card-accent-warning">
-            <div class="card-body">
-              <h4 class="card-title">Warning</h4>
-            </div>
-          </div>
+          <div class="card card-accent"><div class="card-body"><h4 class="card-title">Primary</h4></div></div>
+          <div class="card card-accent-danger"><div class="card-body"><h4 class="card-title">Danger</h4></div></div>
+          <div class="card card-accent-success"><div class="card-body"><h4 class="card-title">Success</h4></div></div>
+          <div class="card card-accent-warning"><div class="card-body"><h4 class="card-title">Warning</h4></div></div>
         </div>
       </article>
 
@@ -590,18 +581,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 3</td>
-              <td>Cell 4</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 3</td>
-              <td>Cell 4</td>
-            </tr>
+            <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+            <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
           </tbody>
         </table>
       </article>
@@ -621,25 +602,25 @@
             <tr>
               <td>Alice</td>
               <td>Admin</td>
-              <td>Active</td>
+              <td><span class="badge badge-soft badge-success">Active</span></td>
               <td>2 minutes ago</td>
             </tr>
             <tr>
               <td>Bob</td>
               <td>Editor</td>
-              <td>Active</td>
+              <td><span class="badge badge-soft badge-success">Active</span></td>
               <td>1 hour ago</td>
             </tr>
             <tr>
               <td>Carol</td>
               <td>Viewer</td>
-              <td>Invited</td>
+              <td><span class="badge badge-soft badge-warning">Invited</span></td>
               <td>Never</td>
             </tr>
             <tr>
               <td>Dave</td>
               <td>Editor</td>
-              <td>Disabled</td>
+              <td><span class="badge badge-soft badge-danger">Disabled</span></td>
               <td>3 days ago</td>
             </tr>
           </tbody>
@@ -649,24 +630,10 @@
       <article>
         <h3>Bordered</h3>
         <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>A</th>
-              <th>B</th>
-              <th>C</th>
-            </tr>
-          </thead>
+          <thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-            </tr>
+            <tr><td>1</td><td>2</td><td>3</td></tr>
+            <tr><td>4</td><td>5</td><td>6</td></tr>
           </tbody>
         </table>
       </article>
@@ -674,13 +641,7 @@
       <article>
         <h3>Compact</h3>
         <table class="table table-compact table-striped">
-          <thead>
-            <tr>
-              <th>Key</th>
-              <th>Value</th>
-              <th>Type</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Key</th><th>Value</th><th>Type</th></tr></thead>
           <tbody>
             <tr><td>name</td><td>love-css</td><td>string</td></tr>
             <tr><td>version</td><td>0.1.0</td><td>string</td></tr>
@@ -692,12 +653,7 @@
       <article>
         <h3>Selected and disabled rows</h3>
         <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Row</th>
-              <th>State</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Row</th><th>State</th></tr></thead>
           <tbody>
             <tr><td>Row 1</td><td>normal</td></tr>
             <tr class="is-selected"><td>Row 2</td><td>selected</td></tr>
@@ -713,23 +669,13 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Column A</th>
-                <th>Column B</th>
-                <th>Column C</th>
-                <th>Column D</th>
-                <th>Column E</th>
-                <th>Column F</th>
-                <th>Column G</th>
-                <th>Column H</th>
+                <th>Column A</th><th>Column B</th><th>Column C</th><th>Column D</th>
+                <th>Column E</th><th>Column F</th><th>Column G</th><th>Column H</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-              </tr>
-              <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-              </tr>
+              <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+              <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
             </tbody>
           </table>
         </div>
@@ -856,10 +802,7 @@
             </div>
             <div class="form-check">
               <input type="checkbox" id="f-check2">
-              <label for="f-check2">
-                Push notifications
-                <span class="form-check-hint">Only available in the mobile app.</span>
-              </label>
+              <label for="f-check2">Push notifications</label>
             </div>
             <div class="form-check">
               <input type="checkbox" id="f-check3" disabled>
@@ -1023,6 +966,498 @@
           <a href="#!" class="btn btn-primary">Link styled as button</a>
           <a href="#!" class="btn btn-ghost">Ghost link</a>
         </div>
+      </article>
+    </section>
+
+    <section id="alerts">
+      <h2>Alerts</h2>
+
+      <article>
+        <h3>Variants</h3>
+        <div class="stack-3">
+          <div class="alert alert-success">
+            <div class="alert-content">
+              <span class="alert-title">Success</span>
+              <p class="alert-text">Your changes have been saved successfully.</p>
+            </div>
+          </div>
+
+          <div class="alert alert-danger">
+            <div class="alert-content">
+              <span class="alert-title">Error</span>
+              <p class="alert-text">Something went wrong. Please try again.</p>
+            </div>
+          </div>
+
+          <div class="alert alert-warning">
+            <div class="alert-content">
+              <span class="alert-title">Warning</span>
+              <p class="alert-text">Your account is nearing its usage limit.</p>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <div class="alert-content">
+              <span class="alert-title">Information</span>
+              <p class="alert-text">A new version of Love.css is available.</p>
+            </div>
+          </div>
+
+          <div class="alert">
+            <div class="alert-content">
+              <span class="alert-title">Neutral</span>
+              <p class="alert-text">This is a neutral alert with no variant applied.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Dismissible</h3>
+        <div class="alert alert-info alert-dismissible" id="dismiss-demo">
+          <div class="alert-content">
+            <span class="alert-title">Heads up</span>
+            <p class="alert-text">This alert can be dismissed with the close button.</p>
+          </div>
+          <button type="button" class="alert-close" aria-label="Close" onclick="document.getElementById('dismiss-demo').remove()">×</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="badges">
+      <h2>Badges</h2>
+
+      <article>
+        <h3>Solid variants</h3>
+        <div class="cluster">
+          <span class="badge">Default</span>
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-danger">Danger</span>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Soft variants</h3>
+        <div class="cluster">
+          <span class="badge badge-soft">Default</span>
+          <span class="badge badge-soft badge-primary">Primary</span>
+          <span class="badge badge-soft badge-success">Success</span>
+          <span class="badge badge-soft badge-danger">Danger</span>
+          <span class="badge badge-soft badge-warning">Warning</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Outline variants</h3>
+        <div class="cluster">
+          <span class="badge badge-outline">Default</span>
+          <span class="badge badge-outline badge-primary">Primary</span>
+          <span class="badge badge-outline badge-success">Success</span>
+          <span class="badge badge-outline badge-danger">Danger</span>
+          <span class="badge badge-outline badge-warning">Warning</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="cluster">
+          <span class="badge badge-sm badge-primary">Small</span>
+          <span class="badge badge-primary">Default</span>
+          <span class="badge badge-lg badge-primary">Large</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Dots and counters</h3>
+        <div class="cluster">
+          <span class="badge-dot badge-success"></span>
+          <span class="badge-dot badge-warning"></span>
+          <span class="badge-dot badge-danger"></span>
+          <span class="badge-dot badge-primary"></span>
+          <span class="badge badge-counter badge-primary">12</span>
+          <span class="badge badge-counter badge-danger">99+</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Inline with text</h3>
+        <p>Status: <span class="badge badge-soft badge-success">Online</span></p>
+        <p>Version <span class="badge badge-primary">0.1.0</span> is the latest release.</p>
+      </article>
+    </section>
+
+    <section id="spinners">
+      <h2>Spinners</h2>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="cluster">
+          <div class="spinner spinner-sm"></div>
+          <div class="spinner"></div>
+          <div class="spinner spinner-lg"></div>
+          <div class="spinner spinner-xl"></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Color variants</h3>
+        <div class="cluster">
+          <div class="spinner spinner-primary"></div>
+          <div class="spinner spinner-success"></div>
+          <div class="spinner spinner-danger"></div>
+          <div class="spinner spinner-warning"></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Dots</h3>
+        <div class="spinner spinner-dots"><span></span></div>
+      </article>
+
+      <article>
+        <h3>Centered in container</h3>
+        <div class="spinner-center ks-box" style="height: 8rem;">
+          <div class="spinner spinner-lg"></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Inside a button</h3>
+        <div class="cluster">
+          <button type="button" class="btn btn-primary is-loading">Loading primary</button>
+          <button type="button" class="btn is-loading">Loading default</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="skeletons">
+      <h2>Skeletons</h2>
+
+      <article>
+        <h3>Text lines</h3>
+        <div class="skeleton-text skeleton-w-100"></div>
+        <div class="skeleton-text skeleton-w-100"></div>
+        <div class="skeleton-text skeleton-w-75"></div>
+      </article>
+
+      <article>
+        <h3>Title and text</h3>
+        <div class="skeleton-title"></div>
+        <div class="skeleton-text skeleton-w-100"></div>
+        <div class="skeleton-text skeleton-w-100"></div>
+        <div class="skeleton-text skeleton-w-50"></div>
+      </article>
+
+      <article>
+        <h3>Avatar and lines</h3>
+        <div class="skeleton-row">
+          <div class="skeleton-avatar"></div>
+          <div style="flex: 1;">
+            <div class="skeleton-text skeleton-w-50"></div>
+            <div class="skeleton-text skeleton-w-75"></div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>List</h3>
+        <div class="skeleton-list-item">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-lines">
+            <div class="skeleton-text skeleton-w-100"></div>
+            <div class="skeleton-text skeleton-w-50"></div>
+          </div>
+        </div>
+        <div class="skeleton-list-item">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-lines">
+            <div class="skeleton-text skeleton-w-100"></div>
+            <div class="skeleton-text skeleton-w-50"></div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Card placeholder</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton-title mt-4"></div>
+              <div class="skeleton-text skeleton-w-100"></div>
+              <div class="skeleton-text skeleton-w-75"></div>
+              <div class="skeleton-button mt-3"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton-title mt-4"></div>
+              <div class="skeleton-text skeleton-w-100"></div>
+              <div class="skeleton-text skeleton-w-75"></div>
+              <div class="skeleton-button mt-3"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton-title mt-4"></div>
+              <div class="skeleton-text skeleton-w-100"></div>
+              <div class="skeleton-text skeleton-w-75"></div>
+              <div class="skeleton-button mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="modals">
+      <h2>Modals</h2>
+
+      <article>
+        <h3>Basic modal</h3>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').showModal()">Open basic modal</button>
+        <dialog class="modal" id="modal-basic">
+          <div class="modal-header">
+            <h4 class="modal-title">Modal title</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-basic').close()">×</button>
+          </div>
+          <div class="modal-body">
+            <p>This is a native HTML dialog element. It traps focus, closes on Escape, and renders above everything else.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('modal-basic').close()">Cancel</button>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').close()">Confirm</button>
+          </div>
+        </dialog>
+      </article>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="cluster">
+          <button type="button" class="btn" onclick="document.getElementById('modal-sm').showModal()">Small</button>
+          <button type="button" class="btn" onclick="document.getElementById('modal-lg').showModal()">Large</button>
+          <button type="button" class="btn" onclick="document.getElementById('modal-xl').showModal()">Extra large</button>
+          <button type="button" class="btn" onclick="document.getElementById('modal-full').showModal()">Full</button>
+        </div>
+
+        <dialog class="modal modal-sm" id="modal-sm">
+          <div class="modal-header">
+            <h4 class="modal-title">Small modal</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-sm').close()">×</button>
+          </div>
+          <div class="modal-body"><p>Max width 24rem.</p></div>
+        </dialog>
+
+        <dialog class="modal modal-lg" id="modal-lg">
+          <div class="modal-header">
+            <h4 class="modal-title">Large modal</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-lg').close()">×</button>
+          </div>
+          <div class="modal-body"><p>Max width 48rem.</p></div>
+        </dialog>
+
+        <dialog class="modal modal-xl" id="modal-xl">
+          <div class="modal-header">
+            <h4 class="modal-title">Extra large modal</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-xl').close()">×</button>
+          </div>
+          <div class="modal-body"><p>Max width 64rem.</p></div>
+        </dialog>
+
+        <dialog class="modal modal-full" id="modal-full">
+          <div class="modal-header">
+            <h4 class="modal-title">Full-width modal</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-full').close()">×</button>
+          </div>
+          <div class="modal-body"><p>Takes almost the full viewport width.</p></div>
+        </dialog>
+      </article>
+
+      <article>
+        <h3>Drawers</h3>
+        <div class="cluster">
+          <button type="button" class="btn" onclick="document.getElementById('drawer-right').showModal()">Open right drawer</button>
+          <button type="button" class="btn" onclick="document.getElementById('drawer-left').showModal()">Open left drawer</button>
+        </div>
+
+        <dialog class="modal modal-drawer" id="drawer-right">
+          <div class="modal-header">
+            <h4 class="modal-title">Right drawer</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-right').close()">×</button>
+          </div>
+          <div class="modal-body">
+            <p>Slides in from the right. Useful for settings panels, filters, and side navigation.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('drawer-right').close()">Done</button>
+          </div>
+        </dialog>
+
+        <dialog class="modal modal-drawer modal-drawer-left" id="drawer-left">
+          <div class="modal-header">
+            <h4 class="modal-title">Left drawer</h4>
+            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-left').close()">×</button>
+          </div>
+          <div class="modal-body">
+            <p>Slides in from the left. Useful for navigation menus.</p>
+          </div>
+        </dialog>
+      </article>
+    </section>
+
+    <section id="tabs">
+      <h2>Tabs</h2>
+
+      <article>
+        <h3>Underline tabs</h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs-list" role="tablist">
+            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="panel-1">Overview</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-2">Details</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-3">Reviews</button>
+          </div>
+          <div class="tab-panel" id="panel-1" role="tabpanel">Overview content goes here.</div>
+          <div class="tab-panel" id="panel-2" role="tabpanel" hidden>Detailed specifications and technical information.</div>
+          <div class="tab-panel" id="panel-3" role="tabpanel" hidden>Customer reviews and ratings.</div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Filled tabs</h3>
+        <div class="tabs tabs-filled" data-tabs>
+          <div class="tabs-list" role="tablist">
+            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="fpanel-1">Day</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-2">Week</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-3">Month</button>
+          </div>
+          <div class="tab-panel" id="fpanel-1" role="tabpanel">Today's statistics.</div>
+          <div class="tab-panel" id="fpanel-2" role="tabpanel" hidden>This week's statistics.</div>
+          <div class="tab-panel" id="fpanel-3" role="tabpanel" hidden>This month's statistics.</div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Vertical tabs</h3>
+        <div class="tabs tabs-vertical" data-tabs>
+          <div class="tabs-list" role="tablist">
+            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="vpanel-1">Profile</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-2">Security</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-3">Notifications</button>
+          </div>
+          <div class="tab-panel" id="vpanel-1" role="tabpanel">Profile settings.</div>
+          <div class="tab-panel" id="vpanel-2" role="tabpanel" hidden>Security options.</div>
+          <div class="tab-panel" id="vpanel-3" role="tabpanel" hidden>Notification preferences.</div>
+        </div>
+      </article>
+    </section>
+
+    <section id="dropdowns">
+      <h2>Dropdowns</h2>
+
+      <article>
+        <h3>Basic dropdown (JavaScript)</h3>
+        <div class="dropdown" data-dropdown>
+          <button type="button" class="btn btn-primary dropdown-trigger" aria-haspopup="true" aria-expanded="false">Menu</button>
+          <ul class="dropdown-menu" role="menu" hidden>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Profile</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Settings</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Help</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="#!" class="dropdown-item dropdown-item-danger" role="menuitem">Sign out</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article>
+        <h3>With headers, active, disabled</h3>
+        <div class="dropdown" data-dropdown>
+          <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Account</button>
+          <ul class="dropdown-menu" role="menu" hidden>
+            <li><span class="dropdown-header">Signed in as Alice</span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="#!" class="dropdown-item is-active" role="menuitem">Dashboard</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Projects</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Team</a></li>
+            <li><a href="#!" class="dropdown-item is-disabled" role="menuitem" aria-disabled="true">Billing (soon)</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Log out</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article>
+        <h3>Right-aligned menu</h3>
+        <div class="dropdown" data-dropdown>
+          <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Options ▾</button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" hidden>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by name</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by date</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by size</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article>
+        <h3>Details-based dropdown (no JavaScript)</h3>
+        <details class="dropdown">
+          <summary class="btn btn-secondary">More ▾</summary>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#!" class="dropdown-item" role="menuitem">First action</a></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Second action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="#!" class="dropdown-item" role="menuitem">Third action</a></li>
+          </ul>
+        </details>
+      </article>
+    </section>
+
+    <section id="toasts">
+      <h2>Toasts</h2>
+
+      <article>
+        <h3>Static examples</h3>
+        <div class="stack-3" style="max-width: 24rem;">
+          <div class="toast toast-success">
+            <div class="toast-content">
+              <span class="toast-title">Saved</span>
+              <p class="toast-text">Your changes have been saved.</p>
+            </div>
+          </div>
+          <div class="toast toast-danger">
+            <div class="toast-content">
+              <span class="toast-title">Error</span>
+              <p class="toast-text">Could not connect to the server.</p>
+            </div>
+          </div>
+          <div class="toast toast-warning">
+            <div class="toast-content">
+              <span class="toast-title">Warning</span>
+              <p class="toast-text">Your session expires in 5 minutes.</p>
+            </div>
+          </div>
+          <div class="toast toast-info">
+            <div class="toast-content">
+              <span class="toast-title">Information</span>
+              <p class="toast-text">A new version is available.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Live demo</h3>
+        <p>Click a button. Toasts appear in the top-right corner and auto-dismiss after 3 seconds.</p>
+        <div class="cluster">
+          <button type="button" class="btn btn-success" onclick="ksToast('success', 'Saved', 'Your changes have been saved successfully.')">Success toast</button>
+          <button type="button" class="btn btn-danger" onclick="ksToast('danger', 'Error', 'Something went wrong. Please try again.')">Danger toast</button>
+          <button type="button" class="btn" onclick="ksToast('warning', 'Warning', 'Your session expires soon.')">Warning toast</button>
+          <button type="button" class="btn" onclick="ksToast('info', 'Information', 'A new update is ready to install.')">Info toast</button>
+        </div>
+
+        <div class="toast-container toast-container-top-right" id="toast-demo-container" aria-live="polite" aria-atomic="false"></div>
       </article>
     </section>
 
@@ -1197,7 +1632,9 @@
   <script>
     (function () {
       var html = document.documentElement;
-      var buttons = document.querySelectorAll('.ks-theme-switcher button');
+
+      /* Theme switcher */
+      var themeButtons = document.querySelectorAll('.ks-theme-switcher button');
 
       function applyTheme(theme) {
         if (theme === 'auto') {
@@ -1205,27 +1642,23 @@
         } else {
           html.setAttribute('data-love-theme', theme);
         }
-        buttons.forEach(function (btn) {
+        themeButtons.forEach(function (btn) {
           btn.setAttribute('aria-pressed', btn.dataset.theme === theme ? 'true' : 'false');
         });
         try { localStorage.setItem('love-theme', theme); } catch (e) {}
       }
 
-      var saved = null;
-      try { saved = localStorage.getItem('love-theme'); } catch (e) {}
-      if (saved) {
-        applyTheme(saved);
-      } else {
-        var current = html.getAttribute('data-love-theme') || 'auto';
-        applyTheme(current);
-      }
+      var savedTheme = null;
+      try { savedTheme = localStorage.getItem('love-theme'); } catch (e) {}
+      applyTheme(savedTheme || html.getAttribute('data-love-theme') || 'auto');
 
-      buttons.forEach(function (btn) {
+      themeButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           applyTheme(btn.dataset.theme);
         });
       });
 
+      /* Button group */
       var groupButtons = document.querySelectorAll('.btn-group .btn');
       groupButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -1233,6 +1666,69 @@
           btn.setAttribute('aria-pressed', 'true');
         });
       });
+
+      /* Tabs */
+      document.querySelectorAll('[data-tabs]').forEach(function (tabsRoot) {
+        var tabs = tabsRoot.querySelectorAll('.tab');
+        var panels = tabsRoot.querySelectorAll('.tab-panel');
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+            tab.setAttribute('aria-selected', 'true');
+            panels.forEach(function (p) { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
+          });
+        });
+      });
+
+      /* Dropdowns */
+      document.querySelectorAll('[data-dropdown]').forEach(function (root) {
+        var trigger = root.querySelector('.dropdown-trigger');
+        var menu = root.querySelector('.dropdown-menu');
+        if (!trigger || !menu) return;
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = !menu.hidden;
+          menu.hidden = isOpen;
+          trigger.setAttribute('aria-expanded', String(!isOpen));
+        });
+        document.addEventListener('click', function (e) {
+          if (!root.contains(e.target)) {
+            menu.hidden = true;
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            menu.hidden = true;
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      /* Toast spawning */
+      window.ksToast = function (variant, title, text) {
+        var container = document.getElementById('toast-demo-container');
+        if (!container) return;
+        var toast = document.createElement('div');
+        toast.className = 'toast toast-' + variant;
+        toast.setAttribute('role', 'status');
+        toast.innerHTML =
+          '<div class="toast-content">' +
+            '<span class="toast-title">' + title + '</span>' +
+            '<p class="toast-text">' + text + '</p>' +
+          '</div>' +
+          '<button type="button" class="toast-close" aria-label="Close">×</button>';
+        container.appendChild(toast);
+
+        var closeBtn = toast.querySelector('.toast-close');
+        function dismiss() {
+          toast.classList.add('is-leaving');
+          toast.addEventListener('animationend', function () { toast.remove(); }, { once: true });
+          setTimeout(function () { if (toast.parentNode) toast.remove(); }, 500);
+        }
+        closeBtn.addEventListener('click', dismiss);
+        setTimeout(dismiss, 3000);
+      };
     })();
   </script>
 

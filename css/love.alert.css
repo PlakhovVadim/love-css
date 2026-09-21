@@ -1,0 +1,142 @@
+/*! Love.css alert | MIT License | github.com/PlakhovVadim/love-css */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--love-space-3);
+  padding: var(--love-space-3) var(--love-space-4);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  background-color: var(--love-bg-subtle);
+  border: 1px solid var(--love-border);
+  border-left: 4px solid var(--love-border-strong);
+  border-radius: var(--love-radius-none);
+  animation: love-fade-in var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+.alert-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.alert-title {
+  display: block;
+  margin: 0 0 var(--love-space-1);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+}
+
+.alert-text {
+  margin: 0;
+  color: var(--love-text);
+}
+
+.alert-text:last-child {
+  margin-bottom: 0;
+}
+
+.alert-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  font-size: var(--love-font-size-lg);
+  line-height: 1;
+  color: var(--love-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--love-radius-none);
+  cursor: pointer;
+  transition: color var(--love-duration-fast) var(--love-ease-default),
+              background-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.alert-close:hover {
+  color: var(--love-text);
+  background-color: var(--love-border);
+}
+
+.alert-close:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* Variants */
+
+.alert-success {
+  color: var(--love-text);
+  background-color: var(--love-success-subtle);
+  border-color: var(--love-success-subtle);
+  border-left-color: var(--love-success);
+}
+
+.alert-success .alert-title {
+  color: var(--love-success);
+}
+
+.alert-danger {
+  color: var(--love-text);
+  background-color: var(--love-danger-subtle);
+  border-color: var(--love-danger-subtle);
+  border-left-color: var(--love-danger);
+}
+
+.alert-danger .alert-title {
+  color: var(--love-danger);
+}
+
+.alert-warning {
+  color: var(--love-text);
+  background-color: var(--love-warning-subtle);
+  border-color: var(--love-warning-subtle);
+  border-left-color: var(--love-warning);
+}
+
+.alert-warning .alert-title {
+  color: var(--love-warning);
+}
+
+.alert-info {
+  color: var(--love-text);
+  background-color: var(--love-primary-subtle);
+  border-color: var(--love-primary-subtle);
+  border-left-color: var(--love-primary);
+}
+
+.alert-info .alert-title {
+  color: var(--love-primary);
+}
+
+/* Borderless — no left accent, just colored background */
+
+.alert-solid {
+  border-left-width: 1px;
+}
+
+/* Dismissible — extra padding to accommodate the close button */
+
+.alert-dismissible {
+  position: relative;
+  padding-right: var(--love-space-10);
+}
+
+.alert-dismissible .alert-close {
+  position: absolute;
+  top: var(--love-space-2);
+  right: var(--love-space-2);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .alert {
+    animation: none;
+  }
+  .alert-close {
+    transition: none;
+  }
+}

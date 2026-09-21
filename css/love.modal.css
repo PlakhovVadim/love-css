@@ -1,0 +1,141 @@
+/*! Love.css modal | MIT License | github.com/PlakhovVadim/love-css */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: calc(100% - var(--love-space-8));
+  max-width: 32rem;
+  max-height: calc(100vh - var(--love-space-8));
+  padding: 0;
+  color: var(--love-text);
+  background-color: var(--love-bg-elevated);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+  box-shadow: var(--love-shadow-lg);
+  overflow: hidden;
+  animation: love-scale-in var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+.modal:not([open]) {
+  display: none;
+}
+
+.modal::backdrop {
+  background-color: oklch(0 0 0 / 0.5);
+  animation: love-fade-in var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--love-space-3);
+  padding: var(--love-space-4) var(--love-space-6);
+  border-bottom: 1px solid var(--love-border);
+}
+
+.modal-title {
+  margin: 0;
+  font-size: var(--love-font-size-lg);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+}
+
+.modal-body {
+  padding: var(--love-space-6);
+  overflow-y: auto;
+  max-height: calc(100vh - 12rem);
+}
+
+.modal-body:last-child {
+  padding-bottom: var(--love-space-6);
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--love-space-2);
+  padding: var(--love-space-4) var(--love-space-6);
+  border-top: 1px solid var(--love-border);
+  background-color: var(--love-bg-subtle);
+}
+
+.modal-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: var(--love-font-size-lg);
+  line-height: 1;
+  color: var(--love-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--love-radius-none);
+  cursor: pointer;
+  transition: color var(--love-duration-fast) var(--love-ease-default),
+              background-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.modal-close:hover {
+  color: var(--love-text);
+  background-color: var(--love-bg-subtle);
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* Sizes */
+
+.modal-sm { max-width: 24rem; }
+.modal-lg { max-width: 48rem; }
+.modal-xl { max-width: 64rem; }
+.modal-full { max-width: calc(100% - var(--love-space-4)); }
+
+/* Drawer — slides from the side */
+
+.modal-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  height: 100vh;
+  max-height: 100vh;
+  width: 24rem;
+  max-width: 100vw;
+  animation: love-slide-in-right var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+.modal-drawer-left {
+  inset: 0 auto 0 0;
+  animation: love-slide-in-left var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+@keyframes love-slide-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes love-slide-in-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal::backdrop,
+  .modal-drawer,
+  .modal-drawer-left {
+    animation: none;
+  }
+  .modal-close {
+    transition: none;
+  }
+}

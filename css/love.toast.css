@@ -1,0 +1,147 @@
+/*! Love.css toast | MIT License | github.com/PlakhovVadim/love-css */
+
+.toast-container {
+  position: fixed;
+  z-index: var(--love-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--love-space-2);
+  width: 100%;
+  max-width: 24rem;
+  padding: var(--love-space-4);
+  pointer-events: none;
+}
+
+.toast-container-top-right {
+  top: 0;
+  right: 0;
+}
+
+.toast-container-top-left {
+  top: 0;
+  left: 0;
+}
+
+.toast-container-top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container-bottom-right {
+  bottom: 0;
+  right: 0;
+  flex-direction: column-reverse;
+}
+
+.toast-container-bottom-left {
+  bottom: 0;
+  left: 0;
+  flex-direction: column-reverse;
+}
+
+.toast-container-bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
+
+/* Toast element */
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--love-space-3);
+  padding: var(--love-space-3) var(--love-space-4);
+  font-size: var(--love-font-size-sm);
+  color: var(--love-text);
+  background-color: var(--love-bg-elevated);
+  border: 1px solid var(--love-border);
+  border-left: 4px solid var(--love-border-strong);
+  border-radius: var(--love-radius-none);
+  box-shadow: var(--love-shadow-md);
+  pointer-events: auto;
+  animation: love-slide-down var(--love-duration-normal) var(--love-ease-out) both;
+}
+
+.toast.is-leaving {
+  animation: love-fade-out var(--love-duration-fast) var(--love-ease-in) both;
+}
+
+.toast-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.toast-title {
+  display: block;
+  margin: 0 0 var(--love-space-1);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+}
+
+.toast-text {
+  margin: 0;
+  color: var(--love-text);
+}
+
+.toast-text:last-child {
+  margin-bottom: 0;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  font-size: var(--love-font-size-base);
+  line-height: 1;
+  color: var(--love-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--love-radius-none);
+  cursor: pointer;
+  transition: color var(--love-duration-fast) var(--love-ease-default),
+              background-color var(--love-duration-fast) var(--love-ease-default);
+}
+
+.toast-close:hover {
+  color: var(--love-text);
+  background-color: var(--love-bg-subtle);
+}
+
+.toast-close:focus-visible {
+  outline: 2px solid var(--love-focus);
+  outline-offset: 2px;
+}
+
+/* Variants */
+
+.toast-success { border-left-color: var(--love-success); }
+.toast-success .toast-title { color: var(--love-success); }
+
+.toast-danger { border-left-color: var(--love-danger); }
+.toast-danger .toast-title { color: var(--love-danger); }
+
+.toast-warning { border-left-color: var(--love-warning); }
+.toast-warning .toast-title { color: var(--love-warning); }
+
+.toast-info { border-left-color: var(--love-primary); }
+.toast-info .toast-title { color: var(--love-primary); }
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .toast,
+  .toast.is-leaving {
+    animation: none;
+  }
+  .toast-close {
+    transition: none;
+  }
+}

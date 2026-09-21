@@ -17,8 +17,6 @@ body {
   min-height: 100vh;
 }
 
-/* Headings */
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--love-font-weight-semibold);
   line-height: var(--love-line-height-tight);
@@ -45,8 +43,6 @@ h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0;
 }
 
-/* Paragraphs */
-
 p {
   margin-top: 0;
   margin-bottom: var(--love-space-4);
@@ -55,8 +51,6 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
-
-/* Links */
 
 a {
   color: var(--love-link);
@@ -77,8 +71,6 @@ a:focus-visible {
   outline: 2px solid var(--love-focus);
   outline-offset: 2px;
 }
-
-/* Lists */
 
 ul, ol {
   margin-top: 0;
@@ -117,8 +109,6 @@ dd {
   color: var(--love-text-muted);
 }
 
-/* Blockquotes */
-
 blockquote {
   margin: var(--love-space-4) 0;
   padding: var(--love-space-3) var(--love-space-6);
@@ -145,8 +135,6 @@ q {
 cite {
   font-style: italic;
 }
-
-/* Code */
 
 code, kbd, samp, pre {
   font-family: var(--love-font-mono);
@@ -179,8 +167,6 @@ kbd {
   border: 1px solid var(--love-border);
   font-size: 0.85em;
 }
-
-/* Inline semantic elements */
 
 strong, b {
   font-weight: var(--love-font-weight-semibold);
@@ -219,8 +205,6 @@ sub, sup {
   font-size: 0.75em;
 }
 
-/* Media */
-
 img, video, canvas, svg, iframe {
   max-width: 100%;
   height: auto;
@@ -237,15 +221,11 @@ figcaption {
   color: var(--love-text-muted);
 }
 
-/* Horizontal rule */
-
 hr {
   margin: var(--love-space-8) 0;
   border: 0;
   border-top: 1px solid var(--love-border);
 }
-
-/* Interactive */
 
 details {
   margin: var(--love-space-4) 0;
@@ -262,8 +242,6 @@ summary:focus-visible {
   outline-offset: 2px;
 }
 
-/* Misc */
-
 address {
   font-style: normal;
   margin: var(--love-space-4) 0;
@@ -277,8 +255,6 @@ time {
   background-color: var(--love-grape);
   color: var(--love-text-inverse);
 }
-
-/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
