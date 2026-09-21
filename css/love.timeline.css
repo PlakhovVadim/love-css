@@ -1,0 +1,192 @@
+/*! Love.css timeline | MIT License | github.com/PlakhovVadim/love-css */
+
+.timeline {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  position: relative;
+  display: block;
+  padding-left: var(--love-space-8);
+  padding-bottom: var(--love-space-6);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical connector line */
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0.4375rem;
+  top: 1.25rem;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--love-border);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* Dot */
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--love-bg-elevated);
+  border: 2px solid var(--love-border-strong);
+  border-radius: var(--love-radius-full);
+  z-index: 1;
+}
+
+/* Colored markers */
+
+.timeline-marker-primary {
+  background-color: var(--love-primary);
+  border-color: var(--love-primary);
+}
+
+.timeline-marker-success {
+  background-color: var(--love-success);
+  border-color: var(--love-success);
+}
+
+.timeline-marker-danger {
+  background-color: var(--love-danger);
+  border-color: var(--love-danger);
+}
+
+.timeline-marker-warning {
+  background-color: var(--love-warning);
+  border-color: var(--love-warning);
+}
+
+/* Content block */
+
+.timeline-content {
+  display: block;
+}
+
+.timeline-time {
+  display: block;
+  margin-bottom: var(--love-space-1);
+  font-size: var(--love-font-size-xs);
+  font-weight: var(--love-font-weight-medium);
+  color: var(--love-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--love-letter-spacing-wide);
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-title {
+  margin: 0 0 var(--love-space-1);
+  font-size: var(--love-font-size-base);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text);
+}
+
+.timeline-text {
+  margin: 0;
+  font-size: var(--love-font-size-sm);
+  line-height: var(--love-line-height-base);
+  color: var(--love-text-muted);
+}
+
+.timeline-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Card-style item */
+
+.timeline-card .timeline-content {
+  padding: var(--love-space-3) var(--love-space-4);
+  background-color: var(--love-bg-elevated);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+}
+
+/* Horizontal timeline */
+
+.timeline-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: var(--love-space-4);
+  overflow-x: auto;
+  padding-bottom: var(--love-space-3);
+}
+
+.timeline-horizontal .timeline-item {
+  flex: 0 0 auto;
+  min-width: 14rem;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-top: var(--love-space-8);
+}
+
+.timeline-horizontal .timeline-item::before {
+  left: 1.25rem;
+  right: 0;
+  top: 0.4375rem;
+  bottom: auto;
+  width: auto;
+  height: 2px;
+}
+
+.timeline-horizontal .timeline-marker {
+  top: 0;
+  left: 0.25rem;
+}
+
+/* Alternating timeline — content left and right of the line */
+
+.timeline-alternating .timeline-item {
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+}
+
+.timeline-alternating .timeline-item:nth-child(odd) {
+  padding-right: var(--love-space-8);
+  text-align: right;
+}
+
+.timeline-alternating .timeline-item:nth-child(even) {
+  margin-left: 50%;
+  padding-left: var(--love-space-8);
+}
+
+.timeline-alternating .timeline-item::before {
+  left: 100%;
+  top: 0.25rem;
+}
+
+.timeline-alternating .timeline-item:nth-child(even)::before {
+  left: 0;
+}
+
+.timeline-alternating .timeline-marker {
+  left: calc(100% - 0.5rem);
+}
+
+.timeline-alternating .timeline-item:nth-child(even) .timeline-marker {
+  left: -0.5rem;
+}
+
+/* Reduced motion — no animations on timeline itself */
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item::before {
+    transition: none;
+  }
+}

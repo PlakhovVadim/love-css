@@ -1,0 +1,127 @@
+/*! Love.css stat | MIT License | github.com/PlakhovVadim/love-css */
+
+.stat {
+  display: block;
+  padding: var(--love-space-4);
+  background-color: var(--love-bg-elevated);
+  border: 1px solid var(--love-border);
+  border-radius: var(--love-radius-none);
+}
+
+.stat-label {
+  display: block;
+  margin: 0 0 var(--love-space-1);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  color: var(--love-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--love-letter-spacing-wide);
+}
+
+.stat-value {
+  display: block;
+  font-size: var(--love-font-size-3xl);
+  font-weight: var(--love-font-weight-semibold);
+  line-height: var(--love-line-height-tight);
+  color: var(--love-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value-lg {
+  font-size: var(--love-font-size-4xl);
+}
+
+.stat-value-sm {
+  font-size: var(--love-font-size-xl);
+}
+
+.stat-suffix {
+  margin-left: var(--love-space-1);
+  font-size: var(--love-font-size-base);
+  font-weight: var(--love-font-weight-normal);
+  color: var(--love-text-muted);
+}
+
+/* Trend indicator */
+
+.stat-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--love-space-1);
+  margin-top: var(--love-space-2);
+  font-size: var(--love-font-size-sm);
+  font-weight: var(--love-font-weight-medium);
+  color: var(--love-text-muted);
+}
+
+.stat-trend-up   { color: var(--love-success); }
+.stat-trend-down { color: var(--love-danger); }
+
+.stat-trend-up::before   { content: "▲"; font-size: 0.75em; }
+.stat-trend-down::before { content: "▼"; font-size: 0.75em; }
+
+/* With an icon or avatar on the left */
+
+.stat-with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--love-space-3);
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--love-font-size-xl);
+  color: var(--love-text-inverse);
+  background-color: var(--love-primary);
+  border-radius: var(--love-radius-none);
+}
+
+.stat-icon-success { background-color: var(--love-success); }
+.stat-icon-danger  { background-color: var(--love-danger); }
+.stat-icon-warning { background-color: var(--love-text); }
+.stat-icon-neutral { background-color: var(--love-text-muted); }
+
+.stat-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Compact — for dense dashboards */
+
+.stat-compact {
+  padding: var(--love-space-3);
+}
+
+.stat-compact .stat-value {
+  font-size: var(--love-font-size-2xl);
+}
+
+/* Centered */
+
+.stat-center {
+  text-align: center;
+}
+
+/* Bordered top accents */
+
+.stat-accent {
+  border-top: 3px solid var(--love-primary);
+}
+
+.stat-accent-success { border-top: 3px solid var(--love-success); }
+.stat-accent-danger  { border-top: 3px solid var(--love-danger); }
+.stat-accent-warning { border-top: 3px solid var(--love-warning); }
+
+/* Description text under the value */
+
+.stat-description {
+  margin-top: var(--love-space-1);
+  margin-bottom: 0;
+  font-size: var(--love-font-size-xs);
+  color: var(--love-text-muted);
+}

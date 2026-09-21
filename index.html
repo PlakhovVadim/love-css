@@ -27,6 +27,11 @@
   <link rel="stylesheet" href="css/love.breadcrumbs.css">
   <link rel="stylesheet" href="css/love.tooltip.css">
   <link rel="stylesheet" href="css/love.accordion.css">
+  <link rel="stylesheet" href="css/love.avatar.css">
+  <link rel="stylesheet" href="css/love.progress.css">
+  <link rel="stylesheet" href="css/love.stat.css">
+  <link rel="stylesheet" href="css/love.empty-state.css">
+  <link rel="stylesheet" href="css/love.timeline.css">
   <link rel="stylesheet" href="css/love.layout.css">
   <link rel="stylesheet" href="css/love.utilities.css">
   <link rel="stylesheet" href="css/love.animations.css">
@@ -108,6 +113,11 @@
       <li><a href="#breadcrumbs">Breadcrumbs</a></li>
       <li><a href="#tooltips">Tooltips</a></li>
       <li><a href="#accordions">Accordions</a></li>
+      <li><a href="#avatars">Avatars</a></li>
+      <li><a href="#progress">Progress</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#empty-states">Empty states</a></li>
+      <li><a href="#timelines">Timelines</a></li>
       <li><a href="#layout">Layout</a></li>
       <li><a href="#utilities">Utilities</a></li>
       <li><a href="#animations">Animations</a></li>
@@ -1007,6 +1017,12 @@
               <p class="alert-text">A new version of Love.css is available.</p>
             </div>
           </div>
+          <div class="alert">
+            <div class="alert-content">
+              <span class="alert-title">Neutral</span>
+              <p class="alert-text">This is a neutral alert with no variant applied.</p>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -1567,9 +1583,7 @@
 
       <article>
         <h3>Placement</h3>
-        <p>
-          Hover or focus each trigger to see the tooltip.
-        </p>
+        <p>Hover or focus each trigger to see the tooltip.</p>
         <div class="cluster">
           <button type="button" class="btn tooltip" data-tooltip="This tooltip appears above">Top (default)</button>
           <button type="button" class="btn tooltip tooltip-bottom" data-tooltip="This tooltip appears below">Bottom</button>
@@ -1650,6 +1664,485 @@
             <div class="accordion-panel"><p>With spacing between them.</p></div>
           </details>
         </div>
+      </article>
+    </section>
+
+    <section id="avatars">
+      <h2>Avatars</h2>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="cluster">
+          <span class="avatar avatar-xs">XS</span>
+          <span class="avatar avatar-sm">SM</span>
+          <span class="avatar">MD</span>
+          <span class="avatar avatar-lg">LG</span>
+          <span class="avatar avatar-xl">XL</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Shapes</h3>
+        <div class="cluster">
+          <span class="avatar">Default</span>
+          <span class="avatar avatar-rounded">Rounded</span>
+          <span class="avatar avatar-circle">Circle</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Colors</h3>
+        <div class="cluster">
+          <span class="avatar avatar-primary">A</span>
+          <span class="avatar avatar-success">B</span>
+          <span class="avatar avatar-danger">C</span>
+          <span class="avatar avatar-warning">D</span>
+          <span class="avatar avatar-neutral">E</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>With image</h3>
+        <div class="cluster">
+          <span class="avatar avatar-circle">
+            <img src="assets/img/placeholder.svg" alt="User avatar">
+          </span>
+          <span class="avatar avatar-lg avatar-circle">
+            <img src="assets/img/placeholder.svg" alt="User avatar">
+          </span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Status indicators</h3>
+        <div class="cluster">
+          <span class="avatar-wrap">
+            <span class="avatar avatar-circle">A</span>
+            <span class="avatar-status online"></span>
+          </span>
+          <span class="avatar-wrap">
+            <span class="avatar avatar-circle">B</span>
+            <span class="avatar-status busy"></span>
+          </span>
+          <span class="avatar-wrap">
+            <span class="avatar avatar-circle">C</span>
+            <span class="avatar-status away"></span>
+          </span>
+          <span class="avatar-wrap">
+            <span class="avatar avatar-circle">D</span>
+            <span class="avatar-status offline"></span>
+          </span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Group</h3>
+        <div class="avatar-group">
+          <span class="avatar avatar-circle">A</span>
+          <span class="avatar avatar-circle">B</span>
+          <span class="avatar avatar-circle">C</span>
+          <span class="avatar avatar-circle">D</span>
+          <span class="avatar-more avatar-circle">+5</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>With name</h3>
+        <div class="cluster">
+          <span class="avatar-with-name">
+            <span class="avatar avatar-circle">A</span>
+            <span class="avatar-name">
+              <span class="avatar-name-primary">Alice Johnson</span>
+              <span class="avatar-name-secondary">Administrator</span>
+            </span>
+          </span>
+          <span class="avatar-with-name">
+            <span class="avatar avatar-circle avatar-success">B</span>
+            <span class="avatar-name">
+              <span class="avatar-name-primary">Bob Smith</span>
+              <span class="avatar-name-secondary">Editor</span>
+            </span>
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <section id="progress">
+      <h2>Progress</h2>
+
+      <article>
+        <h3>Basic bars</h3>
+        <div class="stack-3">
+          <div class="progress"><span class="progress-bar" style="width: 25%"></span></div>
+          <div class="progress"><span class="progress-bar" style="width: 50%"></span></div>
+          <div class="progress"><span class="progress-bar" style="width: 75%"></span></div>
+          <div class="progress"><span class="progress-bar" style="width: 100%"></span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Colors</h3>
+        <div class="stack-3">
+          <div class="progress progress-success"><span class="progress-bar" style="width: 80%"></span></div>
+          <div class="progress progress-danger"><span class="progress-bar" style="width: 40%"></span></div>
+          <div class="progress progress-warning"><span class="progress-bar" style="width: 60%"></span></div>
+          <div class="progress progress-grape"><span class="progress-bar" style="width: 55%"></span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Sizes</h3>
+        <div class="stack-3">
+          <div class="progress progress-sm"><span class="progress-bar" style="width: 60%"></span></div>
+          <div class="progress"><span class="progress-bar" style="width: 60%"></span></div>
+          <div class="progress progress-lg"><span class="progress-bar" style="width: 60%"></span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>With label</h3>
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span class="progress-label">Uploading files</span>
+            <span class="progress-value">72%</span>
+          </div>
+          <div class="progress"><span class="progress-bar" style="width: 72%"></span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Tall with value inside</h3>
+        <div class="progress progress-tall progress-grape">
+          <span class="progress-bar" style="width: 45%">45%</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Striped</h3>
+        <div class="stack-3">
+          <div class="progress progress-striped"><span class="progress-bar" style="width: 60%"></span></div>
+          <div class="progress progress-striped progress-striped-animated progress-success"><span class="progress-bar" style="width: 60%"></span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Indeterminate</h3>
+        <div class="progress progress-indeterminate"><span class="progress-bar"></span></div>
+      </article>
+
+      <article>
+        <h3>Stacked</h3>
+        <div class="progress progress-stacked">
+          <span class="progress-bar" style="width: 30%; background-color: var(--love-primary)"></span>
+          <span class="progress-bar" style="width: 25%; background-color: var(--love-success)"></span>
+          <span class="progress-bar" style="width: 20%; background-color: var(--love-warning)"></span>
+          <span class="progress-bar" style="width: 15%; background-color: var(--love-danger)"></span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Circular</h3>
+        <div class="cluster">
+          <div class="progress-circle" style="--value: 25"><span class="progress-circle-value">25%</span></div>
+          <div class="progress-circle" style="--value: 50"><span class="progress-circle-value">50%</span></div>
+          <div class="progress-circle" style="--value: 75"><span class="progress-circle-value">75%</span></div>
+          <div class="progress-circle" style="--value: 100"><span class="progress-circle-value">100%</span></div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Native <code>&lt;progress&gt;</code></h3>
+        <progress class="progress-native" value="70" max="100">70%</progress>
+      </article>
+    </section>
+
+    <section id="stats">
+      <h2>Stats</h2>
+
+      <article>
+        <h3>Basic</h3>
+        <div class="grid-4">
+          <div class="stat">
+            <span class="stat-label">Users</span>
+            <span class="stat-value">2,847</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Sessions</span>
+            <span class="stat-value">12.4k</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Conversion</span>
+            <span class="stat-value">3.2<span class="stat-suffix">%</span></span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Revenue</span>
+            <span class="stat-value">$48k</span>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>With trend</h3>
+        <div class="grid-2">
+          <div class="stat">
+            <span class="stat-label">Active users</span>
+            <span class="stat-value">1,204</span>
+            <span class="stat-trend stat-trend-up">+12.5% this week</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Bounce rate</span>
+            <span class="stat-value">42%</span>
+            <span class="stat-trend stat-trend-down">-3.1% this week</span>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>With icon</h3>
+        <div class="grid-3">
+          <div class="stat stat-with-icon">
+            <span class="stat-icon">↑</span>
+            <span class="stat-body">
+              <span class="stat-label">Traffic</span>
+              <span class="stat-value stat-value-sm">1.2M</span>
+            </span>
+          </div>
+          <div class="stat stat-with-icon">
+            <span class="stat-icon stat-icon-success">✓</span>
+            <span class="stat-body">
+              <span class="stat-label">Completed</span>
+              <span class="stat-value stat-value-sm">842</span>
+            </span>
+          </div>
+          <div class="stat stat-with-icon">
+            <span class="stat-icon stat-icon-danger">!</span>
+            <span class="stat-body">
+              <span class="stat-label">Errors</span>
+              <span class="stat-value stat-value-sm">12</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Accents and centered</h3>
+        <div class="grid-4">
+          <div class="stat stat-accent stat-center">
+            <span class="stat-label">Total</span>
+            <span class="stat-value stat-value-sm">148</span>
+            <p class="stat-description">All time</p>
+          </div>
+          <div class="stat stat-accent-success stat-center">
+            <span class="stat-label">Passing</span>
+            <span class="stat-value stat-value-sm">132</span>
+            <p class="stat-description">89% success rate</p>
+          </div>
+          <div class="stat stat-accent-danger stat-center">
+            <span class="stat-label">Failed</span>
+            <span class="stat-value stat-value-sm">16</span>
+            <p class="stat-description">Needs review</p>
+          </div>
+          <div class="stat stat-accent-warning stat-center">
+            <span class="stat-label">Pending</span>
+            <span class="stat-value stat-value-sm">4</span>
+            <p class="stat-description">In queue</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="empty-states">
+      <h2>Empty states</h2>
+
+      <article>
+        <h3>Basic</h3>
+        <div class="empty-state">
+          <div class="empty-state-icon">📂</div>
+          <h3 class="empty-state-title">No projects yet</h3>
+          <p class="empty-state-description">Get started by creating your first project. You can always change your mind later.</p>
+          <div class="empty-state-actions">
+            <button type="button" class="btn btn-primary">Create project</button>
+            <button type="button" class="btn btn-ghost">Learn more</button>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Bordered</h3>
+        <div class="empty-state empty-state-bordered">
+          <div class="empty-state-icon empty-state-icon-lg">🔍</div>
+          <h3 class="empty-state-title">No results found</h3>
+          <p class="empty-state-description">Try adjusting your filters or search terms. We couldn't find anything matching your query.</p>
+          <div class="empty-state-actions">
+            <button type="button" class="btn">Clear filters</button>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Compact — inside a card</h3>
+        <div class="card" style="max-width: 24rem;">
+          <div class="card-body">
+            <div class="empty-state empty-state-compact">
+              <div class="empty-state-icon">📭</div>
+              <h3 class="empty-state-title">Inbox empty</h3>
+              <p class="empty-state-description">You're all caught up.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>Danger variant</h3>
+        <div class="empty-state empty-state-danger">
+          <div class="empty-state-icon">⚠</div>
+          <h3 class="empty-state-title">Something went wrong</h3>
+          <p class="empty-state-description">We couldn't load this data. Please try again or contact support if the issue persists.</p>
+          <div class="empty-state-actions">
+            <button type="button" class="btn btn-danger">Retry</button>
+            <button type="button" class="btn btn-ghost">Contact support</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="timelines">
+      <h2>Timelines</h2>
+
+      <article>
+        <h3>Basic vertical</h3>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-primary"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">2 hours ago</span>
+              <h4 class="timeline-title">Project created</h4>
+              <p class="timeline-text">Alice created the project "Love.css v0.1" and invited three team members.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-success"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Yesterday</span>
+              <h4 class="timeline-title">First component added</h4>
+              <p class="timeline-text">The <code>button</code> module was finalized with six variants and four states.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-warning"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">3 days ago</span>
+              <h4 class="timeline-title">Design review</h4>
+              <p class="timeline-text">Bob flagged the grape accent color for the primary buttons. Discussed contrast ratios.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">1 week ago</span>
+              <h4 class="timeline-title">Repository initialized</h4>
+              <p class="timeline-text">Initial commit. Nothing but a README and a dream.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Card-style</h3>
+        <ul class="timeline">
+          <li class="timeline-item timeline-card">
+            <span class="timeline-marker timeline-marker-success"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Deployed</span>
+              <h4 class="timeline-title">v0.1.0 released</h4>
+              <p class="timeline-text">All 28 modules are in place. Registry and library are in sync.</p>
+            </div>
+          </li>
+          <li class="timeline-item timeline-card">
+            <span class="timeline-marker timeline-marker-primary"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">In progress</span>
+              <h4 class="timeline-title">Documentation</h4>
+              <p class="timeline-text">Writing per-module reference and example pages.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Horizontal</h3>
+        <ul class="timeline timeline-horizontal">
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-success"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Step 1</span>
+              <h4 class="timeline-title">Plan</h4>
+              <p class="timeline-text">Define scope and requirements.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-success"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Step 2</span>
+              <h4 class="timeline-title">Design</h4>
+              <p class="timeline-text">Wireframes and mockups.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-primary"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Step 3</span>
+              <h4 class="timeline-title">Build</h4>
+              <p class="timeline-text">Implementation in progress.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Step 4</span>
+              <h4 class="timeline-title">Launch</h4>
+              <p class="timeline-text">Not started.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Alternating</h3>
+        <ul class="timeline timeline-alternating">
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-primary"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Q1</span>
+              <h4 class="timeline-title">Research</h4>
+              <p class="timeline-text">Interviews and competitive analysis.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-success"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Q2</span>
+              <h4 class="timeline-title">Prototype</h4>
+              <p class="timeline-text">Clickable prototype tested with users.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker timeline-marker-warning"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Q3</span>
+              <h4 class="timeline-title">Beta</h4>
+              <p class="timeline-text">Closed beta with 50 users.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-content">
+              <span class="timeline-time">Q4</span>
+              <h4 class="timeline-title">General availability</h4>
+              <p class="timeline-text">Public launch.</p>
+            </div>
+          </li>
+        </ul>
       </article>
     </section>
 
