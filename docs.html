@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="en" data-love-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love.css — Documentation</title>
+
+  <link rel="stylesheet" href="css/love.reset.css">
+  <link rel="stylesheet" href="css/love.fonts.css">
+  <link rel="stylesheet" href="css/love.tokens.css">
+  <link rel="stylesheet" href="css/love.base.css">
+  <link rel="stylesheet" href="css/love.themes.css">
+  <link rel="stylesheet" href="css/love.layout.css">
+  <link rel="stylesheet" href="css/love.utilities.css">
+  <link rel="stylesheet" href="css/love.animations.css">
+  <link rel="stylesheet" href="css/love.button.css">
+  <link rel="stylesheet" href="css/love.card.css">
+  <link rel="stylesheet" href="css/love.form.css">
+  <link rel="stylesheet" href="css/love.table.css">
+  <link rel="stylesheet" href="css/love.alert.css">
+  <link rel="stylesheet" href="css/love.badge.css">
+  <link rel="stylesheet" href="css/love.spinner.css">
+  <link rel="stylesheet" href="css/love.skeleton.css">
+  <link rel="stylesheet" href="css/love.modal.css">
+  <link rel="stylesheet" href="css/love.tabs.css">
+  <link rel="stylesheet" href="css/love.dropdown.css">
+  <link rel="stylesheet" href="css/love.toast.css">
+  <link rel="stylesheet" href="css/love.pagination.css">
+  <link rel="stylesheet" href="css/love.breadcrumbs.css">
+  <link rel="stylesheet" href="css/love.tooltip.css">
+  <link rel="stylesheet" href="css/love.accordion.css">
+  <link rel="stylesheet" href="css/love.avatar.css">
+  <link rel="stylesheet" href="css/love.progress.css">
+  <link rel="stylesheet" href="css/love.stat.css">
+  <link rel="stylesheet" href="css/love.empty-state.css">
+  <link rel="stylesheet" href="css/love.timeline.css">
+  <link rel="stylesheet" href="css/love.overrides.css">
+
+  <script src="i18n.js" defer></script>
+</head>
+<body>
+
+<div class="container-lg p-0">
+  <div class="sidebar-lg">
+
+    <aside class="sticky top-0 max-h-screen overflow-y-auto self-start p-6 bg-subtle border-r">
+      <nav>
+        <h3 class="text-xs text-muted text-uppercase mt-0 mb-2" data-i18n="nav.foundations">Foundations</h3>
+        <ul class="text-sm mb-6" style="list-style: none; padding-left: 0;">
+          <li><a href="#tokens">Tokens</a></li>
+          <li><a href="#themes">Themes</a></li>
+          <li><a href="#fonts">Fonts</a></li>
+        </ul>
+
+        <h3 class="text-xs text-muted text-uppercase mt-6 mb-2" data-i18n="nav.core">Core</h3>
+        <ul class="text-sm mb-6" style="list-style: none; padding-left: 0;">
+          <li><a href="#reset">Reset</a></li>
+          <li><a href="#base">Base</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#utilities">Utilities</a></li>
+          <li><a href="#animations">Animations</a></li>
+        </ul>
+
+        <h3 class="text-xs text-muted text-uppercase mt-6 mb-2" data-i18n="nav.components">Components</h3>
+        <ul class="text-sm mb-6" style="list-style: none; padding-left: 0;">
+          <li><a href="#button">Button</a></li>
+          <li><a href="#card">Card</a></li>
+          <li><a href="#form">Form</a></li>
+          <li><a href="#table">Table</a></li>
+          <li><a href="#alert">Alert</a></li>
+          <li><a href="#badge">Badge</a></li>
+          <li><a href="#spinner">Spinner</a></li>
+          <li><a href="#skeleton">Skeleton</a></li>
+          <li><a href="#modal">Modal</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#toast">Toast</a></li>
+          <li><a href="#pagination">Pagination</a></li>
+          <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+          <li><a href="#tooltip">Tooltip</a></li>
+          <li><a href="#accordion">Accordion</a></li>
+          <li><a href="#avatar">Avatar</a></li>
+          <li><a href="#progress">Progress</a></li>
+          <li><a href="#stat">Stat</a></li>
+          <li><a href="#empty-state">Empty state</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+        </ul>
+
+        <h3 class="text-xs text-muted text-uppercase mt-6 mb-2" data-i18n="nav.extending">Extending</h3>
+        <ul class="text-sm" style="list-style: none; padding-left: 0;">
+          <li><a href="#overrides">Overrides</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="p-6">
+
+      <header class="cluster-between mb-8 border-b pb-6">
+        <div>
+          <h1 class="mt-0">Love.css</h1>
+          <p class="text-muted text-sm mb-0">
+            <a href="index.html">Kitchen sink</a> ·
+            <a href="https://github.com/PlakhovVadim/love-css">GitHub</a>
+          </p>
+        </div>
+        <div class="btn-group" role="group" aria-label="Language">
+          <button type="button" class="btn btn-sm" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="btn btn-sm" data-lang-btn="ru" aria-pressed="false">RU</button>
+        </div>
+      </header>
+
+      <section id="tokens" class="scroll-mt-8 mb-16">
+        <h2>Tokens</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.tokens.css" target="_blank" rel="noopener">css/love.tokens.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="tokens.overview.text">Tokens are CSS custom properties that hold every visual value in Love.css. No component hardcodes a color, radius, or spacing. Change a token and every place that uses it updates.</p>
+
+        <h4 data-i18n="tokens.levels.title">Three levels</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.level">Level</th>
+                <th data-i18n="common.purpose">Purpose</th>
+                <th data-i18n="common.example">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong data-i18n="tokens.levels.primitives">Primitives</strong></td>
+                <td data-i18n="tokens.levels.primitives.desc">Raw values, never change per theme.</td>
+                <td><code>--love-color-grape-600</code></td>
+              </tr>
+              <tr>
+                <td><strong data-i18n="tokens.levels.semantics">Semantic</strong></td>
+                <td data-i18n="tokens.levels.semantics.desc">Roles. Change between themes.</td>
+                <td><code>--love-bg</code>, <code>--love-text</code></td>
+              </tr>
+              <tr>
+                <td><strong data-i18n="tokens.levels.components">Component</strong></td>
+                <td data-i18n="tokens.levels.components.desc">Specific to one component.</td>
+                <td><code>--love-btn-radius</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="tokens.override.title">How to override</h4>
+        <p data-i18n-html="tokens.override.text">Put your rules in <code>love.overrides.css</code>. It loads last, so your values win without <code>!important</code>.</p>
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>:root {
+  --love-primary: oklch(0.55 0.20 300);
+  --love-btn-radius: 0;
+  --love-card-padding: var(--love-space-8);
+}</code></pre>
+
+        <h4 data-i18n="tokens.spacing.title">Spacing scale</h4>
+        <p data-i18n="tokens.spacing.text">Based on 0.25rem increments. Every gap, padding, and margin in the framework comes from here.</p>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th data-i18n="common.value">Value</th>
+                <th data-i18n="common.pixels">Pixels</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--love-space-1</code></td><td>0.25rem</td><td>4px</td></tr>
+              <tr><td><code>--love-space-2</code></td><td>0.5rem</td><td>8px</td></tr>
+              <tr><td><code>--love-space-4</code></td><td>1rem</td><td>16px</td></tr>
+              <tr><td><code>--love-space-6</code></td><td>1.5rem</td><td>24px</td></tr>
+              <tr><td><code>--love-space-8</code></td><td>2rem</td><td>32px</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.anatomy">Anatomy</h3>
+        <h4 data-i18n="tokens.oklch.title">Why oklch</h4>
+        <p data-i18n-html="tokens.oklch.text">Colors use <code>oklch()</code> instead of hex or rgb. Oklch is perceptually uniform: a change of 0.1 in lightness looks the same at any hue. This makes light/dark theme swaps trivial.</p>
+
+        <h4 data-i18n="tokens.three_levels.title">Why three levels</h4>
+        <p data-i18n="tokens.three_levels.text">Primitives give you a palette. Semantics give you roles. Components give you control points. Three levels let you change one thing without touching the rest.</p>
+      </section>
+
+      <section id="themes" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Themes</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.themes.css" target="_blank" rel="noopener">css/love.themes.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="themes.overview.text">Three themes: light, dark, and high-contrast. Themes only redefine semantic tokens. No component changes.</p>
+
+        <h4 data-i18n="themes.activating.title">Activating</h4>
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>&lt;html data-love-theme="dark"&gt;</code></pre>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.value">Value</th>
+                <th data-i18n="common.result">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>light</code></td><td data-i18n="themes.row.light">Light background, dark text.</td></tr>
+              <tr><td><code>dark</code></td><td data-i18n="themes.row.dark">Dark background, light text.</td></tr>
+              <tr><td><code>high-contrast</code></td><td data-i18n="themes.row.high_contrast">Pure black on white, black borders.</td></tr>
+              <tr><td>(no attribute)</td><td data-i18n-html="themes.row.no_attr">Follows <code>prefers-color-scheme</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.anatomy">Anatomy</h3>
+        <h4 data-i18n="themes.color_scheme.title">Why color-scheme</h4>
+        <p data-i18n-html="themes.color_scheme.text">Native form controls — <code>&lt;select&gt;</code>, <code>&lt;input type="date"&gt;</code>, scrollbars — are drawn by the browser. Setting <code>color-scheme: dark</code> tells the browser to use its dark palette. Without it, they stay bright white inside a dark page.</p>
+
+        <h3 class="text-primary" data-i18n="common.notes">Notes</h3>
+        <div class="alert alert-info">
+          <div class="alert-content">
+            <ul class="mb-0">
+              <li data-i18n-html="themes.notes.li1">Theme tokens are declared on <code>:root</code>, <code>[data-love-theme]</code>, and inside a <code>prefers-color-scheme</code> media query. Three ways to resolve — always check all three if a color looks wrong.</li>
+              <li data-i18n-html="themes.notes.li2">To add a custom theme, create <code>[data-love-theme="sepia"]</code> in <code>love.overrides.css</code> and override the same tokens.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="fonts" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Fonts</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.fonts.css" target="_blank" rel="noopener">css/love.fonts.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="fonts.overview.text">Space Grotesk, a variable font by Florian Karsten, under SIL Open Font License 1.1. One file covers all weights from 300 to 700.</p>
+
+        <h4 data-i18n="fonts.replacing.title">Replacing the font</h4>
+        <ol>
+          <li data-i18n-html="fonts.replacing.li1">Drop your font files into <code>assets/fonts/YourFont/</code>.</li>
+          <li data-i18n-html="fonts.replacing.li2">Add an <code>@font-face</code> block to <code>css/love.fonts.css</code>.</li>
+          <li data-i18n-html="fonts.replacing.li3">Update <code>--love-font-sans</code> in <code>love.tokens.css</code>.</li>
+        </ol>
+
+        <h4 data-i18n="fonts.swap.title">Why font-display: swap</h4>
+        <p data-i18n-html="fonts.swap.text">Without it, the browser shows blank text for up to three seconds. With <code>swap</code>, it renders the fallback font immediately and swaps when ready.</p>
+      </section>
+
+      <section id="reset" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Reset</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.reset.css" target="_blank" rel="noopener">css/love.reset.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="reset.overview.text">Combines normalize.css v8 with Eric Meyer's reset. Fixes cross-browser inconsistencies and removes default margins and paddings, so every browser starts from the same baseline.</p>
+
+        <h4 data-i18n="reset.does.title">What it does</h4>
+        <ul>
+          <li data-i18n-html="reset.does.li1"><code>box-sizing: border-box</code> globally.</li>
+          <li data-i18n="reset.does.li2">Removes all margins and paddings.</li>
+          <li data-i18n-html="reset.does.li3">Images responsive by default with <code>max-width: 100%</code>.</li>
+          <li data-i18n-html="reset.does.li4">Removes link decoration and color (styling is <code>base.css</code>).</li>
+          <li data-i18n="reset.does.li5">Normalizes form controls across browsers.</li>
+        </ul>
+      </section>
+
+      <section id="base" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Base</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.base.css" target="_blank" rel="noopener">css/love.base.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="base.overview.text">Base styles every bare HTML element. No classes required. Headings, paragraphs, lists, blockquotes, code, tables, figures — all get sensible defaults from tokens.</p>
+
+        <h4 data-i18n="base.what.title">What gets styled</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.element">Element</th>
+                <th data-i18n="common.default_styling">Default styling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>h1</code>–<code>h6</code></td><td data-i18n="base.row.headings">Semibold, tight line-height, growing top margin.</td></tr>
+              <tr><td><code>p</code></td><td data-i18n="base.row.p">Bottom margin of space-4.</td></tr>
+              <tr><td><code>a</code></td><td data-i18n="base.row.a">Primary color, underline on hover, grape for :visited.</td></tr>
+              <tr><td><code>ul</code>, <code>ol</code></td><td data-i18n="base.row.lists">Restored markers, left padding.</td></tr>
+              <tr><td><code>code</code>, <code>pre</code></td><td data-i18n="base.row.code">Monospace, subtle background.</td></tr>
+              <tr><td><code>blockquote</code></td><td data-i18n="base.row.blockquote">Left border, muted, italic.</td></tr>
+              <tr><td><code>::selection</code></td><td data-i18n="base.row.selection">Grape background, white text.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.notes">Notes</h3>
+        <div class="alert alert-info">
+          <div class="alert-content">
+            <ul class="mb-0">
+              <li data-i18n-html="base.notes.li1"><code>base.css</code> targets elements, not classes. For one-off changes, use a class in overrides, not a new base rule.</li>
+              <li data-i18n-html="base.notes.li2">The <code>prefers-reduced-motion</code> block at the bottom disables all animations globally, including anything you add in overrides.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="layout" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Layout</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.layout.css" target="_blank" rel="noopener">css/love.layout.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="layout.overview.text">Layout primitives for page structure. No styling, only positioning. All responsive by default.</p>
+
+        <h4 data-i18n="common.api">API</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.purpose">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.container</code></td><td data-i18n="layout.row.container">Centered, max-width 72rem, horizontal padding.</td></tr>
+              <tr><td><code>.container-sm</code>, <code>.container-lg</code></td><td data-i18n="layout.row.container_variants">Narrow (48rem) and wide (88rem) containers.</td></tr>
+              <tr><td><code>.container-fluid</code></td><td data-i18n="layout.row.container_fluid">Full width with padding.</td></tr>
+              <tr><td><code>.row</code></td><td data-i18n="layout.row.row">Horizontal flex with gap and wrap.</td></tr>
+              <tr><td><code>.col</code></td><td data-i18n="layout.row.col">Equal-width column.</td></tr>
+              <tr><td><code>.col-1</code>–<code>.col-12</code></td><td data-i18n="layout.row.col_n">Fixed-fraction columns.</td></tr>
+              <tr><td><code>.stack</code></td><td data-i18n="layout.row.stack">Vertical flow with gap.</td></tr>
+              <tr><td><code>.cluster</code>, <code>.cluster-between</code>, <code>.cluster-end</code></td><td data-i18n="layout.row.cluster">Horizontal group that wraps.</td></tr>
+              <tr><td><code>.center</code></td><td data-i18n="layout.row.center">Centers a single child both axes.</td></tr>
+              <tr><td><code>.sidebar</code>, <code>.sidebar-lg</code>, <code>.sidebar-wide</code>, <code>.sidebar-right</code></td><td data-i18n="layout.row.sidebar">Two-column grids. Collapse on mobile.</td></tr>
+              <tr><td><code>.grid-auto</code>, <code>.grid-auto-sm</code></td><td data-i18n="layout.row.grid_auto">Auto-fit grids with minimum cell sizes.</td></tr>
+              <tr><td><code>.grid-2</code>, <code>.grid-3</code>, <code>.grid-4</code>, <code>.grid-6</code></td><td data-i18n="layout.row.grid_n">Fixed count grids.</td></tr>
+              <tr><td><code>.aspect-square</code>, <code>.aspect-video</code>, <code>.aspect-photo</code>, <code>.aspect-wide</code></td><td data-i18n="layout.row.aspect">Aspect ratio helpers.</td></tr>
+              <tr><td><code>.full-bleed</code></td><td data-i18n="layout.row.full_bleed">Escapes container padding to full viewport width.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="utilities" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Utilities</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.utilities.css" target="_blank" rel="noopener">css/love.utilities.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="utilities.overview.text">Single-purpose classes for one-off adjustments. Use them when writing a new CSS rule would be overkill. Do not use them for everything — the framework is not utility-first.</p>
+
+        <h4 data-i18n="utilities.categories.title">Categories</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.prefix">Prefix</th>
+                <th data-i18n="common.purpose">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.p-*</code>, <code>.px-*</code>, <code>.py-*</code></td><td data-i18n="utilities.row.padding">Padding.</td></tr>
+              <tr><td><code>.m-*</code>, <code>.mt-*</code>, <code>.mb-*</code>, <code>.ms-*</code>, <code>.me-*</code>, <code>.mx-auto</code></td><td data-i18n="utilities.row.margin">Margin.</td></tr>
+              <tr><td><code>.gap-*</code></td><td data-i18n="utilities.row.gap">Gap for flex and grid.</td></tr>
+              <tr><td><code>.flex</code>, <code>.inline-flex</code>, <code>.grid</code>, <code>.block</code></td><td data-i18n="utilities.row.display">Display.</td></tr>
+              <tr><td><code>.relative</code>, <code>.absolute</code>, <code>.sticky</code>, <code>.fixed</code></td><td data-i18n="utilities.row.position">Position.</td></tr>
+              <tr><td><code>.top-0</code>, <code>.inset-0</code></td><td data-i18n="utilities.row.coordinates">Coordinates.</td></tr>
+              <tr><td><code>.z-*</code></td><td data-i18n="utilities.row.zindex">Z-index.</td></tr>
+              <tr><td><code>.items-*</code>, <code>.justify-*</code>, <code>.self-*</code></td><td data-i18n="utilities.row.alignment">Alignment.</td></tr>
+              <tr><td><code>.w-*</code>, <code>.h-*</code>, <code>.min-h-screen</code></td><td data-i18n="utilities.row.sizing">Sizing.</td></tr>
+              <tr><td><code>.text-*</code></td><td data-i18n="utilities.row.text">Text alignment, color, size, weight, transform.</td></tr>
+              <tr><td><code>.border</code>, <code>.border-t</code>, <code>.border-b</code>, <code>.border-muted</code></td><td data-i18n="utilities.row.border">Borders.</td></tr>
+              <tr><td><code>.rounded-*</code></td><td data-i18n="utilities.row.radius">Corner radius.</td></tr>
+              <tr><td><code>.overflow-*</code></td><td data-i18n="utilities.row.overflow">Overflow handling.</td></tr>
+              <tr><td><code>.hide</code>, <code>.show</code>, <code>.sr-only</code></td><td data-i18n="utilities.row.visibility">Visibility.</td></tr>
+              <tr><td><code>.scroll-mt-*</code>, <code>.scroll-smooth</code></td><td data-i18n="utilities.row.scroll">Scroll behavior.</td></tr>
+              <tr><td><code>.bg-*</code></td><td data-i18n="utilities.row.background">Background.</td></tr>
+              <tr><td><code>.cursor-*</code></td><td data-i18n="utilities.row.cursor">Cursor.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="animations" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Animations</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.animations.css" target="_blank" rel="noopener">css/love.animations.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="animations.overview.text">Simple CSS animations only. Entrance effects, spinners, shimmer. Anything requiring JS orchestration, scroll-driven timelines, or physics is outside Love.css.</p>
+
+        <h4 data-i18n="animations.classes.title">Available classes</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.fade-in</code></td><td data-i18n="animations.row.fade_in">Opacity 0 to 1.</td></tr>
+              <tr><td><code>.fade-out</code></td><td data-i18n="animations.row.fade_out">Opacity 1 to 0.</td></tr>
+              <tr><td><code>.slide-up</code></td><td data-i18n="animations.row.slide_up">Slides up with fade-in.</td></tr>
+              <tr><td><code>.slide-down</code></td><td data-i18n="animations.row.slide_down">Slides down with fade-in.</td></tr>
+              <tr><td><code>.scale-in</code></td><td data-i18n="animations.row.scale_in">Scales from 0.95.</td></tr>
+              <tr><td><code>.spin</code></td><td data-i18n="animations.row.spin">Continuous rotation.</td></tr>
+              <tr><td><code>.shimmer</code></td><td data-i18n="animations.row.shimmer">Gradient sweep.</td></tr>
+              <tr><td><code>.pulse</code></td><td data-i18n="animations.row.pulse">Opacity oscillation.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="animations.transform.title">Only transform and opacity</h4>
+        <p data-i18n-html="animations.transform.text">Every keyframe animates only <code>transform</code> and <code>opacity</code>. These are handled by the compositor thread, so animations stay smooth even when JS is busy.</p>
+      </section>
+
+      <section id="button" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Button</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.button.css" target="_blank" rel="noopener">css/love.button.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="button.overview.text">Styles every clickable element: <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>, and <code>&lt;input type="submit"&gt;</code>. Six variants, three sizes, icon-only, button groups, loading state, toggle state.</p>
+
+        <div class="card mb-4">
+          <div class="card-body cluster">
+            <button type="button" class="btn">Default</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-ghost">Ghost</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-success">Success</button>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+
+        <h4 data-i18n="common.variants">Variants</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.use">Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.btn</code></td><td data-i18n="button.row.btn">Neutral action.</td></tr>
+              <tr><td><code>.btn-primary</code></td><td data-i18n="button.row.primary">The main action on the page.</td></tr>
+              <tr><td><code>.btn-secondary</code></td><td data-i18n="button.row.secondary">Alternative action.</td></tr>
+              <tr><td><code>.btn-ghost</code></td><td data-i18n="button.row.ghost">Low-priority, toolbars.</td></tr>
+              <tr><td><code>.btn-danger</code></td><td data-i18n="button.row.danger">Destructive action.</td></tr>
+              <tr><td><code>.btn-success</code></td><td data-i18n="button.row.success">Confirm or approve.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="common.modifiers">Modifiers</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.btn-sm</code></td><td data-i18n="button.row.sm">Smaller padding, smaller font.</td></tr>
+              <tr><td><code>.btn-lg</code></td><td data-i18n="button.row.lg">Larger padding, larger font.</td></tr>
+              <tr><td><code>.btn-block</code></td><td data-i18n="button.row.block">Full width.</td></tr>
+              <tr><td><code>.btn-icon</code></td><td data-i18n="button.row.icon">Square, for a single icon.</td></tr>
+              <tr><td><code>.btn-group</code></td><td data-i18n="button.row.group">Joins adjacent buttons.</td></tr>
+              <tr><td><code>.is-loading</code></td><td data-i18n="button.row.loading">Replaces label with a spinner.</td></tr>
+              <tr><td><code>[aria-pressed="true"]</code></td><td data-i18n="button.row.pressed">Grape background for toggle.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="common.tokens">Tokens</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th data-i18n="common.controls">Controls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--love-btn-radius</code></td><td data-i18n="button.row.radius">Corner radius.</td></tr>
+              <tr><td><code>--love-btn-primary-bg</code></td><td data-i18n="button.row.primary_bg">Primary background.</td></tr>
+              <tr><td><code>--love-btn-active-bg</code></td><td data-i18n="button.row.active_bg">Toggle and pressed background.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.notes">Notes</h3>
+        <div class="alert alert-info">
+          <div class="alert-content">
+            <ul class="mb-0">
+              <li data-i18n="button.notes.li1">Active state uses grape, not primary. Pressing is not the same as selecting.</li>
+              <li data-i18n-html="button.notes.li2">The spinner uses <code>currentColor</code> with explicit color overrides for primary/danger/success backgrounds.</li>
+              <li data-i18n="button.notes.li3">Reduced motion slows the spinner to 1.5s instead of removing it.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="card" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Card</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.card.css" target="_blank" rel="noopener">css/love.card.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="card.overview.text">Containers for grouped content: header, body, optional footer. Variants control shadow, border, hover, and accent stripes.</p>
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-subtitle">Subtitle goes here</p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Card body with content.</p>
+          </div>
+          <div class="card-footer">
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary">Action</button>
+              <button type="button" class="btn btn-ghost">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.card</code></td><td data-i18n="card.row.card">Base container with border and shadow.</td></tr>
+              <tr><td><code>.card-header</code></td><td data-i18n="card.row.header">Top section with bottom border.</td></tr>
+              <tr><td><code>.card-body</code></td><td data-i18n="card.row.body">Flexible main area.</td></tr>
+              <tr><td><code>.card-footer</code></td><td data-i18n="card.row.footer">Bottom section with top border.</td></tr>
+              <tr><td><code>.card-title</code></td><td data-i18n="card.row.title">Heading with no outer margin.</td></tr>
+              <tr><td><code>.card-subtitle</code></td><td data-i18n="card.row.subtitle">Small muted text under title.</td></tr>
+              <tr><td><code>.card-text</code></td><td data-i18n="card.row.text">Body text with consistent top margin.</td></tr>
+              <tr><td><code>.card-actions</code></td><td data-i18n="card.row.actions">Horizontal group of buttons.</td></tr>
+              <tr><td><code>.card-flat</code></td><td data-i18n="card.row.flat">No shadow.</td></tr>
+              <tr><td><code>.card-bordered</code></td><td data-i18n="card.row.bordered">Stronger border, no shadow.</td></tr>
+              <tr><td><code>.card-hover</code></td><td data-i18n="card.row.hover">Shadow grows on hover.</td></tr>
+              <tr><td><code>.card-compact</code></td><td data-i18n="card.row.compact">Tighter padding.</td></tr>
+              <tr><td><code>.card-accent</code></td><td data-i18n-html="card.row.accent">Colored top stripe. Variants: <code>-danger</code>, <code>-success</code>, <code>-warning</code>.</td></tr>
+              <tr><td><code>.card-interactive</code></td><td data-i18n="card.row.interactive">Cursor and focus ring for clickable cards.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="common.tokens">Tokens</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th data-i18n="common.controls">Controls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--love-card-padding</code></td><td data-i18n="card.row.padding">Inner padding.</td></tr>
+              <tr><td><code>--love-card-radius</code></td><td data-i18n="card.row.radius">Corner radius.</td></tr>
+              <tr><td><code>--love-card-bg</code></td><td data-i18n="card.row.bg">Background.</td></tr>
+              <tr><td><code>--love-card-shadow</code></td><td data-i18n="card.row.shadow">Box shadow.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="form" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Form</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.form.css" target="_blank" rel="noopener">css/love.form.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="form.overview.text">Styles every field, label, hint, error message, checkbox, and radio. Consistent across browsers, correct in dark theme via <code>color-scheme</code>.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="form-label" for="demo-name">Name</label>
+              <input class="form-input" type="text" id="demo-name" placeholder="Your name">
+              <span class="form-hint">Your real name.</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.form-group</code></td><td data-i18n="form.row.group">Wraps label, field, and messages.</td></tr>
+              <tr><td><code>.form-label</code></td><td data-i18n="form.row.label">Field label.</td></tr>
+              <tr><td><code>.form-label-required</code></td><td data-i18n="form.row.label_required">Red asterisk after the label.</td></tr>
+              <tr><td><code>.form-input</code></td><td data-i18n="form.row.input">Text input, select, textarea.</td></tr>
+              <tr><td><code>.form-input-sm</code>, <code>.form-input-lg</code></td><td data-i18n="form.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.form-hint</code></td><td data-i18n="form.row.hint">Muted helper text.</td></tr>
+              <tr><td><code>.form-error</code></td><td data-i18n="form.row.error">Red error message.</td></tr>
+              <tr><td><code>.form-check</code></td><td data-i18n="form.row.check">Wrapper for checkbox or radio.</td></tr>
+              <tr><td><code>.form-check-hint</code></td><td data-i18n="form.row.check_hint">Secondary line under a check label.</td></tr>
+              <tr><td><code>.form-row</code>, <code>.form-row-2</code>, <code>.form-row-3</code></td><td data-i18n="form.row.rows">Grid of fields. Collapses on mobile.</td></tr>
+              <tr><td><code>.input-group</code></td><td data-i18n="form.row.input_group">Field with prefix or suffix.</td></tr>
+              <tr><td><code>.input-group-text</code></td><td data-i18n="form.row.input_group_text">Prefix or suffix block.</td></tr>
+              <tr><td><code>.is-error</code>, <code>.is-success</code></td><td data-i18n="form.row.validation">Explicit validation state.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 data-i18n="common.tokens">Tokens</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th data-i18n="common.controls">Controls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--love-input-radius</code></td><td data-i18n="form.row.radius">Field corner radius.</td></tr>
+              <tr><td><code>--love-input-padding-x</code>, <code>--love-input-padding-y</code></td><td data-i18n="form.row.padding">Inner padding.</td></tr>
+              <tr><td><code>--love-input-border</code></td><td data-i18n="form.row.border">Border color.</td></tr>
+              <tr><td><code>--love-input-bg</code></td><td data-i18n="form.row.bg">Background.</td></tr>
+              <tr><td><code>--love-select-arrow-color</code></td><td data-i18n="form.row.arrow">Color of the select arrow.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="table" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Table</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.table.css" target="_blank" rel="noopener">css/love.table.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="table.overview.text">Tables with stripes, hover, borders, compact mode, sticky header, responsive scroll, and selected/disabled rows.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover">
+                <thead><tr><th>Name</th><th>Role</th></tr></thead>
+                <tbody>
+                  <tr><td>Alice</td><td>Admin</td></tr>
+                  <tr><td>Bob</td><td>Editor</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.table</code></td><td data-i18n="table.row.table">Base table. Always required.</td></tr>
+              <tr><td><code>.table-striped</code></td><td data-i18n="table.row.striped">Alternating row background.</td></tr>
+              <tr><td><code>.table-hover</code></td><td data-i18n="table.row.hover">Row highlight on hover.</td></tr>
+              <tr><td><code>.table-bordered</code></td><td data-i18n="table.row.bordered">Borders on all sides of every cell.</td></tr>
+              <tr><td><code>.table-compact</code></td><td data-i18n="table.row.compact">Tighter padding.</td></tr>
+              <tr><td><code>.table-sticky</code></td><td data-i18n="table.row.sticky">Header sticks to top on scroll.</td></tr>
+              <tr><td><code>.table-responsive</code></td><td data-i18n="table.row.responsive">Wrapper that adds horizontal scroll.</td></tr>
+              <tr><td><code>.is-selected</code></td><td data-i18n="table.row.selected">Row with grape-tinted background.</td></tr>
+              <tr><td><code>.is-disabled</code></td><td data-i18n="table.row.disabled">Row with reduced opacity.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="alert" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Alert</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.alert.css" target="_blank" rel="noopener">css/love.alert.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="alert.overview.text">Inline messages with a colored left border. Five variants. Optional close button.</p>
+
+        <div class="stack mb-4">
+          <div class="alert alert-success">
+            <div class="alert-content">
+              <span class="alert-title">Success</span>
+              <p class="alert-text">Changes saved.</p>
+            </div>
+          </div>
+          <div class="alert alert-danger">
+            <div class="alert-content">
+              <span class="alert-title">Error</span>
+              <p class="alert-text">Something went wrong.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.alert</code></td><td data-i18n="alert.row.alert">Base alert with neutral border.</td></tr>
+              <tr><td><code>.alert-success</code></td><td data-i18n="alert.row.success">Green.</td></tr>
+              <tr><td><code>.alert-danger</code></td><td data-i18n="alert.row.danger">Red.</td></tr>
+              <tr><td><code>.alert-warning</code></td><td data-i18n="alert.row.warning">Yellow.</td></tr>
+              <tr><td><code>.alert-info</code></td><td data-i18n="alert.row.info">Blue.</td></tr>
+              <tr><td><code>.alert-title</code></td><td data-i18n="alert.row.title">Bold heading inside.</td></tr>
+              <tr><td><code>.alert-text</code></td><td data-i18n="alert.row.text">Body text.</td></tr>
+              <tr><td><code>.alert-close</code></td><td data-i18n="alert.row.close">Close button.</td></tr>
+              <tr><td><code>.alert-dismissible</code></td><td data-i18n="alert.row.dismissible">Positions close button absolutely.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="badge" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Badge</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.badge.css" target="_blank" rel="noopener">css/love.badge.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="badge.overview.text">Small labels for statuses and counters. Three styles: solid, soft, outline. Sizes, dots, and numeric counters.</p>
+
+        <div class="card mb-4">
+          <div class="card-body cluster">
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-soft badge-success">Active</span>
+            <span class="badge badge-outline badge-danger">Failed</span>
+            <span class="badge badge-counter badge-primary">12</span>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.badge</code></td><td data-i18n="badge.row.badge">Base.</td></tr>
+              <tr><td><code>.badge-primary</code>, <code>-success</code>, <code>-danger</code>, <code>-warning</code></td><td data-i18n="badge.row.variants">Color variants.</td></tr>
+              <tr><td><code>.badge-soft</code></td><td data-i18n="badge.row.soft">Pale background, colored text.</td></tr>
+              <tr><td><code>.badge-outline</code></td><td data-i18n="badge.row.outline">Transparent with colored border.</td></tr>
+              <tr><td><code>.badge-sm</code>, <code>.badge-lg</code></td><td data-i18n="badge.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.badge-dot</code></td><td data-i18n="badge.row.dot">Round indicator only.</td></tr>
+              <tr><td><code>.badge-counter</code></td><td data-i18n="badge.row.counter">Round numeric counter.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="spinner" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Spinner</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.spinner.css" target="_blank" rel="noopener">css/love.spinner.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="spinner.overview.text">Loading indicators. Four sizes, color variants, three-dot mode, centered wrapper.</p>
+
+        <div class="card mb-4">
+          <div class="card-body cluster">
+            <span class="spinner"></span>
+            <span class="spinner spinner-primary"></span>
+            <span class="spinner spinner-lg"></span>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.spinner</code></td><td data-i18n="spinner.row.spinner">Base rotating ring.</td></tr>
+              <tr><td><code>.spinner-sm</code>, <code>-lg</code>, <code>-xl</code></td><td data-i18n="spinner.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.spinner-primary</code>, <code>-success</code>, <code>-danger</code>, <code>-warning</code></td><td data-i18n="spinner.row.colors">Colors.</td></tr>
+              <tr><td><code>.spinner-inverse</code></td><td data-i18n="spinner.row.inverse">White ring for dark backgrounds.</td></tr>
+              <tr><td><code>.spinner-dots</code></td><td data-i18n="spinner.row.dots">Three animated dots.</td></tr>
+              <tr><td><code>.spinner-center</code></td><td data-i18n="spinner.row.center">Flex wrapper that centers a spinner.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="skeleton" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Skeleton</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.skeleton.css" target="_blank" rel="noopener">css/love.skeleton.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="skeleton.overview.text">Placeholder shapes that mimic content while it loads.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="skeleton-text skeleton-w-100"></div>
+            <div class="skeleton-text skeleton-w-75"></div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.shape">Shape</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.skeleton</code></td><td data-i18n="skeleton.row.skeleton">Base block.</td></tr>
+              <tr><td><code>.skeleton-text</code></td><td data-i18n="skeleton.row.text">A line of text.</td></tr>
+              <tr><td><code>.skeleton-title</code>, <code>-heading</code></td><td data-i18n="skeleton.row.titles">Title-sized bars.</td></tr>
+              <tr><td><code>.skeleton-avatar</code>, <code>-sm</code>, <code>-lg</code></td><td data-i18n="skeleton.row.avatars">Circular avatar placeholders.</td></tr>
+              <tr><td><code>.skeleton-button</code></td><td data-i18n="skeleton.row.button">Button-sized bar.</td></tr>
+              <tr><td><code>.skeleton-image</code></td><td data-i18n="skeleton.row.image">16:9 rectangle.</td></tr>
+              <tr><td><code>.skeleton-w-25</code>, <code>-50</code>, <code>-75</code>, <code>-100</code></td><td data-i18n="skeleton.row.widths">Width helpers.</td></tr>
+              <tr><td><code>.skeleton-row</code>, <code>.skeleton-list-item</code></td><td data-i18n="skeleton.row.composed">Composed layouts.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="modal" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Modal</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.modal.css" target="_blank" rel="noopener">css/love.modal.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="modal.overview.text">Modals on the native <code>&lt;dialog&gt;</code> element. Focus trap, Escape, click-outside work out of the box.</p>
+
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>&lt;button onclick="document.getElementById('m').showModal()"&gt;
+  Open
+&lt;/button&gt;
+
+&lt;dialog class="modal" id="m"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;h4 class="modal-title"&gt;Title&lt;/h4&gt;
+    &lt;button class="modal-close"&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;&lt;p&gt;Content.&lt;/p&gt;&lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.modal</code></td><td data-i18n="modal.row.modal">Dialog styling.</td></tr>
+              <tr><td><code>.modal-header</code>, <code>.modal-body</code>, <code>.modal-footer</code></td><td data-i18n="modal.row.sections">Sections.</td></tr>
+              <tr><td><code>.modal-title</code></td><td data-i18n="modal.row.title">Heading.</td></tr>
+              <tr><td><code>.modal-close</code></td><td data-i18n="modal.row.close">Close button styling.</td></tr>
+              <tr><td><code>.modal-sm</code>, <code>-lg</code>, <code>-xl</code>, <code>-full</code></td><td data-i18n="modal.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.modal-drawer</code></td><td data-i18n="modal.row.drawer">Slides in from the right.</td></tr>
+              <tr><td><code>.modal-drawer-left</code></td><td data-i18n="modal.row.drawer_left">Slides in from the left.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tabs" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Tabs</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.tabs.css" target="_blank" rel="noopener">css/love.tabs.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="tabs.overview.text">Three visual styles: underline, filled, vertical. Requires minimal JS to toggle panels.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="tabs">
+              <div class="tabs-list" role="tablist">
+                <button type="button" class="tab" role="tab" aria-selected="true">Active</button>
+                <button type="button" class="tab" role="tab" aria-selected="false">Inactive</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.tabs</code></td><td data-i18n="tabs.row.tabs">Base container.</td></tr>
+              <tr><td><code>.tabs-list</code></td><td data-i18n="tabs.row.list">Row of tab buttons.</td></tr>
+              <tr><td><code>.tab</code></td><td data-i18n="tabs.row.tab">Individual tab.</td></tr>
+              <tr><td><code>.tab-panel</code></td><td data-i18n="tabs.row.panel">Content panel.</td></tr>
+              <tr><td><code>.tabs-filled</code></td><td data-i18n="tabs.row.filled">Filled background style.</td></tr>
+              <tr><td><code>.tabs-vertical</code></td><td data-i18n="tabs.row.vertical">Vertical layout.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="dropdown" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Dropdown</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.dropdown.css" target="_blank" rel="noopener">css/love.dropdown.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="dropdown.overview.text">Menu that opens on click. Can use <code>&lt;details&gt;</code> for zero-JS use, or a button with JS.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <details class="dropdown">
+              <summary class="btn btn-secondary">Menu</summary>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Item one</a></li>
+                <li><a href="#" class="dropdown-item">Item two</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.dropdown</code></td><td data-i18n="dropdown.row.dropdown">Relative container.</td></tr>
+              <tr><td><code>.dropdown-trigger</code></td><td data-i18n="dropdown.row.trigger">The button that opens the menu.</td></tr>
+              <tr><td><code>.dropdown-menu</code></td><td data-i18n="dropdown.row.menu">The menu itself.</td></tr>
+              <tr><td><code>.dropdown-item</code></td><td data-i18n="dropdown.row.item">Menu item.</td></tr>
+              <tr><td><code>.dropdown-item-danger</code></td><td data-i18n="dropdown.row.item_danger">Red item for destructive actions.</td></tr>
+              <tr><td><code>.dropdown-divider</code></td><td data-i18n="dropdown.row.divider">Horizontal line between items.</td></tr>
+              <tr><td><code>.dropdown-header</code></td><td data-i18n="dropdown.row.header">Section label.</td></tr>
+              <tr><td><code>.dropdown-menu-right</code></td><td data-i18n="dropdown.row.menu_right">Aligns menu to the right edge.</td></tr>
+              <tr><td><code>.is-active</code>, <code>.is-disabled</code></td><td data-i18n="dropdown.row.states">Item states.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="toast" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Toast</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.toast.css" target="_blank" rel="noopener">css/love.toast.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="toast.overview.text">Temporary notifications in a corner. Six position containers, four variants. Auto-dismiss is handled by your JS.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="toast toast-success">
+              <div class="toast-content">
+                <span class="toast-title">Saved</span>
+                <p class="toast-text">Changes saved successfully.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.toast-container</code></td><td data-i18n="toast.row.container">Fixed wrapper.</td></tr>
+              <tr><td><code>.toast-container-top-right</code>, <code>-top-left</code>, <code>-top-center</code>, <code>-bottom-right</code>, <code>-bottom-left</code>, <code>-bottom-center</code></td><td data-i18n="toast.row.positions">Six positions.</td></tr>
+              <tr><td><code>.toast</code></td><td data-i18n="toast.row.toast">Individual notification.</td></tr>
+              <tr><td><code>.toast-success</code>, <code>-danger</code>, <code>-warning</code>, <code>-info</code></td><td data-i18n="toast.row.variants">Color variants.</td></tr>
+              <tr><td><code>.is-leaving</code></td><td data-i18n="toast.row.leaving">Add before removing to fade out.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="pagination" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Pagination</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.pagination.css" target="_blank" rel="noopener">css/love.pagination.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="pagination.overview.text">Page navigation with numbers, ellipsis, prev/next, and size variants.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <ul class="pagination">
+              <li class="pagination-item"><a href="#" class="pagination-link">1</a></li>
+              <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
+              <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.pagination</code></td><td data-i18n="pagination.row.pagination">Container.</td></tr>
+              <tr><td><code>.pagination-item</code></td><td data-i18n="pagination.row.item">Single slot.</td></tr>
+              <tr><td><code>.pagination-link</code></td><td data-i18n="pagination.row.link">Clickable item.</td></tr>
+              <tr><td><code>.pagination-ellipsis</code></td><td data-i18n="pagination.row.ellipsis">Non-clickable "…"</td></tr>
+              <tr><td><code>.is-active</code></td><td data-i18n="pagination.row.active">Current page.</td></tr>
+              <tr><td><code>.is-disabled</code></td><td data-i18n="pagination.row.disabled">Disabled prev/next.</td></tr>
+              <tr><td><code>.pagination-sm</code>, <code>-lg</code></td><td data-i18n="pagination.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.pagination-center</code></td><td data-i18n="pagination.row.center">Centers the row.</td></tr>
+              <tr><td><code>.pagination-rounded</code></td><td data-i18n="pagination.row.rounded">Rounded corners, ignores global radius.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="breadcrumbs" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Breadcrumbs</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.breadcrumbs.css" target="_blank" rel="noopener">css/love.breadcrumbs.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="breadcrumbs.overview.text">Trail of navigation links. Four separator styles, optional background bar.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs-item"><a href="#" class="breadcrumbs-link">Home</a></li>
+              <li class="breadcrumbs-item"><span class="breadcrumbs-current">Current</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.breadcrumbs</code></td><td data-i18n="breadcrumbs.row.breadcrumbs">Container.</td></tr>
+              <tr><td><code>.breadcrumbs-item</code></td><td data-i18n="breadcrumbs.row.item">One step.</td></tr>
+              <tr><td><code>.breadcrumbs-link</code></td><td data-i18n="breadcrumbs.row.link">Clickable step.</td></tr>
+              <tr><td><code>.breadcrumbs-current</code></td><td data-i18n="breadcrumbs.row.current">Current page, not clickable.</td></tr>
+              <tr><td><code>.breadcrumbs-arrow</code></td><td data-i18n="breadcrumbs.row.arrow">"›" separator.</td></tr>
+              <tr><td><code>.breadcrumbs-chevron</code></td><td data-i18n="breadcrumbs.row.chevron">"→" separator.</td></tr>
+              <tr><td><code>.breadcrumbs-dot</code></td><td data-i18n="breadcrumbs.row.dot">"•" separator.</td></tr>
+              <tr><td><code>.breadcrumbs-bar</code></td><td data-i18n="breadcrumbs.row.bar">Subtle background.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tooltip" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Tooltip</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.tooltip.css" target="_blank" rel="noopener">css/love.tooltip.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="tooltip.overview.text">Text bubble on hover or focus. Four placements. No JavaScript, text from a data attribute.</p>
+
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>&lt;span class="tooltip" data-tooltip="Explanation"&gt;Hover me&lt;/span&gt;</code></pre>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.tooltip</code></td><td data-i18n-html="tooltip.row.tooltip">Wrapper. Reads <code>data-tooltip</code>.</td></tr>
+              <tr><td><code>.tooltip-bottom</code></td><td data-i18n="tooltip.row.bottom">Places bubble below.</td></tr>
+              <tr><td><code>.tooltip-right</code></td><td data-i18n="tooltip.row.right">Places bubble on the right.</td></tr>
+              <tr><td><code>.tooltip-left</code></td><td data-i18n="tooltip.row.left">Places bubble on the left.</td></tr>
+              <tr><td><code>.tooltip-underline</code></td><td data-i18n="tooltip.row.underline">Dotted underline on trigger text.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="accordion" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Accordion</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.accordion.css" target="_blank" rel="noopener">css/love.accordion.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="accordion.overview.text">Collapsible sections on native <code>&lt;details&gt;</code>. No JavaScript. Chevron rotates on open, three variants.</p>
+
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>&lt;div class="accordion"&gt;
+  &lt;details class="accordion-item"&gt;
+    &lt;summary class="accordion-trigger"&gt;Question&lt;/summary&gt;
+    &lt;div class="accordion-panel"&gt;Answer&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.accordion</code></td><td data-i18n="accordion.row.accordion">Wrapper with outer border.</td></tr>
+              <tr><td><code>.accordion-item</code></td><td data-i18n-html="accordion.row.item">A <code>&lt;details&gt;</code> element.</td></tr>
+              <tr><td><code>.accordion-trigger</code></td><td data-i18n-html="accordion.row.trigger">Styling for <code>&lt;summary&gt;</code>.</td></tr>
+              <tr><td><code>.accordion-panel</code></td><td data-i18n="accordion.row.panel">Content area.</td></tr>
+              <tr><td><code>.accordion-flush</code></td><td data-i18n="accordion.row.flush">No outer border, no padding-left.</td></tr>
+              <tr><td><code>.accordion-separated</code></td><td data-i18n="accordion.row.separated">Each item is its own card.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="avatar" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Avatar</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.avatar.css" target="_blank" rel="noopener">css/love.avatar.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="avatar.overview.text">Circular or square user representations. Five sizes, three shapes, status indicators, stacked groups.</p>
+
+        <div class="card mb-4">
+          <div class="card-body cluster">
+            <span class="avatar">AB</span>
+            <span class="avatar avatar-circle avatar-success">CD</span>
+            <span class="avatar avatar-lg avatar-circle">EF</span>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.avatar</code></td><td data-i18n="avatar.row.avatar">Base.</td></tr>
+              <tr><td><code>.avatar-xs</code>, <code>-sm</code>, <code>-lg</code>, <code>-xl</code></td><td data-i18n="avatar.row.sizes">Sizes.</td></tr>
+              <tr><td><code>.avatar-rounded</code>, <code>.avatar-circle</code></td><td data-i18n="avatar.row.shapes">Shapes.</td></tr>
+              <tr><td><code>.avatar-success</code>, <code>-danger</code>, <code>-warning</code>, <code>-neutral</code></td><td data-i18n="avatar.row.colors">Background color for initials.</td></tr>
+              <tr><td><code>.avatar-wrap</code></td><td data-i18n="avatar.row.wrap">Wraps avatar and status dot.</td></tr>
+              <tr><td><code>.avatar-status</code> + <code>.online</code>, <code>.busy</code>, <code>.away</code>, <code>.offline</code></td><td data-i18n="avatar.row.status">Status dot.</td></tr>
+              <tr><td><code>.avatar-group</code></td><td data-i18n="avatar.row.group">Overlapping stack.</td></tr>
+              <tr><td><code>.avatar-more</code></td><td data-i18n="avatar.row.more">"+5" tail.</td></tr>
+              <tr><td><code>.avatar-with-name</code></td><td data-i18n="avatar.row.with_name">Avatar and name side by side.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="progress" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Progress</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.progress.css" target="_blank" rel="noopener">css/love.progress.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="progress.overview.text">Linear, striped, indeterminate, stacked, circular, plus a styled native <code>&lt;progress&gt;</code>. Bar width set inline via <code>style="width: 60%"</code>.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="progress"><span class="progress-bar" style="width: 60%"></span></div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.progress</code></td><td data-i18n="progress.row.progress">Track (gray bar).</td></tr>
+              <tr><td><code>.progress-bar</code></td><td data-i18n="progress.row.bar">Filled portion.</td></tr>
+              <tr><td><code>.progress-success</code>, <code>-danger</code>, <code>-warning</code>, <code>-grape</code></td><td data-i18n="progress.row.colors">Bar colors.</td></tr>
+              <tr><td><code>.progress-sm</code>, <code>.progress-lg</code></td><td data-i18n="progress.row.heights">Heights.</td></tr>
+              <tr><td><code>.progress-striped</code>, <code>-striped-animated</code></td><td data-i18n="progress.row.striped">Diagonal stripes.</td></tr>
+              <tr><td><code>.progress-indeterminate</code></td><td data-i18n="progress.row.indeterminate">Sliding animation.</td></tr>
+              <tr><td><code>.progress-stacked</code></td><td data-i18n="progress.row.stacked">Multiple segments in one bar.</td></tr>
+              <tr><td><code>.progress-circle</code></td><td data-i18n-html="progress.row.circle">Conic-gradient circle. Set <code>--value</code> inline.</td></tr>
+              <tr><td><code>.progress-native</code></td><td data-i18n-html="progress.row.native">Restyles native <code>&lt;progress&gt;</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="stat" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Stat</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.stat.css" target="_blank" rel="noopener">css/love.stat.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="stat.overview.text">Dashboard numbers with a label, trend indicator, icon, and accent stripes.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="stat">
+              <span class="stat-label">Users</span>
+              <span class="stat-value">2,847</span>
+              <span class="stat-trend stat-trend-up">+12.5%</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.stat</code></td><td data-i18n="stat.row.stat">Base container.</td></tr>
+              <tr><td><code>.stat-label</code></td><td data-i18n="stat.row.label">Uppercase muted label.</td></tr>
+              <tr><td><code>.stat-value</code></td><td data-i18n="stat.row.value">Large number.</td></tr>
+              <tr><td><code>.stat-value-sm</code>, <code>-lg</code></td><td data-i18n="stat.row.value_sizes">Sizes.</td></tr>
+              <tr><td><code>.stat-suffix</code></td><td data-i18n="stat.row.suffix">Small unit next to the value.</td></tr>
+              <tr><td><code>.stat-trend-up</code>, <code>.stat-trend-down</code></td><td data-i18n="stat.row.trend">Colored trend with arrow.</td></tr>
+              <tr><td><code>.stat-with-icon</code></td><td data-i18n="stat.row.with_icon">Layout with icon block on the left.</td></tr>
+              <tr><td><code>.stat-icon</code></td><td data-i18n="stat.row.icon">Square icon container.</td></tr>
+              <tr><td><code>.stat-accent</code> + variants</td><td data-i18n="stat.row.accent">Colored top stripe.</td></tr>
+              <tr><td><code>.stat-center</code></td><td data-i18n="stat.row.center">Center align content.</td></tr>
+              <tr><td><code>.stat-description</code></td><td data-i18n="stat.row.description">Muted text below the value.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="empty-state" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Empty state</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.empty-state.css" target="_blank" rel="noopener">css/love.empty-state.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="empty-state.overview.text">Placeholder for screens with no data. Icon, title, description, action buttons.</p>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="empty-state empty-state-compact">
+              <div class="empty-state-icon">📭</div>
+              <h3 class="empty-state-title">Nothing here</h3>
+              <p class="empty-state-description">Create your first item.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.empty-state</code></td><td data-i18n="empty-state.row.empty_state">Centered flex column.</td></tr>
+              <tr><td><code>.empty-state-icon</code></td><td data-i18n="empty-state.row.icon">Square icon block.</td></tr>
+              <tr><td><code>.empty-state-icon-lg</code></td><td data-i18n="empty-state.row.icon_lg">Larger icon.</td></tr>
+              <tr><td><code>.empty-state-title</code></td><td data-i18n="empty-state.row.title">Heading.</td></tr>
+              <tr><td><code>.empty-state-description</code></td><td data-i18n="empty-state.row.description">Muted paragraph.</td></tr>
+              <tr><td><code>.empty-state-actions</code></td><td data-i18n="empty-state.row.actions">Row of buttons.</td></tr>
+              <tr><td><code>.empty-state-bordered</code></td><td data-i18n="empty-state.row.bordered">Dashed border, subtle background.</td></tr>
+              <tr><td><code>.empty-state-compact</code></td><td data-i18n="empty-state.row.compact">Smaller spacing for cards.</td></tr>
+              <tr><td><code>.empty-state-danger</code></td><td data-i18n="empty-state.row.danger">Red icon.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="timeline" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Timeline</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.timeline.css" target="_blank" rel="noopener">css/love.timeline.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n="timeline.overview.text">Chronological list with a vertical connector line and markers. Three layouts: vertical, horizontal, alternating.</p>
+
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>&lt;ul class="timeline"&gt;
+  &lt;li class="timeline-item"&gt;
+    &lt;span class="timeline-marker timeline-marker-primary"&gt;&lt;/span&gt;
+    &lt;div class="timeline-content"&gt;
+      &lt;span class="timeline-time"&gt;2 hours ago&lt;/span&gt;
+      &lt;h4 class="timeline-title"&gt;Event&lt;/h4&gt;
+      &lt;p class="timeline-text"&gt;Description.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h3 class="text-primary" data-i18n="common.api">API</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-compact">
+            <thead>
+              <tr>
+                <th data-i18n="common.class">Class</th>
+                <th data-i18n="common.effect">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.timeline</code></td><td data-i18n="timeline.row.timeline">Container.</td></tr>
+              <tr><td><code>.timeline-item</code></td><td data-i18n="timeline.row.item">One event.</td></tr>
+              <tr><td><code>.timeline-marker</code></td><td data-i18n="timeline.row.marker">The dot on the line.</td></tr>
+              <tr><td><code>.timeline-marker-primary</code>, <code>-success</code>, <code>-danger</code>, <code>-warning</code></td><td data-i18n="timeline.row.marker_colors">Marker colors.</td></tr>
+              <tr><td><code>.timeline-content</code></td><td data-i18n="timeline.row.content">Text block.</td></tr>
+              <tr><td><code>.timeline-time</code></td><td data-i18n="timeline.row.time">Small uppercase timestamp.</td></tr>
+              <tr><td><code>.timeline-title</code></td><td data-i18n="timeline.row.title">Event heading.</td></tr>
+              <tr><td><code>.timeline-text</code></td><td data-i18n="timeline.row.text">Body text.</td></tr>
+              <tr><td><code>.timeline-card</code></td><td data-i18n="timeline.row.card">Wraps each event in a card.</td></tr>
+              <tr><td><code>.timeline-horizontal</code></td><td data-i18n="timeline.row.horizontal">Horizontal layout.</td></tr>
+              <tr><td><code>.timeline-alternating</code></td><td data-i18n="timeline.row.alternating">Content on both sides of the line.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="overrides" class="scroll-mt-8 mb-16 border-t pt-6">
+        <h2>Overrides</h2>
+        <p class="text-muted text-sm mb-6">
+          <a href="https://github.com/PlakhovVadim/love-css/blob/main/css/love.overrides.css" target="_blank" rel="noopener">css/love.overrides.css</a>
+        </p>
+
+        <h3 class="text-primary" data-i18n="common.overview">Overview</h3>
+        <p data-i18n-html="overrides.overview.text">Empty file that loads after every other module. Put customizations here. They win without <code>!important</code>. When you upgrade Love.css, this file is not touched.</p>
+
+        <h4 data-i18n="overrides.what.title">What to put here</h4>
+        <ul>
+          <li data-i18n-html="overrides.what.li1">Token overrides: <code>--love-primary</code>, <code>--love-btn-radius</code>, <code>--love-font-sans</code>.</li>
+          <li data-i18n-html="overrides.what.li2">New themes: <code>[data-love-theme="sepia"]</code> with your own tokens.</li>
+          <li data-i18n="overrides.what.li3">Project-specific components built on top of Love.css primitives.</li>
+          <li data-i18n="overrides.what.li4">Small patches when a framework default does not fit.</li>
+        </ul>
+
+        <pre class="bg-base rounded-md p-4 overflow-x-auto text-sm"><code>:root {
+  --love-btn-radius: 0;
+  --love-primary: oklch(0.55 0.20 300);
+}
+
+[data-love-theme="sepia"] {
+  --love-bg: #f4ecd8;
+  --love-text: #3a2f1c;
+  --love-border: #d6c8a8;
+}</code></pre>
+
+        <h3 class="text-primary" data-i18n="common.notes">Notes</h3>
+        <div class="alert alert-info">
+          <div class="alert-content">
+            <ul class="mb-0">
+              <li data-i18n="overrides.notes.li1">If you upgrade and something breaks, this file is the first place to check.</li>
+              <li data-i18n="overrides.notes.li2">If you find yourself overriding the same thing three times, open an issue instead.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
