@@ -1,7 +1,5 @@
 /*! Love.css form | MIT License | github.com/PlakhovVadim/love-css */
 
-/* Form layout */
-
 .form-group {
   margin-bottom: var(--love-space-4);
 }
@@ -22,8 +20,6 @@
   content: " *";
   color: var(--love-danger);
 }
-
-/* Inputs, selects, textareas */
 
 .form-input,
 input[type="text"],
@@ -127,10 +123,52 @@ select {
   padding-right: calc(var(--love-input-padding-x) * 2 + 12px);
 }
 
+/* Use currentColor for the arrow so it adapts to theme */
+
+select {
+  background-image: none;
+  position: relative;
+}
+
+select::after {
+  content: "";
+  position: absolute;
+  right: var(--love-space-3);
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--love-select-arrow-color);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* For browsers that support picker-icon (Safari 27+, Chrome 135+) */
+
+@supports (selector(::picker-icon)) {
+  select {
+    appearance: base-select;
+  }
+
+  select::picker-icon {
+    color: var(--love-select-arrow-color);
+    transition: transform var(--love-duration-fast) var(--love-ease-default);
+  }
+
+  select:open::picker-icon {
+    transform: rotate(180deg);
+  }
+}
+
 select[multiple] {
   background-image: none;
   padding-right: var(--love-input-padding-x);
   min-height: 6rem;
+}
+
+select[multiple]::after {
+  display: none;
 }
 
 /* Validation states */
@@ -149,8 +187,6 @@ input:invalid:not(:placeholder-shown):not(:focus):focus {
 input:valid:not(:placeholder-shown) {
   border-color: var(--love-border);
 }
-
-/* Explicit error and success classes for custom validation */
 
 .form-input.is-error,
 input.is-error {
@@ -172,8 +208,6 @@ input.is-success:focus {
   box-shadow: 0 0 0 3px var(--love-success-subtle);
 }
 
-/* Hint and error messages */
-
 .form-hint {
   display: block;
   margin-top: var(--love-space-1);
@@ -187,8 +221,6 @@ input.is-success:focus {
   font-size: var(--love-font-size-xs);
   color: var(--love-danger);
 }
-
-/* Checkboxes and radios */
 
 .form-check {
   display: flex;
@@ -231,8 +263,6 @@ input.is-success:focus {
   color: var(--love-text-muted);
 }
 
-/* Form row — horizontal group of fields */
-
 .form-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -248,8 +278,6 @@ input.is-success:focus {
   }
 }
 
-/* Input sizes */
-
 .form-input-sm,
 input.form-input-sm {
   padding: var(--love-space-1) var(--love-space-2);
@@ -261,8 +289,6 @@ input.form-input-lg {
   padding: var(--love-space-3) var(--love-space-4);
   font-size: var(--love-font-size-base);
 }
-
-/* Input group — input with attached prefix or suffix */
 
 .input-group {
   display: flex;
@@ -299,8 +325,6 @@ input.form-input-lg {
   margin-left: -1px;
 }
 
-/* Fieldset and legend */
-
 fieldset {
   margin: 0 0 var(--love-space-6);
   padding: var(--love-space-4);
@@ -314,8 +338,6 @@ legend {
   font-weight: var(--love-font-weight-semibold);
   color: var(--love-text);
 }
-
-/* File input — the button inside is styled by love.button.css */
 
 input[type="file"] {
   display: block;
@@ -335,15 +357,11 @@ input[type="file"]:focus-visible {
   outline-offset: 2px;
 }
 
-/* Range input */
-
 input[type="range"] {
   display: block;
   width: 100%;
   accent-color: var(--love-primary);
 }
-
-/* Color input */
 
 input[type="color"] {
   display: inline-block;
@@ -355,8 +373,6 @@ input[type="color"] {
   cursor: pointer;
   background-color: var(--love-input-bg);
 }
-
-/* Progress and meter */
 
 progress {
   display: block;
@@ -372,16 +388,12 @@ meter {
   accent-color: var(--love-primary);
 }
 
-/* Output */
-
 output {
   display: inline-block;
   font-size: var(--love-font-size-sm);
   color: var(--love-text);
   font-variant-numeric: tabular-nums;
 }
-
-/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   .form-input,
