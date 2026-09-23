@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-love-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +37,8 @@
   <link rel="stylesheet" href="css/love.animations.css">
   <link rel="stylesheet" href="css/love.overrides.css">
 
+  <script src="i18n.js" defer></script>
+
   <style>
     body {
       max-width: 72rem;
@@ -52,10 +54,16 @@
       border-bottom: 1px solid var(--love-border);
       margin-bottom: var(--love-space-6);
     }
+    .ks-header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--love-space-2);
+      align-items: center;
+      flex-shrink: 0;
+    }
     .ks-theme-switcher {
       display: flex;
       gap: var(--love-space-2);
-      flex-shrink: 0;
     }
     .ks-nav ul { list-style: none; padding-left: 0; }
     .ks-nav > ul > li { margin-bottom: var(--love-space-2); }
@@ -80,55 +88,62 @@
 
   <header class="ks-header">
     <div>
-      <h1>Love.css Kitchen Sink</h1>
-      <p>A complete HTML element test page for building CSS systems and frameworks.</p>
+      <h1 data-i18n="index.title">Love.css Kitchen Sink</h1>
+      <p data-i18n="index.subtitle">A complete HTML element test page for building CSS systems and frameworks.</p>
     </div>
-    <div class="ks-theme-switcher" role="group" aria-label="Theme switcher">
-      <button type="button" class="btn btn-ghost btn-sm" data-theme="light" aria-pressed="false">Light</button>
-      <button type="button" class="btn btn-ghost btn-sm" data-theme="dark" aria-pressed="false">Dark</button>
-      <button type="button" class="btn btn-ghost btn-sm" data-theme="high-contrast" aria-pressed="false">Contrast</button>
+    <div class="ks-header-controls">
+      <div class="btn-group" role="group" aria-label="Language">
+        <button type="button" class="btn btn-sm" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button type="button" class="btn btn-sm" data-lang-btn="ru" aria-pressed="false">RU</button>
+      </div>
+      <div class="ks-theme-switcher" role="group" data-i18n-attr="aria-label:index.theme_aria">
+        <button type="button" class="btn btn-ghost btn-sm" data-theme="light" aria-pressed="false" data-i18n="index.theme.light">Light</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-theme="dark" aria-pressed="false" data-i18n="index.theme.dark">Dark</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-theme="high-contrast" aria-pressed="false" data-i18n="index.theme.contrast">Contrast</button>
+      </div>
+      <a href="docs.html" class="btn btn-sm" data-i18n="index.docs_link">Docs</a>
     </div>
   </header>
 
-  <nav class="ks-nav" aria-label="Table of contents">
+  <nav class="ks-nav" data-i18n-attr="aria-label:index.nav.aria">
     <ul>
-      <li><a href="#sections">Sections</a></li>
-      <li><a href="#grouping-content">Grouping content</a></li>
-      <li><a href="#text-level-semantics">Text-level semantics</a></li>
-      <li><a href="#edits">Edits</a></li>
-      <li><a href="#embedded-content">Embedded content</a></li>
-      <li><a href="#cards">Cards</a></li>
-      <li><a href="#tables">Tables</a></li>
-      <li><a href="#forms">Forms</a></li>
-      <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#alerts">Alerts</a></li>
-      <li><a href="#badges">Badges</a></li>
-      <li><a href="#spinners">Spinners</a></li>
-      <li><a href="#skeletons">Skeletons</a></li>
-      <li><a href="#modals">Modals</a></li>
-      <li><a href="#tabs">Tabs</a></li>
-      <li><a href="#dropdowns">Dropdowns</a></li>
-      <li><a href="#toasts">Toasts</a></li>
-      <li><a href="#pagination">Pagination</a></li>
-      <li><a href="#breadcrumbs">Breadcrumbs</a></li>
-      <li><a href="#tooltips">Tooltips</a></li>
-      <li><a href="#accordions">Accordions</a></li>
-      <li><a href="#avatars">Avatars</a></li>
-      <li><a href="#progress">Progress</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#empty-states">Empty states</a></li>
-      <li><a href="#timelines">Timelines</a></li>
-      <li><a href="#layout">Layout</a></li>
-      <li><a href="#utilities">Utilities</a></li>
-      <li><a href="#animations">Animations</a></li>
-      <li><a href="#interactive-elements">Interactive elements</a></li>
+      <li><a href="#sections" data-i18n="index.nav.sections">Sections</a></li>
+      <li><a href="#grouping-content" data-i18n="index.nav.grouping">Grouping content</a></li>
+      <li><a href="#text-level-semantics" data-i18n="index.nav.text_semantics">Text-level semantics</a></li>
+      <li><a href="#edits" data-i18n="index.nav.edits">Edits</a></li>
+      <li><a href="#embedded-content" data-i18n="index.nav.embedded">Embedded content</a></li>
+      <li><a href="#cards" data-i18n="index.nav.cards">Cards</a></li>
+      <li><a href="#tables" data-i18n="index.nav.tables">Tables</a></li>
+      <li><a href="#forms" data-i18n="index.nav.forms">Forms</a></li>
+      <li><a href="#buttons" data-i18n="index.nav.buttons">Buttons</a></li>
+      <li><a href="#alerts" data-i18n="index.nav.alerts">Alerts</a></li>
+      <li><a href="#badges" data-i18n="index.nav.badges">Badges</a></li>
+      <li><a href="#spinners" data-i18n="index.nav.spinners">Spinners</a></li>
+      <li><a href="#skeletons" data-i18n="index.nav.skeletons">Skeletons</a></li>
+      <li><a href="#modals" data-i18n="index.nav.modals">Modals</a></li>
+      <li><a href="#tabs" data-i18n="index.nav.tabs">Tabs</a></li>
+      <li><a href="#dropdowns" data-i18n="index.nav.dropdowns">Dropdowns</a></li>
+      <li><a href="#toasts" data-i18n="index.nav.toasts">Toasts</a></li>
+      <li><a href="#pagination" data-i18n="index.nav.pagination">Pagination</a></li>
+      <li><a href="#breadcrumbs" data-i18n="index.nav.breadcrumbs">Breadcrumbs</a></li>
+      <li><a href="#tooltips" data-i18n="index.nav.tooltips">Tooltips</a></li>
+      <li><a href="#accordions" data-i18n="index.nav.accordions">Accordions</a></li>
+      <li><a href="#avatars" data-i18n="index.nav.avatars">Avatars</a></li>
+      <li><a href="#progress" data-i18n="index.nav.progress">Progress</a></li>
+      <li><a href="#stats" data-i18n="index.nav.stats">Stats</a></li>
+      <li><a href="#empty-states" data-i18n="index.nav.empty_states">Empty states</a></li>
+      <li><a href="#timelines" data-i18n="index.nav.timelines">Timelines</a></li>
+      <li><a href="#layout" data-i18n="index.nav.layout">Layout</a></li>
+      <li><a href="#utilities" data-i18n="index.nav.utilities">Utilities</a></li>
+      <li><a href="#animations" data-i18n="index.nav.animations">Animations</a></li>
+      <li><a href="#interactive-elements" data-i18n="index.nav.interactive">Interactive elements</a></li>
     </ul>
   </nav>
 
   <main>
 
     <section id="sections">
-      <h2>Sections</h2>
+      <h2 data-i18n="index.nav.sections">Sections</h2>
 
       <article>
         <h3><code>&lt;address&gt;</code></h3>
@@ -214,7 +229,7 @@
     </section>
 
     <section id="grouping-content">
-      <h2>Grouping content</h2>
+      <h2 data-i18n="index.nav.grouping">Grouping content</h2>
 
       <article>
         <h3><code>&lt;blockquote&gt;</code></h3>
@@ -301,7 +316,7 @@
     </section>
 
     <section id="text-level-semantics">
-      <h2>Text-level semantics</h2>
+      <h2 data-i18n="index.nav.text_semantics">Text-level semantics</h2>
 
       <article>
         <h3><code>&lt;a&gt;</code></h3>
@@ -410,7 +425,7 @@
     </section>
 
     <section id="edits">
-      <h2>Edits</h2>
+      <h2 data-i18n="index.nav.edits">Edits</h2>
       <article>
         <h3><code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code></h3>
         <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
@@ -419,7 +434,7 @@
     </section>
 
     <section id="embedded-content">
-      <h2>Embedded content</h2>
+      <h2 data-i18n="index.nav.embedded">Embedded content</h2>
 
       <article>
         <h3><code>&lt;img&gt;</code></h3>
@@ -499,7 +514,7 @@
     </section>
 
     <section id="cards">
-      <h2>Cards</h2>
+      <h2 data-i18n="index.nav.cards">Cards</h2>
 
       <article>
         <h3>Basic card</h3>
@@ -584,7 +599,7 @@
     </section>
 
     <section id="tables">
-      <h2>Tables</h2>
+      <h2 data-i18n="index.nav.tables">Tables</h2>
 
       <article>
         <h3>Basic table</h3>
@@ -702,7 +717,7 @@
     </section>
 
     <section id="forms">
-      <h2>Forms</h2>
+      <h2 data-i18n="index.nav.forms">Forms</h2>
 
       <form>
         <article>
@@ -912,7 +927,7 @@
     </section>
 
     <section id="buttons">
-      <h2>Buttons</h2>
+      <h2 data-i18n="index.nav.buttons">Buttons</h2>
 
       <article>
         <h3>Variants</h3>
@@ -988,7 +1003,7 @@
     </section>
 
     <section id="alerts">
-      <h2>Alerts</h2>
+      <h2 data-i18n="index.nav.alerts">Alerts</h2>
 
       <article>
         <h3>Variants</h3>
@@ -1039,7 +1054,7 @@
     </section>
 
     <section id="badges">
-      <h2>Badges</h2>
+      <h2 data-i18n="index.nav.badges">Badges</h2>
 
       <article>
         <h3>Solid variants</h3>
@@ -1103,7 +1118,7 @@
     </section>
 
     <section id="spinners">
-      <h2>Spinners</h2>
+      <h2 data-i18n="index.nav.spinners">Spinners</h2>
 
       <article>
         <h3>Sizes</h3>
@@ -1147,7 +1162,7 @@
     </section>
 
     <section id="skeletons">
-      <h2>Skeletons</h2>
+      <h2 data-i18n="index.nav.skeletons">Skeletons</h2>
 
       <article>
         <h3>Text lines</h3>
@@ -1228,7 +1243,7 @@
     </section>
 
     <section id="modals">
-      <h2>Modals</h2>
+      <h2 data-i18n="index.nav.modals">Modals</h2>
 
       <article>
         <h3>Basic modal</h3>
@@ -1323,7 +1338,7 @@
     </section>
 
     <section id="tabs">
-      <h2>Tabs</h2>
+      <h2 data-i18n="index.nav.tabs">Tabs</h2>
 
       <article>
         <h3>Underline tabs</h3>
@@ -1369,7 +1384,7 @@
     </section>
 
     <section id="dropdowns">
-      <h2>Dropdowns</h2>
+      <h2 data-i18n="index.nav.dropdowns">Dropdowns</h2>
 
       <article>
         <h3>Basic dropdown (JavaScript)</h3>
@@ -1429,7 +1444,7 @@
     </section>
 
     <section id="toasts">
-      <h2>Toasts</h2>
+      <h2 data-i18n="index.nav.toasts">Toasts</h2>
 
       <article>
         <h3>Static examples</h3>
@@ -1476,7 +1491,7 @@
     </section>
 
     <section id="pagination">
-      <h2>Pagination</h2>
+      <h2 data-i18n="index.nav.pagination">Pagination</h2>
 
       <article>
         <h3>Basic pagination</h3>
@@ -1541,7 +1556,7 @@
     </section>
 
     <section id="breadcrumbs">
-      <h2>Breadcrumbs</h2>
+      <h2 data-i18n="index.nav.breadcrumbs">Breadcrumbs</h2>
 
       <article>
         <h3>Basic</h3>
@@ -1579,7 +1594,7 @@
     </section>
 
     <section id="tooltips">
-      <h2>Tooltips</h2>
+      <h2 data-i18n="index.nav.tooltips">Tooltips</h2>
 
       <article>
         <h3>Placement</h3>
@@ -1612,7 +1627,7 @@
     </section>
 
     <section id="accordions">
-      <h2>Accordions</h2>
+      <h2 data-i18n="index.nav.accordions">Accordions</h2>
 
       <article>
         <h3>Basic accordion</h3>
@@ -1668,7 +1683,7 @@
     </section>
 
     <section id="avatars">
-      <h2>Avatars</h2>
+      <h2 data-i18n="index.nav.avatars">Avatars</h2>
 
       <article>
         <h3>Sizes</h3>
@@ -1768,7 +1783,7 @@
     </section>
 
     <section id="progress">
-      <h2>Progress</h2>
+      <h2 data-i18n="index.nav.progress">Progress</h2>
 
       <article>
         <h3>Basic bars</h3>
@@ -1857,7 +1872,7 @@
     </section>
 
     <section id="stats">
-      <h2>Stats</h2>
+      <h2 data-i18n="index.nav.stats">Stats</h2>
 
       <article>
         <h3>Basic</h3>
@@ -1952,7 +1967,7 @@
     </section>
 
     <section id="empty-states">
-      <h2>Empty states</h2>
+      <h2 data-i18n="index.nav.empty_states">Empty states</h2>
 
       <article>
         <h3>Basic</h3>
@@ -2007,7 +2022,7 @@
     </section>
 
     <section id="timelines">
-      <h2>Timelines</h2>
+      <h2 data-i18n="index.nav.timelines">Timelines</h2>
 
       <article>
         <h3>Basic vertical</h3>
@@ -2147,7 +2162,7 @@
     </section>
 
     <section id="layout">
-      <h2>Layout</h2>
+      <h2 data-i18n="index.nav.layout">Layout</h2>
 
       <article>
         <h3><code>.container</code></h3>
@@ -2218,7 +2233,7 @@
     </section>
 
     <section id="utilities">
-      <h2>Utilities</h2>
+      <h2 data-i18n="index.nav.utilities">Utilities</h2>
 
       <article>
         <h3>Spacing</h3>
@@ -2258,7 +2273,7 @@
     </section>
 
     <section id="animations">
-      <h2>Animations</h2>
+      <h2 data-i18n="index.nav.animations">Animations</h2>
 
       <article>
         <h3>Entrance animations</h3>
@@ -2285,7 +2300,7 @@
     </section>
 
     <section id="interactive-elements">
-      <h2>Interactive elements</h2>
+      <h2 data-i18n="index.nav.interactive">Interactive elements</h2>
 
       <article>
         <h3><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h3>
@@ -2311,7 +2326,7 @@
   </main>
 
   <footer role="contentinfo">
-    <p>Love.css Kitchen Sink — built for testing CSS systems and frameworks. <a href="#top">Back to top</a>.</p>
+    <p><span data-i18n="index.footer.text">Love.css Kitchen Sink — built for testing CSS systems and frameworks.</span> <a href="#top" data-i18n="index.footer.top">Back to top</a>.</p>
   </footer>
 
   <script>
