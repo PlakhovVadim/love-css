@@ -1,5 +1,7 @@
 /*! Love.css layout | MIT License | github.com/PlakhovVadim/love-css */
 
+/* Container */
+
 .container {
   width: 100%;
   max-width: 72rem;
@@ -7,10 +9,32 @@
   padding-inline: var(--love-space-4);
 }
 
+/* Container small */
+
+.container-sm {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding-inline: var(--love-space-4);
+}
+
+/* Container large */
+
+.container-lg {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: var(--love-space-4);
+}
+
+/* Container fluid */
+
 .container-fluid {
   width: 100%;
   padding-inline: var(--love-space-4);
 }
+
+/* Row and columns */
 
 .row {
   display: flex;
@@ -27,13 +51,20 @@
   flex: 0 0 auto;
 }
 
-.col-1  { flex: 0 0 calc(8.3333% - var(--love-space-4)); }
-.col-2  { flex: 0 0 calc(16.6667% - var(--love-space-4)); }
-.col-3  { flex: 0 0 calc(25% - var(--love-space-4)); }
-.col-4  { flex: 0 0 calc(33.3333% - var(--love-space-4)); }
-.col-6  { flex: 0 0 calc(50% - var(--love-space-4)); }
-.col-8  { flex: 0 0 calc(66.6667% - var(--love-space-4)); }
+.col-1 { flex: 0 0 calc(8.3333% - var(--love-space-4)); }
+.col-2 { flex: 0 0 calc(16.6667% - var(--love-space-4)); }
+.col-3 { flex: 0 0 calc(25% - var(--love-space-4)); }
+.col-4 { flex: 0 0 calc(33.3333% - var(--love-space-4)); }
+.col-5 { flex: 0 0 calc(41.6667% - var(--love-space-4)); }
+.col-6 { flex: 0 0 calc(50% - var(--love-space-4)); }
+.col-7 { flex: 0 0 calc(58.3333% - var(--love-space-4)); }
+.col-8 { flex: 0 0 calc(66.6667% - var(--love-space-4)); }
+.col-9 { flex: 0 0 calc(75% - var(--love-space-4)); }
+.col-10 { flex: 0 0 calc(83.3333% - var(--love-space-4)); }
+.col-11 { flex: 0 0 calc(91.6667% - var(--love-space-4)); }
 .col-12 { flex: 0 0 100%; }
+
+/* Stack */
 
 .stack {
   display: flex;
@@ -48,6 +79,8 @@
 .stack-4 { gap: var(--love-space-4); }
 .stack-6 { gap: var(--love-space-6); }
 .stack-8 { gap: var(--love-space-8); }
+
+/* Cluster */
 
 .cluster {
   display: flex;
@@ -64,11 +97,23 @@
   justify-content: space-between;
 }
 
+.cluster-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--love-space-3);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Center */
+
 .center {
   display: grid;
   place-items: center;
   min-height: 100%;
 }
+
+/* Sidebar */
 
 .sidebar {
   display: grid;
@@ -76,14 +121,13 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 48rem) {
-  .sidebar {
-    grid-template-columns: 16rem 1fr;
-  }
-  .sidebar-right {
-    grid-template-columns: 1fr 16rem;
-  }
+.sidebar-right {
+  display: grid;
+  gap: var(--love-space-6);
+  grid-template-columns: 1fr;
 }
+
+/* Grid */
 
 .grid {
   display: grid;
@@ -94,6 +138,12 @@
   display: grid;
   gap: var(--love-space-4);
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.grid-auto-sm {
+  display: grid;
+  gap: var(--love-space-3);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
 .grid-2 {
@@ -114,9 +164,46 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid-6 {
+  display: grid;
+  gap: var(--love-space-4);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Full bleed */
+
 .full-bleed {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
+}
+
+/* Aspect ratio */
+
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-photo { aspect-ratio: 4 / 3; }
+.aspect-wide { aspect-ratio: 21 / 9; }
+
+/* Responsive layout adjustments */
+
+@media (min-width: 48rem) {
+  .sidebar {
+    grid-template-columns: 16rem 1fr;
+  }
+
+  .sidebar-right {
+    grid-template-columns: 1fr 16rem;
+  }
+
+  .sidebar-wide {
+    grid-template-columns: 20rem 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .sidebar-lg {
+    grid-template-columns: 18rem 1fr;
+  }
 }
 
 /* Mobile adjustments */
@@ -126,20 +213,35 @@
   .col-2,
   .col-3,
   .col-4,
+  .col-5,
   .col-6,
+  .col-7,
   .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
   .col-12 {
     flex: 0 0 100%;
   }
 
   .grid-2,
   .grid-3,
-  .grid-4 {
+  .grid-4,
+  .grid-6 {
     grid-template-columns: 1fr;
   }
 
   .sidebar,
   .sidebar-right {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .full-bleed {
+    margin-inline: 0;
+    width: 100%;
   }
 }
