@@ -1,9 +1,9 @@
 /*! Love.css themes | MIT License | github.com/PlakhovVadim/love-css */
 
 /* Auto: follow system preference when no explicit theme is set */
-
 @media (prefers-color-scheme: dark) {
   :root:not([data-love-theme]) {
+    color-scheme: dark;
     --love-bg: var(--love-color-gray-950);
     --love-bg-subtle: var(--love-color-gray-900);
     --love-bg-elevated: var(--love-color-gray-800);
@@ -26,12 +26,17 @@
     --love-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.3);
     --love-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
     --love-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.3);
+    --love-select-arrow-color: var(--love-text-muted);
+    --love-skeleton-shimmer: oklch(1 0 0 / 0.08);
+    --love-scrollbar-track: var(--love-color-gray-900);
+    --love-scrollbar-thumb: var(--love-color-gray-700);
+    --love-scrollbar-thumb-hover: var(--love-color-gray-600);
   }
 }
 
 /* Explicit light theme */
-
 [data-love-theme="light"] {
+  color-scheme: light;
   --love-bg: var(--love-color-gray-50);
   --love-bg-subtle: var(--love-color-gray-100);
   --love-bg-elevated: var(--love-color-white);
@@ -51,11 +56,16 @@
   --love-warning: var(--love-color-yellow-600);
   --love-warning-subtle: var(--love-color-yellow-50);
   --love-focus: var(--love-color-blue-400);
+  --love-select-arrow-color: var(--love-text-muted);
+  --love-skeleton-shimmer: oklch(1 0 0 / 0.35);
+  --love-scrollbar-track: var(--love-color-gray-100);
+  --love-scrollbar-thumb: var(--love-color-gray-300);
+  --love-scrollbar-thumb-hover: var(--love-color-gray-400);
 }
 
 /* Explicit dark theme */
-
 [data-love-theme="dark"] {
+  color-scheme: dark;
   --love-bg: var(--love-color-gray-950);
   --love-bg-subtle: var(--love-color-gray-900);
   --love-bg-elevated: var(--love-color-gray-800);
@@ -78,11 +88,16 @@
   --love-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.3);
   --love-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.3);
   --love-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.3);
+  --love-select-arrow-color: var(--love-text-muted);
+  --love-skeleton-shimmer: oklch(1 0 0 / 0.08);
+  --love-scrollbar-track: var(--love-color-gray-900);
+  --love-scrollbar-thumb: var(--love-color-gray-700);
+  --love-scrollbar-thumb-hover: var(--love-color-gray-600);
 }
 
 /* High contrast theme */
-
 [data-love-theme="high-contrast"] {
+  color-scheme: light;
   --love-bg: var(--love-color-white);
   --love-bg-subtle: var(--love-color-gray-100);
   --love-bg-elevated: var(--love-color-white);
@@ -94,19 +109,45 @@
   --love-primary: oklch(0.4 0.2 250);
   --love-primary-hover: oklch(0.3 0.2 250);
   --love-focus: oklch(0.4 0.2 250);
+  --love-select-arrow-color: var(--love-color-black);
+  --love-skeleton-shimmer: oklch(0 0 0 / 0.1);
+  --love-scrollbar-track: var(--love-color-white);
+  --love-scrollbar-thumb: var(--love-color-black);
+  --love-scrollbar-thumb-hover: var(--love-color-gray-800);
 }
 
 /* Smooth theme transition */
-
 html {
   transition: background-color var(--love-duration-normal) var(--love-ease-default),
               color var(--love-duration-normal) var(--love-ease-default);
 }
 
 /* Respect reduced motion for theme transitions */
-
 @media (prefers-reduced-motion: reduce) {
   html {
     transition: none;
   }
+}
+
+/* Custom scrollbar */
+* {
+  scrollbar-color: var(--love-scrollbar-thumb) var(--love-scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--love-scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--love-scrollbar-thumb);
+  border-radius: 0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--love-scrollbar-thumb-hover);
 }
