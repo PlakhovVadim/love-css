@@ -38,2303 +38,2262 @@
   <link rel="stylesheet" href="css/love.overrides.css">
 
   <script src="i18n.js" defer></script>
-
-  <style>
-    body {
-      max-width: 72rem;
-      margin: 0 auto;
-      padding: var(--love-space-6);
-    }
-    .ks-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: var(--love-space-4);
-      padding-bottom: var(--love-space-6);
-      border-bottom: 1px solid var(--love-border);
-      margin-bottom: var(--love-space-6);
-    }
-    .ks-header-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--love-space-2);
-      align-items: center;
-      flex-shrink: 0;
-    }
-    .ks-theme-switcher {
-      display: flex;
-      gap: var(--love-space-2);
-    }
-    .ks-nav ul { list-style: none; padding-left: 0; }
-    .ks-nav > ul > li { margin-bottom: var(--love-space-2); }
-    section { margin-bottom: var(--love-space-12); }
-    article { margin-bottom: var(--love-space-8); }
-    .ks-box {
-      padding: var(--love-space-4);
-      background: var(--love-bg-subtle);
-      border: 1px solid var(--love-border);
-      text-align: center;
-    }
-    footer[role="contentinfo"] {
-      padding-top: var(--love-space-6);
-      border-top: 1px solid var(--love-border);
-      margin-top: var(--love-space-12);
-      color: var(--love-text-muted);
-      font-size: var(--love-font-size-sm);
-    }
-  </style>
 </head>
 <body>
 
-  <header class="ks-header">
-    <div>
-      <h1 data-i18n="index.title">Love.css Kitchen Sink</h1>
-      <p data-i18n="index.subtitle">A complete HTML element test page for building CSS systems and frameworks.</p>
-    </div>
-    <div class="ks-header-controls">
-      <div class="btn-group" role="group" aria-label="Language">
-        <button type="button" class="btn btn-sm" data-lang-btn="en" aria-pressed="true">EN</button>
-        <button type="button" class="btn btn-sm" data-lang-btn="ru" aria-pressed="false">RU</button>
+  <div class="container py-6">
+
+    <header class="flex justify-between items-start gap-4 border-b pb-6 mb-6">
+      <div>
+        <h1 data-i18n="index.title">Love.css Kitchen Sink</h1>
+        <p data-i18n="index.subtitle">A complete HTML element test page for building CSS systems and frameworks.</p>
       </div>
-      <div class="ks-theme-switcher" role="group" data-i18n-attr="aria-label:index.theme_aria">
-        <button type="button" class="btn btn-ghost btn-sm" data-theme="light" aria-pressed="false" data-i18n="index.theme.light">Light</button>
-        <button type="button" class="btn btn-ghost btn-sm" data-theme="dark" aria-pressed="false" data-i18n="index.theme.dark">Dark</button>
-        <button type="button" class="btn btn-ghost btn-sm" data-theme="high-contrast" aria-pressed="false" data-i18n="index.theme.contrast">Contrast</button>
-      </div>
-      <a href="docs.html" class="btn btn-sm" data-i18n="index.docs_link">Docs</a>
-    </div>
-  </header>
-
-  <nav class="ks-nav" data-i18n-attr="aria-label:index.nav.aria">
-    <ul>
-      <li><a href="#sections" data-i18n="index.nav.sections">Sections</a></li>
-      <li><a href="#grouping-content" data-i18n="index.nav.grouping">Grouping content</a></li>
-      <li><a href="#text-level-semantics" data-i18n="index.nav.text_semantics">Text-level semantics</a></li>
-      <li><a href="#edits" data-i18n="index.nav.edits">Edits</a></li>
-      <li><a href="#embedded-content" data-i18n="index.nav.embedded">Embedded content</a></li>
-      <li><a href="#cards" data-i18n="index.nav.cards">Cards</a></li>
-      <li><a href="#tables" data-i18n="index.nav.tables">Tables</a></li>
-      <li><a href="#forms" data-i18n="index.nav.forms">Forms</a></li>
-      <li><a href="#buttons" data-i18n="index.nav.buttons">Buttons</a></li>
-      <li><a href="#alerts" data-i18n="index.nav.alerts">Alerts</a></li>
-      <li><a href="#badges" data-i18n="index.nav.badges">Badges</a></li>
-      <li><a href="#spinners" data-i18n="index.nav.spinners">Spinners</a></li>
-      <li><a href="#skeletons" data-i18n="index.nav.skeletons">Skeletons</a></li>
-      <li><a href="#modals" data-i18n="index.nav.modals">Modals</a></li>
-      <li><a href="#tabs" data-i18n="index.nav.tabs">Tabs</a></li>
-      <li><a href="#dropdowns" data-i18n="index.nav.dropdowns">Dropdowns</a></li>
-      <li><a href="#toasts" data-i18n="index.nav.toasts">Toasts</a></li>
-      <li><a href="#pagination" data-i18n="index.nav.pagination">Pagination</a></li>
-      <li><a href="#breadcrumbs" data-i18n="index.nav.breadcrumbs">Breadcrumbs</a></li>
-      <li><a href="#tooltips" data-i18n="index.nav.tooltips">Tooltips</a></li>
-      <li><a href="#accordions" data-i18n="index.nav.accordions">Accordions</a></li>
-      <li><a href="#avatars" data-i18n="index.nav.avatars">Avatars</a></li>
-      <li><a href="#progress" data-i18n="index.nav.progress">Progress</a></li>
-      <li><a href="#stats" data-i18n="index.nav.stats">Stats</a></li>
-      <li><a href="#empty-states" data-i18n="index.nav.empty_states">Empty states</a></li>
-      <li><a href="#timelines" data-i18n="index.nav.timelines">Timelines</a></li>
-      <li><a href="#layout" data-i18n="index.nav.layout">Layout</a></li>
-      <li><a href="#utilities" data-i18n="index.nav.utilities">Utilities</a></li>
-      <li><a href="#animations" data-i18n="index.nav.animations">Animations</a></li>
-      <li><a href="#interactive-elements" data-i18n="index.nav.interactive">Interactive elements</a></li>
-    </ul>
-  </nav>
-
-  <main>
-
-    <section id="sections">
-      <h2 data-i18n="index.nav.sections">Sections</h2>
-
-      <article>
-        <h3><code>&lt;address&gt;</code></h3>
-        <address>
-          Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
-          Visit us at:<br>
-          Example.com<br>
-          Box 564, Disneyland<br>
-          USA
-        </address>
-      </article>
-
-      <article>
-        <h3><code>&lt;article&gt;</code></h3>
-        <article>
-          <h4>Article heading</h4>
-          <p>An <code>article</code> represents a self-contained composition in a document, page, application, or site.</p>
-        </article>
-      </article>
-
-      <article>
-        <h3><code>&lt;aside&gt;</code></h3>
-        <aside>
-          <h4>Aside heading</h4>
-          <p>The <code>aside</code> element represents a portion of a document whose content is only indirectly related to the document's main content.</p>
-        </aside>
-      </article>
-
-      <article>
-        <h3><code>&lt;footer&gt;</code></h3>
-        <footer>
-          <p>This is a footer. It typically contains information about the author, copyright data, or links to related documents.</p>
-        </footer>
-      </article>
-
-      <article>
-        <h3><code>&lt;header&gt;</code></h3>
-        <header>
-          <h4>Header heading</h4>
-          <p>This is a header. It typically contains introductory content or navigational aids.</p>
-        </header>
-      </article>
-
-      <article>
-        <h3>Headings <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code></h3>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-      </article>
-
-      <article>
-        <h3><code>&lt;nav&gt;</code></h3>
-        <nav aria-label="Example navigation">
-          <ul>
-            <li><a href="#!">Home</a></li>
-            <li><a href="#!">About</a></li>
-            <li><a href="#!">Contact</a></li>
-          </ul>
-        </nav>
-      </article>
-
-      <article>
-        <h3><code>&lt;section&gt;</code></h3>
-        <section>
-          <h4>Section heading</h4>
-          <p>A <code>section</code> represents a generic standalone section of a document.</p>
-        </section>
-      </article>
-
-      <article>
-        <h3><code>&lt;search&gt;</code></h3>
-        <search>
-          <form>
-            <label for="search-input">Search this site:</label>
-            <input type="search" id="search-input" name="q" placeholder="Enter search term">
-            <button type="submit">Search</button>
-          </form>
-        </search>
-      </article>
-    </section>
-
-    <section id="grouping-content">
-      <h2 data-i18n="index.nav.grouping">Grouping content</h2>
-
-      <article>
-        <h3><code>&lt;blockquote&gt;</code></h3>
-        <blockquote>
-          <p>A block quotation is a quotation in a written document, set off from the main text as a paragraph or block of text.</p>
-          <cite><a href="#!">Said no one, ever.</a></cite>
-        </blockquote>
-      </article>
-
-      <article>
-        <h3><code>&lt;dd&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code></h3>
-        <dl>
-          <dt>Definition List Title</dt>
-          <dd>This is a definition list division.</dd>
-          <dt>Another Title</dt>
-          <dd>And its description.</dd>
-        </dl>
-      </article>
-
-      <article>
-        <h3><code>&lt;div&gt;</code></h3>
-        <div>
-          <p>The <code>div</code> element is a generic container for flow content.</p>
+      <div class="flex flex-wrap gap-2 items-center flex-shrink-0">
+        <div class="btn-group" role="group" data-i18n-attr="aria-label:index.lang_aria">
+          <button type="button" class="btn btn-sm" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="btn btn-sm" data-lang-btn="ru" aria-pressed="false">RU</button>
         </div>
-      </article>
+        <div class="flex gap-2" role="group" data-i18n-attr="aria-label:index.theme_aria">
+          <button type="button" class="btn btn-ghost btn-sm" data-theme="light" aria-pressed="false" data-i18n="index.theme.light">Light</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-theme="dark" aria-pressed="false" data-i18n="index.theme.dark">Dark</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-theme="high-contrast" aria-pressed="false" data-i18n="index.theme.contrast">Contrast</button>
+        </div>
+        <a href="docs.html" class="btn btn-sm" data-i18n="index.docs_link">Docs</a>
+      </div>
+    </header>
 
-      <article>
-        <h3><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></h3>
-        <figure>
-          <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
-          <figcaption>Here is a caption for this figure.</figcaption>
-        </figure>
-      </article>
+    <nav data-i18n-attr="aria-label:index.nav.aria">
+      <ul class="list-none">
+        <li class="mb-2"><a href="#sections" data-i18n="index.nav.sections">Sections</a></li>
+        <li class="mb-2"><a href="#grouping-content" data-i18n="index.nav.grouping">Grouping content</a></li>
+        <li class="mb-2"><a href="#text-level-semantics" data-i18n="index.nav.text_semantics">Text-level semantics</a></li>
+        <li class="mb-2"><a href="#edits" data-i18n="index.nav.edits">Edits</a></li>
+        <li class="mb-2"><a href="#embedded-content" data-i18n="index.nav.embedded">Embedded content</a></li>
+        <li class="mb-2"><a href="#cards" data-i18n="index.nav.cards">Cards</a></li>
+        <li class="mb-2"><a href="#tables" data-i18n="index.nav.tables">Tables</a></li>
+        <li class="mb-2"><a href="#forms" data-i18n="index.nav.forms">Forms</a></li>
+        <li class="mb-2"><a href="#buttons" data-i18n="index.nav.buttons">Buttons</a></li>
+        <li class="mb-2"><a href="#alerts" data-i18n="index.nav.alerts">Alerts</a></li>
+        <li class="mb-2"><a href="#badges" data-i18n="index.nav.badges">Badges</a></li>
+        <li class="mb-2"><a href="#spinners" data-i18n="index.nav.spinners">Spinners</a></li>
+        <li class="mb-2"><a href="#skeletons" data-i18n="index.nav.skeletons">Skeletons</a></li>
+        <li class="mb-2"><a href="#modals" data-i18n="index.nav.modals">Modals</a></li>
+        <li class="mb-2"><a href="#tabs" data-i18n="index.nav.tabs">Tabs</a></li>
+        <li class="mb-2"><a href="#dropdowns" data-i18n="index.nav.dropdowns">Dropdowns</a></li>
+        <li class="mb-2"><a href="#toasts" data-i18n="index.nav.toasts">Toasts</a></li>
+        <li class="mb-2"><a href="#pagination" data-i18n="index.nav.pagination">Pagination</a></li>
+        <li class="mb-2"><a href="#breadcrumbs" data-i18n="index.nav.breadcrumbs">Breadcrumbs</a></li>
+        <li class="mb-2"><a href="#tooltips" data-i18n="index.nav.tooltips">Tooltips</a></li>
+        <li class="mb-2"><a href="#accordions" data-i18n="index.nav.accordions">Accordions</a></li>
+        <li class="mb-2"><a href="#avatars" data-i18n="index.nav.avatars">Avatars</a></li>
+        <li class="mb-2"><a href="#progress" data-i18n="index.nav.progress">Progress</a></li>
+        <li class="mb-2"><a href="#stats" data-i18n="index.nav.stats">Stats</a></li>
+        <li class="mb-2"><a href="#empty-states" data-i18n="index.nav.empty_states">Empty states</a></li>
+        <li class="mb-2"><a href="#timelines" data-i18n="index.nav.timelines">Timelines</a></li>
+        <li class="mb-2"><a href="#layout" data-i18n="index.nav.layout">Layout</a></li>
+        <li class="mb-2"><a href="#utilities" data-i18n="index.nav.utilities">Utilities</a></li>
+        <li class="mb-2"><a href="#animations" data-i18n="index.nav.animations">Animations</a></li>
+        <li class="mb-2"><a href="#interactive-elements" data-i18n="index.nav.interactive">Interactive elements</a></li>
+      </ul>
+    </nav>
 
-      <article>
-        <h3><code>&lt;hr&gt;</code></h3>
-        <hr>
-      </article>
+    <main>
 
-      <article>
-        <h3><code>&lt;li&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code></h3>
-        <ul>
-          <li>List Item 1</li>
-          <li>List Item 2</li>
-          <li>List Item 3</li>
-        </ul>
-        <ol type="1">
-          <li>List Item 1</li>
-          <li>
-            List Item 2
-            <ol type="A">
-              <li>List Item 1</li>
-              <li>List Item 2</li>
-            </ol>
-          </li>
-          <li>List Item 3</li>
-        </ol>
-      </article>
+      <section id="sections" class="mb-12">
+        <h2 data-i18n="index.nav.sections">Sections</h2>
 
-      <article>
-        <h3><code>&lt;menu&gt;</code></h3>
-        <menu>
-          <li><button type="button">Copy</button></li>
-          <li><button type="button">Cut</button></li>
-          <li><button type="button">Paste</button></li>
-        </menu>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;address&gt;</code></h3>
+          <address>
+            Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+            Visit us at:<br>
+            Example.com<br>
+            Box 564, Disneyland<br>
+            USA
+          </address>
+        </article>
 
-      <article>
-        <h3><code>&lt;p&gt;</code></h3>
-        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;article&gt;</code></h3>
+          <article>
+            <h4>Article heading</h4>
+            <p>An <code>article</code> represents a self-contained composition in a document, page, application, or site.</p>
+          </article>
+        </article>
 
-      <article>
-        <h3><code>&lt;pre&gt;</code></h3>
-        <pre>P R E F O R M A T T E D   T E X T
+        <article class="mb-8">
+          <h3><code>&lt;aside&gt;</code></h3>
+          <aside>
+            <h4>Aside heading</h4>
+            <p>The <code>aside</code> element represents a portion of a document whose content is only indirectly related to the document's main content.</p>
+          </aside>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;footer&gt;</code></h3>
+          <footer>
+            <p>This is a footer. It typically contains information about the author, copyright data, or links to related documents.</p>
+          </footer>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;header&gt;</code></h3>
+          <header>
+            <h4>Header heading</h4>
+            <p>This is a header. It typically contains introductory content or navigational aids.</p>
+          </header>
+        </article>
+
+        <article class="mb-8">
+          <h3>Headings <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code></h3>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;nav&gt;</code></h3>
+          <nav aria-label="Example navigation">
+            <ul>
+              <li><a href="#!">Home</a></li>
+              <li><a href="#!">About</a></li>
+              <li><a href="#!">Contact</a></li>
+            </ul>
+          </nav>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;section&gt;</code></h3>
+          <section>
+            <h4>Section heading</h4>
+            <p>A <code>section</code> represents a generic standalone section of a document.</p>
+          </section>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;search&gt;</code></h3>
+          <search>
+            <form>
+              <label for="search-input">Search this site:</label>
+              <input type="search" id="search-input" name="q" placeholder="Enter search term">
+              <button type="submit">Search</button>
+            </form>
+          </search>
+        </article>
+      </section>
+
+      <section id="grouping-content" class="mb-12">
+        <h2 data-i18n="index.nav.grouping">Grouping content</h2>
+
+        <article class="mb-8">
+          <h3><code>&lt;blockquote&gt;</code></h3>
+          <blockquote>
+            <p>A block quotation is a quotation in a written document, set off from the main text as a paragraph or block of text.</p>
+            <cite><a href="#!">Said no one, ever.</a></cite>
+          </blockquote>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;dd&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code></h3>
+          <dl>
+            <dt>Definition List Title</dt>
+            <dd>This is a definition list division.</dd>
+            <dt>Another Title</dt>
+            <dd>And its description.</dd>
+          </dl>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;div&gt;</code></h3>
+          <div>
+            <p>The <code>div</code> element is a generic container for flow content.</p>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></h3>
+          <figure>
+            <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
+            <figcaption>Here is a caption for this figure.</figcaption>
+          </figure>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;hr&gt;</code></h3>
+          <hr>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;li&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code></h3>
+          <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+          </ul>
+          <ol type="1">
+            <li>List Item 1</li>
+            <li>
+              List Item 2
+              <ol type="A">
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+              </ol>
+            </li>
+            <li>List Item 3</li>
+          </ol>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;menu&gt;</code></h3>
+          <menu>
+            <li><button type="button">Copy</button></li>
+            <li><button type="button">Cut</button></li>
+            <li><button type="button">Paste</button></li>
+          </menu>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;p&gt;</code></h3>
+          <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea.</p>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;pre&gt;</code></h3>
+          <pre>P R E F O R M A T T E D   T E X T
   ! " # $ % &amp; ' ( ) * + , - . /
   0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
   @ A B C D E F G H I J K L M N O
   P Q R S T U V W X Y Z [ \ ] ^ _
   ` a b c d e f g h i j k l m n o
   p q r s t u v w x y z { | } ~</pre>
-      </article>
-    </section>
+        </article>
+      </section>
 
-    <section id="text-level-semantics">
-      <h2 data-i18n="index.nav.text_semantics">Text-level semantics</h2>
+      <section id="text-level-semantics" class="mb-12">
+        <h2 data-i18n="index.nav.text_semantics">Text-level semantics</h2>
 
-      <article>
-        <h3><code>&lt;a&gt;</code></h3>
-        <p><a href="#!">This is a text link</a>.</p>
-        <p><a href="#!" target="_blank" rel="noopener">This link opens in a new tab</a>.</p>
-        <p><a href="https://example.com" target="_blank" rel="noopener">External link — click it, then come back to see :visited styling</a>.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;a&gt;</code></h3>
+          <p><a href="#!">This is a text link</a>.</p>
+          <p><a href="#!" target="_blank" rel="noopener">This link opens in a new tab</a>.</p>
+          <p><a href="https://example.com" target="_blank" rel="noopener">External link — click it, then come back to see :visited styling</a>.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;abbr&gt;</code></h3>
-        <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;abbr&gt;</code></h3>
+          <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;b&gt;</code></h3>
-        <p>The <b>b element</b> is stylistically different text from normal text.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;b&gt;</code></h3>
+          <p>The <b>b element</b> is stylistically different text from normal text.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;bdi&gt;</code> and <code>&lt;bdo&gt;</code></h3>
-        <p>User <bdi>إيان</bdi> wrote a review.</p>
-        <p><bdo dir="rtl">This text will go right to left.</bdo></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;bdi&gt;</code> and <code>&lt;bdo&gt;</code></h3>
+          <p>User <bdi>إيان</bdi> wrote a review.</p>
+          <p><bdo dir="rtl">This text will go right to left.</bdo></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;br&gt;</code></h3>
-        <p>First line.<br>Second line after a line break.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;br&gt;</code></h3>
+          <p>First line.<br>Second line after a line break.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;cite&gt;</code></h3>
-        <p><cite>This is a citation.</cite></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;cite&gt;</code></h3>
+          <p><cite>This is a citation.</cite></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;code&gt;</code></h3>
-        <p>Inline code: <code>&lt;div&gt;code&lt;/div&gt;</code></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;code&gt;</code></h3>
+          <p>Inline code: <code>&lt;div&gt;code&lt;/div&gt;</code></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;data&gt;</code></h3>
-        <p>The <code>data</code> element links content to a machine-readable translation: <data value="398">Mini Ketchup</data>.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;data&gt;</code></h3>
+          <p>The <code>data</code> element links content to a machine-readable translation: <data value="398">Mini Ketchup</data>.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;dfn&gt;</code></h3>
-        <p>The <dfn>dfn element</dfn> indicates a definition.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;dfn&gt;</code></h3>
+          <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;em&gt;</code> and <code>&lt;i&gt;</code></h3>
-        <p><em>This text has added emphasis.</em></p>
-        <p>The <i>i element</i> is text that is offset from the normal text.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;em&gt;</code> and <code>&lt;i&gt;</code></h3>
+          <p><em>This text has added emphasis.</em></p>
+          <p>The <i>i element</i> is text that is offset from the normal text.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></h3>
-        <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></p>
-        <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
-        <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></h3>
+          <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></p>
+          <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+          <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;mark&gt;</code></h3>
-        <p>The <mark>mark element</mark> indicates a highlight.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;mark&gt;</code></h3>
+          <p>The <mark>mark element</mark> indicates a highlight.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;q&gt;</code></h3>
-        <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;q&gt;</code></h3>
+          <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;ruby&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;rp&gt;</code></h3>
-        <p>
-          <ruby>
-            漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
-            字 <rp>(</rp><rt>ji</rt><rp>)</rp>
-          </ruby>
-        </p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;ruby&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;rp&gt;</code></h3>
+          <p>
+            <ruby>
+              漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+              字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+            </ruby>
+          </p>
+        </article>
 
-      <article>
-        <h3><code>&lt;s&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;strong&gt;</code></h3>
-        <p><s>This text has a strikethrough</s>.</p>
-        <p><small>This small text is small for fine print, etc.</small></p>
-        <p><strong>Strong is used to indicate strong importance.</strong></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;s&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;strong&gt;</code></h3>
+          <p><s>This text has a strikethrough</s>.</p>
+          <p><small>This small text is small for fine print, etc.</small></p>
+          <p><strong>Strong is used to indicate strong importance.</strong></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code></h3>
-        <p>Subscript for things like H<sub>2</sub>O.</p>
-        <p>Superscript<sup>®</sup>.</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code></h3>
+          <p>Subscript for things like H<sub>2</sub>O.</p>
+          <p>Superscript<sup>®</sup>.</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;time&gt;</code></h3>
-        <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;time&gt;</code></h3>
+          <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;u&gt;</code> and <code>&lt;wbr&gt;</code></h3>
-        <p>The <u>u element</u> is text with an unarticulated non-textual annotation.</p>
-        <p>Supercalifragilisticexpialidocious<wbr>Supercalifragilisticexpialidocious</p>
-      </article>
-    </section>
+        <article class="mb-8">
+          <h3><code>&lt;u&gt;</code> and <code>&lt;wbr&gt;</code></h3>
+          <p>The <u>u element</u> is text with an unarticulated non-textual annotation.</p>
+          <p>Supercalifragilisticexpialidocious<wbr>Supercalifragilisticexpialidocious</p>
+        </article>
+      </section>
 
-    <section id="edits">
-      <h2 data-i18n="index.nav.edits">Edits</h2>
-      <article>
-        <h3><code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code></h3>
-        <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
-        <p><ins datetime="2024-01-01T12:00:00Z">This text was inserted on January 1, 2024.</ins></p>
-      </article>
-    </section>
+      <section id="edits" class="mb-12">
+        <h2 data-i18n="index.nav.edits">Edits</h2>
+        <article class="mb-8">
+          <h3><code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code></h3>
+          <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+          <p><ins datetime="2024-01-01T12:00:00Z">This text was inserted on January 1, 2024.</ins></p>
+        </article>
+      </section>
 
-    <section id="embedded-content">
-      <h2 data-i18n="index.nav.embedded">Embedded content</h2>
+      <section id="embedded-content" class="mb-12">
+        <h2 data-i18n="index.nav.embedded">Embedded content</h2>
 
-      <article>
-        <h3><code>&lt;img&gt;</code></h3>
-        <p><img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150"></p>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;img&gt;</code></h3>
+          <p><img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150"></p>
+        </article>
 
-      <article>
-        <h3><code>&lt;picture&gt;</code></h3>
-        <picture>
-          <source srcset="assets/img/placeholder-wide.svg" media="(min-width: 800px)">
-          <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
-        </picture>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;picture&gt;</code></h3>
+          <picture>
+            <source srcset="assets/img/placeholder-wide.svg" media="(min-width: 800px)">
+            <img src="assets/img/placeholder.svg" alt="Placeholder image" width="200" height="150">
+          </picture>
+        </article>
 
-      <article>
-        <h3><code>&lt;audio&gt;</code></h3>
-        <audio controls>
-          <source src="assets/media/sample.ogg" type="audio/ogg">
-          <source src="assets/media/sample.mp3" type="audio/mpeg">
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;audio&gt;</code></h3>
+          <audio controls>
+            <source src="assets/media/sample.ogg" type="audio/ogg">
+            <source src="assets/media/sample.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </article>
 
-      <article>
-        <h3><code>&lt;video&gt;</code> and <code>&lt;source&gt;</code></h3>
-        <video controls width="320" height="240">
-          <source src="assets/media/sample.webm" type="video/webm">
-          <source src="assets/media/sample.mp4" type="video/mp4">
-          Your browser does not support the <code>video</code> element.
-        </video>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;video&gt;</code> and <code>&lt;source&gt;</code></h3>
+          <video controls width="320" height="240">
+            <source src="assets/media/sample.webm" type="video/webm">
+            <source src="assets/media/sample.mp4" type="video/mp4">
+            Your browser does not support the <code>video</code> element.
+          </video>
+        </article>
 
-      <article>
-        <h3><code>&lt;track&gt;</code></h3>
-        <video controls width="320" height="240">
-          <source src="assets/media/sample.mp4" type="video/mp4">
-          <track src="assets/media/subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
-          Your browser does not support the <code>video</code> element.
-        </video>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;track&gt;</code></h3>
+          <video controls width="320" height="240">
+            <source src="assets/media/sample.mp4" type="video/mp4">
+            <track src="assets/media/subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
+            Your browser does not support the <code>video</code> element.
+          </video>
+        </article>
 
-      <article>
-        <h3><code>&lt;canvas&gt;</code></h3>
-        <canvas width="200" height="100">
-          Your browser does not support the <code>canvas</code> element.
-        </canvas>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;canvas&gt;</code></h3>
+          <canvas width="200" height="100">
+            Your browser does not support the <code>canvas</code> element.
+          </canvas>
+        </article>
 
-      <article>
-        <h3><code>&lt;svg&gt;</code></h3>
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="#1fa3ec" />
-        </svg>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;svg&gt;</code></h3>
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="#1fa3ec" />
+          </svg>
+        </article>
 
-      <article>
-        <h3><code>&lt;iframe&gt;</code></h3>
-        <iframe src="about:blank" title="Example iframe" width="300" height="200"></iframe>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;iframe&gt;</code></h3>
+          <iframe src="about:blank" title="Example iframe" width="300" height="200"></iframe>
+        </article>
 
-      <article>
-        <h3><code>&lt;embed&gt;</code> and <code>&lt;object&gt;</code></h3>
-        <embed src="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
-        <object data="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
-          <p>Your browser does not support the <code>object</code> element.</p>
-        </object>
-      </article>
+        <article class="mb-8">
+          <h3><code>&lt;embed&gt;</code> and <code>&lt;object&gt;</code></h3>
+          <embed src="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
+          <object data="assets/media/sample.pdf" type="application/pdf" width="300" height="200">
+            <p>Your browser does not support the <code>object</code> element.</p>
+          </object>
+        </article>
 
-      <article>
-        <h3><code>&lt;map&gt;</code> and <code>&lt;area&gt;</code></h3>
-        <map name="infographic">
-          <area shape="rect" coords="0,0,100,100" href="#!" alt="Rectangle area">
-          <area shape="circle" coords="200,200,50" href="#!" alt="Circle area">
-        </map>
-        <p>Clickable areas defined by <code>area</code> require an <code>img</code> with <code>usemap</code>.</p>
-      </article>
-    </section>
+        <article class="mb-8">
+          <h3><code>&lt;map&gt;</code> and <code>&lt;area&gt;</code></h3>
+          <map name="infographic">
+            <area shape="rect" coords="0,0,100,100" href="#!" alt="Rectangle area">
+            <area shape="circle" coords="200,200,50" href="#!" alt="Circle area">
+          </map>
+          <p>Clickable areas defined by <code>area</code> require an <code>img</code> with <code>usemap</code>.</p>
+        </article>
+      </section>
 
-    <section id="cards">
-      <h2 data-i18n="index.nav.cards">Cards</h2>
+      <section id="cards" class="mb-12">
+        <h2 data-i18n="index.nav.cards">Cards</h2>
 
-      <article>
-        <h3>Basic card</h3>
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-subtitle">Subtitle goes here</p>
+        <article class="mb-8">
+          <h3>Basic card</h3>
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-subtitle">Subtitle goes here</p>
+              </div>
+              <div class="card-body">
+                <p class="card-text">A card is a flexible container.</p>
+              </div>
+              <div class="card-footer">
+                <div class="card-actions">
+                  <button type="button" class="btn btn-primary">Action</button>
+                  <button type="button" class="btn btn-ghost">Cancel</button>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-              <p class="card-text">A card is a flexible container.</p>
+
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Body only</h4>
+                <p class="card-text">A card without header or footer.</p>
+              </div>
             </div>
-            <div class="card-footer">
-              <div class="card-actions">
-                <button type="button" class="btn btn-primary">Action</button>
-                <button type="button" class="btn btn-ghost">Cancel</button>
+
+            <div class="card card-compact">
+              <div class="card-body">
+                <h4 class="card-title">Compact card</h4>
+                <p class="card-text">Tighter padding.</p>
               </div>
             </div>
           </div>
+        </article>
 
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Body only</h4>
-              <p class="card-text">A card without header or footer.</p>
+        <article class="mb-8">
+          <h3>Variants</h3>
+          <div class="grid-3">
+            <div class="card card-flat">
+              <div class="card-body">
+                <h4 class="card-title">Flat</h4>
+                <p class="card-text">No shadow.</p>
+              </div>
+            </div>
+
+            <div class="card card-bordered">
+              <div class="card-body">
+                <h4 class="card-title">Bordered</h4>
+                <p class="card-text">Stronger border.</p>
+              </div>
+            </div>
+
+            <div class="card card-hover">
+              <div class="card-body">
+                <h4 class="card-title">Hover</h4>
+                <p class="card-text">Hover to see shadow grow.</p>
+              </div>
             </div>
           </div>
+        </article>
 
-          <div class="card card-compact">
+        <article class="mb-8">
+          <h3>Accents</h3>
+          <div class="grid-4">
+            <div class="card card-accent"><div class="card-body"><h4 class="card-title">Primary</h4></div></div>
+            <div class="card card-accent-danger"><div class="card-body"><h4 class="card-title">Danger</h4></div></div>
+            <div class="card card-accent-success"><div class="card-body"><h4 class="card-title">Success</h4></div></div>
+            <div class="card card-accent-warning"><div class="card-body"><h4 class="card-title">Warning</h4></div></div>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Interactive card (link)</h3>
+          <a href="#!" class="card card-interactive max-w-sm block">
             <div class="card-body">
-              <h4 class="card-title">Compact card</h4>
-              <p class="card-text">Tighter padding.</p>
+              <h4 class="card-title">Clickable card</h4>
+              <p class="card-text">Hover and focus show it is interactive.</p>
             </div>
-          </div>
-        </div>
-      </article>
+          </a>
+        </article>
+      </section>
 
-      <article>
-        <h3>Variants</h3>
-        <div class="grid-3">
-          <div class="card card-flat">
-            <div class="card-body">
-              <h4 class="card-title">Flat</h4>
-              <p class="card-text">No shadow.</p>
-            </div>
-          </div>
+      <section id="tables" class="mb-12">
+        <h2 data-i18n="index.nav.tables">Tables</h2>
 
-          <div class="card card-bordered">
-            <div class="card-body">
-              <h4 class="card-title">Bordered</h4>
-              <p class="card-text">Stronger border.</p>
-            </div>
-          </div>
-
-          <div class="card card-hover">
-            <div class="card-body">
-              <h4 class="card-title">Hover</h4>
-              <p class="card-text">Hover to see shadow grow.</p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Accents</h3>
-        <div class="grid-4">
-          <div class="card card-accent"><div class="card-body"><h4 class="card-title">Primary</h4></div></div>
-          <div class="card card-accent-danger"><div class="card-body"><h4 class="card-title">Danger</h4></div></div>
-          <div class="card card-accent-success"><div class="card-body"><h4 class="card-title">Success</h4></div></div>
-          <div class="card card-accent-warning"><div class="card-body"><h4 class="card-title">Warning</h4></div></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Interactive card (link)</h3>
-        <a href="#!" class="card card-interactive" style="max-width: 20rem; display: block;">
-          <div class="card-body">
-            <h4 class="card-title">Clickable card</h4>
-            <p class="card-text">Hover and focus show it is interactive.</p>
-          </div>
-        </a>
-      </article>
-    </section>
-
-    <section id="tables">
-      <h2 data-i18n="index.nav.tables">Tables</h2>
-
-      <article>
-        <h3>Basic table</h3>
-        <table class="table">
-          <caption>Table Caption</caption>
-          <thead>
-            <tr>
-              <th>Heading 1</th>
-              <th>Heading 2</th>
-              <th>Heading 3</th>
-              <th>Heading 4</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
-            <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article>
-        <h3>Striped + hover</h3>
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Last seen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alice</td>
-              <td>Admin</td>
-              <td><span class="badge badge-soft badge-success">Active</span></td>
-              <td>2 minutes ago</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>Editor</td>
-              <td><span class="badge badge-soft badge-success">Active</span></td>
-              <td>1 hour ago</td>
-            </tr>
-            <tr>
-              <td>Carol</td>
-              <td>Viewer</td>
-              <td><span class="badge badge-soft badge-warning">Invited</span></td>
-              <td>Never</td>
-            </tr>
-            <tr>
-              <td>Dave</td>
-              <td>Editor</td>
-              <td><span class="badge badge-soft badge-danger">Disabled</span></td>
-              <td>3 days ago</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article>
-        <h3>Bordered</h3>
-        <table class="table table-bordered">
-          <thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>2</td><td>3</td></tr>
-            <tr><td>4</td><td>5</td><td>6</td></tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article>
-        <h3>Compact</h3>
-        <table class="table table-compact table-striped">
-          <thead><tr><th>Key</th><th>Value</th><th>Type</th></tr></thead>
-          <tbody>
-            <tr><td>name</td><td>love-css</td><td>string</td></tr>
-            <tr><td>version</td><td>0.1.0</td><td>string</td></tr>
-            <tr><td>modules</td><td>28</td><td>number</td></tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article>
-        <h3>Selected and disabled rows</h3>
-        <table class="table table-hover">
-          <thead><tr><th>Row</th><th>State</th></tr></thead>
-          <tbody>
-            <tr><td>Row 1</td><td>normal</td></tr>
-            <tr class="is-selected"><td>Row 2</td><td>selected</td></tr>
-            <tr><td>Row 3</td><td>normal</td></tr>
-            <tr class="is-disabled"><td>Row 4</td><td>disabled</td></tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article>
-        <h3>Responsive wrapper</h3>
-        <div class="table-responsive">
-          <table class="table table-striped">
+        <article class="mb-8">
+          <h3>Basic table</h3>
+          <table class="table">
+            <caption>Table Caption</caption>
             <thead>
               <tr>
-                <th>Column A</th><th>Column B</th><th>Column C</th><th>Column D</th>
-                <th>Column E</th><th>Column F</th><th>Column G</th><th>Column H</th>
+                <th>Heading 1</th>
+                <th>Heading 2</th>
+                <th>Heading 3</th>
+                <th>Heading 4</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-              <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+              <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
+              <tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td></tr>
             </tbody>
           </table>
-        </div>
-        <p class="text-muted text-sm mt-2">On narrow screens the table scrolls horizontally.</p>
-      </article>
-    </section>
-
-    <section id="forms">
-      <h2 data-i18n="index.nav.forms">Forms</h2>
-
-      <form>
-        <article>
-          <h3>Basic inputs with hints and errors</h3>
-          <div class="form-row form-row-2">
-            <div class="form-group">
-              <label class="form-label" for="f-name">Name</label>
-              <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name">
-              <span class="form-hint">Use your real name for verification.</span>
-            </div>
-            <div class="form-group">
-              <label class="form-label form-label-required" for="f-email">Email</label>
-              <input class="form-input is-error" type="email" id="f-email" name="email" value="not-an-email">
-              <span class="form-error">Please enter a valid email address.</span>
-            </div>
-          </div>
-
-          <div class="form-row form-row-2">
-            <div class="form-group">
-              <label class="form-label" for="f-username">Username</label>
-              <input class="form-input is-success" type="text" id="f-username" name="username" value="love-css">
-              <span class="form-hint">This username is available.</span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-password">Password</label>
-              <input class="form-input" type="password" id="f-password" name="password" placeholder="••••••••">
-            </div>
-          </div>
         </article>
 
-        <article>
-          <h3>Input sizes</h3>
-          <div class="form-row form-row-3">
-            <div class="form-group">
-              <label class="form-label" for="f-sm">Small</label>
-              <input class="form-input form-input-sm" type="text" id="f-sm" placeholder="Small">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-md">Default</label>
-              <input class="form-input" type="text" id="f-md" placeholder="Default">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-lg">Large</label>
-              <input class="form-input form-input-lg" type="text" id="f-lg" placeholder="Large">
-            </div>
-          </div>
+        <article class="mb-8">
+          <h3>Striped + hover</h3>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Last seen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice</td>
+                <td>Admin</td>
+                <td><span class="badge badge-soft badge-success">Active</span></td>
+                <td>2 minutes ago</td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>Editor</td>
+                <td><span class="badge badge-soft badge-success">Active</span></td>
+                <td>1 hour ago</td>
+              </tr>
+              <tr>
+                <td>Carol</td>
+                <td>Viewer</td>
+                <td><span class="badge badge-soft badge-warning">Invited</span></td>
+                <td>Never</td>
+              </tr>
+              <tr>
+                <td>Dave</td>
+                <td>Editor</td>
+                <td><span class="badge badge-soft badge-danger">Disabled</span></td>
+                <td>3 days ago</td>
+              </tr>
+            </tbody>
+          </table>
         </article>
 
-        <article>
-          <h3>Input group</h3>
-          <div class="form-group">
-            <label class="form-label" for="f-url">Website</label>
-            <div class="input-group">
-              <span class="input-group-text">https://</span>
-              <input class="form-input" type="text" id="f-url" placeholder="example.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="f-price">Price</label>
-            <div class="input-group">
-              <input class="form-input" type="number" id="f-price" value="49">
-              <span class="input-group-text">.00 USD</span>
-            </div>
-          </div>
+        <article class="mb-8">
+          <h3>Bordered</h3>
+          <table class="table table-bordered">
+            <thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>2</td><td>3</td></tr>
+              <tr><td>4</td><td>5</td><td>6</td></tr>
+            </tbody>
+          </table>
         </article>
 
-        <article>
-          <h3>Select, textarea, datalist</h3>
-          <div class="form-group">
-            <label class="form-label" for="f-select">Select</label>
-            <select id="f-select">
-              <optgroup label="Option Group 1">
+        <article class="mb-8">
+          <h3>Compact</h3>
+          <table class="table table-compact table-striped">
+            <thead><tr><th>Key</th><th>Value</th><th>Type</th></tr></thead>
+            <tbody>
+              <tr><td>name</td><td>love-css</td><td>string</td></tr>
+              <tr><td>version</td><td>0.1.0</td><td>string</td></tr>
+              <tr><td>modules</td><td>28</td><td>number</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="mb-8">
+          <h3>Selected and disabled rows</h3>
+          <table class="table table-hover">
+            <thead><tr><th>Row</th><th>State</th></tr></thead>
+            <tbody>
+              <tr><td>Row 1</td><td>normal</td></tr>
+              <tr class="is-selected"><td>Row 2</td><td>selected</td></tr>
+              <tr><td>Row 3</td><td>normal</td></tr>
+              <tr class="is-disabled"><td>Row 4</td><td>disabled</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="mb-8">
+          <h3>Responsive wrapper</h3>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Column A</th><th>Column B</th><th>Column C</th><th>Column D</th>
+                  <th>Column E</th><th>Column F</th><th>Column G</th><th>Column H</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-muted text-sm mt-2">On narrow screens the table scrolls horizontally.</p>
+        </article>
+      </section>
+
+      <section id="forms" class="mb-12">
+        <h2 data-i18n="index.nav.forms">Forms</h2>
+
+        <form>
+          <article class="mb-8">
+            <h3>Basic inputs with hints and errors</h3>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="f-name">Name</label>
+                <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name">
+                <span class="form-hint">Use your real name for verification.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required" for="f-email">Email</label>
+                <input class="form-input is-error" type="email" id="f-email" name="email" value="not-an-email">
+                <span class="form-error">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="f-username">Username</label>
+                <input class="form-input is-success" type="text" id="f-username" name="username" value="love-css">
+                <span class="form-hint">This username is available.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-password">Password</label>
+                <input class="form-input" type="password" id="f-password" name="password" placeholder="••••••••">
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-8">
+            <h3>Input sizes</h3>
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label class="form-label" for="f-sm">Small</label>
+                <input class="form-input form-input-sm" type="text" id="f-sm" placeholder="Small">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-md">Default</label>
+                <input class="form-input" type="text" id="f-md" placeholder="Default">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-lg">Large</label>
+                <input class="form-input form-input-lg" type="text" id="f-lg" placeholder="Large">
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-8">
+            <h3>Input group</h3>
+            <div class="form-group">
+              <label class="form-label" for="f-url">Website</label>
+              <div class="input-group">
+                <span class="input-group-text">https://</span>
+                <input class="form-input" type="text" id="f-url" placeholder="example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-price">Price</label>
+              <div class="input-group">
+                <input class="form-input" type="number" id="f-price" value="49">
+                <span class="input-group-text">.00 USD</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-8">
+            <h3>Select, textarea, datalist</h3>
+            <div class="form-group">
+              <label class="form-label" for="f-select">Select</label>
+              <select id="f-select">
+                <optgroup label="Option Group 1">
+                  <option>Option One</option>
+                  <option>Option Two</option>
+                </optgroup>
+                <optgroup label="Option Group 2">
+                  <option>Option Three</option>
+                  <option>Option Four</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-select-multiple">Select (multiple)</label>
+              <select id="f-select-multiple" multiple>
                 <option>Option One</option>
                 <option>Option Two</option>
-              </optgroup>
-              <optgroup label="Option Group 2">
                 <option>Option Three</option>
-                <option>Option Four</option>
-              </optgroup>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="f-select-multiple">Select (multiple)</label>
-            <select id="f-select-multiple" multiple>
-              <option>Option One</option>
-              <option>Option Two</option>
-              <option>Option Three</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="f-textarea">Message</label>
-            <textarea id="f-textarea" rows="4" placeholder="Enter your message here"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="f-datalist">Datalist</label>
-            <input class="form-input" type="text" id="f-datalist" list="example-list" placeholder="Type to search">
-            <datalist id="example-list">
-              <option value="Example #1">
-              <option value="Example #2">
-              <option value="Example #3">
-            </datalist>
-          </div>
-        </article>
-
-        <article>
-          <h3>Checkboxes and radios</h3>
-          <fieldset>
-            <legend>Notification preferences</legend>
-            <div class="form-check">
-              <input type="checkbox" id="f-check1" checked>
-              <label for="f-check1">Email notifications</label>
+              </select>
             </div>
-            <div class="form-check">
-              <input type="checkbox" id="f-check2">
-              <label for="f-check2">Push notifications</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="f-check3" disabled>
-              <label for="f-check3">SMS (unavailable)</label>
-            </div>
-          </fieldset>
 
-          <fieldset>
-            <legend>Account type</legend>
-            <div class="form-check">
-              <input type="radio" id="f-radio1" name="acct" checked>
-              <label for="f-radio1">Personal</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" id="f-radio2" name="acct">
-              <label for="f-radio2">Business</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" id="f-radio3" name="acct">
-              <label for="f-radio3">Enterprise</label>
-            </div>
-          </fieldset>
-        </article>
-
-        <article>
-          <h3>Native HTML5 inputs</h3>
-          <div class="form-row form-row-3">
             <div class="form-group">
-              <label class="form-label" for="f-number">Number</label>
-              <input class="form-input" type="number" id="f-number" min="0" max="100" value="50">
+              <label class="form-label" for="f-textarea">Message</label>
+              <textarea id="f-textarea" rows="4" placeholder="Enter your message here"></textarea>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="f-date">Date</label>
-              <input class="form-input" type="date" id="f-date" value="2026-09-21">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-time">Time</label>
-              <input class="form-input" type="time" id="f-time" value="12:30">
-            </div>
-          </div>
-          <div class="form-row form-row-3">
-            <div class="form-group">
-              <label class="form-label" for="f-color">Color</label>
-              <input type="color" id="f-color" value="#7c3aed">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-range">Range</label>
-              <input type="range" id="f-range" min="0" max="100" value="50">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="f-file">File</label>
-              <input type="file" id="f-file">
-            </div>
-          </div>
-        </article>
 
-        <article>
-          <h3>Progress, meter, output</h3>
-          <div class="form-group">
-            <label class="form-label" for="f-progress">Progress</label>
-            <progress id="f-progress" value="70" max="100">70%</progress>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="f-meter">Meter</label>
-            <meter id="f-meter" value="0.7" min="0" max="1">70%</meter>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="f-output">Output</label>
-            <output id="f-output" for="f-range">50</output>
-          </div>
-        </article>
+            <div class="form-group">
+              <label class="form-label" for="f-datalist">Datalist</label>
+              <input class="form-input" type="text" id="f-datalist" list="example-list" placeholder="Type to search">
+              <datalist id="example-list">
+                <option value="Example #1">
+                <option value="Example #2">
+                <option value="Example #3">
+              </datalist>
+            </div>
+          </article>
 
-        <article>
-          <h3>Native buttons — styled automatically</h3>
+          <article class="mb-8">
+            <h3>Checkboxes and radios</h3>
+            <fieldset>
+              <legend>Notification preferences</legend>
+              <div class="form-check">
+                <input type="checkbox" id="f-check1" checked>
+                <label for="f-check1">Email notifications</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="f-check2">
+                <label for="f-check2">Push notifications</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="f-check3" disabled>
+                <label for="f-check3">SMS (unavailable)</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Account type</legend>
+              <div class="form-check">
+                <input type="radio" id="f-radio1" name="acct" checked>
+                <label for="f-radio1">Personal</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="f-radio2" name="acct">
+                <label for="f-radio2">Business</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="f-radio3" name="acct">
+                <label for="f-radio3">Enterprise</label>
+              </div>
+            </fieldset>
+          </article>
+
+          <article class="mb-8">
+            <h3>Native HTML5 inputs</h3>
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label class="form-label" for="f-number">Number</label>
+                <input class="form-input" type="number" id="f-number" min="0" max="100" value="50">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-date">Date</label>
+                <input class="form-input" type="date" id="f-date" value="2026-09-21">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-time">Time</label>
+                <input class="form-input" type="time" id="f-time" value="12:30">
+              </div>
+            </div>
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label class="form-label" for="f-color">Color</label>
+                <input type="color" id="f-color" value="#7c3aed">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-range">Range</label>
+                <input type="range" id="f-range" min="0" max="100" value="50">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-file">File</label>
+                <input type="file" id="f-file">
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-8">
+            <h3>Progress, meter, output</h3>
+            <div class="form-group">
+              <label class="form-label" for="f-progress">Progress</label>
+              <progress id="f-progress" value="70" max="100">70%</progress>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-meter">Meter</label>
+              <meter id="f-meter" value="0.7" min="0" max="1">70%</meter>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-output">Output</label>
+              <output id="f-output" for="f-range">50</output>
+            </div>
+          </article>
+
+          <article class="mb-8">
+            <h3>Native buttons — styled automatically</h3>
+            <div class="cluster">
+              <button type="submit">Submit</button>
+              <button type="button">Generic</button>
+              <button type="reset">Reset</button>
+              <button type="button" disabled>Disabled</button>
+            </div>
+            <div class="cluster mt-3">
+              <input type="submit" value="Input submit">
+              <input type="button" value="Input button">
+              <input type="reset" value="Input reset">
+              <input type="submit" value="Disabled" disabled>
+            </div>
+          </article>
+        </form>
+      </section>
+
+      <section id="buttons" class="mb-12">
+        <h2 data-i18n="index.nav.buttons">Buttons</h2>
+
+        <article class="mb-8">
+          <h3>Variants</h3>
           <div class="cluster">
-            <button type="submit">Submit</button>
-            <button type="button">Generic</button>
-            <button type="reset">Reset</button>
-            <button type="button" disabled>Disabled</button>
-          </div>
-          <div class="cluster mt-3">
-            <input type="submit" value="Input submit">
-            <input type="button" value="Input button">
-            <input type="reset" value="Input reset">
-            <input type="submit" value="Disabled" disabled>
+            <button type="button" class="btn">Default</button>
+            <button type="button" class="btn btn-primary">Primary (grape)</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-ghost">Ghost</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-success">Success</button>
           </div>
         </article>
-      </form>
-    </section>
 
-    <section id="buttons">
-      <h2 data-i18n="index.nav.buttons">Buttons</h2>
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="cluster">
+            <button type="button" class="btn btn-primary btn-sm">Small</button>
+            <button type="button" class="btn btn-primary">Default</button>
+            <button type="button" class="btn btn-primary btn-lg">Large</button>
+          </div>
+        </article>
 
-      <article>
-        <h3>Variants</h3>
-        <div class="cluster">
-          <button type="button" class="btn">Default</button>
-          <button type="button" class="btn btn-primary">Primary (grape)</button>
-          <button type="button" class="btn btn-secondary">Secondary</button>
-          <button type="button" class="btn btn-ghost">Ghost</button>
-          <button type="button" class="btn btn-danger">Danger</button>
-          <button type="button" class="btn btn-success">Success</button>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Block and icon-only</h3>
+          <div class="stack-3">
+            <button type="button" class="btn btn-primary btn-block">Block button — full width</button>
+          </div>
+          <div class="cluster">
+            <button type="button" class="btn btn-icon" aria-label="Add">+</button>
+            <button type="button" class="btn btn-icon btn-primary" aria-label="Add">+</button>
+            <button type="button" class="btn btn-icon btn-danger" aria-label="Delete">×</button>
+            <button type="button" class="btn btn-icon btn-ghost" aria-label="More">⋯</button>
+          </div>
+        </article>
 
-      <article>
-        <h3>Sizes</h3>
-        <div class="cluster">
-          <button type="button" class="btn btn-primary btn-sm">Small</button>
-          <button type="button" class="btn btn-primary">Default</button>
-          <button type="button" class="btn btn-primary btn-lg">Large</button>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>States</h3>
+          <div class="cluster">
+            <button type="button" class="btn">Normal</button>
+            <button type="button" class="btn" disabled>Disabled</button>
+            <button type="button" class="btn is-disabled">Disabled (class)</button>
+            <button type="button" class="btn is-loading">Loading</button>
+            <button type="button" class="btn btn-primary is-loading">Loading primary</button>
+          </div>
+        </article>
 
-      <article>
-        <h3>Block and icon-only</h3>
-        <div class="stack-3">
-          <button type="button" class="btn btn-primary btn-block">Block button — full width</button>
-        </div>
-        <div class="cluster">
-          <button type="button" class="btn btn-icon" aria-label="Add">+</button>
-          <button type="button" class="btn btn-icon btn-primary" aria-label="Add">+</button>
-          <button type="button" class="btn btn-icon btn-danger" aria-label="Delete">×</button>
-          <button type="button" class="btn btn-icon btn-ghost" aria-label="More">⋯</button>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Selected / toggle buttons (grape)</h3>
+          <p>Click to toggle. The active state uses the grape color.</p>
+          <div class="cluster">
+            <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Bold</button>
+            <button type="button" class="btn" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Italic (selected)</button>
+            <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Underline</button>
+          </div>
+        </article>
 
-      <article>
-        <h3>States</h3>
-        <div class="cluster">
-          <button type="button" class="btn">Normal</button>
-          <button type="button" class="btn" disabled>Disabled</button>
-          <button type="button" class="btn is-disabled">Disabled (class)</button>
-          <button type="button" class="btn is-loading">Loading</button>
-          <button type="button" class="btn btn-primary is-loading">Loading primary</button>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Button group</h3>
+          <div class="btn-group" role="group" aria-label="Text alignment">
+            <button type="button" class="btn" aria-pressed="true">Left</button>
+            <button type="button" class="btn" aria-pressed="false">Center</button>
+            <button type="button" class="btn" aria-pressed="false">Right</button>
+          </div>
+        </article>
 
-      <article>
-        <h3>Selected / toggle buttons (grape)</h3>
-        <p>Click to toggle. The active state uses the grape color.</p>
-        <div class="cluster">
-          <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Bold</button>
-          <button type="button" class="btn" aria-pressed="true" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Italic (selected)</button>
-          <button type="button" class="btn" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">Underline</button>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Buttons as links</h3>
+          <div class="cluster">
+            <a href="#!" class="btn btn-primary">Link styled as button</a>
+            <a href="#!" class="btn btn-ghost">Ghost link</a>
+          </div>
+        </article>
+      </section>
 
-      <article>
-        <h3>Button group</h3>
-        <div class="btn-group" role="group" aria-label="Text alignment">
-          <button type="button" class="btn" aria-pressed="true">Left</button>
-          <button type="button" class="btn" aria-pressed="false">Center</button>
-          <button type="button" class="btn" aria-pressed="false">Right</button>
-        </div>
-      </article>
+      <section id="alerts" class="mb-12">
+        <h2 data-i18n="index.nav.alerts">Alerts</h2>
 
-      <article>
-        <h3>Buttons as links</h3>
-        <div class="cluster">
-          <a href="#!" class="btn btn-primary">Link styled as button</a>
-          <a href="#!" class="btn btn-ghost">Ghost link</a>
-        </div>
-      </article>
-    </section>
-
-    <section id="alerts">
-      <h2 data-i18n="index.nav.alerts">Alerts</h2>
-
-      <article>
-        <h3>Variants</h3>
-        <div class="stack-3">
-          <div class="alert alert-success">
-            <div class="alert-content">
-              <span class="alert-title">Success</span>
-              <p class="alert-text">Your changes have been saved successfully.</p>
+        <article class="mb-8">
+          <h3>Variants</h3>
+          <div class="stack-3">
+            <div class="alert alert-success">
+              <div class="alert-content">
+                <span class="alert-title">Success</span>
+                <p class="alert-text">Your changes have been saved successfully.</p>
+              </div>
+            </div>
+            <div class="alert alert-danger">
+              <div class="alert-content">
+                <span class="alert-title">Error</span>
+                <p class="alert-text">Something went wrong. Please try again.</p>
+              </div>
+            </div>
+            <div class="alert alert-warning">
+              <div class="alert-content">
+                <span class="alert-title">Warning</span>
+                <p class="alert-text">Your account is nearing its usage limit.</p>
+              </div>
+            </div>
+            <div class="alert alert-info">
+              <div class="alert-content">
+                <span class="alert-title">Information</span>
+                <p class="alert-text">A new version of Love.css is available.</p>
+              </div>
+            </div>
+            <div class="alert">
+              <div class="alert-content">
+                <span class="alert-title">Neutral</span>
+                <p class="alert-text">This is a neutral alert with no variant applied.</p>
+              </div>
             </div>
           </div>
-          <div class="alert alert-danger">
+        </article>
+
+        <article class="mb-8">
+          <h3>Dismissible</h3>
+          <div class="alert alert-info alert-dismissible" id="dismiss-demo">
             <div class="alert-content">
-              <span class="alert-title">Error</span>
-              <p class="alert-text">Something went wrong. Please try again.</p>
+              <span class="alert-title">Heads up</span>
+              <p class="alert-text">This alert can be dismissed with the close button.</p>
             </div>
+            <button type="button" class="alert-close" aria-label="Close" onclick="document.getElementById('dismiss-demo').remove()">×</button>
           </div>
-          <div class="alert alert-warning">
-            <div class="alert-content">
-              <span class="alert-title">Warning</span>
-              <p class="alert-text">Your account is nearing its usage limit.</p>
-            </div>
+        </article>
+      </section>
+
+      <section id="badges" class="mb-12">
+        <h2 data-i18n="index.nav.badges">Badges</h2>
+
+        <article class="mb-8">
+          <h3>Solid variants</h3>
+          <div class="cluster">
+            <span class="badge">Default</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-danger">Danger</span>
+            <span class="badge badge-warning">Warning</span>
           </div>
-          <div class="alert alert-info">
-            <div class="alert-content">
-              <span class="alert-title">Information</span>
-              <p class="alert-text">A new version of Love.css is available.</p>
-            </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Soft variants</h3>
+          <div class="cluster">
+            <span class="badge badge-soft">Default</span>
+            <span class="badge badge-soft badge-primary">Primary</span>
+            <span class="badge badge-soft badge-success">Success</span>
+            <span class="badge badge-soft badge-danger">Danger</span>
+            <span class="badge badge-soft badge-warning">Warning</span>
           </div>
-          <div class="alert">
-            <div class="alert-content">
-              <span class="alert-title">Neutral</span>
-              <p class="alert-text">This is a neutral alert with no variant applied.</p>
-            </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Outline variants</h3>
+          <div class="cluster">
+            <span class="badge badge-outline">Default</span>
+            <span class="badge badge-outline badge-primary">Primary</span>
+            <span class="badge badge-outline badge-success">Success</span>
+            <span class="badge badge-outline badge-danger">Danger</span>
+            <span class="badge badge-outline badge-warning">Warning</span>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Dismissible</h3>
-        <div class="alert alert-info alert-dismissible" id="dismiss-demo">
-          <div class="alert-content">
-            <span class="alert-title">Heads up</span>
-            <p class="alert-text">This alert can be dismissed with the close button.</p>
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="cluster">
+            <span class="badge badge-sm badge-primary">Small</span>
+            <span class="badge badge-primary">Default</span>
+            <span class="badge badge-lg badge-primary">Large</span>
           </div>
-          <button type="button" class="alert-close" aria-label="Close" onclick="document.getElementById('dismiss-demo').remove()">×</button>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section id="badges">
-      <h2 data-i18n="index.nav.badges">Badges</h2>
-
-      <article>
-        <h3>Solid variants</h3>
-        <div class="cluster">
-          <span class="badge">Default</span>
-          <span class="badge badge-primary">Primary</span>
-          <span class="badge badge-success">Success</span>
-          <span class="badge badge-danger">Danger</span>
-          <span class="badge badge-warning">Warning</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Soft variants</h3>
-        <div class="cluster">
-          <span class="badge badge-soft">Default</span>
-          <span class="badge badge-soft badge-primary">Primary</span>
-          <span class="badge badge-soft badge-success">Success</span>
-          <span class="badge badge-soft badge-danger">Danger</span>
-          <span class="badge badge-soft badge-warning">Warning</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Outline variants</h3>
-        <div class="cluster">
-          <span class="badge badge-outline">Default</span>
-          <span class="badge badge-outline badge-primary">Primary</span>
-          <span class="badge badge-outline badge-success">Success</span>
-          <span class="badge badge-outline badge-danger">Danger</span>
-          <span class="badge badge-outline badge-warning">Warning</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Sizes</h3>
-        <div class="cluster">
-          <span class="badge badge-sm badge-primary">Small</span>
-          <span class="badge badge-primary">Default</span>
-          <span class="badge badge-lg badge-primary">Large</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Dots and counters</h3>
-        <div class="cluster">
-          <span class="badge-dot badge-success"></span>
-          <span class="badge-dot badge-warning"></span>
-          <span class="badge-dot badge-danger"></span>
-          <span class="badge-dot badge-primary"></span>
-          <span class="badge badge-counter badge-primary">12</span>
-          <span class="badge badge-counter badge-danger">99+</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Inline with text</h3>
-        <p>Status: <span class="badge badge-soft badge-success">Online</span></p>
-        <p>Version <span class="badge badge-primary">0.1.0</span> is the latest release.</p>
-      </article>
-    </section>
-
-    <section id="spinners">
-      <h2 data-i18n="index.nav.spinners">Spinners</h2>
-
-      <article>
-        <h3>Sizes</h3>
-        <div class="cluster">
-          <div class="spinner spinner-sm"></div>
-          <div class="spinner"></div>
-          <div class="spinner spinner-lg"></div>
-          <div class="spinner spinner-xl"></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Color variants</h3>
-        <div class="cluster">
-          <div class="spinner spinner-primary"></div>
-          <div class="spinner spinner-success"></div>
-          <div class="spinner spinner-danger"></div>
-          <div class="spinner spinner-warning"></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Dots</h3>
-        <div class="spinner spinner-dots"><span></span></div>
-      </article>
-
-      <article>
-        <h3>Centered in container</h3>
-        <div class="spinner-center ks-box" style="height: 8rem;">
-          <div class="spinner spinner-lg"></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Inside a button</h3>
-        <div class="cluster">
-          <button type="button" class="btn btn-primary is-loading">Loading primary</button>
-          <button type="button" class="btn is-loading">Loading default</button>
-        </div>
-      </article>
-    </section>
-
-    <section id="skeletons">
-      <h2 data-i18n="index.nav.skeletons">Skeletons</h2>
-
-      <article>
-        <h3>Text lines</h3>
-        <div class="skeleton-text skeleton-w-100"></div>
-        <div class="skeleton-text skeleton-w-100"></div>
-        <div class="skeleton-text skeleton-w-75"></div>
-      </article>
-
-      <article>
-        <h3>Title and text</h3>
-        <div class="skeleton-title"></div>
-        <div class="skeleton-text skeleton-w-100"></div>
-        <div class="skeleton-text skeleton-w-100"></div>
-        <div class="skeleton-text skeleton-w-50"></div>
-      </article>
-
-      <article>
-        <h3>Avatar and lines</h3>
-        <div class="skeleton-row">
-          <div class="skeleton-avatar"></div>
-          <div style="flex: 1;">
-            <div class="skeleton-text skeleton-w-50"></div>
-            <div class="skeleton-text skeleton-w-75"></div>
+        <article class="mb-8">
+          <h3>Dots and counters</h3>
+          <div class="cluster">
+            <span class="badge-dot badge-success"></span>
+            <span class="badge-dot badge-warning"></span>
+            <span class="badge-dot badge-danger"></span>
+            <span class="badge-dot badge-primary"></span>
+            <span class="badge badge-counter badge-primary">12</span>
+            <span class="badge badge-counter badge-danger">99+</span>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>List</h3>
-        <div class="skeleton-list-item">
-          <div class="skeleton-avatar"></div>
-          <div class="skeleton-lines">
-            <div class="skeleton-text skeleton-w-100"></div>
-            <div class="skeleton-text skeleton-w-50"></div>
-          </div>
-        </div>
-        <div class="skeleton-list-item">
-          <div class="skeleton-avatar"></div>
-          <div class="skeleton-lines">
-            <div class="skeleton-text skeleton-w-100"></div>
-            <div class="skeleton-text skeleton-w-50"></div>
-          </div>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Inline with text</h3>
+          <p>Status: <span class="badge badge-soft badge-success">Online</span></p>
+          <p>Version <span class="badge badge-primary">0.1.0</span> is the latest release.</p>
+        </article>
+      </section>
 
-      <article>
-        <h3>Card placeholder</h3>
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-body">
-              <div class="skeleton skeleton-image"></div>
-              <div class="skeleton-title mt-4"></div>
-              <div class="skeleton-text skeleton-w-100"></div>
+      <section id="spinners" class="mb-12">
+        <h2 data-i18n="index.nav.spinners">Spinners</h2>
+
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="cluster">
+            <div class="spinner spinner-sm"></div>
+            <div class="spinner"></div>
+            <div class="spinner spinner-lg"></div>
+            <div class="spinner spinner-xl"></div>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Color variants</h3>
+          <div class="cluster">
+            <div class="spinner spinner-primary"></div>
+            <div class="spinner spinner-success"></div>
+            <div class="spinner spinner-danger"></div>
+            <div class="spinner spinner-warning"></div>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Dots</h3>
+          <div class="spinner spinner-dots"><span></span></div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Centered in container</h3>
+          <div class="spinner-center p-4 bg-subtle border" style="height: 8rem;">
+            <div class="spinner spinner-lg"></div>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Inside a button</h3>
+          <div class="cluster">
+            <button type="button" class="btn btn-primary is-loading">Loading primary</button>
+            <button type="button" class="btn is-loading">Loading default</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="skeletons" class="mb-12">
+        <h2 data-i18n="index.nav.skeletons">Skeletons</h2>
+
+        <article class="mb-8">
+          <h3>Text lines</h3>
+          <div class="skeleton-text skeleton-w-100"></div>
+          <div class="skeleton-text skeleton-w-100"></div>
+          <div class="skeleton-text skeleton-w-75"></div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Title and text</h3>
+          <div class="skeleton-title"></div>
+          <div class="skeleton-text skeleton-w-100"></div>
+          <div class="skeleton-text skeleton-w-100"></div>
+          <div class="skeleton-text skeleton-w-50"></div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Avatar and lines</h3>
+          <div class="skeleton-row">
+            <div class="skeleton-avatar"></div>
+            <div class="flex-1">
+              <div class="skeleton-text skeleton-w-50"></div>
               <div class="skeleton-text skeleton-w-75"></div>
-              <div class="skeleton-button mt-3"></div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="skeleton skeleton-image"></div>
-              <div class="skeleton-title mt-4"></div>
+        </article>
+
+        <article class="mb-8">
+          <h3>List</h3>
+          <div class="skeleton-list-item">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-lines">
               <div class="skeleton-text skeleton-w-100"></div>
-              <div class="skeleton-text skeleton-w-75"></div>
-              <div class="skeleton-button mt-3"></div>
+              <div class="skeleton-text skeleton-w-50"></div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="skeleton skeleton-image"></div>
-              <div class="skeleton-title mt-4"></div>
+          <div class="skeleton-list-item">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-lines">
               <div class="skeleton-text skeleton-w-100"></div>
-              <div class="skeleton-text skeleton-w-75"></div>
-              <div class="skeleton-button mt-3"></div>
+              <div class="skeleton-text skeleton-w-50"></div>
             </div>
           </div>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section id="modals">
-      <h2 data-i18n="index.nav.modals">Modals</h2>
-
-      <article>
-        <h3>Basic modal</h3>
-        <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').showModal()">Open basic modal</button>
-        <dialog class="modal" id="modal-basic">
-          <div class="modal-header">
-            <h4 class="modal-title">Modal title</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-basic').close()">×</button>
-          </div>
-          <div class="modal-body">
-            <p>This is a native HTML dialog element. It traps focus, closes on Escape, and renders above everything else.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-ghost" onclick="document.getElementById('modal-basic').close()">Cancel</button>
-            <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').close()">Confirm</button>
-          </div>
-        </dialog>
-      </article>
-
-      <article>
-        <h3>Sizes</h3>
-        <div class="cluster">
-          <button type="button" class="btn" onclick="document.getElementById('modal-sm').showModal()">Small</button>
-          <button type="button" class="btn" onclick="document.getElementById('modal-lg').showModal()">Large</button>
-          <button type="button" class="btn" onclick="document.getElementById('modal-xl').showModal()">Extra large</button>
-          <button type="button" class="btn" onclick="document.getElementById('modal-full').showModal()">Full</button>
-        </div>
-
-        <dialog class="modal modal-sm" id="modal-sm">
-          <div class="modal-header">
-            <h4 class="modal-title">Small modal</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-sm').close()">×</button>
-          </div>
-          <div class="modal-body"><p>Max width 24rem.</p></div>
-        </dialog>
-
-        <dialog class="modal modal-lg" id="modal-lg">
-          <div class="modal-header">
-            <h4 class="modal-title">Large modal</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-lg').close()">×</button>
-          </div>
-          <div class="modal-body"><p>Max width 48rem.</p></div>
-        </dialog>
-
-        <dialog class="modal modal-xl" id="modal-xl">
-          <div class="modal-header">
-            <h4 class="modal-title">Extra large modal</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-xl').close()">×</button>
-          </div>
-          <div class="modal-body"><p>Max width 64rem.</p></div>
-        </dialog>
-
-        <dialog class="modal modal-full" id="modal-full">
-          <div class="modal-header">
-            <h4 class="modal-title">Full-width modal</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-full').close()">×</button>
-          </div>
-          <div class="modal-body"><p>Takes almost the full viewport width.</p></div>
-        </dialog>
-      </article>
-
-      <article>
-        <h3>Drawers</h3>
-        <div class="cluster">
-          <button type="button" class="btn" onclick="document.getElementById('drawer-right').showModal()">Open right drawer</button>
-          <button type="button" class="btn" onclick="document.getElementById('drawer-left').showModal()">Open left drawer</button>
-        </div>
-
-        <dialog class="modal modal-drawer" id="drawer-right">
-          <div class="modal-header">
-            <h4 class="modal-title">Right drawer</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-right').close()">×</button>
-          </div>
-          <div class="modal-body">
-            <p>Slides in from the right. Useful for settings panels, filters, and side navigation.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="document.getElementById('drawer-right').close()">Done</button>
-          </div>
-        </dialog>
-
-        <dialog class="modal modal-drawer modal-drawer-left" id="drawer-left">
-          <div class="modal-header">
-            <h4 class="modal-title">Left drawer</h4>
-            <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-left').close()">×</button>
-          </div>
-          <div class="modal-body">
-            <p>Slides in from the left. Useful for navigation menus.</p>
-          </div>
-        </dialog>
-      </article>
-    </section>
-
-    <section id="tabs">
-      <h2 data-i18n="index.nav.tabs">Tabs</h2>
-
-      <article>
-        <h3>Underline tabs</h3>
-        <div class="tabs" data-tabs>
-          <div class="tabs-list" role="tablist">
-            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="panel-1">Overview</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-2">Details</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-3">Reviews</button>
-          </div>
-          <div class="tab-panel" id="panel-1" role="tabpanel">Overview content goes here.</div>
-          <div class="tab-panel" id="panel-2" role="tabpanel" hidden>Detailed specifications and technical information.</div>
-          <div class="tab-panel" id="panel-3" role="tabpanel" hidden>Customer reviews and ratings.</div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Filled tabs</h3>
-        <div class="tabs tabs-filled" data-tabs>
-          <div class="tabs-list" role="tablist">
-            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="fpanel-1">Day</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-2">Week</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-3">Month</button>
-          </div>
-          <div class="tab-panel" id="fpanel-1" role="tabpanel">Today's statistics.</div>
-          <div class="tab-panel" id="fpanel-2" role="tabpanel" hidden>This week's statistics.</div>
-          <div class="tab-panel" id="fpanel-3" role="tabpanel" hidden>This month's statistics.</div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Vertical tabs</h3>
-        <div class="tabs tabs-vertical" data-tabs>
-          <div class="tabs-list" role="tablist">
-            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="vpanel-1">Profile</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-2">Security</button>
-            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-3">Notifications</button>
-          </div>
-          <div class="tab-panel" id="vpanel-1" role="tabpanel">Profile settings.</div>
-          <div class="tab-panel" id="vpanel-2" role="tabpanel" hidden>Security options.</div>
-          <div class="tab-panel" id="vpanel-3" role="tabpanel" hidden>Notification preferences.</div>
-        </div>
-      </article>
-    </section>
-
-    <section id="dropdowns">
-      <h2 data-i18n="index.nav.dropdowns">Dropdowns</h2>
-
-      <article>
-        <h3>Basic dropdown (JavaScript)</h3>
-        <div class="dropdown" data-dropdown>
-          <button type="button" class="btn btn-primary dropdown-trigger" aria-haspopup="true" aria-expanded="false">Menu</button>
-          <ul class="dropdown-menu" role="menu" hidden>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Profile</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Settings</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Help</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#!" class="dropdown-item dropdown-item-danger" role="menuitem">Sign out</a></li>
-          </ul>
-        </div>
-      </article>
-
-      <article>
-        <h3>With headers, active, disabled</h3>
-        <div class="dropdown" data-dropdown>
-          <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Account</button>
-          <ul class="dropdown-menu" role="menu" hidden>
-            <li><span class="dropdown-header">Signed in as Alice</span></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#!" class="dropdown-item is-active" role="menuitem">Dashboard</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Projects</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Team</a></li>
-            <li><a href="#!" class="dropdown-item is-disabled" role="menuitem" aria-disabled="true">Billing (soon)</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Log out</a></li>
-          </ul>
-        </div>
-      </article>
-
-      <article>
-        <h3>Right-aligned menu</h3>
-        <div class="dropdown" data-dropdown>
-          <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Options ▾</button>
-          <ul class="dropdown-menu dropdown-menu-right" role="menu" hidden>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by name</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by date</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Sort by size</a></li>
-          </ul>
-        </div>
-      </article>
-
-      <article>
-        <h3>Details-based dropdown (no JavaScript)</h3>
-        <details class="dropdown">
-          <summary class="btn btn-secondary">More ▾</summary>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#!" class="dropdown-item" role="menuitem">First action</a></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Second action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#!" class="dropdown-item" role="menuitem">Third action</a></li>
-          </ul>
-        </details>
-      </article>
-    </section>
-
-    <section id="toasts">
-      <h2 data-i18n="index.nav.toasts">Toasts</h2>
-
-      <article>
-        <h3>Static examples</h3>
-        <div class="stack-3" style="max-width: 24rem;">
-          <div class="toast toast-success">
-            <div class="toast-content">
-              <span class="toast-title">Saved</span>
-              <p class="toast-text">Your changes have been saved.</p>
+        <article class="mb-8">
+          <h3>Card placeholder</h3>
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="skeleton skeleton-image"></div>
+                <div class="skeleton-title mt-4"></div>
+                <div class="skeleton-text skeleton-w-100"></div>
+                <div class="skeleton-text skeleton-w-75"></div>
+                <div class="skeleton-button mt-3"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="skeleton skeleton-image"></div>
+                <div class="skeleton-title mt-4"></div>
+                <div class="skeleton-text skeleton-w-100"></div>
+                <div class="skeleton-text skeleton-w-75"></div>
+                <div class="skeleton-button mt-3"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="skeleton skeleton-image"></div>
+                <div class="skeleton-title mt-4"></div>
+                <div class="skeleton-text skeleton-w-100"></div>
+                <div class="skeleton-text skeleton-w-75"></div>
+                <div class="skeleton-button mt-3"></div>
+              </div>
             </div>
           </div>
-          <div class="toast toast-danger">
-            <div class="toast-content">
-              <span class="toast-title">Error</span>
-              <p class="toast-text">Could not connect to the server.</p>
+        </article>
+      </section>
+
+      <section id="modals" class="mb-12">
+        <h2 data-i18n="index.nav.modals">Modals</h2>
+
+        <article class="mb-8">
+          <h3>Basic modal</h3>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').showModal()">Open basic modal</button>
+          <dialog class="modal" id="modal-basic">
+            <div class="modal-header">
+              <h4 class="modal-title">Modal title</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-basic').close()">×</button>
             </div>
+            <div class="modal-body">
+              <p>This is a native HTML dialog element. It traps focus, closes on Escape, and renders above everything else.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('modal-basic').close()">Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-basic').close()">Confirm</button>
+            </div>
+          </dialog>
+        </article>
+
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="cluster">
+            <button type="button" class="btn" onclick="document.getElementById('modal-sm').showModal()">Small</button>
+            <button type="button" class="btn" onclick="document.getElementById('modal-lg').showModal()">Large</button>
+            <button type="button" class="btn" onclick="document.getElementById('modal-xl').showModal()">Extra large</button>
+            <button type="button" class="btn" onclick="document.getElementById('modal-full').showModal()">Full</button>
           </div>
-          <div class="toast toast-warning">
-            <div class="toast-content">
-              <span class="toast-title">Warning</span>
-              <p class="toast-text">Your session expires in 5 minutes.</p>
+
+          <dialog class="modal modal-sm" id="modal-sm">
+            <div class="modal-header">
+              <h4 class="modal-title">Small modal</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-sm').close()">×</button>
             </div>
+            <div class="modal-body"><p>Max width 24rem.</p></div>
+          </dialog>
+
+          <dialog class="modal modal-lg" id="modal-lg">
+            <div class="modal-header">
+              <h4 class="modal-title">Large modal</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-lg').close()">×</button>
+            </div>
+            <div class="modal-body"><p>Max width 48rem.</p></div>
+          </dialog>
+
+          <dialog class="modal modal-xl" id="modal-xl">
+            <div class="modal-header">
+              <h4 class="modal-title">Extra large modal</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-xl').close()">×</button>
+            </div>
+            <div class="modal-body"><p>Max width 64rem.</p></div>
+          </dialog>
+
+          <dialog class="modal modal-full" id="modal-full">
+            <div class="modal-header">
+              <h4 class="modal-title">Full-width modal</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('modal-full').close()">×</button>
+            </div>
+            <div class="modal-body"><p>Takes almost the full viewport width.</p></div>
+          </dialog>
+        </article>
+
+        <article class="mb-8">
+          <h3>Drawers</h3>
+          <div class="cluster">
+            <button type="button" class="btn" onclick="document.getElementById('drawer-right').showModal()">Open right drawer</button>
+            <button type="button" class="btn" onclick="document.getElementById('drawer-left').showModal()">Open left drawer</button>
           </div>
-          <div class="toast toast-info">
-            <div class="toast-content">
-              <span class="toast-title">Information</span>
-              <p class="toast-text">A new version is available.</p>
+
+          <dialog class="modal modal-drawer" id="drawer-right">
+            <div class="modal-header">
+              <h4 class="modal-title">Right drawer</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-right').close()">×</button>
             </div>
+            <div class="modal-body">
+              <p>Slides in from the right. Useful for settings panels, filters, and side navigation.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="document.getElementById('drawer-right').close()">Done</button>
+            </div>
+          </dialog>
+
+          <dialog class="modal modal-drawer modal-drawer-left" id="drawer-left">
+            <div class="modal-header">
+              <h4 class="modal-title">Left drawer</h4>
+              <button type="button" class="modal-close" aria-label="Close" onclick="document.getElementById('drawer-left').close()">×</button>
+            </div>
+            <div class="modal-body">
+              <p>Slides in from the left. Useful for navigation menus.</p>
+            </div>
+          </dialog>
+        </article>
+      </section>
+
+      <section id="tabs" class="mb-12">
+        <h2 data-i18n="index.nav.tabs">Tabs</h2>
+
+        <article class="mb-8">
+          <h3>Underline tabs</h3>
+          <div class="tabs" data-tabs>
+            <div class="tabs-list" role="tablist">
+              <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="panel-1">Overview</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-2">Details</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-3">Reviews</button>
+            </div>
+            <div class="tab-panel" id="panel-1" role="tabpanel">Overview content goes here.</div>
+            <div class="tab-panel" id="panel-2" role="tabpanel" hidden>Detailed specifications and technical information.</div>
+            <div class="tab-panel" id="panel-3" role="tabpanel" hidden>Customer reviews and ratings.</div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Live demo</h3>
-        <p>Click a button. Toasts appear in the top-right corner and auto-dismiss after 3 seconds.</p>
-        <div class="cluster">
-          <button type="button" class="btn btn-success" onclick="ksToast('success', 'Saved', 'Your changes have been saved successfully.')">Success toast</button>
-          <button type="button" class="btn btn-danger" onclick="ksToast('danger', 'Error', 'Something went wrong. Please try again.')">Danger toast</button>
-          <button type="button" class="btn" onclick="ksToast('warning', 'Warning', 'Your session expires soon.')">Warning toast</button>
-          <button type="button" class="btn" onclick="ksToast('info', 'Information', 'A new update is ready to install.')">Info toast</button>
-        </div>
-
-        <div class="toast-container toast-container-top-right" id="toast-demo-container" aria-live="polite" aria-atomic="false"></div>
-      </article>
-    </section>
-
-    <section id="pagination">
-      <h2 data-i18n="index.nav.pagination">Pagination</h2>
-
-      <article>
-        <h3>Basic pagination</h3>
-        <nav aria-label="Pagination">
-          <ul class="pagination">
-            <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Previous">‹</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
-            <li class="pagination-item is-active"><span class="pagination-link">3</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">4</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">5</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Next">›</a></li>
-          </ul>
-        </nav>
-      </article>
-
-      <article>
-        <h3>With ellipsis</h3>
-        <nav aria-label="Pagination">
-          <ul class="pagination">
-            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
-            <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">8</a></li>
-            <li class="pagination-item is-active"><span class="pagination-link">9</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">10</a></li>
-            <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">42</a></li>
-          </ul>
-        </nav>
-      </article>
-
-      <article>
-        <h3>Disabled prev/next</h3>
-        <nav aria-label="Pagination">
-          <ul class="pagination">
-            <li class="pagination-item is-disabled"><span class="pagination-link" aria-disabled="true">‹</span></li>
-            <li class="pagination-item is-active"><span class="pagination-link">1</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">›</a></li>
-          </ul>
-        </nav>
-      </article>
-
-      <article>
-        <h3>Sizes and centered</h3>
-        <nav aria-label="Pagination">
-          <ul class="pagination pagination-sm pagination-center">
-            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
-            <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Pagination" class="mt-3">
-          <ul class="pagination pagination-lg pagination-center">
-            <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
-            <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
-            <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
-          </ul>
-        </nav>
-      </article>
-    </section>
-
-    <section id="breadcrumbs">
-      <h2 data-i18n="index.nav.breadcrumbs">Breadcrumbs</h2>
-
-      <article>
-        <h3>Basic</h3>
-        <nav aria-label="Breadcrumb">
-          <ol class="breadcrumbs">
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Library</a></li>
-            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Data</span></li>
-          </ol>
-        </nav>
-      </article>
-
-      <article>
-        <h3>Arrow separator</h3>
-        <nav aria-label="Breadcrumb">
-          <ol class="breadcrumbs breadcrumbs-arrow">
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Products</a></li>
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Shoes</a></li>
-            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Sneakers</span></li>
-          </ol>
-        </nav>
-      </article>
-
-      <article>
-        <h3>With background bar</h3>
-        <nav aria-label="Breadcrumb" class="breadcrumbs-bar">
-          <ol class="breadcrumbs">
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Admin</a></li>
-            <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Users</a></li>
-            <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Edit profile</span></li>
-          </ol>
-        </nav>
-      </article>
-    </section>
-
-    <section id="tooltips">
-      <h2 data-i18n="index.nav.tooltips">Tooltips</h2>
-
-      <article>
-        <h3>Placement</h3>
-        <p>Hover or focus each trigger to see the tooltip.</p>
-        <div class="cluster">
-          <button type="button" class="btn tooltip" data-tooltip="This tooltip appears above">Top (default)</button>
-          <button type="button" class="btn tooltip tooltip-bottom" data-tooltip="This tooltip appears below">Bottom</button>
-          <button type="button" class="btn tooltip tooltip-right" data-tooltip="This tooltip appears on the right">Right</button>
-          <button type="button" class="btn tooltip tooltip-left" data-tooltip="This tooltip appears on the left">Left</button>
-        </div>
-      </article>
-
-      <article>
-        <h3>On inline text</h3>
-        <p>
-          This sentence has a
-          <span class="tooltip tooltip-underline" tabindex="0" data-tooltip="A tooltip on inline text">helpful tooltip</span>
-          that explains the term. Tab to it with the keyboard.
-        </p>
-      </article>
-
-      <article>
-        <h3>On icon buttons</h3>
-        <div class="cluster">
-          <button type="button" class="btn btn-icon tooltip" aria-label="Add" data-tooltip="Add new item">+</button>
-          <button type="button" class="btn btn-icon btn-danger tooltip" aria-label="Delete" data-tooltip="Delete this item">×</button>
-          <button type="button" class="btn btn-icon btn-ghost tooltip" aria-label="More" data-tooltip="More actions">⋯</button>
-        </div>
-      </article>
-    </section>
-
-    <section id="accordions">
-      <h2 data-i18n="index.nav.accordions">Accordions</h2>
-
-      <article>
-        <h3>Basic accordion</h3>
-        <div class="accordion">
-          <details class="accordion-item" open>
-            <summary class="accordion-trigger">What is Love.css?</summary>
-            <div class="accordion-panel">
-              <p>Love.css is a minimalist CSS framework for fast interface assembly. It focuses on design, not animations, and gives you full control through tokens.</p>
+        <article class="mb-8">
+          <h3>Filled tabs</h3>
+          <div class="tabs tabs-filled" data-tabs>
+            <div class="tabs-list" role="tablist">
+              <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="fpanel-1">Day</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-2">Week</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="fpanel-3">Month</button>
             </div>
+            <div class="tab-panel" id="fpanel-1" role="tabpanel">Today's statistics.</div>
+            <div class="tab-panel" id="fpanel-2" role="tabpanel" hidden>This week's statistics.</div>
+            <div class="tab-panel" id="fpanel-3" role="tabpanel" hidden>This month's statistics.</div>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Vertical tabs</h3>
+          <div class="tabs tabs-vertical" data-tabs>
+            <div class="tabs-list" role="tablist">
+              <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="vpanel-1">Profile</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-2">Security</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="vpanel-3">Notifications</button>
+            </div>
+            <div class="tab-panel" id="vpanel-1" role="tabpanel">Profile settings.</div>
+            <div class="tab-panel" id="vpanel-2" role="tabpanel" hidden>Security options.</div>
+            <div class="tab-panel" id="vpanel-3" role="tabpanel" hidden>Notification preferences.</div>
+          </div>
+        </article>
+      </section>
+
+      <section id="dropdowns" class="mb-12">
+        <h2 data-i18n="index.nav.dropdowns">Dropdowns</h2>
+
+        <article class="mb-8">
+          <h3>Basic dropdown (JavaScript)</h3>
+          <div class="dropdown" data-dropdown>
+            <button type="button" class="btn btn-primary dropdown-trigger" aria-haspopup="true" aria-expanded="false">Menu</button>
+            <ul class="dropdown-menu" role="menu" hidden>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Profile</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Settings</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Help</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#!" class="dropdown-item dropdown-item-danger" role="menuitem">Sign out</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>With headers, active, disabled</h3>
+          <div class="dropdown" data-dropdown>
+            <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Account</button>
+            <ul class="dropdown-menu" role="menu" hidden>
+              <li><span class="dropdown-header">Signed in as Alice</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#!" class="dropdown-item is-active" role="menuitem">Dashboard</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Projects</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Team</a></li>
+              <li><a href="#!" class="dropdown-item is-disabled" role="menuitem" aria-disabled="true">Billing (soon)</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Log out</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Right-aligned menu</h3>
+          <div class="dropdown" data-dropdown>
+            <button type="button" class="btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">Options ▾</button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" hidden>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Sort by name</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Sort by date</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Sort by size</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Details-based dropdown (no JavaScript)</h3>
+          <details class="dropdown">
+            <summary class="btn btn-secondary">More ▾</summary>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#!" class="dropdown-item" role="menuitem">First action</a></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Second action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#!" class="dropdown-item" role="menuitem">Third action</a></li>
+            </ul>
           </details>
-          <details class="accordion-item">
-            <summary class="accordion-trigger">How do I install it?</summary>
-            <div class="accordion-panel">
-              <p>Clone the repository, run the installer, and start using classes. No build step, no dependencies, no configuration files.</p>
+        </article>
+      </section>
+
+      <section id="toasts" class="mb-12">
+        <h2 data-i18n="index.nav.toasts">Toasts</h2>
+
+        <article class="mb-8">
+          <h3>Static examples</h3>
+          <div class="stack-3 max-w-sm">
+            <div class="toast toast-success">
+              <div class="toast-content">
+                <span class="toast-title">Saved</span>
+                <p class="toast-text">Your changes have been saved.</p>
+              </div>
             </div>
-          </details>
-          <details class="accordion-item">
-            <summary class="accordion-trigger">Can I customize it?</summary>
-            <div class="accordion-panel">
-              <p>Yes. Every visual parameter is a CSS variable. Change a token and the entire framework adapts. Or use <code>love.overrides.css</code> for your own rules.</p>
+            <div class="toast toast-danger">
+              <div class="toast-content">
+                <span class="toast-title">Error</span>
+                <p class="toast-text">Could not connect to the server.</p>
+              </div>
             </div>
-          </details>
-        </div>
-      </article>
+            <div class="toast toast-warning">
+              <div class="toast-content">
+                <span class="toast-title">Warning</span>
+                <p class="toast-text">Your session expires in 5 minutes.</p>
+              </div>
+            </div>
+            <div class="toast toast-info">
+              <div class="toast-content">
+                <span class="toast-title">Information</span>
+                <p class="toast-text">A new version is available.</p>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <article>
-        <h3>Flush accordion</h3>
-        <div class="accordion accordion-flush">
-          <details class="accordion-item">
-            <summary class="accordion-trigger">Section one</summary>
-            <div class="accordion-panel"><p>Content for section one.</p></div>
-          </details>
-          <details class="accordion-item">
-            <summary class="accordion-trigger">Section two</summary>
-            <div class="accordion-panel"><p>Content for section two.</p></div>
-          </details>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Live demo</h3>
+          <p>Click a button. Toasts appear in the top-right corner and auto-dismiss after 3 seconds.</p>
+          <div class="cluster">
+            <button type="button" class="btn btn-success" onclick="ksToast('success', 'Saved', 'Your changes have been saved successfully.')">Success toast</button>
+            <button type="button" class="btn btn-danger" onclick="ksToast('danger', 'Error', 'Something went wrong. Please try again.')">Danger toast</button>
+            <button type="button" class="btn" onclick="ksToast('warning', 'Warning', 'Your session expires soon.')">Warning toast</button>
+            <button type="button" class="btn" onclick="ksToast('info', 'Information', 'A new update is ready to install.')">Info toast</button>
+          </div>
 
-      <article>
-        <h3>Separated accordion</h3>
-        <div class="accordion accordion-separated">
-          <details class="accordion-item">
-            <summary class="accordion-trigger">First card</summary>
-            <div class="accordion-panel"><p>Each item is its own bordered card.</p></div>
-          </details>
-          <details class="accordion-item">
-            <summary class="accordion-trigger">Second card</summary>
-            <div class="accordion-panel"><p>With spacing between them.</p></div>
-          </details>
-        </div>
-      </article>
-    </section>
+          <div class="toast-container toast-container-top-right" id="toast-demo-container" aria-live="polite" aria-atomic="false"></div>
+        </article>
+      </section>
 
-    <section id="avatars">
-      <h2 data-i18n="index.nav.avatars">Avatars</h2>
+      <section id="pagination" class="mb-12">
+        <h2 data-i18n="index.nav.pagination">Pagination</h2>
 
-      <article>
-        <h3>Sizes</h3>
-        <div class="cluster">
-          <span class="avatar avatar-xs">XS</span>
-          <span class="avatar avatar-sm">SM</span>
-          <span class="avatar">MD</span>
-          <span class="avatar avatar-lg">LG</span>
-          <span class="avatar avatar-xl">XL</span>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Basic pagination</h3>
+          <nav aria-label="Pagination">
+            <ul class="pagination">
+              <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Previous">‹</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
+              <li class="pagination-item is-active"><span class="pagination-link">3</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">4</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">5</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link" aria-label="Next">›</a></li>
+            </ul>
+          </nav>
+        </article>
 
-      <article>
-        <h3>Shapes</h3>
-        <div class="cluster">
-          <span class="avatar">Default</span>
-          <span class="avatar avatar-rounded">Rounded</span>
-          <span class="avatar avatar-circle">Circle</span>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>With ellipsis</h3>
+          <nav aria-label="Pagination">
+            <ul class="pagination">
+              <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+              <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">8</a></li>
+              <li class="pagination-item is-active"><span class="pagination-link">9</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">10</a></li>
+              <li class="pagination-item"><span class="pagination-ellipsis">…</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">42</a></li>
+            </ul>
+          </nav>
+        </article>
 
-      <article>
-        <h3>Colors</h3>
-        <div class="cluster">
-          <span class="avatar avatar-primary">A</span>
-          <span class="avatar avatar-success">B</span>
-          <span class="avatar avatar-danger">C</span>
-          <span class="avatar avatar-warning">D</span>
-          <span class="avatar avatar-neutral">E</span>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Disabled prev/next</h3>
+          <nav aria-label="Pagination">
+            <ul class="pagination">
+              <li class="pagination-item is-disabled"><span class="pagination-link" aria-disabled="true">‹</span></li>
+              <li class="pagination-item is-active"><span class="pagination-link">1</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">2</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">›</a></li>
+            </ul>
+          </nav>
+        </article>
 
-      <article>
-        <h3>With image</h3>
-        <div class="cluster">
-          <span class="avatar avatar-circle">
-            <img src="assets/img/placeholder.svg" alt="User avatar">
-          </span>
-          <span class="avatar avatar-lg avatar-circle">
-            <img src="assets/img/placeholder.svg" alt="User avatar">
-          </span>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Sizes and centered</h3>
+          <nav aria-label="Pagination">
+            <ul class="pagination pagination-sm pagination-center">
+              <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+              <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Pagination" class="mt-3">
+            <ul class="pagination pagination-lg pagination-center">
+              <li class="pagination-item"><a href="#!" class="pagination-link">1</a></li>
+              <li class="pagination-item is-active"><span class="pagination-link">2</span></li>
+              <li class="pagination-item"><a href="#!" class="pagination-link">3</a></li>
+            </ul>
+          </nav>
+        </article>
+      </section>
 
-      <article>
-        <h3>Status indicators</h3>
-        <div class="cluster">
-          <span class="avatar-wrap">
+      <section id="breadcrumbs" class="mb-12">
+        <h2 data-i18n="index.nav.breadcrumbs">Breadcrumbs</h2>
+
+        <article class="mb-8">
+          <h3>Basic</h3>
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Library</a></li>
+              <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Data</span></li>
+            </ol>
+          </nav>
+        </article>
+
+        <article class="mb-8">
+          <h3>Arrow separator</h3>
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumbs breadcrumbs-arrow">
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Home</a></li>
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Products</a></li>
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Shoes</a></li>
+              <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Sneakers</span></li>
+            </ol>
+          </nav>
+        </article>
+
+        <article class="mb-8">
+          <h3>With background bar</h3>
+          <nav aria-label="Breadcrumb" class="breadcrumbs-bar">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Admin</a></li>
+              <li class="breadcrumbs-item"><a href="#!" class="breadcrumbs-link">Users</a></li>
+              <li class="breadcrumbs-item"><span class="breadcrumbs-current" aria-current="page">Edit profile</span></li>
+            </ol>
+          </nav>
+        </article>
+      </section>
+
+      <section id="tooltips" class="mb-12">
+        <h2 data-i18n="index.nav.tooltips">Tooltips</h2>
+
+        <article class="mb-8">
+          <h3>Placement</h3>
+          <p>Hover or focus each trigger to see the tooltip.</p>
+          <div class="cluster">
+            <button type="button" class="btn tooltip" data-tooltip="This tooltip appears above">Top (default)</button>
+            <button type="button" class="btn tooltip tooltip-bottom" data-tooltip="This tooltip appears below">Bottom</button>
+            <button type="button" class="btn tooltip tooltip-right" data-tooltip="This tooltip appears on the right">Right</button>
+            <button type="button" class="btn tooltip tooltip-left" data-tooltip="This tooltip appears on the left">Left</button>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>On inline text</h3>
+          <p>
+            This sentence has a
+            <span class="tooltip tooltip-underline" tabindex="0" data-tooltip="A tooltip on inline text">helpful tooltip</span>
+            that explains the term. Tab to it with the keyboard.
+          </p>
+        </article>
+
+        <article class="mb-8">
+          <h3>On icon buttons</h3>
+          <div class="cluster">
+            <button type="button" class="btn btn-icon tooltip" aria-label="Add" data-tooltip="Add new item">+</button>
+            <button type="button" class="btn btn-icon btn-danger tooltip" aria-label="Delete" data-tooltip="Delete this item">×</button>
+            <button type="button" class="btn btn-icon btn-ghost tooltip" aria-label="More" data-tooltip="More actions">⋯</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="accordions" class="mb-12">
+        <h2 data-i18n="index.nav.accordions">Accordions</h2>
+
+        <article class="mb-8">
+          <h3>Basic accordion</h3>
+          <div class="accordion">
+            <details class="accordion-item" open>
+              <summary class="accordion-trigger">What is Love.css?</summary>
+              <div class="accordion-panel">
+                <p>Love.css is a minimalist CSS framework for fast interface assembly. It focuses on design, not animations, and gives you full control through tokens.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-trigger">How do I install it?</summary>
+              <div class="accordion-panel">
+                <p>Clone the repository, run the installer, and start using classes. No build step, no dependencies, no configuration files.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-trigger">Can I customize it?</summary>
+              <div class="accordion-panel">
+                <p>Yes. Every visual parameter is a CSS variable. Change a token and the entire framework adapts. Or use <code>love.overrides.css</code> for your own rules.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Flush accordion</h3>
+          <div class="accordion accordion-flush">
+            <details class="accordion-item">
+              <summary class="accordion-trigger">Section one</summary>
+              <div class="accordion-panel"><p>Content for section one.</p></div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-trigger">Section two</summary>
+              <div class="accordion-panel"><p>Content for section two.</p></div>
+            </details>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Separated accordion</h3>
+          <div class="accordion accordion-separated">
+            <details class="accordion-item">
+              <summary class="accordion-trigger">First card</summary>
+              <div class="accordion-panel"><p>Each item is its own bordered card.</p></div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-trigger">Second card</summary>
+              <div class="accordion-panel"><p>With spacing between them.</p></div>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <section id="avatars" class="mb-12">
+        <h2 data-i18n="index.nav.avatars">Avatars</h2>
+
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="cluster">
+            <span class="avatar avatar-xs">XS</span>
+            <span class="avatar avatar-sm">SM</span>
+            <span class="avatar">MD</span>
+            <span class="avatar avatar-lg">LG</span>
+            <span class="avatar avatar-xl">XL</span>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Shapes</h3>
+          <div class="cluster">
+            <span class="avatar">Default</span>
+            <span class="avatar avatar-rounded">Rounded</span>
+            <span class="avatar avatar-circle">Circle</span>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Colors</h3>
+          <div class="cluster">
+            <span class="avatar avatar-primary">A</span>
+            <span class="avatar avatar-success">B</span>
+            <span class="avatar avatar-danger">C</span>
+            <span class="avatar avatar-warning">D</span>
+            <span class="avatar avatar-neutral">E</span>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>With image</h3>
+          <div class="cluster">
+            <span class="avatar avatar-circle">
+              <img src="assets/img/placeholder.svg" alt="User avatar">
+            </span>
+            <span class="avatar avatar-lg avatar-circle">
+              <img src="assets/img/placeholder.svg" alt="User avatar">
+            </span>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Status indicators</h3>
+          <div class="cluster">
+            <span class="avatar-wrap">
+              <span class="avatar avatar-circle">A</span>
+              <span class="avatar-status online"></span>
+            </span>
+            <span class="avatar-wrap">
+              <span class="avatar avatar-circle">B</span>
+              <span class="avatar-status busy"></span>
+            </span>
+            <span class="avatar-wrap">
+              <span class="avatar avatar-circle">C</span>
+              <span class="avatar-status away"></span>
+            </span>
+            <span class="avatar-wrap">
+              <span class="avatar avatar-circle">D</span>
+              <span class="avatar-status offline"></span>
+            </span>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Group</h3>
+          <div class="avatar-group">
             <span class="avatar avatar-circle">A</span>
-            <span class="avatar-status online"></span>
-          </span>
-          <span class="avatar-wrap">
             <span class="avatar avatar-circle">B</span>
-            <span class="avatar-status busy"></span>
-          </span>
-          <span class="avatar-wrap">
             <span class="avatar avatar-circle">C</span>
-            <span class="avatar-status away"></span>
-          </span>
-          <span class="avatar-wrap">
             <span class="avatar avatar-circle">D</span>
-            <span class="avatar-status offline"></span>
-          </span>
-        </div>
-      </article>
+            <span class="avatar-more avatar-circle">+5</span>
+          </div>
+        </article>
 
-      <article>
-        <h3>Group</h3>
-        <div class="avatar-group">
-          <span class="avatar avatar-circle">A</span>
-          <span class="avatar avatar-circle">B</span>
-          <span class="avatar avatar-circle">C</span>
-          <span class="avatar avatar-circle">D</span>
-          <span class="avatar-more avatar-circle">+5</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>With name</h3>
-        <div class="cluster">
-          <span class="avatar-with-name">
-            <span class="avatar avatar-circle">A</span>
-            <span class="avatar-name">
-              <span class="avatar-name-primary">Alice Johnson</span>
-              <span class="avatar-name-secondary">Administrator</span>
+        <article class="mb-8">
+          <h3>With name</h3>
+          <div class="cluster">
+            <span class="avatar-with-name">
+              <span class="avatar avatar-circle">A</span>
+              <span class="avatar-name">
+                <span class="avatar-name-primary">Alice Johnson</span>
+                <span class="avatar-name-secondary">Administrator</span>
+              </span>
             </span>
-          </span>
-          <span class="avatar-with-name">
-            <span class="avatar avatar-circle avatar-success">B</span>
-            <span class="avatar-name">
-              <span class="avatar-name-primary">Bob Smith</span>
-              <span class="avatar-name-secondary">Editor</span>
-            </span>
-          </span>
-        </div>
-      </article>
-    </section>
-
-    <section id="progress">
-      <h2 data-i18n="index.nav.progress">Progress</h2>
-
-      <article>
-        <h3>Basic bars</h3>
-        <div class="stack-3">
-          <div class="progress"><span class="progress-bar" style="width: 25%"></span></div>
-          <div class="progress"><span class="progress-bar" style="width: 50%"></span></div>
-          <div class="progress"><span class="progress-bar" style="width: 75%"></span></div>
-          <div class="progress"><span class="progress-bar" style="width: 100%"></span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Colors</h3>
-        <div class="stack-3">
-          <div class="progress progress-success"><span class="progress-bar" style="width: 80%"></span></div>
-          <div class="progress progress-danger"><span class="progress-bar" style="width: 40%"></span></div>
-          <div class="progress progress-warning"><span class="progress-bar" style="width: 60%"></span></div>
-          <div class="progress progress-grape"><span class="progress-bar" style="width: 55%"></span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Sizes</h3>
-        <div class="stack-3">
-          <div class="progress progress-sm"><span class="progress-bar" style="width: 60%"></span></div>
-          <div class="progress"><span class="progress-bar" style="width: 60%"></span></div>
-          <div class="progress progress-lg"><span class="progress-bar" style="width: 60%"></span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>With label</h3>
-        <div class="progress-wrap">
-          <div class="progress-header">
-            <span class="progress-label">Uploading files</span>
-            <span class="progress-value">72%</span>
-          </div>
-          <div class="progress"><span class="progress-bar" style="width: 72%"></span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Tall with value inside</h3>
-        <div class="progress progress-tall progress-grape">
-          <span class="progress-bar" style="width: 45%">45%</span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Striped</h3>
-        <div class="stack-3">
-          <div class="progress progress-striped"><span class="progress-bar" style="width: 60%"></span></div>
-          <div class="progress progress-striped progress-striped-animated progress-success"><span class="progress-bar" style="width: 60%"></span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Indeterminate</h3>
-        <div class="progress progress-indeterminate"><span class="progress-bar"></span></div>
-      </article>
-
-      <article>
-        <h3>Stacked</h3>
-        <div class="progress progress-stacked">
-          <span class="progress-bar" style="width: 30%; background-color: var(--love-primary)"></span>
-          <span class="progress-bar" style="width: 25%; background-color: var(--love-success)"></span>
-          <span class="progress-bar" style="width: 20%; background-color: var(--love-warning)"></span>
-          <span class="progress-bar" style="width: 15%; background-color: var(--love-danger)"></span>
-        </div>
-      </article>
-
-      <article>
-        <h3>Circular</h3>
-        <div class="cluster">
-          <div class="progress-circle" style="--value: 25"><span class="progress-circle-value">25%</span></div>
-          <div class="progress-circle" style="--value: 50"><span class="progress-circle-value">50%</span></div>
-          <div class="progress-circle" style="--value: 75"><span class="progress-circle-value">75%</span></div>
-          <div class="progress-circle" style="--value: 100"><span class="progress-circle-value">100%</span></div>
-        </div>
-      </article>
-
-      <article>
-        <h3>Native <code>&lt;progress&gt;</code></h3>
-        <progress class="progress-native" value="70" max="100">70%</progress>
-      </article>
-    </section>
-
-    <section id="stats">
-      <h2 data-i18n="index.nav.stats">Stats</h2>
-
-      <article>
-        <h3>Basic</h3>
-        <div class="grid-4">
-          <div class="stat">
-            <span class="stat-label">Users</span>
-            <span class="stat-value">2,847</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Sessions</span>
-            <span class="stat-value">12.4k</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Conversion</span>
-            <span class="stat-value">3.2<span class="stat-suffix">%</span></span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Revenue</span>
-            <span class="stat-value">$48k</span>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <h3>With trend</h3>
-        <div class="grid-2">
-          <div class="stat">
-            <span class="stat-label">Active users</span>
-            <span class="stat-value">1,204</span>
-            <span class="stat-trend stat-trend-up">+12.5% this week</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Bounce rate</span>
-            <span class="stat-value">42%</span>
-            <span class="stat-trend stat-trend-down">-3.1% this week</span>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <h3>With icon</h3>
-        <div class="grid-3">
-          <div class="stat stat-with-icon">
-            <span class="stat-icon">↑</span>
-            <span class="stat-body">
-              <span class="stat-label">Traffic</span>
-              <span class="stat-value stat-value-sm">1.2M</span>
+            <span class="avatar-with-name">
+              <span class="avatar avatar-circle avatar-success">B</span>
+              <span class="avatar-name">
+                <span class="avatar-name-primary">Bob Smith</span>
+                <span class="avatar-name-secondary">Editor</span>
+              </span>
             </span>
           </div>
-          <div class="stat stat-with-icon">
-            <span class="stat-icon stat-icon-success">✓</span>
-            <span class="stat-body">
-              <span class="stat-label">Completed</span>
-              <span class="stat-value stat-value-sm">842</span>
-            </span>
+        </article>
+      </section>
+
+      <section id="progress" class="mb-12">
+        <h2 data-i18n="index.nav.progress">Progress</h2>
+
+        <article class="mb-8">
+          <h3>Basic bars</h3>
+          <div class="stack-3">
+            <div class="progress"><span class="progress-bar" style="width: 25%"></span></div>
+            <div class="progress"><span class="progress-bar" style="width: 50%"></span></div>
+            <div class="progress"><span class="progress-bar" style="width: 75%"></span></div>
+            <div class="progress"><span class="progress-bar" style="width: 100%"></span></div>
           </div>
-          <div class="stat stat-with-icon">
-            <span class="stat-icon stat-icon-danger">!</span>
-            <span class="stat-body">
-              <span class="stat-label">Errors</span>
-              <span class="stat-value stat-value-sm">12</span>
-            </span>
+        </article>
+
+        <article class="mb-8">
+          <h3>Colors</h3>
+          <div class="stack-3">
+            <div class="progress progress-success"><span class="progress-bar" style="width: 80%"></span></div>
+            <div class="progress progress-danger"><span class="progress-bar" style="width: 40%"></span></div>
+            <div class="progress progress-warning"><span class="progress-bar" style="width: 60%"></span></div>
+            <div class="progress progress-grape"><span class="progress-bar" style="width: 55%"></span></div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Accents and centered</h3>
-        <div class="grid-4">
-          <div class="stat stat-accent stat-center">
-            <span class="stat-label">Total</span>
-            <span class="stat-value stat-value-sm">148</span>
-            <p class="stat-description">All time</p>
+        <article class="mb-8">
+          <h3>Sizes</h3>
+          <div class="stack-3">
+            <div class="progress progress-sm"><span class="progress-bar" style="width: 60%"></span></div>
+            <div class="progress"><span class="progress-bar" style="width: 60%"></span></div>
+            <div class="progress progress-lg"><span class="progress-bar" style="width: 60%"></span></div>
           </div>
-          <div class="stat stat-accent-success stat-center">
-            <span class="stat-label">Passing</span>
-            <span class="stat-value stat-value-sm">132</span>
-            <p class="stat-description">89% success rate</p>
+        </article>
+
+        <article class="mb-8">
+          <h3>With label</h3>
+          <div class="progress-wrap">
+            <div class="progress-header">
+              <span class="progress-label">Uploading files</span>
+              <span class="progress-value">72%</span>
+            </div>
+            <div class="progress"><span class="progress-bar" style="width: 72%"></span></div>
           </div>
-          <div class="stat stat-accent-danger stat-center">
-            <span class="stat-label">Failed</span>
-            <span class="stat-value stat-value-sm">16</span>
-            <p class="stat-description">Needs review</p>
+        </article>
+
+        <article class="mb-8">
+          <h3>Tall with value inside</h3>
+          <div class="progress progress-tall progress-grape">
+            <span class="progress-bar" style="width: 45%">45%</span>
           </div>
-          <div class="stat stat-accent-warning stat-center">
-            <span class="stat-label">Pending</span>
-            <span class="stat-value stat-value-sm">4</span>
-            <p class="stat-description">In queue</p>
+        </article>
+
+        <article class="mb-8">
+          <h3>Striped</h3>
+          <div class="stack-3">
+            <div class="progress progress-striped"><span class="progress-bar" style="width: 60%"></span></div>
+            <div class="progress progress-striped progress-striped-animated progress-success"><span class="progress-bar" style="width: 60%"></span></div>
           </div>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section id="empty-states">
-      <h2 data-i18n="index.nav.empty_states">Empty states</h2>
+        <article class="mb-8">
+          <h3>Indeterminate</h3>
+          <div class="progress progress-indeterminate"><span class="progress-bar"></span></div>
+        </article>
 
-      <article>
-        <h3>Basic</h3>
-        <div class="empty-state">
-          <div class="empty-state-icon">📂</div>
-          <h3 class="empty-state-title">No projects yet</h3>
-          <p class="empty-state-description">Get started by creating your first project. You can always change your mind later.</p>
-          <div class="empty-state-actions">
-            <button type="button" class="btn btn-primary">Create project</button>
-            <button type="button" class="btn btn-ghost">Learn more</button>
+        <article class="mb-8">
+          <h3>Stacked</h3>
+          <div class="progress progress-stacked">
+            <span class="progress-bar" style="width: 30%; background-color: var(--love-primary)"></span>
+            <span class="progress-bar" style="width: 25%; background-color: var(--love-success)"></span>
+            <span class="progress-bar" style="width: 20%; background-color: var(--love-warning)"></span>
+            <span class="progress-bar" style="width: 15%; background-color: var(--love-danger)"></span>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Bordered</h3>
-        <div class="empty-state empty-state-bordered">
-          <div class="empty-state-icon empty-state-icon-lg">🔍</div>
-          <h3 class="empty-state-title">No results found</h3>
-          <p class="empty-state-description">Try adjusting your filters or search terms. We couldn't find anything matching your query.</p>
-          <div class="empty-state-actions">
-            <button type="button" class="btn">Clear filters</button>
+        <article class="mb-8">
+          <h3>Circular</h3>
+          <div class="cluster">
+            <div class="progress-circle" style="--value: 25"><span class="progress-circle-value">25%</span></div>
+            <div class="progress-circle" style="--value: 50"><span class="progress-circle-value">50%</span></div>
+            <div class="progress-circle" style="--value: 75"><span class="progress-circle-value">75%</span></div>
+            <div class="progress-circle" style="--value: 100"><span class="progress-circle-value">100%</span></div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Compact — inside a card</h3>
-        <div class="card" style="max-width: 24rem;">
-          <div class="card-body">
-            <div class="empty-state empty-state-compact">
-              <div class="empty-state-icon">📭</div>
-              <h3 class="empty-state-title">Inbox empty</h3>
-              <p class="empty-state-description">You're all caught up.</p>
+        <article class="mb-8">
+          <h3>Native <code>&lt;progress&gt;</code></h3>
+          <progress class="progress-native" value="70" max="100">70%</progress>
+        </article>
+      </section>
+
+      <section id="stats" class="mb-12">
+        <h2 data-i18n="index.nav.stats">Stats</h2>
+
+        <article class="mb-8">
+          <h3>Basic</h3>
+          <div class="grid-4">
+            <div class="stat">
+              <span class="stat-label">Users</span>
+              <span class="stat-value">2,847</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Sessions</span>
+              <span class="stat-value">12.4k</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Conversion</span>
+              <span class="stat-value">3.2<span class="stat-suffix">%</span></span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Revenue</span>
+              <span class="stat-value">$48k</span>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h3>Danger variant</h3>
-        <div class="empty-state empty-state-danger">
-          <div class="empty-state-icon">⚠</div>
-          <h3 class="empty-state-title">Something went wrong</h3>
-          <p class="empty-state-description">We couldn't load this data. Please try again or contact support if the issue persists.</p>
-          <div class="empty-state-actions">
-            <button type="button" class="btn btn-danger">Retry</button>
-            <button type="button" class="btn btn-ghost">Contact support</button>
+        <article class="mb-8">
+          <h3>With trend</h3>
+          <div class="grid-2">
+            <div class="stat">
+              <span class="stat-label">Active users</span>
+              <span class="stat-value">1,204</span>
+              <span class="stat-trend stat-trend-up">+12.5% this week</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Bounce rate</span>
+              <span class="stat-value">42%</span>
+              <span class="stat-trend stat-trend-down">-3.1% this week</span>
+            </div>
           </div>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section id="timelines">
-      <h2 data-i18n="index.nav.timelines">Timelines</h2>
-
-      <article>
-        <h3>Basic vertical</h3>
-        <ul class="timeline">
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-primary"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">2 hours ago</span>
-              <h4 class="timeline-title">Project created</h4>
-              <p class="timeline-text">Alice created the project "Love.css v0.1" and invited three team members.</p>
+        <article class="mb-8">
+          <h3>With icon</h3>
+          <div class="grid-3">
+            <div class="stat stat-with-icon">
+              <span class="stat-icon">↑</span>
+              <span class="stat-body">
+                <span class="stat-label">Traffic</span>
+                <span class="stat-value stat-value-sm">1.2M</span>
+              </span>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-success"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Yesterday</span>
-              <h4 class="timeline-title">First component added</h4>
-              <p class="timeline-text">The <code>button</code> module was finalized with six variants and four states.</p>
+            <div class="stat stat-with-icon">
+              <span class="stat-icon stat-icon-success">✓</span>
+              <span class="stat-body">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value stat-value-sm">842</span>
+              </span>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-warning"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">3 days ago</span>
-              <h4 class="timeline-title">Design review</h4>
-              <p class="timeline-text">Bob flagged the grape accent color for the primary buttons. Discussed contrast ratios.</p>
+            <div class="stat stat-with-icon">
+              <span class="stat-icon stat-icon-danger">!</span>
+              <span class="stat-body">
+                <span class="stat-label">Errors</span>
+                <span class="stat-value stat-value-sm">12</span>
+              </span>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">1 week ago</span>
-              <h4 class="timeline-title">Repository initialized</h4>
-              <p class="timeline-text">Initial commit. Nothing but a README and a dream.</p>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Accents and centered</h3>
+          <div class="grid-4">
+            <div class="stat stat-accent stat-center">
+              <span class="stat-label">Total</span>
+              <span class="stat-value stat-value-sm">148</span>
+              <p class="stat-description">All time</p>
             </div>
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Card-style</h3>
-        <ul class="timeline">
-          <li class="timeline-item timeline-card">
-            <span class="timeline-marker timeline-marker-success"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Deployed</span>
-              <h4 class="timeline-title">v0.1.0 released</h4>
-              <p class="timeline-text">All 28 modules are in place. Registry and library are in sync.</p>
+            <div class="stat stat-accent-success stat-center">
+              <span class="stat-label">Passing</span>
+              <span class="stat-value stat-value-sm">132</span>
+              <p class="stat-description">89% success rate</p>
             </div>
-          </li>
-          <li class="timeline-item timeline-card">
-            <span class="timeline-marker timeline-marker-primary"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">In progress</span>
-              <h4 class="timeline-title">Documentation</h4>
-              <p class="timeline-text">Writing per-module reference and example pages.</p>
+            <div class="stat stat-accent-danger stat-center">
+              <span class="stat-label">Failed</span>
+              <span class="stat-value stat-value-sm">16</span>
+              <p class="stat-description">Needs review</p>
             </div>
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Horizontal</h3>
-        <ul class="timeline timeline-horizontal">
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-success"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Step 1</span>
-              <h4 class="timeline-title">Plan</h4>
-              <p class="timeline-text">Define scope and requirements.</p>
+            <div class="stat stat-accent-warning stat-center">
+              <span class="stat-label">Pending</span>
+              <span class="stat-value stat-value-sm">4</span>
+              <p class="stat-description">In queue</p>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-success"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Step 2</span>
-              <h4 class="timeline-title">Design</h4>
-              <p class="timeline-text">Wireframes and mockups.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="empty-states" class="mb-12">
+        <h2 data-i18n="index.nav.empty_states">Empty states</h2>
+
+        <article class="mb-8">
+          <h3>Basic</h3>
+          <div class="empty-state">
+            <div class="empty-state-icon">📂</div>
+            <h3 class="empty-state-title">No projects yet</h3>
+            <p class="empty-state-description">Get started by creating your first project. You can always change your mind later.</p>
+            <div class="empty-state-actions">
+              <button type="button" class="btn btn-primary">Create project</button>
+              <button type="button" class="btn btn-ghost">Learn more</button>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-primary"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Step 3</span>
-              <h4 class="timeline-title">Build</h4>
-              <p class="timeline-text">Implementation in progress.</p>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Bordered</h3>
+          <div class="empty-state empty-state-bordered">
+            <div class="empty-state-icon empty-state-icon-lg">🔍</div>
+            <h3 class="empty-state-title">No results found</h3>
+            <p class="empty-state-description">Try adjusting your filters or search terms. We couldn't find anything matching your query.</p>
+            <div class="empty-state-actions">
+              <button type="button" class="btn">Clear filters</button>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Step 4</span>
-              <h4 class="timeline-title">Launch</h4>
-              <p class="timeline-text">Not started.</p>
+          </div>
+        </article>
+
+        <article class="mb-8">
+          <h3>Compact — inside a card</h3>
+          <div class="card max-w-sm">
+            <div class="card-body">
+              <div class="empty-state empty-state-compact">
+                <div class="empty-state-icon">📭</div>
+                <h3 class="empty-state-title">Inbox empty</h3>
+                <p class="empty-state-description">You're all caught up.</p>
+              </div>
             </div>
-          </li>
-        </ul>
-      </article>
+          </div>
+        </article>
 
-      <article>
-        <h3>Alternating</h3>
-        <ul class="timeline timeline-alternating">
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-primary"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Q1</span>
-              <h4 class="timeline-title">Research</h4>
-              <p class="timeline-text">Interviews and competitive analysis.</p>
+        <article class="mb-8">
+          <h3>Danger variant</h3>
+          <div class="empty-state empty-state-danger">
+            <div class="empty-state-icon">⚠</div>
+            <h3 class="empty-state-title">Something went wrong</h3>
+            <p class="empty-state-description">We couldn't load this data. Please try again or contact support if the issue persists.</p>
+            <div class="empty-state-actions">
+              <button type="button" class="btn btn-danger">Retry</button>
+              <button type="button" class="btn btn-ghost">Contact support</button>
             </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-success"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Q2</span>
-              <h4 class="timeline-title">Prototype</h4>
-              <p class="timeline-text">Clickable prototype tested with users.</p>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker timeline-marker-warning"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Q3</span>
-              <h4 class="timeline-title">Beta</h4>
-              <p class="timeline-text">Closed beta with 50 users.</p>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-content">
-              <span class="timeline-time">Q4</span>
-              <h4 class="timeline-title">General availability</h4>
-              <p class="timeline-text">Public launch.</p>
-            </div>
-          </li>
-        </ul>
-      </article>
-    </section>
+          </div>
+        </article>
+      </section>
 
-    <section id="layout">
-      <h2 data-i18n="index.nav.layout">Layout</h2>
+      <section id="timelines" class="mb-12">
+        <h2 data-i18n="index.nav.timelines">Timelines</h2>
 
-      <article>
-        <h3><code>.container</code></h3>
-        <div class="container" style="background: var(--love-bg-subtle); padding-block: var(--love-space-4);">
-          <p>Centered container with max-width 72rem and horizontal padding.</p>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Basic vertical</h3>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-primary"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">2 hours ago</span>
+                <h4 class="timeline-title">Project created</h4>
+                <p class="timeline-text">Alice created the project "Love.css v0.1" and invited three team members.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-success"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Yesterday</span>
+                <h4 class="timeline-title">First component added</h4>
+                <p class="timeline-text">The <code>button</code> module was finalized with six variants and four states.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-warning"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">3 days ago</span>
+                <h4 class="timeline-title">Design review</h4>
+                <p class="timeline-text">Bob flagged the grape accent color for the primary buttons. Discussed contrast ratios.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">1 week ago</span>
+                <h4 class="timeline-title">Repository initialized</h4>
+                <p class="timeline-text">Initial commit. Nothing but a README and a dream.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
 
-      <article>
-        <h3><code>.row</code> and <code>.col</code></h3>
-        <div class="row">
-          <div class="col-4"><div class="ks-box">col-4</div></div>
-          <div class="col-4"><div class="ks-box">col-4</div></div>
-          <div class="col-4"><div class="ks-box">col-4</div></div>
-        </div>
-        <div class="row mt-4">
-          <div class="col"><div class="ks-box">col (auto)</div></div>
-          <div class="col"><div class="ks-box">col (auto)</div></div>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Card-style</h3>
+          <ul class="timeline">
+            <li class="timeline-item timeline-card">
+              <span class="timeline-marker timeline-marker-success"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Deployed</span>
+                <h4 class="timeline-title">v0.1.0 released</h4>
+                <p class="timeline-text">All 28 modules are in place. Registry and library are in sync.</p>
+              </div>
+            </li>
+            <li class="timeline-item timeline-card">
+              <span class="timeline-marker timeline-marker-primary"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">In progress</span>
+                <h4 class="timeline-title">Documentation</h4>
+                <p class="timeline-text">Writing per-module reference and example pages.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
 
-      <article>
-        <h3><code>.stack</code></h3>
-        <div class="stack-3">
-          <div class="ks-box">Stack item 1</div>
-          <div class="ks-box">Stack item 2</div>
-          <div class="ks-box">Stack item 3</div>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Horizontal</h3>
+          <ul class="timeline timeline-horizontal">
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-success"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Step 1</span>
+                <h4 class="timeline-title">Plan</h4>
+                <p class="timeline-text">Define scope and requirements.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-success"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Step 2</span>
+                <h4 class="timeline-title">Design</h4>
+                <p class="timeline-text">Wireframes and mockups.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-primary"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Step 3</span>
+                <h4 class="timeline-title">Build</h4>
+                <p class="timeline-text">Implementation in progress.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Step 4</span>
+                <h4 class="timeline-title">Launch</h4>
+                <p class="timeline-text">Not started.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
 
-      <article>
-        <h3><code>.cluster</code></h3>
-        <div class="cluster">
-          <div class="ks-box">Item 1</div>
-          <div class="ks-box">Item 2</div>
-          <div class="ks-box">Item 3</div>
-          <div class="ks-box">Item 4</div>
-          <div class="ks-box">Item 5</div>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3>Alternating</h3>
+          <ul class="timeline timeline-alternating">
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-primary"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Q1</span>
+                <h4 class="timeline-title">Research</h4>
+                <p class="timeline-text">Interviews and competitive analysis.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-success"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Q2</span>
+                <h4 class="timeline-title">Prototype</h4>
+                <p class="timeline-text">Clickable prototype tested with users.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker timeline-marker-warning"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Q3</span>
+                <h4 class="timeline-title">Beta</h4>
+                <p class="timeline-text">Closed beta with 50 users.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <div class="timeline-content">
+                <span class="timeline-time">Q4</span>
+                <h4 class="timeline-title">General availability</h4>
+                <p class="timeline-text">Public launch.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
 
-      <article>
-        <h3><code>.grid-auto</code></h3>
-        <div class="grid-auto">
-          <div class="ks-box">Auto 1</div>
-          <div class="ks-box">Auto 2</div>
-          <div class="ks-box">Auto 3</div>
-          <div class="ks-box">Auto 4</div>
-        </div>
-      </article>
+      <section id="layout" class="mb-12">
+        <h2 data-i18n="index.nav.layout">Layout</h2>
 
-      <article>
-        <h3><code>.grid-3</code></h3>
-        <div class="grid-3">
-          <div class="ks-box">1</div>
-          <div class="ks-box">2</div>
-          <div class="ks-box">3</div>
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3><code>.container</code></h3>
+          <div class="container bg-subtle py-4">
+            <p>Centered container with max-width 72rem and horizontal padding.</p>
+          </div>
+        </article>
 
-      <article>
-        <h3><code>.sidebar</code></h3>
-        <div class="sidebar">
-          <div class="ks-box">Sidebar</div>
-          <div class="ks-box">Main content</div>
-        </div>
-      </article>
-    </section>
+        <article class="mb-8">
+          <h3><code>.row</code> and <code>.col</code></h3>
+          <div class="row">
+            <div class="col-4"><div class="p-4 bg-subtle border text-center">col-4</div></div>
+            <div class="col-4"><div class="p-4 bg-subtle border text-center">col-4</div></div>
+            <div class="col-4"><div class="p-4 bg-subtle border text-center">col-4</div></div>
+          </div>
+          <div class="row mt-4">
+            <div class="col"><div class="p-4 bg-subtle border text-center">col (auto)</div></div>
+            <div class="col"><div class="p-4 bg-subtle border text-center">col (auto)</div></div>
+          </div>
+        </article>
 
-    <section id="utilities">
-      <h2 data-i18n="index.nav.utilities">Utilities</h2>
+        <article class="mb-8">
+          <h3><code>.stack</code></h3>
+          <div class="stack-3">
+            <div class="p-4 bg-subtle border text-center">Stack item 1</div>
+            <div class="p-4 bg-subtle border text-center">Stack item 2</div>
+            <div class="p-4 bg-subtle border text-center">Stack item 3</div>
+          </div>
+        </article>
 
-      <article>
-        <h3>Spacing</h3>
-        <div class="p-4 mb-4" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
-          <code>.p-4 .mb-4</code> — padding and margin on the same element.
-        </div>
-        <div class="p-6" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
-          <code>.p-6</code> — larger padding.
-        </div>
-      </article>
+        <article class="mb-8">
+          <h3><code>.cluster</code></h3>
+          <div class="cluster">
+            <div class="p-4 bg-subtle border text-center">Item 1</div>
+            <div class="p-4 bg-subtle border text-center">Item 2</div>
+            <div class="p-4 bg-subtle border text-center">Item 3</div>
+            <div class="p-4 bg-subtle border text-center">Item 4</div>
+            <div class="p-4 bg-subtle border text-center">Item 5</div>
+          </div>
+        </article>
 
-      <article>
-        <h3>Text</h3>
-        <p class="text-left">Left aligned</p>
-        <p class="text-center">Center aligned</p>
-        <p class="text-right">Right aligned</p>
-        <p class="text-muted">Muted color</p>
-        <p class="text-primary">Primary color (grape)</p>
-        <p class="text-danger">Danger color</p>
-        <p class="text-success">Success color</p>
-        <p class="text-sm">Small text</p>
-        <p class="text-lg">Large text</p>
-        <p class="text-bold">Bold text</p>
-        <p class="text-uppercase">uppercase text</p>
-      </article>
+        <article class="mb-8">
+          <h3><code>.grid-auto</code></h3>
+          <div class="grid-auto">
+            <div class="p-4 bg-subtle border text-center">Auto 1</div>
+            <div class="p-4 bg-subtle border text-center">Auto 2</div>
+            <div class="p-4 bg-subtle border text-center">Auto 3</div>
+            <div class="p-4 bg-subtle border text-center">Auto 4</div>
+          </div>
+        </article>
 
-      <article>
-        <h3>Flex and visibility</h3>
-        <div class="flex justify-between items-center gap-3 p-3" style="background: var(--love-bg-subtle); border: 1px solid var(--love-border);">
-          <span>Left</span>
-          <span>Center</span>
-          <span>Right</span>
-        </div>
-        <p class="mt-3">This paragraph is visible. <span class="sr-only">This text is only for screen readers.</span></p>
-        <p class="mt-3"><span class="hide">This text is hidden.</span> This text is not hidden.</p>
-      </article>
-    </section>
+        <article class="mb-8">
+          <h3><code>.grid-3</code></h3>
+          <div class="grid-3">
+            <div class="p-4 bg-subtle border text-center">1</div>
+            <div class="p-4 bg-subtle border text-center">2</div>
+            <div class="p-4 bg-subtle border text-center">3</div>
+          </div>
+        </article>
 
-    <section id="animations">
-      <h2 data-i18n="index.nav.animations">Animations</h2>
+        <article class="mb-8">
+          <h3><code>.sidebar</code></h3>
+          <div class="sidebar">
+            <div class="p-4 bg-subtle border text-center">Sidebar</div>
+            <div class="p-4 bg-subtle border text-center">Main content</div>
+          </div>
+        </article>
+      </section>
 
-      <article>
-        <h3>Entrance animations</h3>
-        <div class="cluster">
-          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-fade'); e.classList.remove('fade-in'); void e.offsetWidth; e.classList.add('fade-in');">Replay fade-in</button>
-          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-slide'); e.classList.remove('slide-up'); void e.offsetWidth; e.classList.add('slide-up');">Replay slide-up</button>
-          <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-scale'); e.classList.remove('scale-in'); void e.offsetWidth; e.classList.add('scale-in');">Replay scale-in</button>
-        </div>
-        <div class="grid-3 mt-4">
-          <div id="anim-fade" class="ks-box">fade-in</div>
-          <div id="anim-slide" class="ks-box">slide-up</div>
-          <div id="anim-scale" class="ks-box">scale-in</div>
-        </div>
-      </article>
+      <section id="utilities" class="mb-12">
+        <h2 data-i18n="index.nav.utilities">Utilities</h2>
 
-      <article>
-        <h3>Loading animations</h3>
-        <div class="cluster">
-          <div class="ks-box" style="width: 4rem;">spin<div class="spin" style="display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--love-primary); border-top-color: transparent; border-radius: 9999px;"></div></div>
-          <div class="ks-box shimmer" style="width: 12rem;">shimmer</div>
-          <div class="ks-box pulse" style="width: 12rem;">pulse</div>
-        </div>
-      </article>
-    </section>
+        <article class="mb-8">
+          <h3>Spacing</h3>
+          <div class="p-4 mb-4 bg-subtle border">
+            <code>.p-4 .mb-4</code> — padding and margin on the same element.
+          </div>
+          <div class="p-6 bg-subtle border">
+            <code>.p-6</code> — larger padding.
+          </div>
+        </article>
 
-    <section id="interactive-elements">
-      <h2 data-i18n="index.nav.interactive">Interactive elements</h2>
+        <article class="mb-8">
+          <h3>Text</h3>
+          <p class="text-left">Left aligned</p>
+          <p class="text-center">Center aligned</p>
+          <p class="text-right">Right aligned</p>
+          <p class="text-muted">Muted color</p>
+          <p class="text-primary">Primary color (grape)</p>
+          <p class="text-danger">Danger color</p>
+          <p class="text-success">Success color</p>
+          <p class="text-sm">Small text</p>
+          <p class="text-lg">Large text</p>
+          <p class="text-bold">Bold text</p>
+          <p class="text-uppercase">uppercase text</p>
+        </article>
 
-      <article>
-        <h3><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h3>
-        <details>
-          <summary>Expand for details</summary>
-          <p>Here is the detailed content that is hidden until the summary is activated.</p>
-        </details>
-      </article>
+        <article class="mb-8">
+          <h3>Flex and visibility</h3>
+          <div class="flex justify-between items-center gap-3 p-3 bg-subtle border">
+            <span>Left</span>
+            <span>Center</span>
+            <span>Right</span>
+          </div>
+          <p class="mt-3">This paragraph is visible. <span class="sr-only">This text is only for screen readers.</span></p>
+          <p class="mt-3"><span class="hide">This text is hidden.</span> This text is not hidden.</p>
+        </article>
+      </section>
 
-      <article>
-        <h3><code>&lt;dialog&gt;</code></h3>
-        <button type="button" class="btn btn-primary" onclick="document.getElementById('demo-dialog').showModal()">Open dialog</button>
-        <dialog id="demo-dialog">
-          <h4>Dialog heading</h4>
-          <p>This is a native HTML dialog element. It can be modal or non-modal.</p>
-          <form method="dialog">
-            <button type="submit" class="btn">Close</button>
-          </form>
-        </dialog>
-      </article>
-    </section>
+      <section id="animations" class="mb-12">
+        <h2 data-i18n="index.nav.animations">Animations</h2>
 
-  </main>
+        <article class="mb-8">
+          <h3>Entrance animations</h3>
+          <div class="cluster">
+            <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-fade'); e.classList.remove('fade-in'); void e.offsetWidth; e.classList.add('fade-in');">Replay fade-in</button>
+            <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-slide'); e.classList.remove('slide-up'); void e.offsetWidth; e.classList.add('slide-up');">Replay slide-up</button>
+            <button type="button" class="btn btn-secondary" onclick="var e=document.getElementById('anim-scale'); e.classList.remove('scale-in'); void e.offsetWidth; e.classList.add('scale-in');">Replay scale-in</button>
+          </div>
+          <div class="grid-3 mt-4">
+            <div id="anim-fade" class="p-4 bg-subtle border text-center">fade-in</div>
+            <div id="anim-slide" class="p-4 bg-subtle border text-center">slide-up</div>
+            <div id="anim-scale" class="p-4 bg-subtle border text-center">scale-in</div>
+          </div>
+        </article>
 
-  <footer role="contentinfo">
-    <p><span data-i18n="index.footer.text">Love.css Kitchen Sink — built for testing CSS systems and frameworks.</span> <a href="#top" data-i18n="index.footer.top">Back to top</a>.</p>
-  </footer>
+        <article class="mb-8">
+          <h3>Loading animations</h3>
+          <div class="cluster">
+            <div class="p-4 bg-subtle border text-center" style="width: 4rem;">spin<div class="spin" style="display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--love-primary); border-top-color: transparent; border-radius: 9999px;"></div></div>
+            <div class="p-4 bg-subtle border text-center shimmer" style="width: 12rem;">shimmer</div>
+            <div class="p-4 bg-subtle border text-center pulse" style="width: 12rem;">pulse</div>
+          </div>
+        </article>
+      </section>
+
+      <section id="interactive-elements" class="mb-12">
+        <h2 data-i18n="index.nav.interactive">Interactive elements</h2>
+
+        <article class="mb-8">
+          <h3><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h3>
+          <details>
+            <summary>Expand for details</summary>
+            <p>Here is the detailed content that is hidden until the summary is activated.</p>
+          </details>
+        </article>
+
+        <article class="mb-8">
+          <h3><code>&lt;dialog&gt;</code></h3>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('demo-dialog').showModal()">Open dialog</button>
+          <dialog id="demo-dialog">
+            <h4>Dialog heading</h4>
+            <p>This is a native HTML dialog element. It can be modal or non-modal.</p>
+            <form method="dialog">
+              <button type="submit" class="btn">Close</button>
+            </form>
+          </dialog>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="border-t pt-6 mt-12 text-muted text-sm" role="contentinfo">
+      <p><span data-i18n="index.footer.text">Love.css Kitchen Sink — built for testing CSS systems and frameworks.</span> <a href="#top" data-i18n="index.footer.top">Back to top</a>.</p>
+    </footer>
+
+  </div>
 
   <script>
     (function () {
       var html = document.documentElement;
 
       /* Theme switcher */
-      var themeButtons = document.querySelectorAll('.ks-theme-switcher button');
+      var themeButtons = document.querySelectorAll('[data-theme]');
       function applyTheme(theme) {
         if (theme === 'auto') {
           html.removeAttribute('data-love-theme');
