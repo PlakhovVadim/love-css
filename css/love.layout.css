@@ -1,7 +1,5 @@
 /*! Love.css layout | MIT License | github.com/PlakhovVadim/love-css */
 
-/* Container — constrains content width and centers it */
-
 .container {
   width: 100%;
   max-width: 72rem;
@@ -13,8 +11,6 @@
   width: 100%;
   padding-inline: var(--love-space-4);
 }
-
-/* Row and col — simple 12-column grid using flex */
 
 .row {
   display: flex;
@@ -39,8 +35,6 @@
 .col-8  { flex: 0 0 calc(66.6667% - var(--love-space-4)); }
 .col-12 { flex: 0 0 100%; }
 
-/* Stack — vertical rhythm. Children get equal gaps. */
-
 .stack {
   display: flex;
   flex-direction: column;
@@ -54,8 +48,6 @@
 .stack-4 { gap: var(--love-space-4); }
 .stack-6 { gap: var(--love-space-6); }
 .stack-8 { gap: var(--love-space-8); }
-
-/* Cluster — horizontal group that wraps */
 
 .cluster {
   display: flex;
@@ -72,15 +64,11 @@
   justify-content: space-between;
 }
 
-/* Center — centers a single child both axes */
-
 .center {
   display: grid;
   place-items: center;
   min-height: 100%;
 }
-
-/* Sidebar — main content plus aside, collapses on small screens */
 
 .sidebar {
   display: grid;
@@ -96,8 +84,6 @@
     grid-template-columns: 1fr 16rem;
   }
 }
-
-/* Grid — auto-fit responsive grid */
 
 .grid {
   display: grid;
@@ -128,15 +114,32 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-@media (max-width: 48rem) {
-  .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Full-bleed — escapes the container padding */
-
 .full-bleed {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 48rem) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-6,
+  .col-8,
+  .col-12 {
+    flex: 0 0 100%;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar,
+  .sidebar-right {
+    grid-template-columns: 1fr;
+  }
 }
