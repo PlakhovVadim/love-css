@@ -2,6 +2,9 @@
 
 A minimalist CSS framework for fast interface assembly. Design, not animations. Zero bloat, full customization through tokens.
 
+![Light theme](assets/img/screenshot-light.png)
+![Dark theme](assets/img/screenshot-dark.png)
+
 Love.css is built for people who do not want to write CSS. You write HTML, add a few classes, and get a clean, modern interface with light and dark themes out of the box. If you need to change something, you change a token — not a component.
 
 ## Philosophy
