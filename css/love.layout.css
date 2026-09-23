@@ -9,8 +9,6 @@
   padding-inline: var(--love-space-4);
 }
 
-/* Container small */
-
 .container-sm {
   width: 100%;
   max-width: 48rem;
@@ -18,16 +16,12 @@
   padding-inline: var(--love-space-4);
 }
 
-/* Container large */
-
 .container-lg {
   width: 100%;
   max-width: 88rem;
   margin-inline: auto;
   padding-inline: var(--love-space-4);
 }
-
-/* Container fluid */
 
 .container-fluid {
   width: 100%;
@@ -119,12 +113,28 @@
   display: grid;
   gap: var(--love-space-6);
   grid-template-columns: 1fr;
+  align-items: start;
 }
 
 .sidebar-right {
   display: grid;
   gap: var(--love-space-6);
   grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.sidebar-lg {
+  display: grid;
+  gap: var(--love-space-6);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.sidebar-wide {
+  display: grid;
+  gap: var(--love-space-6);
+  grid-template-columns: 1fr;
+  align-items: start;
 }
 
 /* Grid */
@@ -194,15 +204,29 @@
   .sidebar-right {
     grid-template-columns: 1fr 16rem;
   }
+}
+
+@media (min-width: 64rem) {
+  .sidebar-lg {
+    grid-template-columns: 18rem 1fr;
+  }
 
   .sidebar-wide {
     grid-template-columns: 20rem 1fr;
   }
 }
 
-@media (min-width: 64rem) {
-  .sidebar-lg {
-    grid-template-columns: 18rem 1fr;
+/* Sticky sidebars on narrow screens: disable sticky, let page scroll */
+
+@media (max-width: 63.999rem) {
+  .sidebar-lg > .sticky,
+  .sidebar-wide > .sticky,
+  .sidebar > .sticky,
+  .sidebar-right > .sticky {
+    position: static;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
   }
 }
 
